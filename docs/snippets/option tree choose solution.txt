@@ -1,0 +1,23 @@
+<!--- // show solution buttons --->
+														<cfoutput>
+														<div style="float:right;"><a href="#application.root#?event=page.tree" class="btn btn-small btn-secondary"><i class="icon-hand-left"></i> Return to Option Tree</a>&nbsp;<a href="javascript:;" class="btn btn-small btn-primary"><i class="icon-check"></i> Choose This Solution</a>
+														</cfoutput>
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+		<!--- // show solution buttons --->
+																			<cfoutput>
+																				<div style="float:right;"><a href="#application.root#?event=page.tree" class="btn btn-small btn-secondary"><i class="icon-hand-left"></i> Return to Option Tree</a>&nbsp;<a href="#application.root#?event=page.worksheet.solution&tree=#tree#&option=cancel&solution=school" class="btn btn-small btn-primary"><i class="icon-check"></i> Choose This Solution</a>
+																			</cfoutput>	

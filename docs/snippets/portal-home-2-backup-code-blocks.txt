@@ -1,0 +1,294 @@
+
+
+
+
+
+
+						<cfif cdashboard.totalloans neq 0>
+																	
+											<div class="widget stacked">
+															
+												<cfoutput>
+																					
+													<div class="widget-content">
+																						
+														<div id="big_stats">
+															<div class="stat">								
+																	<h4>Total Student Loans Enrolled</h4>
+																	<span class="value">#cdashboard.totalloans#</span>								
+																</div> <!-- .stat -->
+																							
+																<div class="stat">								
+																	<h4>Total Student Loan Debt</h4>
+																	<span class="value">#dollarformat( cdashboard.totaldebt )#</span>								
+																</div> <!-- .stat -->															
+																
+																<div class="stat">								
+																	<h4>Total Completed Solutions</h4>
+																	<span class="value">#completedsolutions.recordcount#</span>								
+																</div> <!-- .stat -->																
+																						
+																<div class="stat">								
+																	<h4>Program Enrollment</h4>
+																	<span class="value"><span style="padding:10px;font-size:24px;" class="label label-success">ACTIVE</span></span>								
+																</div> <!-- .stat -->
+														</div>
+																					
+													</div> <!-- /widget-content -->
+																				
+												</cfoutput>
+																			
+											</div> <!-- /widget -->
+										</cfif>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										<!--- // default welcome message --->
+											<cfif leaddetail.leadesign eq 0 and leaddetail.leadconv eq 0>
+												<cfoutput>
+													<div class="alert alert-block alert-notice">
+														<button type="button" class="close" data-dismiss="alert">&times;</button>												
+															<h4><i class="icon-home"></i> Welcome to Your Client Portal.  </h4>
+															<p>Please take the time to <strong><a href="#application.root#?event=page.enroll.esign">E-SIGN</a></strong> your <strong>Student Loan Advisory Agreement</strong> before you get started.
+															<p><a href="#application.root#?event=page.enroll.esign" class="btn btn-secondary btn-medium"><i class="icon-pencil"></i> I'm Ready to E-Sign</a></p>
+															
+													</div>
+												</cfoutput>
+											<cfelse>
+												<cfoutput>
+													<div class="alert alert-block alert-success">
+														<button type="button" class="close" data-dismiss="alert">&times;</button>											
+															<h4><i class="icon-home"></i> OK, LET'S GET STARTED!</H4>
+															<p>Now that you have provided your electronic signature and have officially enrolled in Student Loan Advisory Program, please <strong><a href="#application.root#?event=page.portal.instructions">View Instructions</a></strong> to help you navigate your client portal.</p>
+															
+													</div>
+												</cfoutput>
+											</cfif>	
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											<cfoutput>
+												
+													<div class="span7">
+														<div class="well">	
+																														
+															<h4 style="font-size:14px;"><i class="icon-user"></i>  Welcome #leaddetail.leadfirst# #leaddetail.leadlast#!</h4>																	
+																<p><i class="icon-home"></i> #leaddetail.leadadd1#   <cfif leaddetail.leadadd2 is not "">#leaddetail.leadadd2#</cfif> <span class="pull-right"><i class="icon-calendar"></i> Enroll Date | #dateformat( leaddetail.leaddate, "mm/dd/yyyy" )#</span></p>
+																<p style="margin-top:-10px;">#leaddetail.leadcity#, #ucase( leaddetail.leadstate )#  #leaddetail.leadzip#		      <span class="pull-right"><i class="icon-cog"></i> <a href="#application.root#?event=page.profile">Edit My Profile </a> | <a href="#application.root#?event=page.logout">Logout</a></span></p>								
+																<p style="margin-top:-10px;"><i class="icon-phone"></i>  #leaddetail.leadphonetype# : #leaddetail.leadphonenumber#	  <span class="pull-right"><i class="icon-comments"></i> <cfif convolist.totalnewmsgs gt 0><span class="label label-success">#convolist.totalnewmsgs# New Message<cfif convolist.totalnewmsgs gt 1>s</cfif></span><cfelse><span class="label label-important">0 New Messages</span></cfif>  <a href="#application.root#?event=page.conversation&fuseaction=new"> Ask Us</a></span></p>
+																<p style="margin-top:-10px;"><i class="icon-envelope"></i>  #leaddetail.leademail#									  <span class="pull-right"><i class="icon-folder-open"></i> <a href="#application.root#?event=page.docs&fuseaction=upload"> Upload New Document</a></span></p>
+																
+														</div>						
+													</div>
+												
+												
+											</cfoutput>
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											<cfif leaddetail.leadesign eq 1 and leaddetail.leadconv eq 1>
+												<h5><i class="icon-check"></i> Getting Started</h5>									
+													
+													<cfoutput>
+														<ul style="list-style:none;">
+															<cfloop query="tasklist">
+																<li><cfif #trim( taskstatus )# is "completed"><i class="icon-check"></i><cfelse><i class="icon-check-empty"></i></cfif>  <strong>#mtaskname#</strong></li>													
+															</cfloop>
+														</ul>
+													</cfoutput>			
+											</cfif>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										<cfif advisorteam.recordcount eq 1>
+												
+												<cfoutput>	
+												
+												
+													<h4><i class="icon-group"></i> Meet Your Student Loan Advisor Team</h4>
+														<cfif advisorteam.enrollmentcounselor is not "">
+															<div class="span2">
+																<div style="padding:30px;border:1px solid lightgray;text-align:center;">
+																	<i style="color:lightgray;" class="icon-user icon-4x"></i>
+																		<h4 style="color:lightgray;">#advisorteam.enrollmentcounselor#</h4><br />
+																		<p class="help-block">Enrollment Counselor</p>
+																		<br />
+																		<a href="#application.root#?event=age.conversation&fuseaction=new">Ask Me a Question</a>
+																		
+																
+																	
+																	
+																
+																</div>
+															</div>
+														</cfif>
+														
+													
+													
+														
+														<cfif advisorteam.intakeadvisor is not "">
+															<div class="span2">
+																<div style="padding:30px;border:1px solid lightgray;text-align:center;">
+																	<i style="color:lightgray;" class="icon-user icon-4x"></i>
+																		<h4 style="color:lightgray;">#advisorteam.intakeadvisor#</h4><br />
+																		<p class="help-block">Data & Intake Advisor</p>
+																		<br />
+																		<a href="#application.root#?event=age.conversation&fuseaction=new">Ask Me a Question</a>
+																</div>
+															</div>
+														</cfif>
+														
+													
+															
+														<cfif advisorteam.slsadvisor is not "">												
+															<div class="span2">
+																	<div style="padding:30px;border:1px solid lightgray;text-align:center;">
+																		<i style="color:lightgray;" class="icon-user icon-4x"></i>
+																			<h4 style="color:lightgray;">#advisorteam.slsadvisor#</h4><br />
+																			<p class="help-block">Student Loan Advisor</p>
+																		<br />
+																		<a href="#application.root#?event=age.conversation&fuseaction=new">Ask Me a Question</a>
+																	</div>
+															</div>
+														</cfif>
+														
+												
+												
+												</cfoutput>
+												
+											<cfelse>
+												Team Not Yet Assigned
+											</cfif>
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											<!--- // last login and history --->
+											<cfif session.lastdate neq "" and session.lastip neq "">
+												<cfoutput>
+													<div>
+														<div style="text-align:center;">																					
+															<a href="#application.root#?event=page.loginhistory" title="View Login History"><strong>Last Login</strong></a>
+															<span class="stat-value" style="font-size:10px;letter-spacing:0px;">#DateFormat( session.lastdate, "mm/dd/yyyy" )# from #session.lastip#</span>													
+														
+															
+															<a class="btn btn-mini btn-tertiary" data-toggle="modal" href="##myModal" >Show Welcome Message</a>
+														
+														
+														</div> <!-- /stat -->
+													</div>
+												</cfoutput>
+											</cfif>
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											<cfoutput>
+												<div class="modal fade hide" id="myModal">
+													<div class="modal-header">
+														<h3>Welcome, #leaddetail.leadfirst#</h3>
+													</div>
+														
+													<div class="modal-body">
+														<p>Welcome to your Student Loan Advisor Client Portal. The portal allows you to E-sign your enrollment docs, update your contact information, upload student loan and personal information, view student loan solution packet, download forms needed to implement solutions and track progress on your file.  Before you can proceed, please see the instructions on how to e-sign your enrollment documents and payment form.  Once you have completed these steps, you will be able to have full access to the portal and be on your way to discovering the solutions for your student loan debt!</p>
+													</div>
+														  
+													<div class="modal-footer">							
+														<form class="form-inline" method="post" action="#cgi.script_name#?event=page.portal.welcome">																				
+															<label class="checkbox" style="margin-right:200px;">
+																<input name="chkhome" type="checkbox" value="1" checked> Show Welcome Page
+															</label>											
+															<button type="submit" name="savewelcomehome" class="btn btn-primary btn-large"><i class="icon-circle-arrow-right"></i> Continue</button>										
+														</form>						
+													</div>
+												</div>
+											</cfoutput>
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											

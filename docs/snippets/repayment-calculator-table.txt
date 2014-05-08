@@ -1,0 +1,116 @@
+
+
+
+			<table class="table table-bordered table-striped table-highlight">
+																	<thead>
+																		<tr>
+																			<th width="7%"><div align="center">Select</div></th>
+																			<th>Repayment Plan</th>
+																			<th>Months in Repayment</th>
+																			<th>Monthly Payment</th>
+																			<th>Total Payments</th>
+																			<th>Details</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<!--- // standard repayment --->																
+																		<tr>
+																			<td class="actions"><div align="center"><input type="radio" name="STD" id="STD"></div></td>																					
+																			<td>Standard</td>
+																			<td>#cloanterm#</td>
+																			<td>#dollarformat( monthlyPaymentStd )#</td>
+																			<td>#dollarformat( monthlyPaymentStd * cloanterm )#</td>
+																			<td><span class="label label-default">View Detail</span></td>
+																		</tr>
+																		<!--- graduated --->
+																		<tr>
+																			<td class="actions"><div align="center"><input type="radio" name="grad" id="grad"></div></td>																					
+																			<td>Graduated</td>
+																			<td>#cloanterm#</td>
+																			<td>#dollarformat( gradInitialPayAmt )#</td>
+																			<td>#dollarformat( gradInitialPayAmt * cloanterm )#</td>
+																			<td><span class="label label-default">View Detail</span>&nbsp;<span class="label label-inverse">See Note 1</span></td>
+																		</tr>
+																		<!--- // extended --->
+																		<cfif cloaninfo.totalloanamount GT 30000 >
+																		<tr>
+																			<td class="actions"><div align="center"><input type="radio" name="extstd" id="extstd"></div></td>																					
+																			<td>Extended</td>
+																			<td>#mExtPay.mExtTerm#</td>
+																			<td>#dollarformat( mExtPay.mExtPayAmt )#</td>
+																			<td>#dollarformat( mExtPay.mExtPayAmt * mExtPay.mExtTerm )#</td>
+																			<td><span class="label label-default">View Detail</span></td>
+																		</tr>
+																		<!--- // extended graduated --->
+																		<tr>
+																			<td class="actions"><div align="center"><input type="radio" name="extgrad" id="extgrad"></div></td>																					
+																			<td>Extended Graduated</td>
+																			<td>#strExtGrad.newloanterm#</td>
+																			<td>#dollarformat( strExtGrad.gradExtInitialPayAmt )#</td>
+																			<td>#dollarformat( strExtGrad.gradExtInitialPayAmt * strExtGrad.newloanterm )#</td>
+																			<td><span class="label label-default">View Detail</span></td>
+																		</tr>
+																		</cfif>
+																		<!--- // pay as you earn --->
+																		<tr>
+																			<td class="actions"><div align="center"><input type="radio" name="PAYE" id="PAYE"></div></td>																					
+																			<td>Pay As You Earn</td>
+																			<td><span class="label label-warning">See Note 2</span></td>
+																			<td>#dollarformat( mIBR.mIBRPAYE )#</td>
+																			<td>#dollarformat( mIBR.mIBRPAYE * 300 )#</td>
+																			<td><span class="label label-default">View Detail</span></td>
+																		</tr>
+																		<!--- // income contingent --->
+																		<tr>
+																			<td class="actions"><div align="center"><input type="radio" name="ICR" id="ICR"<cfif qualifythisclient is false>disabled</cfif>></div></td>																					
+																			<td>Income Contingent</td>
+																			<td><span class="label label-warning">See Note 2</span></td>
+																			<td>#dollarformat( monthlyPaymentICR )#</td>
+																			<td>#dollarformat( monthlyPaymentICR * 300 )#</td>
+																			<td><cfif qualifythisclient is true><span class="label label-default">View Detail</span><cfelse><span class="label label-important">Not Qualified</span></cfif></td>
+																		</tr>
+																		<!--- // income based --->
+																		<cfif mIBR.mIBRPayAmt LTE mIBR.mIBRStd>
+																		<tr>
+																			<td class="actions"><div align="center"><input type="radio" name="IBR" id="IBR"<cfif qualifythisclient is false>disabled</cfif>></div></td>																					
+																			<td>Income Based</td>
+																			<td><span class="label label-warning">See Note 2</span></td>
+																			<td>#dollarformat( mIBR.mIBRPayAmt )#</td>
+																			<td>#dollarformat( mIBR.mIBRPayAmt * 300 )#</td>
+																			<td><cfif qualifythisclient is true><span class="label label-default">View Detail</span><cfelse><span class="label label-important">Not Qualified</span></cfif></td>
+																		</tr>
+																		</cfif>
+																	</tbody>
+																</table>
+																
+																
+																
+																
+																
+																
+																
+																<div class="well" style="padding:15px;">
+															<span class="small">
+															<p><strong>Note 1:</strong>
+															This is an estimated monthly payment amount for the first two years of the term. The monthly payment amount generally will increase every two years, based on a gradation factor. 
+															</p>						  
+																					  
+															<p><strong>Note 2:</strong>	
+															This is an estimated repayment amount for the first year and total loan payment, based on the information you provided. 
+															This repayment amount will be recalculated annually based on your income (and the Poverty Guidelines for your family size as determined by the U.S Dept of Health & Human Service for ICR and your family size for IBR). 
+															The ICR and IBR Plans have a maximum term of 25 years.
+															</p>													
+																					  
+															<p><strong>Note 3:</strong>
+															You are not eligible for the IBR Plan because you included ineligible PLUS loans. If you want to repay under the IBR Plan, you need to exclude your parent PLUS Loan(s).
+															</p>						 
+																					  
+															<p><strong>Note 4:</strong>
+															You are not eligible for the IBR Plan because you do not have a partial financial hardship based on the income and family size information you provided.
+															</p>						 
+																					  
+															<p><strong>Note 5:</strong>
+															The IBR Plan Estimated Total Loan Balances include your spouse's total indebtedness, if applicable.
+															</p>
+															</small>
+														</div>

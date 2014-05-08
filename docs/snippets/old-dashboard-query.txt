@@ -1,0 +1,33 @@
+<cffunction name="getRC" access="remote" output="false" hint="I get the list of recent activity">
+			
+			<cfargument name="userID" default="#session.userID#" required="yes" type="numeric">
+			
+				<cfquery datasource="#application.dsn#" name="rc1">
+					select top 10 r.recentid, r.leadid, r.recentdate, l.leadfirst, l.leadlast				       
+					  from recent r, leads l, client c
+					 where r.leadid = l.leadid
+					   and l.leadid = c.leadid
+					   and r.userid = <cfqueryparam value=#arguments.userID#" cfsqltype="cf_sql_integer" />
+					order by r.recentid desc
+				</cfquery>
+				
+				<cfreturn rc1>
+		
+		</cffunction>
+		
+		
+		<cffunction name="getRA" access="remote" output="false" hint="I get the list of recent activity">
+			
+			<cfargument name="userID" default="#session.userID#" required="yes" type="numeric">
+			
+				<cfquery datasource="#application.dsn#" name="ra">
+					select top 10 a.activityid, a.leadid, l.leadfirst, l.leadlast, a.activitydate, 
+						   a.activtytype, a.activity
+					  from activity a, leads l
+					 where a.leadid = l.leadid
+					   and a.userid = <cfqueryparam value=#arguments.userID#" cfsqltype="cf_sql_integer" />
+				</cfquery>
+				
+				<cfreturn ra>
+		
+		</cffunction>

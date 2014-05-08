@@ -1,0 +1,32 @@
+
+										
+										
+										<cfoutput>															
+															
+															
+															<div class="shortcuts">																
+																
+																<a href="#application.root#?event=page.budget" class="shortcut">
+																	<i class="shortcut-icon icon-money"></i>
+																	<span class="shortcut-label">Your Budget</span>
+																</a>
+																
+																<a href="#application.root#?event=page.client.forms" class="shortcut">
+																	<i class="shortcut-icon icon-book"></i>
+																	<span class="shortcut-label">Forms Library</span>								
+																</a>
+																
+																<a href="#application.root#?event=page.activity" class="shortcut">
+																	<i class="shortcut-icon icon-briefcase"></i>
+																	<span class="shortcut-label">Account Activity</span>	
+																</a>
+																
+																<a href="#application.root#?event=page.reminders" class="shortcut">
+																	<i class="shortcut-icon icon-question-sign"></i>
+																	<span class="shortcut-label">Questionnaire</span>								
+																</a>				
+																
+																
+															</div> <!-- / .shortcuts -->
+															
+										</cfoutput>

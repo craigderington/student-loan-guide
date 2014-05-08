@@ -1,0 +1,24 @@
+
+
+
+		<div class="well" style="padding: 10px; margin-top: 5px;">
+						<form name="filter-struct" method="post" action="#cgi.script_name#">
+							<div class="clearfix">
+								<div class="inputs">
+									<div class="inline-inputs">										
+										<select name="pointtype" id="pointtype" class="large" onChange="javascript:this.form.submit();">
+											<option value="">Filter By Type</option>
+											<cfoutput query="pointfiltertype">
+											<option value="#pointtype#"<cfif isdefined("form.pointtype") and form.pointtype EQ pointtype>selected</cfif>>#pointtype#</option>
+											</cfoutput>
+										</select>&nbsp;&nbsp;																				
+										<input type="text" name="pointtitle" placeholder="Search by Title" class="large" title="Search by Title" onBlur="javascript:this.form.submit();" <cfif isdefined("form.pointtitle")><cfoutput>value="#form.pointtitle#"</cfoutput></cfif>>
+										<cfif isdefined( "form.pointtype" ) or isdefined( "form.pointitle" ) >
+										<input type="button" class="btn btn-medium btn-inverse" style="margin-top: -8px" name="cancelFilter" value="Clear Filter" onClick="location.href='#cgi.script_name#'">
+										</cfif>
+										<span class="help-block">Use the available filters above to refine your search parameters...</span>
+									</div>
+								</div>
+							</div>						
+						</form>					
+					</div><!-- // form well -->

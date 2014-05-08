@@ -1,0 +1,842 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-01-24-11.01.45.582
+Student First Name:PETER
+Student Middle Initial:J
+Student Last Name:NAUGHTON
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:WITHDRAWN
+Student Enrollment Status Effective Date:05/17/2013
+Student Total All Loans Outstanding Principal:$29,142
+Student Total All Loans Outstanding Interest:$2,198
+Student Pell Lifetime Eligibility Used:457.938%
+Student Total All Grants:$22,916
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Principal:$12,135
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Interest:$179
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Principal:$5,260
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Interest:$776
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$2,590
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$647
+Total STAFFORD SUBSIDIZED Outstanding Principal:$2,250
+Total STAFFORD SUBSIDIZED Outstanding Interest:$0
+Total DIRECT CONSOLIDATED UNSUBSIDIZED Outstanding Principal:$1,886
+Total DIRECT CONSOLIDATED UNSUBSIDIZED Outstanding Interest:$263
+Total DIRECT CONSOLIDATED SUBSIDIZED Outstanding Principal:$5,021
+Total DIRECT CONSOLIDATED SUBSIDIZED Outstanding Interest:$333
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****5054S11G20988001
+Loan Attending School Name:UNIVERSITY OF PHOENIX
+Loan Attending School OPEID:02098800
+Loan Date:06/15/2011
+Loan Repayment Begin Date:11/18/2013
+Loan Period Begin Date:05/31/2011
+Loan Period End Date:03/13/2012
+Loan Amount:$2,250
+Loan Disbursed Amount:$2,250
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,250
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:4.50%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:05/18/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:06/15/2011
+Loan Disbursement Date:06/15/2011
+Loan Disbursement Amount:$2,250
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****5054S10G20988001
+Loan Attending School Name:UNIVERSITY OF PHOENIX
+Loan Attending School OPEID:02098800
+Loan Date:11/22/2010
+Loan Repayment Begin Date:11/18/2013
+Loan Period Begin Date:03/30/2010
+Loan Period End Date:05/24/2011
+Loan Amount:$2,250
+Loan Disbursed Amount:$2,250
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,250
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:4.50%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:05/18/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:11/22/2010
+Loan Disbursement Date:11/24/2010
+Loan Disbursement Amount:$1,125
+Loan Disbursement Date:11/22/2010
+Loan Disbursement Amount:$1,125
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****5054U10G20988001
+Loan Attending School Name:UNIVERSITY OF PHOENIX
+Loan Attending School OPEID:02098800
+Loan Date:11/22/2010
+Loan Repayment Begin Date:11/18/2013
+Loan Period Begin Date:03/30/2010
+Loan Period End Date:05/24/2011
+Loan Amount:$2,590
+Loan Disbursed Amount:$2,590
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,590
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$547
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:05/18/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:11/22/2010
+Loan Disbursement Date:11/24/2010
+Loan Disbursement Amount:$1,295
+Loan Disbursement Date:11/22/2010
+Loan Disbursement Amount:$1,295
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:*****5054210020988100
+Loan Attending School Name:UNIVERSITY OF PHOENIX
+Loan Attending School OPEID:02098800
+Loan Date:04/23/2010
+Loan Repayment Begin Date:11/18/2013
+Loan Period Begin Date:03/30/2010
+Loan Period End Date:04/19/2011
+Loan Amount:$5,180
+Loan Disbursed Amount:$2,590
+Loan Canceled Amount:$2,590
+Loan Canceled Date:11/22/2010
+Loan Outstanding Principal Balance:$2,590
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$647
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:05/18/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:04/23/2010
+Loan Disbursement Date:04/30/2010
+Loan Disbursement Amount:$2,590
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:P.O. BOX 69184
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171069184
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:*****5054110020988100
+Loan Attending School Name:UNIVERSITY OF PHOENIX
+Loan Attending School OPEID:02098800
+Loan Date:04/23/2010
+Loan Repayment Begin Date:11/18/2013
+Loan Period Begin Date:03/30/2010
+Loan Period End Date:04/19/2011
+Loan Amount:$4,500
+Loan Disbursed Amount:$2,250
+Loan Canceled Amount:$2,250
+Loan Canceled Date:11/22/2010
+Loan Outstanding Principal Balance:$2,250
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.60%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:05/18/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:04/23/2010
+Loan Disbursement Date:04/30/2010
+Loan Disbursement Amount:$2,250
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:P.O. BOX 69184
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171069184
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****5054S09G25383001
+Loan Attending School Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Loan Attending School OPEID:02538300
+Loan Date:10/27/2008
+Loan Repayment Begin Date:02/01/2009
+Loan Period Begin Date:12/31/2007
+Loan Period End Date:07/28/2008
+Loan Amount:$4,242
+Loan Disbursed Amount:$4,242
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,693
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$105
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.00%
+Loan Repayment Plan Begin Date:12/03/2008
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/18/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/17/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/15/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/17/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/29/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:01/28/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/21/2010
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/27/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:01/27/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/2009
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:10/27/2008
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:07/31/2008
+Loan Disbursement Date:10/27/2008
+Loan Disbursement Amount:$4,242
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****5054U07G25383001
+Loan Attending School Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Loan Attending School OPEID:02538300
+Loan Date:05/30/2007
+Loan Repayment Begin Date:02/01/2009
+Loan Period Begin Date:04/02/2007
+Loan Period End Date:10/29/2007
+Loan Amount:$2,120
+Loan Disbursed Amount:$2,120
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,670
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$229
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:12/03/2008
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/18/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/17/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/15/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/17/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/29/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:01/28/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/21/2010
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/27/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:01/27/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/2009
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:07/31/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/30/2007
+Loan Disbursement Date:08/22/2007
+Loan Disbursement Amount:$1,060
+Loan Disbursement Date:05/30/2007
+Loan Disbursement Amount:$1,060
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****5054S07G25383001
+Loan Attending School Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Loan Attending School OPEID:02538300
+Loan Date:05/30/2007
+Loan Repayment Begin Date:02/01/2009
+Loan Period Begin Date:04/02/2007
+Loan Period End Date:10/29/2007
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,942
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$74
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:12/03/2008
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/18/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/17/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/15/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/17/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/29/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:01/28/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/21/2010
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/27/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:01/27/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/2009
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:07/31/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/30/2007
+Loan Disbursement Date:08/22/2007
+Loan Disbursement Amount:$1,312
+Loan Disbursement Date:05/30/2007
+Loan Disbursement Amount:$1,313
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT CONSOLIDATED UNSUBSIDIZED
+Loan Award ID:*****5054U07G77778101
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:03/19/2007
+Loan Repayment Begin Date:03/19/2007
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$1,318
+Loan Disbursed Amount:$1,318
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,886
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$263
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:8.00%
+Loan Repayment Plan Begin Date:09/25/2013
+Loan Repayment Plan Scheduled Amount:$30
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/24/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/17/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/15/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:03/30/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/01/2008
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:03/19/2007
+Loan Disbursement Date:03/19/2007
+Loan Disbursement Amount:$1,318
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT CONSOLIDATED SUBSIDIZED
+Loan Award ID:*****5054S07G77778101
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:03/19/2007
+Loan Repayment Begin Date:03/19/2007
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$4,446
+Loan Disbursed Amount:$4,446
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$5,021
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$333
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:8.00%
+Loan Repayment Plan Begin Date:09/25/2013
+Loan Repayment Plan Scheduled Amount:$76
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/24/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/17/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/15/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:03/30/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/01/2008
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:03/19/2007
+Loan Disbursement Date:03/19/2007
+Loan Disbursement Amount:$4,446
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****5054U98G21975101
+Loan Attending School Name:BATON ROUGE SCHOOL OF COMPUTERS
+Loan Attending School OPEID:02197500
+Loan Date:12/22/1997
+Loan Repayment Begin Date:07/29/1998
+Loan Period Begin Date:11/03/1997
+Loan Period End Date:06/03/1998
+Loan Amount:$2,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/05/2007
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/05/2007
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.16%
+Loan Repayment Plan Begin Date:07/29/1998
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DP
+Loan Status Description:DEFAULTED, PAID IN FULL
+Loan Status Effective Date:05/05/2007
+Loan Status:PC
+Loan Status Description:PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:03/19/2007
+Loan Status:DU
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:05/18/1999
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:07/29/1998
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:11/03/1997
+Loan Disbursement Date:12/22/1997
+Loan Disbursement Amount:$2,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEBT MANAGEMENT AND COLLECTIONS SYSTEM
+Loan Contact Street Address 1:U.S. DEPARTMENT OF EDUCATION P.O. BOX 5609
+Loan Contact Street Address 2:
+Loan Contact City:GREENVILLE
+Loan Contact State Code:TX
+Loan Contact Zip Code:75403
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****5054S98G21975101
+Loan Attending School Name:BATON ROUGE SCHOOL OF COMPUTERS
+Loan Attending School OPEID:02197500
+Loan Date:12/04/1997
+Loan Repayment Begin Date:07/29/1998
+Loan Period Begin Date:11/03/1997
+Loan Period End Date:06/03/1998
+Loan Amount:$1,313
+Loan Disbursed Amount:$1,313
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/05/2007
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/05/2007
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.16%
+Loan Repayment Plan Begin Date:07/29/1998
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DP
+Loan Status Description:DEFAULTED, PAID IN FULL
+Loan Status Effective Date:05/05/2007
+Loan Status:PC
+Loan Status Description:PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:03/19/2007
+Loan Status:DU
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:05/18/1999
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:07/29/1998
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:11/03/1997
+Loan Disbursement Date:12/04/1997
+Loan Disbursement Amount:$1,313
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEBT MANAGEMENT AND COLLECTIONS SYSTEM
+Loan Contact Street Address 1:U.S. DEPARTMENT OF EDUCATION P.O. BOX 5609
+Loan Contact Street Address 2:
+Loan Contact City:GREENVILLE
+Loan Contact State Code:TX
+Loan Contact Zip Code:75403
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:SOUTHEASTERN LOUISIANA UNIVERSITY
+Loan Attending School OPEID:00202400
+Loan Date:02/02/1996
+Loan Repayment Begin Date:11/17/1996
+Loan Period Begin Date:01/22/1996
+Loan Period End Date:07/30/1996
+Loan Amount:$2,625
+Loan Disbursed Amount:$1,313
+Loan Canceled Amount:$1,312
+Loan Canceled Date:05/22/1996
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/05/2007
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/05/2007
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.16%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DP
+Loan Status Description:DEFAULTED, PAID IN FULL
+Loan Status Effective Date:05/05/2007
+Loan Status:PC
+Loan Status Description:PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:03/19/2007
+Loan Status:DU
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:12/10/2005
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:12/11/1998
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/17/1996
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:01/22/1996
+Loan Disbursement Date:02/16/1996
+Loan Disbursement Amount:$1,313
+Loan Special Contact Reason:This loan has been transferred to the Debt Collection Service of the Department of Education.
+Loan Special Contact:For answers to questions concerning this aid please contact the service at 1-800-621-3115.
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:LOUISIANA STATE UNIVERSITY & AGRICULTURAL & MECHANICAL COLLEGE
+Grant Attending School OPEID:00201000
+Grant Award Year:2012 - 2013
+Grant Scheduled Amount:$5,550
+Grant Award Amount:$5,550
+Grant Disbursed Amount:$3,215
+Grant Remaining Amount to be Paid:$2,335
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:LOUISIANA STATE UNIVERSITY & AGRICULTURAL & MECHANICAL COLLEGE
+Grant Contact Street Address 1:156 THOMAS BOYD
+Grant Contact Street Address 2:
+Grant Contact City:BATON ROUGE
+Grant Contact State Code:LA
+Grant Contact Zip Code:708035710
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:LOUISIANA STATE UNIVERSITY & AGRICULTURAL & MECHANICAL COLLEGE
+Grant Attending School OPEID:00201000
+Grant Award Year:2011 - 2012
+Grant Scheduled Amount:$5,550
+Grant Award Amount:$5,550
+Grant Disbursed Amount:$2,775
+Grant Remaining Amount to be Paid:$2,775
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:LOUISIANA STATE UNIVERSITY & AGRICULTURAL & MECHANICAL COLLEGE
+Grant Contact Street Address 1:156 THOMAS BOYD
+Grant Contact Street Address 2:
+Grant Contact City:BATON ROUGE
+Grant Contact State Code:LA
+Grant Contact Zip Code:708035710
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UNIVERSITY OF PHOENIX
+Grant Attending School OPEID:02098800
+Grant Award Year:2010 - 2011
+Grant Scheduled Amount:$5,550
+Grant Award Amount:$5,550
+Grant Disbursed Amount:$5,550
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:Yes
+Grant Contact Type:Attending School
+Grant Contact Name:UNIVERSITY OF PHOENIX
+Grant Contact Street Address 1:1625 WEST FOUNTAINHEAD PARKWAY
+Grant Contact Street Address 2:
+Grant Contact City:TEMPE
+Grant Contact State Code:AZ
+Grant Contact Zip Code:852822371
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UNIVERSITY OF PHOENIX
+Grant Attending School OPEID:02098800
+Grant Award Year:2009 - 2010
+Grant Scheduled Amount:$5,350
+Grant Award Amount:$2,675
+Grant Disbursed Amount:$2,675
+Grant Remaining Amount to be Paid:$2,675
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:UNIVERSITY OF PHOENIX
+Grant Contact Street Address 1:1625 WEST FOUNTAINHEAD PARKWAY
+Grant Contact Street Address 2:
+Grant Contact City:TEMPE
+Grant Contact State Code:AZ
+Grant Contact Zip Code:852822371
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Grant Attending School OPEID:02538300
+Grant Award Year:2008 - 2009
+Grant Scheduled Amount:$4,731
+Grant Award Amount:$2,366
+Grant Disbursed Amount:$2,366
+Grant Remaining Amount to be Paid:$2,365
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Grant Contact Street Address 1:7380 EXCHANGE PLACE
+Grant Contact Street Address 2:
+Grant Contact City:BATON ROUGE
+Grant Contact State Code:LA
+Grant Contact Zip Code:708061529
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Grant Attending School OPEID:02538300
+Grant Award Year:2007 - 2008
+Grant Scheduled Amount:$4,310
+Grant Award Amount:$4,310
+Grant Disbursed Amount:$4,310
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Grant Contact Street Address 1:7380 EXCHANGE PLACE
+Grant Contact Street Address 2:
+Grant Contact City:BATON ROUGE
+Grant Contact State Code:LA
+Grant Contact Zip Code:708061529
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Grant Attending School OPEID:02538300
+Grant Award Year:2006 - 2007
+Grant Scheduled Amount:$4,050
+Grant Award Amount:$2,025
+Grant Disbursed Amount:$2,025
+Grant Remaining Amount to be Paid:$2,025
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:DELTA COLLEGE OF ARTS & TECHNOLOGY
+Grant Contact Street Address 1:7380 EXCHANGE PLACE
+Grant Contact Street Address 2:
+Grant Contact City:BATON ROUGE
+Grant Contact State Code:LA
+Grant Contact Zip Code:708061529

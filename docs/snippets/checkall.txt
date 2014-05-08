@@ -1,0 +1,13 @@
+<script type="text/javascript">
+function checkAll(formId) {
+        var frmId=document.getElementById(formId);
+        var reclen =  frmId.length;
+        for(i=0;i<reclen;i++) {
+                if(frmId.elements[i].checked==true) {
+                        frmId.elements[i].checked=false;        
+                } else {
+                        frmId.elements[i].checked=true;         
+                }
+        }
+}
+</script>

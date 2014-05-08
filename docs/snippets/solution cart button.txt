@@ -1,0 +1,7 @@
+
+
+
+		<!--- // show the solution button to add to solution presentation --->
+		<cfoutput>
+			<a href="#application.root#?event=page.tree" style="margin-left:30px;" class="btn btn-small btn-secondary"><i class="icon-circle-arrow-left"></i> Return to Option Tree</a><a href="#application.root#?event=page.worksheet.solution&tree=#tree#&option=cancel&solution=refund" style="margin-left:5px;" class="btn btn-small btn-primary"><i class="icon-circle-arrow-right"></i> Choose This Solution</a>
+		</cfoutput>

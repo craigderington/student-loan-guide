@@ -1,0 +1,228 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-02-05-08.31.30.326
+Student First Name:MONICA
+Student Middle Initial:R
+Student Last Name:HADAD
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:WITHDRAWN
+Student Enrollment Status Effective Date:09/14/2006
+Student Total All Loans Outstanding Principal:$2,260
+Student Total All Loans Outstanding Interest:$481
+Student Pell Lifetime Eligibility Used:100.000%
+Student Total All Grants:$2,600
+Total FFEL CONSOLIDATED Outstanding Principal:$2,260
+Total FFEL CONSOLIDATED Outstanding Interest:$481
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$0
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$0
+Total STAFFORD SUBSIDIZED Outstanding Principal:$0
+Total STAFFORD SUBSIDIZED Outstanding Interest:$0
+Loan Type:FFEL CONSOLIDATED
+Loan Award ID:
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:02/06/2008
+Loan Repayment Begin Date:02/06/2008
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$7,322
+Loan Disbursed Amount:$7,322
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,260
+Loan Outstanding Principal Balance as of Date:02/01/2014
+Loan Outstanding Interest Balance:$481
+Loan Outstanding Interest Balance as of Date:02/01/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:7.25%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:05/21/2009
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/06/2008
+Loan Disbursement Date:02/06/2008
+Loan Disbursement Amount:$7,322
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT SLM TRUSTS
+Loan Contact Street Address 1:11600 SALLIE MAE DR,DEB SOUTHERLAND
+Loan Contact Street Address 2:
+Loan Contact City:RESTON
+Loan Contact State Code:VA
+Loan Contact Zip Code:201930000
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:EDUCATIONAL CREDIT MANAGEMENT CORP
+Loan Contact Street Address 1:1 IMATION PLACE
+Loan Contact Street Address 2:BUILDING 1
+Loan Contact City:OAKDALE
+Loan Contact State Code:MN
+Loan Contact Zip Code:55128
+Loan Contact Phone Number:888-221-3262
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:SANFORD-BROWN COLLEGE
+Loan Attending School OPEID:02615000
+Loan Date:12/28/2005
+Loan Repayment Begin Date:03/15/2007
+Loan Period Begin Date:11/30/2005
+Loan Period End Date:07/27/2006
+Loan Amount:$4,000
+Loan Disbursed Amount:$4,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:02/06/2008
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:02/06/2008
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:02/06/2008
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/05/2007
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:09/15/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:12/28/2005
+Loan Disbursement Date:05/05/2006
+Loan Disbursement Amount:$2,000
+Loan Disbursement Date:01/10/2006
+Loan Disbursement Amount:$2,000
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT SLM TRUSTS
+Loan Contact Street Address 1:11600 SALLIE MAE DR,DEB SOUTHERLAND
+Loan Contact Street Address 2:
+Loan Contact City:RESTON
+Loan Contact State Code:VA
+Loan Contact Zip Code:201930000
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:ECMC-CA
+Loan Contact Street Address 1:1 IMATION PLACE
+Loan Contact Street Address 2:BUILDING 2
+Loan Contact City:OAKDALE
+Loan Contact State Code:MN
+Loan Contact Zip Code:55128
+Loan Contact Phone Number:888-221-3262
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:SANFORD-BROWN COLLEGE
+Loan Attending School OPEID:02615000
+Loan Date:12/28/2005
+Loan Repayment Begin Date:03/15/2007
+Loan Period Begin Date:11/30/2005
+Loan Period End Date:07/27/2006
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:02/06/2008
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:02/06/2008
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:02/06/2008
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/05/2007
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:09/15/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:12/28/2005
+Loan Disbursement Date:05/04/2006
+Loan Disbursement Amount:$1,312
+Loan Disbursement Date:01/10/2006
+Loan Disbursement Amount:$1,313
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT SLM TRUSTS
+Loan Contact Street Address 1:11600 SALLIE MAE DR,DEB SOUTHERLAND
+Loan Contact Street Address 2:
+Loan Contact City:RESTON
+Loan Contact State Code:VA
+Loan Contact Zip Code:201930000
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:ECMC-CA
+Loan Contact Street Address 1:1 IMATION PLACE
+Loan Contact Street Address 2:BUILDING 2
+Loan Contact City:OAKDALE
+Loan Contact State Code:MN
+Loan Contact Zip Code:55128
+Loan Contact Phone Number:888-221-3262
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:SANFORD-BROWN COLLEGE
+Grant Attending School OPEID:02615000
+Grant Award Year:2005 - 2006
+Grant Scheduled Amount:$2,600
+Grant Award Amount:$2,600
+Grant Disbursed Amount:$2,600
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:SANFORD-BROWN COLLEGE
+Grant Contact Street Address 1:1250 MOCKINGBIRD LANE
+Grant Contact Street Address 2:
+Grant Contact City:DALLAS
+Grant Contact State Code:TX
+Grant Contact Zip Code:752476931

@@ -1,0 +1,13 @@
+
+
+
+					<div class="widget big-stats-container stacked">
+																<div class="widget-content">																		
+																	<div id="big_stats" class="cf">
+																		<div class="stat">								
+																			<h4>Total Monthly Expenses</h4>
+																			<span class="value">#dollarformat( totalexpenses )#</span>								
+																		</div> <!-- .stat -->																	
+																	</div>
+																</div>
+															</div><!-- // .widget -->

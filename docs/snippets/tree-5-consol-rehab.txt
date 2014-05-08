@@ -1,0 +1,25 @@
+<!--- // default intervention rehab --->
+				<cfloop query="worksheets">
+					<cfif trim( loancode ) is "F" or trim( loancode ) is "M" or trim( loancode ) is "N">
+						<cfif trim( statuscode ) is "dn" and worksheets.recordcount gt 1>
+							<cfset subcat3consol = "yes" />						
+						<cfelseif trim( statuscode ) is "dn" and worksheets.recordcount eq 1>					
+							<cfset subcat3rehab = "yes" />
+							<cfset subcat3consol = "no" />			
+						</cfif>
+					</cfif>
+				</cfloop>
+				
+				
+				
+				<!--- // default intervention rehab --->
+				<cfloop query="worksheets">
+					<cfif trim( loancode ) is "F" or trim( loancode ) is "M" or trim( loancode ) is "N">
+						<cfif trim( statuscode ) is "dn" and worksheets.recordcount gt 1>
+							<cfset subcat3consol = "yes" />						
+						<cfelseif trim( statuscode ) is "dn" and worksheets.recordcount eq 1>					
+							<cfset subcat3rehab = "yes" />
+							<cfset subcat3consol = "no" />			
+						</cfif>
+					</cfif>
+				</cfloop>

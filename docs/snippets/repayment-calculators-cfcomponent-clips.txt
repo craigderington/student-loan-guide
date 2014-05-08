@@ -1,0 +1,96 @@
+
+
+
+			<cfinvoke component="apis.com.clientloanoptions" method="getclientloaninfo" returnvariable="cloaninfo">
+														<cfinvokeargument name="leadid" value="#session.leadid#">
+													</cfinvoke>
+											
+													<!--- // determine the loan term // this is needed for other functions --->
+													<cfparam name="cloanterm" default="0">
+													<cfif cloaninfo.totalloanamount LT 10000>
+														<cfset cloanterm = 144 />
+													<cfelseif cloaninfo.totalloanamount GT 10000 AND cloaninfo.totalloanamount LTE 19999>
+														<cfset cloanterm = 180 />
+													<cfelseif cloaninfo.totalloanamount GT 19999 AND cloaninfo.totalloanamount LTE 39999>
+														<cfset cloanterm = 240 />
+													<cfelseif cloaninfo.totalloanamount GT 39999 AND cloaninfo.totalloanamount LTE 59999>
+														<cfset cloanterm = 300 />
+													<cfelse>
+														<cfset cloanterm = 360 />
+													</cfif>		
+											
+													<!--- // qualify the client based on the poverty lookup --->
+													<cfinvoke component="apis.com.studentloancalculator" method="qualifyclient" returnvariable="qualifyThisClient">
+														<cfinvokeargument name="agi" value="#leadsummary.primaryagi#">
+														<cfinvokeargument name="famsize" value="#leadsummary.familysize#">
+														<cfif trim( leaddetail.leadstate ) IS "AK">
+															<cfinvokeargument name="region" value="AK">
+														<cfelseif trim( leaddetail.leadstate ) IS "HI">
+															<cfinvokeargument name="region" value="AK">
+														<cfelse>
+															<cfinvokeargument name="region" value="CS">
+														</cfif>
+													</cfinvoke>
+													
+													<!--- // calculate the income based plan --->
+													<cfinvoke component="apis.com.studentloancalculator" method="calcIBR" returnvariable="mIBR">
+														<cfinvokeargument name="agi" value="#leadsummary.primaryagi#">
+														<cfinvokeargument name="famsize" value="#leadsummary.familysize#">
+														<cfif trim( leaddetail.leadstate ) IS "AK">
+															<cfinvokeargument name="region" value="AK">
+														<cfelseif trim( leaddetail.leadstate ) IS "HI">
+															<cfinvokeargument name="region" value="AK">
+														<cfelse>
+															<cfinvokeargument name="region" value="CS">
+														</cfif>
+													</cfinvoke>
+													
+													
+													<!--- // calculate the income contingent plan --->
+													<cfinvoke component="apis.com.studentloancalculator" method="calcICR" returnvariable="monthlyPaymentICR">
+														<cfinvokeargument name="agi" value="#leadsummary.primaryagi#">
+														<cfinvokeargument name="famsize" value="#leadsummary.familysize#">
+														<cfinvokeargument name="maritalstatus" value="#leadsummary.filingstatus#">		
+														<cfinvokeargument name="leadid" value="#leaddetail.leadid#">
+														
+														<cfif trim( leaddetail.leadstate ) IS "AK">
+															<cfinvokeargument name="region" value="AK">
+														<cfelseif trim( leaddetail.leadstate ) IS "HI">
+															<cfinvokeargument name="region" value="AK">
+														<cfelse>
+															<cfinvokeargument name="region" value="CS">
+														</cfif>
+													</cfinvoke>
+													
+													<!--- // calculate the income sensitive plan (ISR) 
+													<cfinvoke component="apis.com.studentloancalculator" method="calcISR" returnvariable="isrPayment">
+														<cfinvokeargument name="agi" value="#leadsummary.primaryagi#">
+														<cfinvokeargument name="loanterm" value="#cloanterm#">			
+													</cfinvoke>
+													--->
+													
+													<!--- Standard --->
+													<cfinvoke component="apis.com.studentloancalculator" method="calcSTD" returnvariable="monthlyPaymentStd">
+														<cfinvokeargument name="loanterm" value="#cloanterm#">
+														<cfinvokeargument name="leadid" value="#leaddetail.leadid#">
+													</cfinvoke>
+															
+													<!--- Extended --->
+													<cfinvoke component="apis.com.studentloancalculator" method="calcExt" returnvariable="mExtPay">
+														<cfinvokeargument name="loanterm" value="#cloanterm#">
+														<cfinvokeargument name="leadid" value="#leaddetail.leadid#">
+													</cfinvoke>
+														
+													<!--- Graduated --->
+													<cfinvoke component="apis.com.studentloancalculator" method="calcGrad" returnvariable="gradInitialPayAmt">
+														<cfinvokeargument name="loanterm" value="#cloanterm#">
+														<cfinvokeargument name="leadid" value="#leaddetail.leadid#">
+													</cfinvoke>
+														
+													<!--- Extended Graduated --->
+													<cfinvoke component="apis.com.studentloancalculator" method="calcExtGrad" returnvariable="strExtGrad">
+														<cfinvokeargument name="loanterm" value="#cloanterm#">
+														<cfinvokeargument name="leadid" value="#leaddetail.leadid#">
+													</cfinvoke>
+													
+													<!--- // end data components for calculators --->

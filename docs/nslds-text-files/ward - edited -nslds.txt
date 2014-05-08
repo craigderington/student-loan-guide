@@ -1,0 +1,31 @@
+
+Loan Type:FFEL CONSOLIDATED
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Date:02/06/2008
+Loan Amount:$7,322
+Loan Outstanding Principal Balance:$2,260
+Loan Outstanding Interest Balance:$481
+Loan Interest Rate:7.25%
+
+
+
+
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Attending School Name:SANFORD-BROWN COLLEGE
+Loan Date:12/28/2005
+Loan Amount:$4,000
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Interest Balance:$0
+Loan Interest Rate:
+
+
+
+Loan Type:STAFFORD SUBSIDIZED
+Loan Attending School Name:SANFORD-BROWN COLLEGE
+Loan Date:12/28/2005
+Loan Amount:$2,625
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Interest Balance:$0
+Loan Interest Rate:
+Loan Repayment Plan Scheduled Amount:
+Loan Contact Name:SALLIE MAE, INC.

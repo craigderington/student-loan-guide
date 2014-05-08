@@ -1,0 +1,18 @@
+
+
+
+
+				<li class="dropdown <cfif structkeyexists( url, "event" ) and ( url.event contgains "page.worksheet" or url.event contains "page.budget" or url.event is "page.survey" or url.event is "page.repayments" )> active</cfif>">					
+									<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+										<i class="icon-tasks"></i>
+										<span>Intake</span>
+										<b class="caret"></b>
+									</a>	    
+								
+									<ul class="dropdown-menu">
+										<li><a href="#application.root#?event=page.worksheet">Debt Worksheet</a></li>
+										<li><a href="#application.root#?event=page.budget">Monthly Budget</a></li>
+										<li><a href="#application.root#?event=page.survey">Questionnaire</a></li>										
+										<li><a href="#application.root#?event=page.repayments">Adjusted Gross Income</a></li>										
+									</ul> 				
+								</li>	

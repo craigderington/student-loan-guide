@@ -1,0 +1,34 @@
+<strong>Electronic Disclosure and Electronic Signature Agreement</strong>
+<i>Effective: August 16, 2013</i>
+
+The Electronic Signatures in Global and National Commerce Act (ESIGN) requires your approval before we can provide services to you electronically. Please read this Electronic Records Disclosure and Agreement carefully and save or print a copy for your records.
+
+Terms: This Disclosure and Agreement (“Agreement”) is the contract which covers your and our rights and responsibilities concerning the service offered to you by VSECU. The service permits you to electronically open a deposit account online, initiate account transactions involving your accounts, communicate with, and to electronically receive disclosures and records regarding your account(s) with VSECU. In this Agreement, the words “you,” “your,” and “yours” mean those who request and use the service, including any joint owners or any person authorized to use your services. The words “we,” “us,” and “our” mean VSECU. By using the service, each of you, jointly and severally, agree to the terms and conditions of this Agreement, and any amendments.  The terms of this Agreement are in addition to the terms of any other client agreements you have with us, including but not limited to the: a) Client Enrollment Agreement for Student Loan Advisory Services; and b) Fee Disclosures, Privacy Notice and Electronic Fund Transfers Agreement, and any change of terms notices.
+
+Electronic Signature (e-Signature): You consent and agree that your use of a key pad, mouse or other device to select an item, button, icon or similar act/action while using any electronic service we offer; or in accessing or making any transactions regarding any agreement, acknowledgement, consent, terms, disclosures or conditions constitutes your signature, acceptance and agreement as if actually signed by you in writing. Further, you agree that no certification authority or other third party verification is necessary to validate your electronic signature; and that the lack of such certification or third party verification will not in any way affect the enforceability of your signature or resulting contract between you and Student Loan Advisor Online. You understand and agree that your e-Signature executed in conjunction with the electronic submission of your application shall be legally binding and such transaction shall be considered authorized by you.
+
+Your Consent is Required: By enrolling, you are agreeing to receive documents electronically including disclosures and notices we may need to provide you, including, but not limited to: Client Enrollment Agreement and Account Disclosures (as described above). You also agree to receive an e-mail with a link to enroll for electronic statements (e-Statements) for any account(s) you have with us where you are the primary user.
+
+If you do not wish to receive e-Statements, disregard the e-mails and paper statements will be sent to you.
+
+System Requirements: To receive the applicable disclosures and statements electronically you will need:
+
+<ul>
+<li>A personal computer or other device which is capable of accessing the Internet.</li>
+<li>An active Internet Service Provider.</li>
+<li>An Internet Web Browser with capabilities to support a minimum 128-bit encryption. An “A-Class Browser Support Chart” can be found at http://yuilibrary.com/yui/environments/.</li>
+<li>The ability to download or print agreements, disclosures, and e-Statements.</li>
+<li>Software which permits you to receive and access Portable Document Format (PDF) files, such as Adobe Acrobat Reader® (you will need one of the last three versions.)</li>
+</ul>
+
+Adobe Acrobat is free software available at www.adobe.com.  Please note: e-Statements will only be available in PDF formatting.
+
+System Requirements to Retain Disclosures: To retain disclosures and e-Statements for your records, your system must have the ability to either download to your hard disk drive or print PDF files.
+
+Requesting Paper Copies of Disclosures: If, after consenting to receive applicable disclosures electronically you would like paper copies of the disclosures or statements, we will send them to you. Refer to the Truth-in-Savings Disclosures for fees for copies of statements. Copies of disclosures are at no cost. There is no charge to convert from electronic disclosures and statements to paper disclosures and statements. If you would like to receive future disclosures or statements by paper instead of electronically; or you need copies of these disclosures, contact us using the following information:
+
+E-mail: info@studentloanadvisoronline.com
+Telephone: 802/800 371-5162 to speak to a Member Consultant
+Postal mail: Student Loan Advisor Online Consortium, Attn: e-Signature Services, 831 West Morse Blvd., Winter Park, FL 32789
+
+Updating Your Personal Information: You are responsible for keeping your e-mail address updated. You should keep us informed of any changes in your telephone number, mailing address, or e-mail address by contacting us using one of the methods listed above.

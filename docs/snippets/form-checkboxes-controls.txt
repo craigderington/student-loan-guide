@@ -1,0 +1,13 @@
+
+
+			<div class="control-group">
+				<label class="control-label">Checkboxes</label>
+				    <div class="controls">
+				        <label class="checkbox">
+				            <input type="checkbox" name="validateCheckbox" value="option1">
+				                Option one is this and that-be sure to include why it's great
+				        </label>
+				              
+					<p class="help-block"><strong>Note:</strong> Labels surround all the options for much larger click areas and a more usable form.</p>
+				    </div>
+			</div>

@@ -1,0 +1,45 @@
+
+
+			<!--- pagination --->
+			<cfset perpage = "25" />
+				<cfparam name="url.start" default="1">
+						
+					<cfif not isNumeric(url.start) or url.start lt 1 or url.start gt queryname.recordCount or round(url.start) neq url.start>
+						<cfset url.start = 1>
+					</cfif>
+					
+					
+					<cfquery name="" startrow="#url.start#" maxrows="#perpage#">
+					
+					<!--- // pagingation for recordset --->
+					<div class="pagination">
+						<ul>
+							
+							
+							
+						</ul>
+					</div>
+					
+					
+					<cfif queryname.recordcount GT 25>
+							
+								<cfif url.start gt 1>
+									<cfset plink = cgi.script_name & "?start=" & (url.start - perpage) />
+										<ul>										
+											<li><a href="#plink#">Prev &laquo; &laquo;</a></li>												
+								<cfelse>											
+											<li><a href="javascript:;" disabled>Prev &laquo; &laquo;</a></li>	
+										</ul>
+								</cfif>
+												
+								
+								<cfif (url.start + perpage - 1) LT queryname.recordCount>
+									<cfset nlink = cgi.script_name & "?start=" & (url.start + perpage)>
+										<ul>		
+											<li class="active"><a href="#nlink#">Next &raquo; &raquo;</a></li>											
+								<cfelse>										
+											<li><a href="javascript:;" disabled>Next &raquo; &raquo;</a></li>
+										</ul>		
+								</cfif>								
+							
+					</cfif>

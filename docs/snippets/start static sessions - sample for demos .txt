@@ -1,0 +1,35 @@
+<!--- some sample scripts to instantiate a client or lead session --->
+					<cfif structkeyexists(url, "fuseaction") and url.fuseaction is "createleadsession">
+						<cfif structkeyexists(url, "leadid") and url.leadid is not "">
+							<cfparam name="leadid" default="">
+							<cfset leadid = #url.leadid# />
+							<cfset session.leadid = #leadid#>
+							
+							<cflocation url="#cgi.script_name#?event=#url.event#" addtoken="no"/>
+						</cfif>
+					</cfif>
+					
+					<cfif structkeyexists(url, "fuseaction") and url.fuseaction is "killleadsession">						
+						<cfparam name="tempid" default="">							
+						<cfset tempid = StructDelete(session, "leadid")>						
+							
+						<cflocation url="#cgi.script_name#?event=#url.event#" addtoken="no"/>					
+					</cfif>
+					
+					<!--- some sample scripts to instantiate a client or lead session --->
+					<cfif structkeyexists(url, "fuseaction") and url.fuseaction is "createclientsession">
+						<cfif structkeyexists(url, "clientid") and url.clientid is not "">
+							<cfparam name="clientid" default="">
+							<cfset leadid = #url.clientid# />
+							<cfset session.clientid = #clientid#>
+							
+							<cflocation url="#cgi.script_name#?event=#url.event#" addtoken="no"/>
+						</cfif>
+					</cfif>
+					
+					<cfif structkeyexists(url, "fuseaction") and url.fuseaction is "killclientsession">						
+						<cfparam name="tempid" default="">							
+						<cfset tempid = StructDelete(session, "clientid")>						
+							
+						<cflocation url="#cgi.script_name#?event=#url.event#" addtoken="no"/>					
+					</cfif>

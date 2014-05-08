@@ -1,0 +1,6 @@
+
+
+
+	<cfset objTest = CreateObject("component", "Test")> 
+	<cfset qryTestData = objTest.getTestData(TestID = 1)> 
+	<cfdump var="#qryTestData#"> 

@@ -1,0 +1,33 @@
+
+												
+												
+												
+												
+												
+												
+												
+												<!--- assign the intake advisor --->
+												<cfquery datasource="#application.dsn#" name="assignintake">
+													update slsummary
+													   set intakeid = <cfqueryparam value="#intakerole.userid#" cfsqltype="cf_sql_integer" />
+												     where leadid = <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />
+												</cfquery>
+													
+													
+													<cfmail from="#GetAuthUser()#" to="#intakerole.email#" subject="SLA - New Client Assignment">*** AUTOMATED SYSTEM MESSAGE *** DO NOT REPLY ***
+												
+	You have been assigned a new client file.  Please login to the Student Loan Advisor Online system to check the status of this new assignment. Details below. 
+													
+	Client ID:  #session.leadid# 
+	Client Name:  #leaddetail.leadfirst# #leaddetail.leadlast#
+	
+	Please follow up with the client to complete the intake process.
+	
+	
+	
+	
+	
+	
+	This message was auto-generated from the Student Loan Advisor website on #dateformat( now(), "mm/dd/yyyy" )# at #timeformat( now(), "hh:mm tt" )#.  
+														
+													</cfmail>

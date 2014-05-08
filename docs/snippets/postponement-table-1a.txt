@@ -1,0 +1,54 @@
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>Interest Rate</td>
+<td>Loan Disbursement Amount</td>
+<td>Interest Accrued after 1 year Forbearance</td>
+<td>New&nbsp;Loan Balance</td>
+<td>Amount of&nbsp;Interest over 10 years</td>
+<td>Total Principal Interest Paid over 10 years</td>
+<td>Amount of Interest&nbsp;over 30 Years</td>
+<td>Total Principal&nbsp; Interest&nbsp;paid over 30&nbsp;Years &nbsp;</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>$10000</td>
+<td>$340</td>
+<td>$10340</td>
+<td>$1871</td>
+<td>$12211</td>
+<td>$6169</td>
+<td>$16509</td>
+</tr>
+<tr>
+<td>5.0</td>
+<td>$10000</td>
+<td>$500</td>
+<td>$10500</td>
+<td>$2864</td>
+<td>$13364</td>
+<td>$9793</td>
+<td>$20293</td>
+</tr>
+<tr>
+<td>6.8</td>
+<td>$10000</td>
+<td>$680</td>
+<td>$10680</td>
+<td>$4069</td>
+<td>$14749</td>
+<td>$14368</td>
+<td>$25066</td>
+</tr>
+<tr>
+<td>8.4</td>
+<td>$10000</td>
+<td>$840</td>
+<td>$10840</td>
+<td>$5218</td>
+<td>$16057</td>
+<td>$18888</td>
+<td>$29727</td>
+</tr>
+</tbody>
+</table>

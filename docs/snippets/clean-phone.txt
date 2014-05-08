@@ -1,0 +1,1 @@
+<cfset conphone = ReReplace(strPhone, "[^0-9]", "", "ALL") />

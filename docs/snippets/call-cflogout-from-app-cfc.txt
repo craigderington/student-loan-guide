@@ -1,0 +1,38 @@
+
+
+
+			<!--- // listen for broadcast event for page.logout to log out the user ---> 
+			<!--- // upon successful logout, fire onsessionend event records user logout to cflog --->
+			<cfif structkeyexists( url, "event" ) and url.event is "page.logout">			
+				
+				<!--- // ensure we don't leave any client lead sessions open, kill them explicitly if they exist --->
+				<cfif structkeyexists( session, "leadid" )>
+					<cfset structdelete( session, "leadid" ) />
+				</cfif>
+				
+				<cfif structkeyexists( session, "leadconv" )>
+					<cfset structdelete( session, "leadconv" ) />
+				</cfif>
+				
+				<!---
+				<cfif structkeyexists( session, "userid" )>
+					<cfset structdelete( session, "userid" ) />
+				</cfif>
+				
+				<cfif structkeyexists( session, "companyid" )>
+					<cfset structdelete( session, "companyid" ) />
+				</cfif>
+				
+				<cfif structkeyexists( session, "cfid" )>
+					<cfset structdelete( session, "cfid" ) />
+				</cfif>
+				
+				<cfif structkeyexists( session, "cftoken" )>
+					<cfset structdelete( session, "cftoken" ) />
+				</cfif>
+				--->
+				
+				<!--- // call the logout function --->
+				<cflogout>				
+				<cflocation url="#application.root#?event=page.index" addtoken="no" />
+			</cfif>

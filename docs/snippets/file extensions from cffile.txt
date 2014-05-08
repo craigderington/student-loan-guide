@@ -1,0 +1,32 @@
+
+
+		
+
+		Use the List functions to your advantage.
+
+		<cfset FileName = ListDeleteAt(FileFullName, ListLen(FileFullName, "."), ".")>
+		
+		
+		Be aware that this only works for file names that actually have a file extension (that is defined as the thing after the last dot). To make it safer, the following is better:
+
+		<cfset ExtensionIndex = ListLen(FileFullName, ".")>
+		<cfif ExtensionIndex gt 1>
+		  <cfset FileExt  = ListGetAt(ExtensionIndex , ".")>
+		  <cfset FileName = ListDeleteAt(FileFullName, ExtensionIndex, ".")>
+		<cfelse>
+		  <cfset FileExt  = "">
+		  <cfset FileName = FileFullName>
+		</cfif>
+		
+		
+		To complicate things a bit further: There may be files that start with a dot. 
+		There may be file names that contain many adjacent dots. List functions return wrong results for them, 
+		as they ignore empty list elements. There may also be files that have dots, but no extension. 
+		These can only be handled if you provide an extension white list: ListFindNoCase(FileExt, "doc,xls,ppt,jpg"). 
+		If you want to account for all of this, you probably need to resign to a reguar expression:
+
+		<cfset FileExtRe = "(?:\.(?:doc|xls|ppt|jpg))?$">
+		<cfset FileName  = REReplaceNoCase(FileExtRe, FileFullName, "")>
+		
+		
+		To split file name from path, ColdFusion provides distinct functions that also handle platform differences: GetFileFromPath() and GetDirectoryFromPath()

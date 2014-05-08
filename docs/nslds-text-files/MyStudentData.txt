@@ -1,0 +1,613 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-02-06-09.59.44.704
+Student First Name:SHAUNTE
+Student Middle Initial:L
+Student Last Name:JEMISON
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:FULL TIME
+Student Enrollment Status Effective Date:04/15/2013
+Student Total All Loans Outstanding Principal:$31,832
+Student Total All Loans Outstanding Interest:$672
+Student Pell Lifetime Eligibility Used:200.000%
+Student Total All Grants:$2,970
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Principal:$10,505
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Interest:$442
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Principal:$6,286
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Interest:$107
+Total FFEL CONSOLIDATED Outstanding Principal:$1,341
+Total FFEL CONSOLIDATED Outstanding Interest:$87
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$519
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$10
+Total STAFFORD SUBSIDIZED Outstanding Principal:$13,181
+Total STAFFORD SUBSIDIZED Outstanding Interest:$26
+Total FEDERAL PERKINS Outstanding Principal:$0
+Total FEDERAL PERKINS Outstanding Interest:$0
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****5249U13G20988001
+Loan Attending School Name:UNIVERSITY OF PHOENIX
+Loan Attending School OPEID:02098800
+Loan Date:05/13/2013
+Loan Repayment Begin Date:05/24/2015
+Loan Period Begin Date:04/15/2013
+Loan Period End Date:02/10/2014
+Loan Amount:$6,000
+Loan Disbursed Amount:$6,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$6,000
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$175
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/13/2013
+Loan Disbursement Date:10/13/2013
+Loan Disbursement Amount:$3,000
+Loan Disbursement Date:05/13/2013
+Loan Disbursement Amount:$3,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****5249S13G20988001
+Loan Attending School Name:UNIVERSITY OF PHOENIX
+Loan Attending School OPEID:02098800
+Loan Date:05/13/2013
+Loan Repayment Begin Date:05/24/2015
+Loan Period Begin Date:04/15/2013
+Loan Period End Date:02/10/2014
+Loan Amount:$3,500
+Loan Disbursed Amount:$3,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$3,500
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/13/2013
+Loan Disbursement Date:10/13/2013
+Loan Disbursement Amount:$1,750
+Loan Disbursement Date:05/13/2013
+Loan Disbursement Amount:$1,750
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:FFEL CONSOLIDATED
+Loan Award ID:
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:12/31/2001
+Loan Repayment Begin Date:12/31/2001
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$2,917
+Loan Disbursed Amount:$2,917
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,341
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$87
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.00%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:04/15/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/12/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/12/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/09/2008
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:02/06/2003
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/31/2001
+Loan Disbursement Date:12/31/2001
+Loan Disbursement Amount:$2,917
+Loan Contact Type:Current Servicer
+Loan Contact Name:AMERICAN EDUCATION SERVICES
+Loan Contact Street Address 1:PO BOX 2461
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171052461
+Loan Contact Phone Number:800-233-0557
+Loan Contact Phone Extension:
+Loan Contact Email Address:WEBMASTER@PHEAA.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:SUNTRUST BANK
+Loan Contact Street Address 1:1001 SEMMES AVENUE
+Loan Contact Street Address 2:
+Loan Contact City:RICHMOND
+Loan Contact State Code:VA
+Loan Contact Zip Code:232240000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:EDUCATIONAL CREDIT MANAGEMENT CORP
+Loan Contact Street Address 1:1 IMATION PLACE
+Loan Contact Street Address 2:BUILDING 1
+Loan Contact City:OAKDALE
+Loan Contact State Code:MN
+Loan Contact Zip Code:55128
+Loan Contact Phone Number:888-221-3262
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****5249U00G01050001
+Loan Attending School Name:TUSKEGEE UNIVERSITY
+Loan Attending School OPEID:00105000
+Loan Date:11/11/1999
+Loan Repayment Begin Date:11/10/2000
+Loan Period Begin Date:08/25/1999
+Loan Period End Date:05/09/2000
+Loan Amount:$4,000
+Loan Disbursed Amount:$4,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,505
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$267
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:1.75%
+Loan Repayment Plan Begin Date:11/26/2013
+Loan Repayment Plan Scheduled Amount:$19
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:11/01/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/29/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:10/28/2008
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:05/09/2000
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:11/11/1999
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:08/25/1999
+Loan Disbursement Date:01/26/2000
+Loan Disbursement Amount:$2,000
+Loan Disbursement Date:11/11/1999
+Loan Disbursement Amount:$2,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****5249S00G01050001
+Loan Attending School Name:TUSKEGEE UNIVERSITY
+Loan Attending School OPEID:00105000
+Loan Date:11/01/1999
+Loan Repayment Begin Date:11/10/2000
+Loan Period Begin Date:08/25/1999
+Loan Period End Date:05/09/2000
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,786
+Loan Outstanding Principal Balance as of Date:12/31/2013
+Loan Outstanding Interest Balance:$107
+Loan Outstanding Interest Balance as of Date:12/31/2013
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:1.75%
+Loan Repayment Plan Begin Date:11/26/2013
+Loan Repayment Plan Scheduled Amount:$12
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:11/01/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/29/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:10/28/2008
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:05/09/2000
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:11/01/1999
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:08/25/1999
+Loan Disbursement Date:01/26/2000
+Loan Disbursement Amount:$1,312
+Loan Disbursement Date:11/01/1999
+Loan Disbursement Amount:$1,313
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF SOUTH CAROLINA - COLUMBIA
+Loan Attending School OPEID:00344800
+Loan Date:03/06/1998
+Loan Repayment Begin Date:11/16/1998
+Loan Period Begin Date:01/12/1998
+Loan Period End Date:05/06/1998
+Loan Amount:$282
+Loan Disbursed Amount:$282
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$519
+Loan Outstanding Principal Balance as of Date:02/02/2014
+Loan Outstanding Interest Balance:$10
+Loan Outstanding Interest Balance as of Date:02/02/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:04/15/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2008
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:07/03/2006
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/16/1998
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:01/12/1998
+Loan Disbursement Date:03/10/1998
+Loan Disbursement Amount:$141
+Loan Disbursement Date:03/06/1998
+Loan Disbursement Amount:$141
+Loan Contact Type:Current Lender
+Loan Contact Name:SC  STUDENT LOAN (10 RES)
+Loan Contact Street Address 1:P.O. BOX 102423
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:29224
+Loan Contact Phone Number:800-347-2752
+Loan Contact Phone Extension:3192
+Loan Contact Email Address:SEAA@SCSTUDENTLOAN.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:SOUTH CAROLINA STATE EDUCATION ASST AUTH
+Loan Contact Street Address 1:P.O. BOX 210219
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:292210000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF SOUTH CAROLINA - COLUMBIA
+Loan Attending School OPEID:00344800
+Loan Date:03/06/1998
+Loan Repayment Begin Date:11/16/1998
+Loan Period Begin Date:01/12/1998
+Loan Period End Date:05/06/1998
+Loan Amount:$2,343
+Loan Disbursed Amount:$2,343
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$3,880
+Loan Outstanding Principal Balance as of Date:02/02/2014
+Loan Outstanding Interest Balance:$8
+Loan Outstanding Interest Balance as of Date:02/02/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:04/15/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2008
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:07/03/2006
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/16/1998
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:01/12/1998
+Loan Disbursement Date:03/10/1998
+Loan Disbursement Amount:$1,172
+Loan Disbursement Date:03/06/1998
+Loan Disbursement Amount:$1,171
+Loan Contact Type:Current Lender
+Loan Contact Name:SC  STUDENT LOAN (10 RES)
+Loan Contact Street Address 1:P.O. BOX 102423
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:29224
+Loan Contact Phone Number:800-347-2752
+Loan Contact Phone Extension:3192
+Loan Contact Email Address:SEAA@SCSTUDENTLOAN.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:SOUTH CAROLINA STATE EDUCATION ASST AUTH
+Loan Contact Street Address 1:P.O. BOX 210219
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:292210000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF SOUTH CAROLINA - COLUMBIA
+Loan Attending School OPEID:00344800
+Loan Date:02/26/1997
+Loan Repayment Begin Date:11/16/1997
+Loan Period Begin Date:01/13/1997
+Loan Period End Date:05/07/1997
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,559
+Loan Outstanding Principal Balance as of Date:02/02/2014
+Loan Outstanding Interest Balance:$9
+Loan Outstanding Interest Balance as of Date:02/02/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:04/15/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2008
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:07/03/2006
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/16/1997
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:01/13/1997
+Loan Disbursement Date:03/11/1997
+Loan Disbursement Amount:$2,625
+Loan Contact Type:Current Lender
+Loan Contact Name:SC  STUDENT LOAN (10 RES)
+Loan Contact Street Address 1:P.O. BOX 102423
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:29224
+Loan Contact Phone Number:800-347-2752
+Loan Contact Phone Extension:3192
+Loan Contact Email Address:SEAA@SCSTUDENTLOAN.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:SOUTH CAROLINA STATE EDUCATION ASST AUTH
+Loan Contact Street Address 1:P.O. BOX 210219
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:292210000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:FEDERAL PERKINS
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF SOUTH CAROLINA - COLUMBIA
+Loan Attending School OPEID:00344800
+Loan Date:08/21/1995
+Loan Repayment Begin Date:03/02/1997
+Loan Period Begin Date:07/01/1995
+Loan Period End Date:06/30/1996
+Loan Amount:$2,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:02/15/2002
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:
+Loan Interest Rate Type:
+Loan Interest Rate:5.00%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PF
+Loan Status Description:PAID IN FULL
+Loan Status Effective Date:02/14/2002
+Loan Status:DZ
+Loan Status Description:DEFAULTED, SIX CONSECUTIVE PAYMENTS, THEN MISSED PAYMENT(S)
+Loan Status Effective Date:09/11/1998
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/11/1998
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:03/03/1997
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/02/1997
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:08/22/1995
+Loan Disbursement Date:01/30/1996
+Loan Disbursement Amount:$1,000
+Loan Disbursement Date:08/21/1995
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current Servicer
+Loan Contact Name:UNIVERSITY OF SOUTH CAROLINA - COLUMBIA
+Loan Contact Street Address 1:1714 COLLEGE ST.
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:29208
+Loan Contact Phone Number:803-777-8134
+Loan Contact Phone Extension:
+Loan Contact Email Address:uscfaid@sc.edu
+Loan Contact Web Site Address:www.sc.edu/financialaid
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF SOUTH CAROLINA - COLUMBIA
+Loan Attending School OPEID:00344800
+Loan Date:05/16/1995
+Loan Repayment Begin Date:11/16/1996
+Loan Period Begin Date:08/24/1995
+Loan Period End Date:05/04/1996
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,742
+Loan Outstanding Principal Balance as of Date:02/02/2014
+Loan Outstanding Interest Balance:$9
+Loan Outstanding Interest Balance as of Date:02/02/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:04/15/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2008
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:07/03/2006
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/16/1996
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:08/24/1995
+Loan Disbursement Date:02/01/1996
+Loan Disbursement Amount:$1,313
+Loan Disbursement Date:09/18/1995
+Loan Disbursement Amount:$1,312
+Loan Contact Type:Current Lender
+Loan Contact Name:SC  STUDENT LOAN (10 RES)
+Loan Contact Street Address 1:P.O. BOX 102423
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:29224
+Loan Contact Phone Number:800-347-2752
+Loan Contact Phone Extension:3192
+Loan Contact Email Address:SEAA@SCSTUDENTLOAN.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:SOUTH CAROLINA STATE EDUCATION ASST AUTH
+Loan Contact Street Address 1:P.O. BOX 210219
+Loan Contact Street Address 2:
+Loan Contact City:COLUMBIA
+Loan Contact State Code:SC
+Loan Contact Zip Code:292210000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UNIVERSITY OF PHOENIX
+Grant Attending School OPEID:02098800
+Grant Award Year:2013 - 2014
+Grant Scheduled Amount:$1,995
+Grant Award Amount:$1,995
+Grant Disbursed Amount:$1,995
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:UNIVERSITY OF PHOENIX
+Grant Contact Street Address 1:1625 WEST FOUNTAINHEAD PARKWAY
+Grant Contact Street Address 2:
+Grant Contact City:TEMPE
+Grant Contact State Code:AZ
+Grant Contact Zip Code:852822371
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:TUSKEGEE UNIVERSITY
+Grant Attending School OPEID:00105000
+Grant Award Year:1999 - 2000
+Grant Scheduled Amount:$975
+Grant Award Amount:$975
+Grant Disbursed Amount:$975
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:TUSKEGEE UNIVERSITY
+Grant Contact Street Address 1:308 KRESGE CENTER
+Grant Contact Street Address 2:
+Grant Contact City:TUSKEGEE INSTITUTE
+Grant Contact State Code:AL
+Grant Contact Zip Code:360881645

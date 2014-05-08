@@ -1,0 +1,818 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-02-13-15.11.16.730
+Student First Name:CLAUDE
+Student Middle Initial:R
+Student Last Name:SULLIVAN III III
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:LESS THAN HALF TIME
+Student Enrollment Status Effective Date:12/08/1997
+Student Total All Loans Outstanding Principal:$35,808
+Student Total All Loans Outstanding Interest:$501
+Student Pell Lifetime Eligibility Used:300.000%
+Student Total All Grants:$10,050
+Total FFEL CONSOLIDATED Outstanding Principal:$35,808
+Total FFEL CONSOLIDATED Outstanding Interest:$501
+Total STAFFORD SUBSIDIZED Outstanding Principal:$0
+Total STAFFORD SUBSIDIZED Outstanding Interest:$0
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$0
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$0
+Loan Type:FFEL CONSOLIDATED
+Loan Award ID:
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:06/07/2005
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$11,600
+Loan Disbursed Amount:$11,600
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$14,227
+Loan Outstanding Principal Balance as of Date:02/07/2014
+Loan Outstanding Interest Balance:$199
+Loan Outstanding Interest Balance as of Date:02/07/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:2.88%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:08/14/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:07/15/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:10/14/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/11/2010
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:07/28/2009
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/08/2008
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:09/08/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/03/2007
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:03/03/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/09/2006
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/09/2006
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:05/09/2006
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:11/28/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/07/2005
+Loan Disbursement Date:06/07/2005
+Loan Disbursement Amount:$11,600
+Loan Contact Type:Current Servicer
+Loan Contact Name:ACS EDUCATION SERVICES
+Loan Contact Street Address 1:ATTN:  BORROWER SERVICES DEPARTMENT
+Loan Contact Street Address 2:P.O. BOX 7051
+Loan Contact City:UTICA
+Loan Contact State Code:NY
+Loan Contact Zip Code:135047051
+Loan Contact Phone Number:800-835-4611
+Loan Contact Phone Extension:
+Loan Contact Email Address:HTTPS://WWW.AFSA.COM/FFEL/FEEDBACK_SSL.HTML
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT JPMORGAN PRIN FUNDING
+Loan Contact Street Address 1:60 WALL ST.
+Loan Contact Street Address 2:
+Loan Contact City:NEW YORK
+Loan Contact State Code:NY
+Loan Contact Zip Code:100050000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:HIGHER EDUCATION ASSISTANCE AUTHORITY
+Loan Contact Street Address 1:PO BOX 798
+Loan Contact Street Address 2:
+Loan Contact City:FRANKFORT
+Loan Contact State Code:KY
+Loan Contact Zip Code:40602
+Loan Contact Phone Number:800-928-8926
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:FFEL CONSOLIDATED
+Loan Award ID:
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:06/07/2005
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$17,597
+Loan Disbursed Amount:$17,597
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$21,581
+Loan Outstanding Principal Balance as of Date:02/07/2014
+Loan Outstanding Interest Balance:$302
+Loan Outstanding Interest Balance as of Date:02/07/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:2.88%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:08/14/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:07/15/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:10/14/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/11/2010
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:07/28/2009
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/08/2008
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:09/08/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/03/2007
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:03/03/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/09/2006
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/09/2006
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:05/09/2006
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:11/28/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/07/2005
+Loan Disbursement Date:06/07/2005
+Loan Disbursement Amount:$17,597
+Loan Contact Type:Current Servicer
+Loan Contact Name:ACS EDUCATION SERVICES
+Loan Contact Street Address 1:ATTN:  BORROWER SERVICES DEPARTMENT
+Loan Contact Street Address 2:P.O. BOX 7051
+Loan Contact City:UTICA
+Loan Contact State Code:NY
+Loan Contact Zip Code:135047051
+Loan Contact Phone Number:800-835-4611
+Loan Contact Phone Extension:
+Loan Contact Email Address:HTTPS://WWW.AFSA.COM/FFEL/FEEDBACK_SSL.HTML
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT JPMORGAN PRIN FUNDING
+Loan Contact Street Address 1:60 WALL ST.
+Loan Contact Street Address 2:
+Loan Contact City:NEW YORK
+Loan Contact State Code:NY
+Loan Contact Zip Code:100050000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:HIGHER EDUCATION ASSISTANCE AUTHORITY
+Loan Contact Street Address 1:PO BOX 798
+Loan Contact Street Address 2:
+Loan Contact City:FRANKFORT
+Loan Contact State Code:KY
+Loan Contact Zip Code:40602
+Loan Contact Phone Number:800-928-8926
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Loan Attending School OPEID:00110100
+Loan Date:08/04/2004
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:08/23/2004
+Loan Period End Date:05/13/2005
+Loan Amount:$5,500
+Loan Disbursed Amount:$2,750
+Loan Canceled Amount:$2,750
+Loan Canceled Date:03/24/2005
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/16/2004
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/04/2004
+Loan Disbursement Date:08/23/2004
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Loan Attending School OPEID:00110100
+Loan Date:08/04/2004
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:08/23/2004
+Loan Period End Date:05/13/2005
+Loan Amount:$5,000
+Loan Disbursed Amount:$2,500
+Loan Canceled Amount:$2,500
+Loan Canceled Date:03/24/2005
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/16/2004
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/04/2004
+Loan Disbursement Date:08/23/2004
+Loan Disbursement Amount:$2,500
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Loan Attending School OPEID:00110100
+Loan Date:08/19/2003
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:08/25/2003
+Loan Period End Date:05/07/2004
+Loan Amount:$4,860
+Loan Disbursed Amount:$4,860
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/16/2004
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/19/2003
+Loan Disbursement Date:01/12/2004
+Loan Disbursement Amount:$2,430
+Loan Disbursement Date:10/03/2003
+Loan Disbursement Amount:$2,430
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Loan Attending School OPEID:00110100
+Loan Date:08/19/2003
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:08/25/2003
+Loan Period End Date:05/07/2004
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/16/2004
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/19/2003
+Loan Disbursement Date:01/12/2004
+Loan Disbursement Amount:$2,750
+Loan Disbursement Date:10/03/2003
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Loan Attending School OPEID:00110100
+Loan Date:09/12/2002
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:08/26/2002
+Loan Period End Date:05/09/2003
+Loan Amount:$3,698
+Loan Disbursed Amount:$3,698
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/16/2004
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/12/2002
+Loan Disbursement Date:01/13/2003
+Loan Disbursement Amount:$1,849
+Loan Disbursement Date:09/19/2002
+Loan Disbursement Amount:$1,849
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Loan Attending School OPEID:00110100
+Loan Date:09/12/2002
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:08/26/2002
+Loan Period End Date:05/09/2003
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/16/2004
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/12/2002
+Loan Disbursement Date:01/13/2003
+Loan Disbursement Amount:$2,750
+Loan Disbursement Date:09/19/2002
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:PULASKI TECHNICAL COLLEGE
+Loan Attending School OPEID:02075300
+Loan Date:04/18/2002
+Loan Repayment Begin Date:06/07/2005
+Loan Period Begin Date:08/18/2001
+Loan Period End Date:05/11/2002
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/16/2004
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:04/18/2002
+Loan Disbursement Date:05/09/2002
+Loan Disbursement Amount:$2,625
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:HENDERSON STATE UNIVERSITY
+Loan Attending School OPEID:00109800
+Loan Date:09/03/1997
+Loan Repayment Begin Date:06/08/1998
+Loan Period Begin Date:08/27/1997
+Loan Period End Date:05/14/1998
+Loan Amount:$1,758
+Loan Disbursed Amount:$879
+Loan Canceled Amount:$879
+Loan Canceled Date:01/02/1998
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/06/2000
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:03/06/2000
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/19/2000
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:03/06/1999
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/08/1998
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:08/27/1997
+Loan Disbursement Date:09/24/1997
+Loan Disbursement Amount:$879
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:HENDERSON STATE UNIVERSITY
+Loan Attending School OPEID:00109800
+Loan Date:01/02/1997
+Loan Repayment Begin Date:06/08/1998
+Loan Period Begin Date:01/14/1997
+Loan Period End Date:05/17/1997
+Loan Amount:$1,372
+Loan Disbursed Amount:$1,372
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:06/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:06/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:06/07/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/06/2000
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:03/06/2000
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/19/2000
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:03/06/1999
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/08/1998
+Loan Status:ID
+Loan Status Description:IN SCHOOL OR GRACE PERIOD
+Loan Status Effective Date:01/14/1997
+Loan Disbursement Date:03/03/1997
+Loan Disbursement Amount:$686
+Loan Disbursement Date:01/15/1997
+Loan Disbursement Amount:$686
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:REGIONS BANK
+Loan Contact Street Address 1:PO BOX 2527
+Loan Contact Street Address 2:
+Loan Contact City:MOBILE
+Loan Contact State Code:AL
+Loan Contact Zip Code:366520000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:STUDENT LOAN GUARANTY FNDTN. OF ARKANSAS
+Loan Contact Street Address 1:10 TURTLE CREEK LANE
+Loan Contact Street Address 2:
+Loan Contact City:LITTLE ROCK
+Loan Contact State Code:AR
+Loan Contact Zip Code:722021884
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Grant Attending School OPEID:00110100
+Grant Award Year:2004 - 2005
+Grant Scheduled Amount:$3,000
+Grant Award Amount:$3,000
+Grant Disbursed Amount:$1,500
+Grant Remaining Amount to be Paid:$1,500
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Grant Contact Street Address 1:2801 SOUTH UNIVERSITY
+Grant Contact Street Address 2:
+Grant Contact City:LITTLE ROCK
+Grant Contact State Code:AR
+Grant Contact Zip Code:722041099
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Grant Attending School OPEID:00110100
+Grant Award Year:2003 - 2004
+Grant Scheduled Amount:$3,400
+Grant Award Amount:$3,400
+Grant Disbursed Amount:$3,400
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Grant Contact Street Address 1:2801 SOUTH UNIVERSITY
+Grant Contact Street Address 2:
+Grant Contact City:LITTLE ROCK
+Grant Contact State Code:AR
+Grant Contact Zip Code:722041099
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Grant Attending School OPEID:00110100
+Grant Award Year:2002 - 2003
+Grant Scheduled Amount:$4,000
+Grant Award Amount:$4,000
+Grant Disbursed Amount:$4,000
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:UNIVERSITY OF ARKANSAS AT LITTLE ROCK
+Grant Contact Street Address 1:2801 SOUTH UNIVERSITY
+Grant Contact Street Address 2:
+Grant Contact City:LITTLE ROCK
+Grant Contact State Code:AR
+Grant Contact Zip Code:722041099
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:PULASKI TECHNICAL COLLEGE
+Grant Attending School OPEID:02075300
+Grant Award Year:2001 - 2002
+Grant Scheduled Amount:$2,300
+Grant Award Amount:$1,150
+Grant Disbursed Amount:$1,150
+Grant Remaining Amount to be Paid:$1,150
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:PULASKI TECHNICAL COLLEGE
+Grant Contact Street Address 1:3000 WEST SCENIC DRIVE
+Grant Contact Street Address 2:
+Grant Contact City:NORTH LITTLE ROCK
+Grant Contact State Code:AR
+Grant Contact Zip Code:721183347

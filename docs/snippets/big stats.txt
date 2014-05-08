@@ -1,0 +1,104 @@
+<!--- // admin stats ---> 
+										<div class="row" style="margin-left:5px;margin-right:5px;">
+											<cfoutput>
+											
+												<div id="big_stats" class="cf">													
+																					
+													<div class="stat">								
+														<h4>Total Companies</h4>
+														<span class="value"><small>#numberformat( , "999,999" )#</small></span>								
+													</div> <!-- .stat -->
+																					
+													<div class="stat">								
+														<h4>Total Lead Sources</h4>
+														<span class="value"><small>#numberformat( , "999,999" )#</small></span>								
+													</div> <!-- .stat -->																
+																					
+													<div class="stat">								
+														<h4>Total NSLDS</h4>
+														<span class="value"><small>#numberformat( , "999,999" )#</small></span>								
+													</div> <!-- .stat -->
+													
+													<div class="stat">								
+														<h4>Total Tasks</h4>
+														<span class="value"><small>#numberformat( , "999,999" )#</small></span>								
+													</div> <!-- .stat -->
+													
+																									
+												</div>
+											
+											</cfoutput>				
+										</div><!-- / .row -->
+										
+										
+										<div class="row" style="margin-left:5px;margin-right:5px;margin-top:10px;padding-top:10px;border-top:1px dotted #f2f2f2;">
+											<cfoutput>
+											
+												<div id="big_stats" class="cf">													
+																					
+													<div class="stat">								
+														<h4>Total Clients</h4>
+														<span class="value"><small>#numberformat( , "999,999" )#</small></span>								
+													</div> <!-- .stat -->
+																					
+													<div class="stat">								
+														<h4>Total Worksheets</h4>
+														<span class="value"><small>#numberformat( , "999,999" )#</small></span>								
+													</div> <!-- .stat -->																
+																					
+													<div class="stat">								
+														<h4>Total Solutions</h4>
+														<span class="value"><small>#numberformat( , "999,999" )#</small></span>								
+													</div> <!-- .stat -->
+													
+													<div class="stat">								
+														<h4>Total Implementations</h4>
+														<span class="value"><small>#numberformat( , "999,999" )#</small></span>								
+													</div> <!-- .stat -->													
+																									
+												</div>
+											
+											</cfoutput>				
+										</div><!-- / .row -->
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										<cfoutput>
+									<div id="big_stats" class="cf">
+										<div class="stat">								
+											<h4>Active Leads</h4>
+											<span class="value">#mydashboard.totalleads#</span>								
+										</div> <!-- .stat -->
+											
+										<div class="stat">								
+											<h4>Enrolled Clients</h4>
+											<span class="value">#mydashboard.totalclients#</span>								
+										</div> <!-- .stat -->
+
+										<div class="stat">								
+											<h4>Enrolled Student Loans</h4>
+											<span class="value">#mydashboard.totalloans#</span>								
+										</div> <!-- .stat -->
+											
+										<div class="stat">								
+											<h4>Total Enrolled Debt</h4>
+											<span class="value">#dollarformat( mydashboard.totaldebt )#</span>								
+										</div> <!-- .stat -->
+									</div>
+								</cfoutput>

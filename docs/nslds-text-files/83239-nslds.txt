@@ -1,0 +1,936 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2013-05-23-17.38.53.193
+Student First Name:EDNA
+Student Middle Initial:M
+Student Last Name:BERASTAIN
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:GRADUATED
+Student Enrollment Status Effective Date:12/30/2004
+Student Total All Loans Outstanding Principal:$64,378
+Student Total All Loans Outstanding Interest:$2,546
+Student Pell Lifetime Eligibility Used:0.000%
+Student Total All Grants:$0
+Total FFEL CONSOLIDATED Outstanding Principal:$64,378
+Total FFEL CONSOLIDATED Outstanding Interest:$2,546
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Principal:$0
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Interest:$0
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Principal:$0
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Interest:$0
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$0
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$0
+Total STAFFORD SUBSIDIZED Outstanding Principal:$0
+Total STAFFORD SUBSIDIZED Outstanding Interest:$0
+Loan Type:FFEL CONSOLIDATED
+Loan Award ID:
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:11/07/2005
+Loan Repayment Begin Date:11/08/2005
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$5,025
+Loan Disbursed Amount:$5,025
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$6,139
+Loan Outstanding Principal Balance as of Date:04/30/2013
+Loan Outstanding Interest Balance:$243
+Loan Outstanding Interest Balance as of Date:04/30/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.38%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/05/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:08/05/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:07/02/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:11/05/2009
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:10/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/08/2005
+Loan Disbursement Date:11/08/2005
+Loan Disbursement Amount:$5,025
+Loan Contact Type:Current Servicer
+Loan Contact Name:AMERICAN EDUCATION SERVICES
+Loan Contact Street Address 1:PO BOX 2461
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171052461
+Loan Contact Phone Number:800-233-0557
+Loan Contact Phone Extension:
+Loan Contact Email Address:WEBMASTER@PHEAA.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT HIGHER ED FINANCING & AFF.
+Loan Contact Street Address 1:425 WALNUT ST 6TH FL
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:GREAT LAKES HIGHER ED GUARANTY CORP
+Loan Contact Street Address 1:PO BOX 7860
+Loan Contact Street Address 2:
+Loan Contact City:MADISON
+Loan Contact State Code:WI
+Loan Contact Zip Code:537047860
+Loan Contact Phone Number:800-236-4300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:mygreatlakes.org
+Loan Type:FFEL CONSOLIDATED
+Loan Award ID:
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:11/07/2005
+Loan Repayment Begin Date:11/08/2005
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$10,038
+Loan Disbursed Amount:$10,038
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$11,649
+Loan Outstanding Principal Balance as of Date:04/30/2013
+Loan Outstanding Interest Balance:$461
+Loan Outstanding Interest Balance as of Date:04/30/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.38%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/05/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:08/05/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:07/02/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:11/05/2009
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:10/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/08/2005
+Loan Disbursement Date:11/08/2005
+Loan Disbursement Amount:$10,038
+Loan Contact Type:Current Servicer
+Loan Contact Name:AMERICAN EDUCATION SERVICES
+Loan Contact Street Address 1:PO BOX 2461
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171052461
+Loan Contact Phone Number:800-233-0557
+Loan Contact Phone Extension:
+Loan Contact Email Address:WEBMASTER@PHEAA.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT HIGHER ED FINANCING & AFF.
+Loan Contact Street Address 1:425 WALNUT ST 6TH FL
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:GREAT LAKES HIGHER ED GUARANTY CORP
+Loan Contact Street Address 1:PO BOX 7860
+Loan Contact Street Address 2:
+Loan Contact City:MADISON
+Loan Contact State Code:WI
+Loan Contact Zip Code:537047860
+Loan Contact Phone Number:800-236-4300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:mygreatlakes.org
+Loan Type:FFEL CONSOLIDATED
+Loan Award ID:
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:10/04/2005
+Loan Repayment Begin Date:10/05/2005
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$21,674
+Loan Disbursed Amount:$21,444
+Loan Canceled Amount:$229
+Loan Canceled Date:10/05/2005
+Loan Outstanding Principal Balance:$26,200
+Loan Outstanding Principal Balance as of Date:04/30/2013
+Loan Outstanding Interest Balance:$1,036
+Loan Outstanding Interest Balance as of Date:04/30/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.38%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/05/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:08/05/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:07/02/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:11/05/2009
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:10/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/05/2005
+Loan Disbursement Date:10/05/2005
+Loan Disbursement Amount:$21,444
+Loan Contact Type:Current Servicer
+Loan Contact Name:AMERICAN EDUCATION SERVICES
+Loan Contact Street Address 1:PO BOX 2461
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171052461
+Loan Contact Phone Number:800-233-0557
+Loan Contact Phone Extension:
+Loan Contact Email Address:WEBMASTER@PHEAA.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT HIGHER ED FINANCING & AFF.
+Loan Contact Street Address 1:425 WALNUT ST 6TH FL
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:GREAT LAKES HIGHER ED GUARANTY CORP
+Loan Contact Street Address 1:PO BOX 7860
+Loan Contact Street Address 2:
+Loan Contact City:MADISON
+Loan Contact State Code:WI
+Loan Contact Zip Code:537047860
+Loan Contact Phone Number:800-236-4300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:mygreatlakes.org
+Loan Type:FFEL CONSOLIDATED
+Loan Award ID:
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:10/04/2005
+Loan Repayment Begin Date:10/05/2005
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$17,573
+Loan Disbursed Amount:$17,573
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$20,390
+Loan Outstanding Principal Balance as of Date:04/30/2013
+Loan Outstanding Interest Balance:$806
+Loan Outstanding Interest Balance as of Date:04/30/2013
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.38%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/05/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:08/05/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:07/02/2011
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:11/05/2009
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:10/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/05/2005
+Loan Disbursement Date:10/05/2005
+Loan Disbursement Amount:$17,573
+Loan Contact Type:Current Servicer
+Loan Contact Name:AMERICAN EDUCATION SERVICES
+Loan Contact Street Address 1:PO BOX 2461
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171052461
+Loan Contact Phone Number:800-233-0557
+Loan Contact Phone Extension:
+Loan Contact Email Address:WEBMASTER@PHEAA.ORG
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT HIGHER ED FINANCING & AFF.
+Loan Contact Street Address 1:425 WALNUT ST 6TH FL
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:GREAT LAKES HIGHER ED GUARANTY CORP
+Loan Contact Street Address 1:PO BOX 7860
+Loan Contact Street Address 2:
+Loan Contact City:MADISON
+Loan Contact State Code:WI
+Loan Contact Zip Code:537047860
+Loan Contact Phone Number:800-236-4300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:mygreatlakes.org
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****6132U04G02804001
+Loan Attending School Name:RENSSELAER HARTFORD GRADUATE CENTER
+Loan Attending School OPEID:00280400
+Loan Date:10/29/2003
+Loan Repayment Begin Date:07/01/2005
+Loan Period Begin Date:10/03/2003
+Loan Period End Date:09/24/2004
+Loan Amount:$10,000
+Loan Disbursed Amount:$10,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:10/11/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:10/11/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:10/11/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/08/2005
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:08/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/30/2005
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:10/29/2003
+Loan Disbursement Date:08/02/2004
+Loan Disbursement Amount:$2,500
+Loan Disbursement Date:04/26/2004
+Loan Disbursement Amount:$2,500
+Loan Disbursement Date:02/05/2004
+Loan Disbursement Amount:$2,500
+Loan Disbursement Date:10/29/2003
+Loan Disbursement Amount:$2,500
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DIRECT LOAN SERVICING CENTER (ACS)
+Loan Contact Street Address 1:P.O BOX 530260
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:800-848-0979
+Loan Contact Phone Extension:
+Loan Contact Email Address:dlservicer@acs-education.com
+Loan Contact Web Site Address:www.myedaccount.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****6132S04G02804001
+Loan Attending School Name:RENSSELAER HARTFORD GRADUATE CENTER
+Loan Attending School OPEID:00280400
+Loan Date:10/29/2003
+Loan Repayment Begin Date:07/01/2005
+Loan Period Begin Date:10/03/2003
+Loan Period End Date:09/24/2004
+Loan Amount:$8,500
+Loan Disbursed Amount:$8,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:10/11/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:10/11/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:10/11/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/08/2005
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:08/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/30/2005
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:10/29/2003
+Loan Disbursement Date:08/02/2004
+Loan Disbursement Amount:$2,125
+Loan Disbursement Date:04/26/2004
+Loan Disbursement Amount:$2,125
+Loan Disbursement Date:02/05/2004
+Loan Disbursement Amount:$2,125
+Loan Disbursement Date:10/29/2003
+Loan Disbursement Amount:$2,125
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DIRECT LOAN SERVICING CENTER (ACS)
+Loan Contact Street Address 1:P.O BOX 530260
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:800-848-0979
+Loan Contact Phone Extension:
+Loan Contact Email Address:dlservicer@acs-education.com
+Loan Contact Web Site Address:www.myedaccount.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****6132U03G02804001
+Loan Attending School Name:RENSSELAER HARTFORD GRADUATE CENTER
+Loan Attending School OPEID:00280400
+Loan Date:03/14/2003
+Loan Repayment Begin Date:07/01/2005
+Loan Period Begin Date:10/04/2002
+Loan Period End Date:09/26/2003
+Loan Amount:$10,000
+Loan Disbursed Amount:$10,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:10/11/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:10/11/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:10/11/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/08/2005
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:08/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/30/2005
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:03/14/2003
+Loan Disbursement Date:08/06/2003
+Loan Disbursement Amount:$2,500
+Loan Disbursement Date:04/28/2003
+Loan Disbursement Amount:$2,500
+Loan Disbursement Date:03/14/2003
+Loan Disbursement Amount:$2,500
+Loan Disbursement Date:03/12/2003
+Loan Disbursement Amount:$2,500
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DIRECT LOAN SERVICING CENTER (ACS)
+Loan Contact Street Address 1:P.O BOX 530260
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:800-848-0979
+Loan Contact Phone Extension:
+Loan Contact Email Address:dlservicer@acs-education.com
+Loan Contact Web Site Address:www.myedaccount.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****6132S03G02804001
+Loan Attending School Name:RENSSELAER HARTFORD GRADUATE CENTER
+Loan Attending School OPEID:00280400
+Loan Date:03/14/2003
+Loan Repayment Begin Date:07/01/2005
+Loan Period Begin Date:10/04/2002
+Loan Period End Date:09/26/2003
+Loan Amount:$8,500
+Loan Disbursed Amount:$8,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:10/11/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:10/11/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:10/11/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/08/2005
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:08/07/2005
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/30/2005
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:03/14/2003
+Loan Disbursement Date:08/06/2003
+Loan Disbursement Amount:$2,125
+Loan Disbursement Date:04/28/2003
+Loan Disbursement Amount:$2,125
+Loan Disbursement Date:03/14/2003
+Loan Disbursement Amount:$2,125
+Loan Disbursement Date:03/12/2003
+Loan Disbursement Amount:$2,125
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DIRECT LOAN SERVICING CENTER (ACS)
+Loan Contact Street Address 1:P.O BOX 530260
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:800-848-0979
+Loan Contact Phone Extension:
+Loan Contact Email Address:dlservicer@acs-education.com
+Loan Contact Web Site Address:www.myedaccount.com
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:ALBERTUS MAGNUS COLLEGE - EAST HARTFORD
+Loan Attending School OPEID:00137413
+Loan Date:03/26/2002
+Loan Repayment Begin Date:02/13/2003
+Loan Period Begin Date:09/12/2001
+Loan Period End Date:08/12/2002
+Loan Amount:$923
+Loan Disbursed Amount:$923
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:12/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:12/07/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/13/2003
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:08/13/2002
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:03/26/2002
+Loan Disbursement Date:04/11/2002
+Loan Disbursement Amount:$461
+Loan Disbursement Date:03/27/2002
+Loan Disbursement Amount:$462
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT SLM TRUSTS
+Loan Contact Street Address 1:11600 SALLIE MAE DR,DEB SOUTHERLAND
+Loan Contact Street Address 2:
+Loan Contact City:RESTON
+Loan Contact State Code:VA
+Loan Contact Zip Code:201930000
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:ALBERTUS MAGNUS COLLEGE - EAST HARTFORD
+Loan Attending School OPEID:00137413
+Loan Date:03/26/2002
+Loan Repayment Begin Date:02/13/2003
+Loan Period Begin Date:09/12/2001
+Loan Period End Date:08/12/2002
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:12/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:12/07/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/13/2003
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:08/13/2002
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:03/26/2002
+Loan Disbursement Date:04/11/2002
+Loan Disbursement Amount:$2,750
+Loan Disbursement Date:03/27/2002
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT SLM TRUSTS
+Loan Contact Street Address 1:11600 SALLIE MAE DR,DEB SOUTHERLAND
+Loan Contact Street Address 2:
+Loan Contact City:RESTON
+Loan Contact State Code:VA
+Loan Contact Zip Code:201930000
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:ALBERTUS MAGNUS COLLEGE - EAST HARTFORD
+Loan Attending School OPEID:00137413
+Loan Date:06/17/2001
+Loan Repayment Begin Date:02/13/2003
+Loan Period Begin Date:09/25/2000
+Loan Period End Date:08/27/2001
+Loan Amount:$3,892
+Loan Disbursed Amount:$3,892
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:12/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:12/07/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/13/2003
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:08/13/2002
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:06/17/2001
+Loan Disbursement Date:07/05/2001
+Loan Disbursement Amount:$3,892
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT SLM TRUSTS
+Loan Contact Street Address 1:11600 SALLIE MAE DR,DEB SOUTHERLAND
+Loan Contact Street Address 2:
+Loan Contact City:RESTON
+Loan Contact State Code:VA
+Loan Contact Zip Code:201930000
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:ALBERTUS MAGNUS COLLEGE - EAST HARTFORD
+Loan Attending School OPEID:00137413
+Loan Date:06/17/2001
+Loan Repayment Begin Date:02/13/2003
+Loan Period Begin Date:09/25/2000
+Loan Period End Date:08/27/2001
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:12/07/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/07/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:12/07/2005
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/13/2003
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:08/13/2002
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:06/17/2001
+Loan Disbursement Date:07/05/2001
+Loan Disbursement Amount:$5,500
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:DEUTSCHE BANK ELT SLM TRUSTS
+Loan Contact Street Address 1:11600 SALLIE MAE DR,DEB SOUTHERLAND
+Loan Contact Street Address 2:
+Loan Contact City:RESTON
+Loan Contact State Code:VA
+Loan Contact Zip Code:201930000
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF MARYLAND UNIVERSITY COLLEGE
+Loan Attending School OPEID:01164400
+Loan Date:04/09/1992
+Loan Repayment Begin Date:02/01/1993
+Loan Period Begin Date:06/01/1992
+Loan Period End Date:08/22/1992
+Loan Amount:$625
+Loan Disbursed Amount:$625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:02/28/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:02/28/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PF
+Loan Status Description:PAID IN FULL
+Loan Status Effective Date:02/28/2005
+Loan Status:PM
+Loan Status Description:PRESUMED PAID-IN-FULL
+Loan Status Effective Date:02/01/2005
+Loan Status:AL
+Loan Status Description:ABANDONED LOAN
+Loan Status Effective Date:09/30/2001
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/1993
+Loan Disbursement Date:07/13/1992
+Loan Disbursement Amount:$625
+Loan Contact Type:Current Servicer
+Loan Contact Name:ACS EDUCATION SERVICES
+Loan Contact Street Address 1:ATTN:  BORROWER SERVICES DEPARTMENT
+Loan Contact Street Address 2:P.O. BOX 7051
+Loan Contact City:UTICA
+Loan Contact State Code:NY
+Loan Contact Zip Code:135047051
+Loan Contact Phone Number:800-835-4611
+Loan Contact Phone Extension:
+Loan Contact Email Address:HTTPS://WWW.AFSA.COM/FFEL/FEEDBACK_SSL.HTML
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:FIRST UNION NATIONAL BANK
+Loan Contact Street Address 1:201 S. COLLEGE ST.
+Loan Contact Street Address 2:
+Loan Contact City:CHARLOTTE
+Loan Contact State Code:NC
+Loan Contact Zip Code:282885578
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UNIVERSITY OF MARYLAND UNIVERSITY COLLEGE
+Loan Attending School OPEID:01164400
+Loan Date:01/14/1992
+Loan Repayment Begin Date:02/01/1993
+Loan Period Begin Date:09/03/1991
+Loan Period End Date:05/17/1992
+Loan Amount:$2,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:12/08/1997
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/08/1997
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PF
+Loan Status Description:PAID IN FULL
+Loan Status Effective Date:12/08/1997
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/1993
+Loan Disbursement Date:01/21/1992
+Loan Disbursement Amount:$2,000
+Loan Contact Type:Current Lender
+Loan Contact Name:FIRST UNION NATIONAL BANK
+Loan Contact Street Address 1:201 S. COLLEGE ST.
+Loan Contact Street Address 2:
+Loan Contact City:CHARLOTTE
+Loan Contact State Code:NC
+Loan Contact Zip Code:282885578
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:

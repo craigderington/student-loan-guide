@@ -1,0 +1,49 @@
+
+
+					
+						
+						<a name="q23defertypes"></a>
+						
+						
+						
+						<p style="margin-toP;150px;">
+						
+						
+							<h3>Survey Question 23 | Deferment Type Definitions</h3>
+
+								<h4>Internship/Residency</h4>
+								<p>If you are a medical intern or resident and you either do not qualify for an internship residency deferment (i.e., the earliest of your outstanding loans was borrowed after 6/30/1993), or you have exhausted your deferment eligibility, you may qualify for mandatory forbearance.</p>
+								<p>To qualify you must be engaged in a program that: 
+									<ul>
+										<li>Must be successfully completed before you may begin professional practice or service;</li>
+										<li>Leads to a degree or certificate awarded by an institution of higher education, a hospital, or health care facility offering postgraduate training.</li>
+									</ul>
+								</p>
+								
+								
+								<h4>Payments Exceed 20% of Income</h4> 
+								<p>The total amount you owe each month for all of the Title IV student loans you received is 20% or more of your total monthly gross income.</p>
+
+								
+								<h4>Poor Health/Financial Problems</h4>
+								<p>You are unable to make your scheduled loan payments for reasons including, but not limited to, financial hardship and illness.</p>
+
+								
+								<h4>Post Active Duty</h4> 
+								<p>You qualify for partial repayment of your loans under the Student Loan Repayment Program, as administered by the Department of Defense.</p>
+
+								
+								<h4>Teacher Loan Forgiveness Participant</h4>
+								<p>You are performing a teaching service that would qualify for loan forgiveness under the requirements of the Teacher Loan Forgiveness Program</p>
+
+								
+								<h4>U.S. Armed Services</h4>
+								<p>You are called to active duty in the U.S. armed forces.</p>
+
+								
+								<h4>Peace Corps</h4> 
+								<p>You are serving in an approved AmeriCorps position.</p>
+								
+								
+								
+						</p>

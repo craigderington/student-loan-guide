@@ -1,0 +1,20 @@
+
+
+
+			<div class="accordion" id="basic-accordion">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#basic-accordion" href="#collapseOne">
+							Collapsible Group Item #1
+				        </a>
+				    </div>
+				              
+					<div id="collapseOne" class="accordion-body in collapse">
+						<div class="accordion-inner">
+							<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt.</p>
+				                  
+							<p>Vivamus ac velit eget turpis pharetra placerat bibendum at risus. Vestibulum a sodales mauris. Curabitur et nibh nunc.</p>
+						</div>
+					</div>
+				</div>
+			</div>

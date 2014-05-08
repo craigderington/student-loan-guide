@@ -1,0 +1,55 @@
+
+
+
+
+
+													<cfoutput>
+														<form id="edit-this-form" class="form-horizontal" method="post" action="#application.root#?event=#url.event#">
+															<fieldset>
+																
+																	<div class="control-group">											
+																		<label class="control-label" for="element">Lead Source</label>
+																		<div class="controls">
+																			<select name="element" id="element">
+																			<cfloop query="query">
+																				<option value="">this</option>
+																			</cfloop>
+																			</select>
+																		</div> <!-- /controls -->				
+																	</div> <!-- /control-group -->														
+																
+
+																<div class="control-group">											
+																	<label class="control-label" for="element1">Field Name</label>
+																	<div class="controls">
+																		<input type="text" class="input-large" name="element1" id="element1" value="<cfif isdefined( "form.element1" )>#trim( form.element1 )#<cfelse>#query.data#</cfif>">
+																	</div> <!-- /controls -->				
+																</div> <!-- /control-group -->
+																
+																
+																<div class="control-group">											
+																	<label class="control-label" for="lastname">Last Name <span style="color:##ff0000;">*</span></label>
+																	<div class="controls">
+																		<input type="text" class="input-large" name="element2" id="element2" value="<cfif isdefined( "form.element2" )>#trim( form.element2 )#<cfelse>#query.data#</cfif>">
+																	</div> <!-- /controls -->				
+																</div> <!-- /control-group -->		
+																
+																
+																
+																<br />											
+																
+																
+																<div class="form-actions">													
+																	<button type="submit" class="btn btn-secondary" name="savelead"><i class="icon-save"></i> Save Contact Details</button>
+																	<button type="submit" class="btn btn-tertiary" name="saveleadcontinue"><i class="icon-refresh"></i> Save Contact &amp; Continue</button>	
+																	
+																	
+																	<input name="utf8" type="hidden" value="&##955;">												
+																	<input type="hidden" name="__authToken" value="#randout#" />
+																	<input name="validate_require" type="hidden" value="leadid|'Lead ID' is a required field.;firstname|'Inquiry First Name' is a required field.;lastname|'Inquiry last Name' is a required field.;streetaddress|'Inquiry address' is required to save the record.;city|'Inquiry city of residence' is required to save this record.;state|'The inquiry state' is required to save the record.;zipcode|'The inquiry zip code' is a required field;email|'The inquiry email address' is a required field." />									
+																	
+																</div> <!-- /form-actions -->
+																
+															</fieldset>
+														</form>
+													</cfoutput>

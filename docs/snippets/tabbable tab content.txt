@@ -1,0 +1,20 @@
+
+
+
+									<!--- // tabs --->
+									<div class="tabbable">
+										<ul class="nav nav-tabs">
+											<li class="active">
+												<a href="#profile" data-toggle="tab">Profile</a>
+											</li>
+											<li><a href="#settings" data-toggle="tab">Settings</a></li>
+										</ul>
+									
+									<br>
+									
+										<div class="tab-content">
+											
+											
+											
+										</div><!-- /.tab-content -->
+									</div> <!-- /.tabbable -->

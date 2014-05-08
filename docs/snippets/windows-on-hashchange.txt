@@ -1,0 +1,25 @@
+<!--- // let's try some js to keep the current tab open on page refresh --->
+				<script src="../js/jquery.ba-hashchange.min.js"></script>
+				<script type="text/javascript">
+					$(function(){
+						// Function to activate the tab
+						function activateTab() {
+							var activeTab = $('[href=' + window.location.hash.replace('/', '') + ']');
+							activeTab && activeTab.tab('show');
+						}
+
+						// Trigger when the page loads
+						activateTab();
+
+						// Trigger when the hash changes (forward / back)
+						$(window).hashchange(function(e) {
+							activateTab();
+						});
+
+						// Change hash when a tab changes
+						// Handle shown event using delegation 
+						$(document).on('shown.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function () {
+							window.location.hash = '/' + $(this).attr('href').replace('#', '');
+						}); 
+					});
+				</script>

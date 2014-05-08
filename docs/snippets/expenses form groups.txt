@@ -1,0 +1,86 @@
+
+
+
+															<form id="lead-budget-expense-home" class="form-horizontal" method="post" action="#application.root#?event=#url.event#">
+																<fieldset>
+																
+																	<div class="control-group">
+																		<label class="control-label" for="accounttype">Own or Rent</label>
+																		<div class="controls">
+																			<label class="radio">
+																				<input type="radio" name="ownrent" value="O" checked="checked" id="ownrent">
+																				Own
+																			</label>
+																			<label class="radio">
+																				<input type="radio" name="ownrent" value="R">
+																				Rent
+																			</label>
+																		</div>
+																	</div>																
+																	
+																	<div class="control-group">											
+																		<label class="control-label" for="ownorrent">Own or Rent</label>
+																		<div class="controls">
+																			<input type="text" class="input-small" name="mtgrent" value="#numberformat( budget.mortgage1, 'L99.99' )#" />
+																		</div> <!-- /controls -->				
+																	</div> <!-- /control-group -->
+																	
+																	<div class="control-group">											
+																		<label class="control-label" for="mtgrent">Primary Mortgage/Rent</label>
+																		<div class="controls">
+																			<input type="text" class="input-small" name="mtgrent" value="#numberformat( budget.mortgage1, 'L99.99' )#" />
+																		</div> <!-- /controls -->				
+																	</div> <!-- /control-group -->
+
+																	<div class="control-group">											
+																		<label class="control-label" for="mortgage2">2nd Mortgage</label>
+																		<div class="controls">
+																			<input type="text" class="input-small" name="mortgage2" value="#numberformat( budget.mortgage2, 'L99.99' )#" />
+																		</div> <!-- /controls -->				
+																	</div> <!-- /control-group -->
+																	
+																	<div class="control-group">											
+																		<label class="control-label" for="mortgage3">Pension</label>
+																		<div class="controls">
+																			<input type="text" class="input-small" name="mortgage3" value="#numberformat( budget.mortgage3, 'L99.99' )#" />
+																		</div> <!-- /controls -->				
+																	</div> <!-- /control-group -->
+																	
+																	<div class="control-group">											
+																		<label class="control-label" for="estatetax">Social Security</label>
+																		<div class="controls">
+																			<input type="text" class="input-small" name="estatetax" value="#numberformat( budget.realestatetax, 'L99.99' )#" />
+																		</div> <!-- /controls -->				
+																	</div> <!-- /control-group -->
+																	
+																	<div class="control-group">											
+																		<label class="control-label" for="hoacondo">HOA/Condo Dues</label>
+																		<div class="controls">
+																			<input type="text" class="input-small" name="hoacondo" value="#numberformat( budget.hoacondodues, 'L99.99' )#" />
+																		</div> <!-- /controls -->				
+																	</div> <!-- /control-group -->
+																	
+																	<div class="control-group">											
+																		<label class="control-label" for="homeinsure">Insurance</label>
+																		<div class="controls">
+																			<input type="text" class="input-small" name="homeinsure" value="#numberformat( budget.homerentinsurance, 'L99.99' )#" />
+																		</div> <!-- /controls -->				
+																	</div> <!-- /control-group -->
+																	
+																	
+																																						
+																	
+																	<br /><br />
+																	
+																	<div class="form-actions">													
+																		<button type="submit" class="btn btn-secondary" name="saveexphome"><i class="icon-save"></i> Save Expense Group</button>																									
+																		<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.budget'"><i class="icon-remove-sign"></i> Cancel</a>													
+																		<input name="utf8" type="hidden" value="&##955;">													
+																		<input type="hidden" name="leadid" value="#leaddetail.leadid#" />
+																		<input type="hidden" name="budgetuuid" value="#budget.budgetuuid#" />																		
+																		<input type="hidden" name="__authToken" value="#randout#" />
+																		<input name="validate_require" type="hidden" value="mtgrent|The primary mortgage or rent amount is required to post this form." />															
+																	</div> <!-- /form-actions -->
+																	
+																</fieldset>
+															</form>

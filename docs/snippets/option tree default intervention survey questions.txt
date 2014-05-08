@@ -1,0 +1,66 @@
+				
+				
+				
+				
+				
+				
+				<!--- // default intervention wage garnishment q24 --->
+				<cfif trim( surveyq24.slqa ) is "yes" >
+					<cfloop query="worksheets">
+						<cfif trim( loancode ) is "T" or trim( loancode ) is "U" or trim( loancode ) is "V">
+							<cfif trim( statuscode ) is "df" or trim( statuscode ) is "wg" or trim( statuscode ) is "to" or trim( statuscode ) is "dn">
+								<cfset subcat6default = true />
+								<cfset subcat6wg = "yes" />
+							</cfif>
+						</cfif>
+					</cfloop>
+				</cfif>
+				
+				<!--- // default intervention wage garnishment q25 --->
+				<cfif trim( surveyq25.slqa ) is "yes" >
+					<cfloop query="worksheets">
+						<cfif trim( loancode ) is "T" or trim( loancode ) is "U" or trim( loancode ) is "V">
+							<cfif trim( statuscode ) is "df" or trim( statuscode ) is "wg" or trim( statuscode ) is "to" or trim( statuscode ) is "dn">
+								<cfset subcat6default = true />
+								<cfset subcat6wg = "yes" />
+							</cfif>
+						</cfif>
+					</cfloop>
+				</cfif>		
+				
+				
+				<!--- // default intervention tax off set // survey questions 26 --->
+				<cfif trim( surveyq26.slqa ) is "yes">
+					<cfloop query="worksheets">
+						<cfif trim( loancode ) is "T" or trim( loancode ) is "U" or trim( loancode ) is "V">
+							<cfif trim( statuscode ) is "df" or trim( statuscode ) is "wg" or trim( statuscode ) is "to" or trim( statuscode ) is "dn">
+								<cfset subcat6default = true />
+								<cfset subcat6to = "yes">
+							</cfif>
+						</cfif>
+					</cfloop>
+				</cfif>
+
+				<!--- // default intervention tax off set // survey questions 27 --->
+				<cfif trim( surveyq27.slqa ) is "yes">
+					<cfloop query="worksheets">
+						<cfif trim( loancode ) is "T" or trim( loancode ) is "U" or trim( loancode ) is "V">
+							<cfif trim( statuscode ) is "df" or trim( statuscode ) is "wg" or trim( statuscode ) is "to" or trim( statuscode ) is "dn">
+								<cfset subcat6default = true />
+								<cfset subcat6to = "yes">
+							</cfif>
+						</cfif>
+					</cfloop>
+				</cfif>
+				
+				<!--- // default intervention tax off set // survey questions 28 --->
+				<cfif trim( surveyq28.slqa ) is "yes">
+					<cfloop query="worksheets">
+						<cfif trim( loancode ) is "T" or trim( loancode ) is "U" or trim( loancode ) is "V">
+							<cfif trim( statuscode ) is "df" or trim( statuscode ) is "wg" or trim( statuscode ) is "to" or trim( statuscode ) is "dn">
+								<cfset subcat6default = true />
+								<cfset subcat6to = "yes">
+							</cfif>
+						</cfif>
+					</cfloop>
+				</cfif>
