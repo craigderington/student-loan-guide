@@ -105,7 +105,13 @@
 											<cfset step.steptask = trim( form.steptask ) />											
 																						
 											<!--- // some other variables --->
-											<cfset today = #CreateODBCDateTime(now())# />											
+											<cfset today = #CreateODBCDateTime(now())# />
+
+											<cfif structkeyexists( form, "stepreason" )>
+												<cfset step.stepreason = #form.stepreason# />
+												<cfset step.stepreasonnum = #form.stepreasonnum# />
+											</cfif>
+										
 																						
 											
 											<!--- if this is a new entry, do this --->
@@ -113,7 +119,7 @@
 											
 												<!--- // update the database record --->
 												<cfquery datasource="#application.dsn#" name="savemasterstep">
-													insert into masterstepsimpl(msimpcat, msimptype, msimpstepcat, msimpstepnum, msimpstepstat, msimpsteptask)
+													insert into masterstepsimpl(msimpcat, msimptype, msimpstepcat, msimpstepnum, msimpstepstat, msimpsteptask, msimpstepreasonnumber, msimpstepreason)
 													   values(
 																<cfqueryparam value="#step.steptrees#" cfsqltype="cf_sql_varchar" maxlength="13" />,
 																<cfqueryparam value="#step.steptype#" cfsqltype="cf_sql_varchar" />,
@@ -121,6 +127,10 @@
 																<cfqueryparam value="#step.stepnum#" cfsqltype="cf_sql_numeric" />,
 																<cfqueryparam value="#step.stepgroup#" cfsqltype="cf_sql_char" />,
 																<cfqueryparam value="#step.steptask#" cfsqltype="cf_sql_varchar" maxlength="150" />
+																<cfif structkeyexists( step, "stepreason" )>,
+																<cfqueryparam value="#step.stepreasonnum#" cfsqltype="cf_sql_numeric" />,
+																<cfqueryparam value="#step.stepreason#" cfsqltype="cf_sql_varchar" maxlength="150" />
+																</cfif>
 															 );
 												</cfquery>											
 												
@@ -149,6 +159,10 @@
 														   msimpstepnum = <cfqueryparam value="#step.stepnum#" cfsqltype="cf_sql_numeric" />,
 														   msimpstepstat = <cfqueryparam value="#step.stepgroup#" cfsqltype="cf_sql_char" />,
 														   msimpsteptask = <cfqueryparam value="#step.steptask#" cfsqltype="cf_sql_varchar" maxlength="150" />
+														    <cfif structkeyexists( step, "stepreason" )>
+																, msimpstepreasonnumber = <cfqueryparam value="#step.stepreasonnum#" cfsqltype="cf_sql_numeric" />
+																, msimpstepreason = <cfqueryparam value="#step.stepreason#" cfsqltype="cf_sql_varchar" maxlength="150" />
+														    </cfif>
 													 where msimpstepid = <cfqueryparam value="#step.stepid#" cfsqltype="cf_sql_integer" />
 												</cfquery>											
 												
@@ -240,15 +254,20 @@
 											
 											<cfoutput><h4 style="margin-bottom:5px;">Selected Category: #session.stepcat#</h4></cfoutput>
 											
-											<table class="table table-bordered table-striped table-highlight">
+											<table id="tablesorter" class="table tablesorter table-bordered table-striped table-highlight">
 												<thead>
 													<tr>
 														<th width="10%">Actions</th>
 														<th>Trees</th>
 														<th>Category</th>
-														<th>Type</th>
+														<th>Type</th>														
+														<cfif session.stepcat is "wage garnishment" or session.stepcat is "tax offset" >
+														<th>Reason</th>														
+														<th>Step</th>
+														<cfelse>
 														<th>Step Number</th>														
 														<th>Step</th>
+														</cfif>
 													</tr>
 												</thead>
 												<tbody>
@@ -264,9 +283,14 @@
 															</td>												
 															<td><span class="label label-info">#msimpcat#</span></td>
 															<td>#msimpstepcat#</td>
-															<td>#msimptype#</td>
-															<td>#msimpstepnum#</td>															
-															<td>#msimpsteptask#</td>
+															<td>#msimptype#</td>														
+															<cfif session.stepcat is "wage garnishment" or session.stepcat is "tax offset" >
+															    <td><span class="label label-warning">#msimpstepreasonnumber#</span>  #msimpstepreason#</td>
+																<td><span class="label label-success">#msimpstepnum#</span>  #msimpsteptask#
+															<cfelse>																 
+																<td>#msimpstepnum#</td>
+																<td>#msimpsteptask#</td>
+															</cfif>															
 														</tr>
 													</cfoutput>
 												</tbody>
@@ -320,20 +344,32 @@
 																</div> <!-- /controls -->				
 														</div> <!-- /control-group -->
 														
+														
+														<cfif session.stepcat is "wage garnishment" or session.stepcat is "tax offset" >
+														
+															<div class="control-group">											
+																<label class="control-label" for="stepreason">Reason for #session.stepcat#</label>
+																	<div class="controls">
+																		<input type="text" class="input-large" name="stepreason" value="#stepdetail.msimpstepreason#" /> &nbsp;&nbsp;Reason Number &nbsp;&nbsp; <input type="text" class="input-small" name="stepreasonnum" value="#stepdetail.msimpstepreasonnumber#" /></span>																
+																	</div> <!-- /controls -->				
+															</div> <!-- /control-group -->
+														
+														</cfif>
+														
 														<div class="control-group">											
 															<label class="control-label" for="stepnum">Step Number</label>
 																<div class="controls">
 																	<input type="text" class="input-mini" name="stepnum" value="#stepdetail.msimpstepnum#" />																
 																</div> <!-- /controls -->				
-														</div> <!-- /control-group -->
+														</div> <!-- /control-group -->													
+														
 														
 														<div class="control-group">											
 															<label class="control-label" for="steptask">Step Task</label>
 																<div class="controls">
 																	<textarea name="steptask" class="input-large span6" rows="5">#stepdetail.msimpsteptask#</textarea>															
 																</div> <!-- /controls -->				
-														</div> <!-- /control-group -->
-														
+														</div> <!-- /control-group -->														
 														
 														
 														<br /><br />
@@ -362,7 +398,7 @@
 														<div class="control-group">											
 															<label class="control-label" for="steptype">Category Type</label>
 																<div class="controls">
-																	<input type="text" class="input-large" name="steptype" value="<cfif isdefined( "form.steptype" )>#form.steptype#</cfif>" />
+																	<input type="text" class="input-large" name="steptype" <cfif isdefined( "form.steptype" )>value="#form.steptype#"</cfif> <cfif session.stepcat is "wage garnishment" or session.stepcat is "tax offset">value="Default Intervention"</cfif>  />
 																	<p class="help-block">Types like Forgiveness, Default Intervention, Cancellation, Postponement</p>
 																</div> <!-- /controls -->				
 														</div> <!-- /control-group -->
@@ -382,6 +418,17 @@
 																	<p class="help-block">Always Default to C</p>
 																</div> <!-- /controls -->				
 														</div> <!-- /control-group -->
+														
+														<cfif session.stepcat is "wage garnishment" or session.stepcat is "tax offset" >
+														
+															<div class="control-group">											
+																<label class="control-label" for="stepreason">Reason for #session.stepcat#</label>
+																	<div class="controls">
+																		<input type="text" class="input-large" name="stepreason" value="<cfif isdefined( "form.stepreason" )>#form.stepreason#</cfif>" />  &nbsp;&nbsp;Reason Number &nbsp;&nbsp;<input type="text" class="input-small" name="stepreasonnum" value="<cfif isdefined( "form.stepreasonnum" )>#form.stepreasonnum#</cfif>" /></span>																
+																	</div> <!-- /controls -->				
+															</div> <!-- /control-group -->
+														
+														</cfif>
 														
 														<div class="control-group">											
 															<label class="control-label" for="stepnum">Step Number</label>
