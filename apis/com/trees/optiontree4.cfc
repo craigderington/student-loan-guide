@@ -310,10 +310,12 @@
 				<!--- // default intervention rehab // 10-24-2013 // check to remove q29 --->
 				<cfloop query="worksheets">
 					<cfif trim( loancode ) is "E" or trim( loancode ) is "K" or trim( loancode ) is "V">
-						<cfif trim( prevconsol ) is "n" and worksheets.recordcount gt 1>
-							<cfset subcat4default = true />
-							<cfset subcat4consol = "yes" />							
-						</cfif>						
+						<cfif trim( statuscoderefer ) is "df" or trim( statuscoderefer ) is "dg" or trim( statuscoderefer ) is "wg" or trim( statuscoderefer ) is "to" or trim( statuscoderefer ) is "dn">
+							<cfif trim( prevconsol ) is "n">
+								<cfset subcat4default = true />
+								<cfset subcat4consol = "yes" />							
+							</cfif>
+						</cfif>
 					</cfif>						
 				</cfloop>				
 				

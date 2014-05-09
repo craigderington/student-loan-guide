@@ -5,7 +5,7 @@
 		
 		<cfscript>
 			thread = createobject( "java", "java.lang.Thread" );
-			thread.sleep(10000);
+			thread.sleep(3000);
 		</cfscript>
 		
 	
@@ -32,10 +32,31 @@
 				<cfset solutionid = url.solutionid />
 					
 					<cfquery datasource="#application.dsn#" name="getworksheet">
-						select solutionworksheetid
+						select solutionid, solutionworksheetid
 						  from solution
 						 where solutionuuid = <cfqueryparam value="#solutionid#" cfsqltype="cf_sql_varchar" maxlength="35" />
-					</cfquery>		
+					</cfquery>
+					
+					<!--- // think about this some more // will have to reset all solutions in the implement plan group
+					<cfquery datasource="#application.dsn#" name="getplan">
+						select implementid
+						  from implement
+						 where solutionid IN( <cfqueryparam value="#getworksheet.solutionid#" cfsqltype="cf_sql_varchar" list="yes" maxlength="50" /> )
+					</cfquery>
+
+					<cfquery datasource="#application.dsn#" name="killplan">
+						delete
+						  from implement
+						 where solutionid IN( <cfqueryparam value="#getworksheet.solutionid#" cfsqltype="cf_sql_varchar" list="yes" maxlength="50" /> )
+					</cfquery>
+					
+					<cfquery datasource="#application.dsn#" name="killplansteps">
+						delete
+						  from leadimplementsteps
+						 where implementid = <cfqueryparam value="#getplan.implementid#" cfsqltype="cf_sql_integer" />
+					</cfquery>
+					
+					--->
 				
 					<cfquery datasource="#application.dsn#" name="killsolution">
 						delete

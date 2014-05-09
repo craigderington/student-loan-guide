@@ -57,9 +57,12 @@
 					   and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 							
 							
-							<cfif isuserinrole( "intake" ) or isuserinrole( "sls" )> 
+							<cfif isuserinrole( "intake" )> 
 							   and l.leadid = la.leadassignleadid
-							   and (la.leadassignuserid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /> and ( la.leadassignrole = 'intake' or la.leadassignrole = 'sls'))
+							   and ( la.leadassignuserid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /> and la.leadassignrole = 'intake' )
+							<cfelseif isuserinrole( "sls" )> 
+							   and l.leadid = la.leadassignleadid
+							   and ( la.leadassignuserid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /> and la.leadassignrole = 'sls' )							
 							<cfelseif isuserinrole( "counselor" )>
 							   and l.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" />
 							</cfif>

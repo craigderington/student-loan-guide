@@ -148,7 +148,7 @@
 													<tbody>
 														<cfoutput query="solutionlist">
 														<tr>
-															<td><cfif solutionsubcat contains "consolidation"><div align="center"><form name="consol-date-this" method="post" action="#cgi.script_name#?event=#url.event#"><input type="checkbox" name="chkInc" value="1" onclick="this.form.submit();"<cfif incconsol eq 1>checked</cfif>><input type="hidden" name="worksheetid" value="#solutionworksheetid#"><input type="hidden" name="updateconsolworksheet" value="true"></form><cfelse><span class="label label-important">N/A</span></div></cfif></td>													
+															<td><cfif trim( solutionsubcat ) is "consolidation"><div align="center"><form name="consol-date-this" method="post" action="#cgi.script_name#?event=#url.event#"><input type="checkbox" name="chkInc" value="1" onclick="this.form.submit();"<cfif incconsol eq 1>checked</cfif>><input type="hidden" name="worksheetid" value="#solutionworksheetid#"><input type="hidden" name="updateconsolworksheet" value="true"></form><cfelse><span class="label label-important">N/A</span></div></cfif></td>													
 															<td>#solutionsubcat# #solutionoption#</td>
 															<td><cfif solutionoptiontree eq 1>Direct Loan<cfelseif solutionoptiontree eq 2>FFEL Loan<cfelseif solutionoptiontree eq 2><cfelseif solutionoptiontree eq 3>Perkins Loan<cfelseif solutionoptiontree eq 4>Direct Consolidation<cfelseif solutionoptiontree eq 5>Health Professional<cfelseif solutionoptiontree eq 6>Parent PLUS<cfelseif solutionoptiontree eq 7>Private Loan</cfif></td>
 															<td><cfif servid neq -1>#servname#<cfelse>#nslservicer#</cfif></td>
