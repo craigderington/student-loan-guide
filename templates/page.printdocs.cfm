@@ -32,6 +32,10 @@
 				<cfinvokeargument name="leadid" value="#clientid#">
 			</cfinvoke>
 			
+			<cfinvoke component="apis.com.clients.clientgateway" method="getclientfeetotals" returnvariable="clientfeetotals">
+				<cfinvokeargument name="leadid" value="#clientid#">
+			</cfinvoke>
+			
 
 			
 			
@@ -66,11 +70,17 @@
 				<cfparam name="PAYOPTION1" default="On" />
 				<cfparam name="PAYOPTION2" default="Off" />
 				<cfparam name="MDAYOPTION2" default="" />
+				<cfparam name="NUMBERPAYMENTS" default="#clientfeetotals.numpayments#">
+				<cfparam name="PAY1AMOUNT" default="#clientfeetotals.totalfees#">
+				<cfparam name="PAY2AMOUNT" default="">
 			<cfelse>
 				<cfparam name="PAYOPTION1" default="Off" />
 				<cfparam name="MDAYOPTION1" default="" />
 				<cfparam name="PAYOPTION2" default="On" />
 				<cfparam name="MDAYOPTION2" default="#datepart( 'd', firstpaydate )#" />
+				<cfparam name="NUMBERPAYMENTS" default="#clientfeetotals.numpayments#">
+				<cfparam name="PAY2AMOUNT" default="#round( clientfeetotals.totalfees / clientfeetotals.numpayments )#">
+				<cfparam name="PAY1AMOUNT" default="">
 			</cfif>
 			
 			<cfif trim( esigninfo.esignaccttype ) is "Checking">
@@ -128,6 +138,9 @@
 					<cfpdfformparam name="SIGNATUREDATE" value="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
 					<cfpdfformparam name="AUTHKEYTOKEN2" value="#authkeytoken2#" />					
 					<cfpdfformparam name="IPADDRESS2" value="#ipaddress#" />
+					<cfpdfformparam name="NUMBERPAYMENTS" value="#numberpayments#" />
+					<cfpdfformparam name="PAY1AMOUNT" value="#pay1amount#" />
+					<cfpdfformparam name="PAY2AMOUNT" value="#pay2amount#" />
 				</cfpdfform>
 			
 			
