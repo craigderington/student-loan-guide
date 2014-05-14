@@ -227,7 +227,7 @@
 												<div class="span12">
 													<a name="cancel" class="btn btn-secondary" onclick="location.href='#cgi.http_referer#'"><i class="icon-circle-arrow-left"></i> Go Back</a>
 													<a name="cancel" class="btn btn-tertiary" onclick="location.href='#application.root#?event=page.tree'"><i class="icon-sitemap"></i> View Option Trees</a>
-													<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.solution'"><i class="icon-shopping-cart"></i> View Solution Cart</a>
+													<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.solution'"><i class="icon-shopping-cart"></i> View Solution Cart</a>													
 												</div>
 											</cfoutput>
 										</div>

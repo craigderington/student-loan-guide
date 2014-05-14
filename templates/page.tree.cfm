@@ -167,7 +167,7 @@
 															
 																<cfinvoke component="apis.com.worksheets.worksheetgateway" method="getloansfortree" returnvariable="treeloans">
 																	<cfinvokeargument name="leadid" value="#session.leadid#">
-																	<cfinvokeargument name="loancodes" value="D,L,I">
+																	<cfinvokeargument name="loancodes" value="D,L,I,AC,AD">
 																</cfinvoke>
 																
 																<li>Show eligible loans <a href="javascript:;" rel="popover" data-original-title="Direct Loans" data-html="true" data-content="<cfif treeloans.recordcount gt 0><cfoutput query="treeloans"><li><cfif servid eq -1>#nslservicer#<cfelse>#servname#</cfif> - #acctnum# - #dollarformat( loanbalance )#</li></cfoutput><cfelse>All eligible Direct Loans have already been marked completed. </cfif>"><i class="icon-info-sign"></i></a></li>
@@ -288,7 +288,7 @@
 																	
 																	<cfinvoke component="apis.com.worksheets.worksheetgateway" method="getloansfortree" returnvariable="treeloans">
 																		<cfinvokeargument name="leadid" value="#session.leadid#">
-																		<cfinvokeargument name="loancodes" value="A,B,C,G,H,O,P,S,J,AB">
+																		<cfinvokeargument name="loancodes" value="A,B,C,G,H,O,P,S,J,AB,AF">
 																	</cfinvoke>
 																
 																	<li>Show eligible loans <a href="" rel="popover" data-original-title="FFEL Loans" data-html="true" data-content="<cfif treeloans.recordcount gt 0><cfoutput query="treeloans"><li><cfif servid eq -1>#nslservicer#<cfelse>#servname#</cfif> - #acctnum# - #dollarformat( loanbalance )#</li></cfoutput><cfelse>All eligible FFEL Loans have already been marked completed.</cfif>"><i class="icon-info-sign"></i></a></li>
@@ -406,7 +406,7 @@
 																
 																	<cfinvoke component="apis.com.worksheets.worksheetgateway" method="getloansfortree" returnvariable="treeloans">
 																		<cfinvokeargument name="leadid" value="#session.leadid#">
-																		<cfinvokeargument name="loancodes" value="F,M,N">
+																		<cfinvokeargument name="loancodes" value="F,M,N,AE">
 																	</cfinvoke>
 																
 																	<li>Show eligible loans <a href="" rel="popover" data-original-title="Perkins Loans" data-html="true" data-content="<cfif treeloans.recordcount gt 0><cfoutput query="treeloans"><li><cfif servid eq -1>#nslservicer#<cfelse>#servname#</cfif> - #acctnum# - #dollarformat( loanbalance )#</li></cfoutput><cfelse>All eligible Perkins Loans have already been marked completed.</cfif>"><i class="icon-info-sign"></i></a></li>

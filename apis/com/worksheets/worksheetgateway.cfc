@@ -124,7 +124,7 @@
 					   </cfif>
 					   
 					   <cfif trim( arguments.statuscode ) is "default">
-					   and sc.statuscoderefer = <cfqueryparam value="dn" cfsqltype="cf_sql_char" />
+					   and sc.statuscoderefer = <cfqueryparam value="df" cfsqltype="cf_sql_char" />
 					   </cfif>
 					   
 					   and left(lc.loancode,2) IN( <cfqueryparam value="#arguments.loancodes#" list="yes" separator="," /> )
