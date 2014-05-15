@@ -12,6 +12,12 @@
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
 			
+			<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
+				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>
+			
+			
+			
 			
 			<!--- // declare form variables --->			
 			<cfparam name="leadusername" default="">
@@ -99,54 +105,85 @@
 											<!--- // determine of we need to create the login or update an existing record --->
 											<cfif structkeyexists( form, "createleadlogin" )>
 											
-												<!--- // create the lead user login insert record --->
-												<cfquery datasource="#application.dsn#" name="createleadlogin">
-													insert into users(useruuid,companyid,deptid,username,passcode,firstname,lastname,acl,role,active,email,leadid,leadwelcome)
-														values (
-																<cfqueryparam value="#createuuid()#" cfsqltype="cf_sql_varchar" maxlength="35" />,
-																<cfqueryparam value="#lead.companyid#" cfsqltype="cf_sql_integer" />,
-																<cfqueryparam value="#lead.deptid#" cfsqltype="cf_sql_integer" />,
-																<cfqueryparam value="#lead.username#" cfsqltype="cf_sql_varchar" />,
-																<cfqueryparam value="#hash( lead.password, "SHA-384", "UTF-8" )#" cfsqltype="cf_sql_clob" />,
-																<cfqueryparam value="#lead.firstname#" cfsqltype="cf_sql_varchar" />,
-																<cfqueryparam value="#lead.lastname#" cfsqltype="cf_sql_varchar" />,
-																<cfqueryparam value="#lead.acl#" cfsqltype="cf_sql_integer" />,
-																<cfqueryparam value="#lead.role#" cfsqltype="cf_sql_varchar" />,
-																<cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
-																<cfqueryparam value="#lead.email#" cfsqltype="cf_sql_varchar" />,
-																<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
-																<cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-																); 
-												</cfquery>
-												
+												<cfquery datasource="#application.dsn#" name="checkusername">
+													select userid, username
+													  from users
+													 where username = <cfqueryparam value="#lead.username#" cfsqltype="cf_sql_varchar" />													 
+												</cfquery>												
 													
-													<cfquery datasource="#application.dsn#" name="checkportaltasks">
-														select count(*) as totaltasks
-														  from leadportaltasks
-														 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />												 
-													</cfquery>
-													
-													<cfif checkportaltasks.totaltasks eq 0>													
-													
-														<!--- // create the client portal task list --->
-														<cfquery datasource="#application.dsn#" name="getportaltasks">
-															select portaltaskid, portaltask
-															  from portaltasks						  
-														</cfquery>
+													<cfif checkusername.recordcount gt 0>
 														
-														<cfloop query="getportaltasks">													
-															<cfquery datasource="#application.dsn#" name="createportaltasks">
-																insert into leadportaltasks(portaltaskid, leadid, portaltaskcomp)
-																	values(
-																			<cfqueryparam value="#portaltaskid#" cfsqltype="cf_sql_integer" />,
-																			<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
-																			<cfqueryparam value="0" cfsqltype="cf_sql_bit" />								
-																		   );
-															</cfquery>												
-														</cfloop>
+														<cfoutput>
+															<div class="alert alert-block alert-error">
+																<a class="close" data-dismiss="alert">&times;</a>
+																	<h5><error><i class="icon-warning-sign"></i> There were errors in your submission:</error></h5>
+																	<p>The username entered #lead.username# is already in use on this system.  Please enter a different username.</p>
+																	<p><a class="btn btn-default btn-small" href="#application.root#?event=#url.event#"><i style="margin-right:4px;" class="icon-plus-sign-alt"></i> Re-Enter Username</a></p>
+															</div>
+														</cfoutput>
+														<cfabort>
+													
+													<cfelse>
 
+															<!--- // create the lead user login insert record --->
+															<cfquery datasource="#application.dsn#" name="createleadlogin">
+																insert into users(useruuid,companyid,deptid,username,passcode,firstname,lastname,acl,role,active,email,leadid,leadwelcome)
+																	values (
+																			<cfqueryparam value="#createuuid()#" cfsqltype="cf_sql_varchar" maxlength="35" />,
+																			<cfqueryparam value="#lead.companyid#" cfsqltype="cf_sql_integer" />,
+																			<cfqueryparam value="#lead.deptid#" cfsqltype="cf_sql_integer" />,
+																			<cfqueryparam value="#lead.username#" cfsqltype="cf_sql_varchar" />,
+																			<cfqueryparam value="#hash( lead.password, "SHA-384", "UTF-8" )#" cfsqltype="cf_sql_clob" />,
+																			<cfqueryparam value="#lead.firstname#" cfsqltype="cf_sql_varchar" />,
+																			<cfqueryparam value="#lead.lastname#" cfsqltype="cf_sql_varchar" />,
+																			<cfqueryparam value="#lead.acl#" cfsqltype="cf_sql_integer" />,
+																			<cfqueryparam value="#lead.role#" cfsqltype="cf_sql_varchar" />,
+																			<cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+																			<cfqueryparam value="#lead.email#" cfsqltype="cf_sql_varchar" />,
+																			<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
+																			<cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+																			); 
+															</cfquery>
+														
+															
+															<cfquery datasource="#application.dsn#" name="checkportaltasks">
+																select count(*) as totaltasks
+																  from leadportaltasks
+																 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />												 
+															</cfquery>
+															
+															<cfif checkportaltasks.totaltasks eq 0>													
+															
+																<!--- // create the client portal task list --->
+																<cfquery datasource="#application.dsn#" name="getportaltasks">
+																	select portaltaskid, portaltask
+																	  from portaltasks						  
+																</cfquery>
+																
+																<cfloop query="getportaltasks">													
+																	<cfquery datasource="#application.dsn#" name="createportaltasks">
+																		insert into leadportaltasks(portaltaskid, leadid, portaltaskcomp)
+																			values(
+																					<cfqueryparam value="#portaltaskid#" cfsqltype="cf_sql_integer" />,
+																					<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
+																					<cfqueryparam value="0" cfsqltype="cf_sql_bit" />								
+																				   );
+																	</cfquery>												
+																</cfloop>
+
+															</cfif>											
+															
+															<!--- send the client a message with their login information --->
+															<cfinvoke component="apis.com.comms.commsgateway" method="sendclientlogin" returnvariable="msgstatus">
+																<cfinvokeargument name="leadid" value="#session.leadid#">
+																<cfinvokeargument name="companyemail" value="#companysettings.email#">
+																<cfinvokeargument name="companyname" value="#companysettings.dba#">
+																<cfinvokeargument name="sendto" value="#lead.username#">
+															</cfinvoke>								
+															
+														
 													</cfif>
-											
+													
 											<!--- // update the existing lead user login details --->
 											<cfelseif structkeyexists( form, "saveleadlogin" )>
 
@@ -215,7 +252,7 @@
 										
 											<div class="alert alert-error">
 												<a class="close" data-dismiss="alert">&times;</a>
-													<h5><error>There were <cfoutput>#objValidation.getErrorCount()#</cfoutput> errors in your submission:</error></h2>
+													<h5><error>There were <cfoutput>#objValidation.getErrorCount()#</cfoutput> errors in your submission:</error></h5>
 													<ul>
 														<cfloop collection="#variables.objValidation.getMessages()#" item="rr">
 															<li class="formerror"><cfoutput>#variables.objValidation.getMessage(rr)#"</cfoutput></li>

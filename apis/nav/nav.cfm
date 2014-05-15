@@ -59,6 +59,9 @@
 				<cfcase value="page.reports.enrollment">				
 					<cfinclude template="../../templates/page.reports.enrollment.cfm">
 				</cfcase>
+				<cfcase value="page.reports.esign">				
+					<cfinclude template="../../templates/page.reports.esign.cfm">
+				</cfcase>
 				<cfcase value="page.leads">				
 					<cfinclude template="../../templates/page.leads2.cfm">
 				</cfcase>

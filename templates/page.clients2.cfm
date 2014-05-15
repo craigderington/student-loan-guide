@@ -20,7 +20,7 @@
 			<cfinvokeargument name="companyid" value="#session.companyid#">
 			<cfinvokeargument name="userid" value="#session.userid#">
 			<cfinvokeargument name="thisdate" value="#createodbcdatetime( now() )#" />
-		</cfinvoke>
+		</cfinvoke>	
 		
 		<cfinvoke component="apis.com.leads.leadgateway" method="getleadsources" returnvariable="leadsources">
 			<cfinvokeargument name="companyid" value="#session.companyid#">				
@@ -30,6 +30,8 @@
 			<cfinvokeargument name="companyid" value="#session.companyid#">
 			<cfinvokeargument name="roletype" value="counselor">
 		</cfinvoke>
+		
+		
 		
 		<!--- // redirect if client list is empty --->
 		<cfif not structkeyexists( form, "filtermyresults" ) and mclientlist.recordcount eq 0>
@@ -64,7 +66,7 @@
 							
 								<div class="widget-content">			
 										
-										<!--- // data grid  filter	--->							
+										<!--- // data grid  filter --->								
 										<cfoutput>
 											<div class="well">
 												<p><i class="icon-check"></i> Filter Your Results</p>
@@ -76,6 +78,7 @@
 																<option value="#leadsourceid#"<cfif isdefined( "form.leadsource" ) and form.leadsource eq leadsources.leadsourceid>selected</cfif>>#leadsource#</option>
 															</cfloop>												
 													</select>
+													
 													<cfif isuserinrole( "admin" ) or isuserinrole( "co-admin ") or isuserinrole( "sls" )>
 														<select name="counselors" style="margin-left:5px;" class="input-large" onchange="javascript:this.form.submit();">
 															<option value="">Select Counselors</option>
@@ -84,6 +87,7 @@
 															</cfloop>												
 														</select>
 													</cfif>
+													
 													<input type="text" name="filterbyname" style="margin-left:5px;" class="input-large" placeholder="Filter By Name" id="filterbyname" value="<cfif isdefined( "form.filterbyname" )>#trim( form.filterbyname )#</cfif>" onchange="javascript:this.form.submit();" />
 													<input type="text" name="startdate" style="margin-left:5px;" class="input-small" placeholder="Start Date" id="datepicker-inline4" value="<cfif isdefined( "form.startdate" )>#dateformat( form.startdate, 'mm/dd/yyyy' )#</cfif>">
 													<input type="text" name="enddate" style="margin-left:5px;" class="input-small" placeholder="End Date" id="datepicker-inline5" value="<cfif isdefined( "form.enddate" )>#dateformat( form.enddate, 'mm/dd/yyyy' )#</cfif>">

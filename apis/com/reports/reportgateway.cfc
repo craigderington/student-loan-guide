@@ -16,7 +16,7 @@
 					  from users u
 					 where u.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 					   and u.role LIKE <cfqueryparam value="%#arguments.roletype#%" cfsqltype="cf_sql_varchar" />
-				  order by u.lastname asc, u.firstname asc
+				  order by u.lastname asc
 				</cfquery>
 				<cfreturn reportroles>
 			</cffunction>
@@ -344,7 +344,55 @@
 			</cffunction>
 			
 			
+			<cffunction name="getesignreport" access="public" output="false" hint="I get the e-follow up report.">				
+				<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+				<cfargument name="userid" type="numeric" required="no" default="#session.userid#">
+				<cfargument name="thisdate" type="date" required="yes" default="1/1/2014">
+				<cfset var esignreport = "" />
+				<cfquery datasource="#application.dsn#" name="esignreport">
+					select l.*, e.*, 
+					       ls.leadsource, s.slenrolldate, s.slenrollcontacttype, s.slenrollclientmethod, s.slenrollclientdocsmethod,
+						   s.slenrollclientdocsdate, s.sloutcome, s.slenrollreturndate, u.firstname as enrollcounselorfirst, u.lastname as enrollcounselorlast,
+						   datediff( day, l.leaddate, getdate()) as leadage,						  
+						   (select max(notedate) from notes n where l.leadid = n.leadid) as lastnotedate,
+						   (select top 1 notetext from notes n where l.leadid = n.leadid order by noteid desc) as lastnotetext
+					from leads l, leadsource ls, esign e, slsummary s, company c, users u
+				   where l.leadsourceid = ls.leadsourceid			         
+					 and l.leadid = s.leadid
+					 and l.companyid = c.companyid
+					 and l.leadid = e.leadid
+					 and l.userid = u.userid
+					 and c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />					 
+					 and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />				 
+						 					
+							
+							<cfif structkeyexists( form, "filtermyresults" )>
+								
+								<cfif structkeyexists( form, "rgstat" ) and form.rgstat is not "">
+									and e.escompleted = <cfqueryparam value="#form.rgstat#" cfsqltype="cf_sql_bit" />
+								</cfif>
+								
+								<cfif structkeyexists( form, "leadsource" ) and form.leadsource is not "" and form.leadsource is not "Select Lead Source">
+									and ls.leadsourceid = <cfqueryparam value="#form.leadsource#" cfsqltype="cf_sql_integer" />
+								</cfif>
+								
+								<cfif structkeyexists( form, "counselors" ) and form.counselors is not "" and form.counselors is not "Select Advisor">					   
+									and u.userid = <cfqueryparam value="#form.counselors#" cfsqltype="cf_sql_integer" />									
+								</cfif>
+								
+								<cfif structkeyexists( form, "startdate" ) and form.startdate is not "" and form.startdate is not "Select Start Date" and structkeyexists( form, "enddate" ) and form.enddate is not "" and form.enddate is not "Select End Date">
+									and l.leaddate between <cfqueryparam value="#form.startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#form.enddate#" cfsqltype="cf_sql_date" />
+								</cfif>											   
+							
+							</cfif>
+							
+				  order by l.leaddate asc
+				</cfquery>
+				<cfreturn esignreport>
+			</cffunction>
 			
+			
+			<!---
 			<cffunction name="getsummaryreport" access="public" output="false" hint="I get the summary report data">
 				<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
 				<cfargument name="sdate" type="date" required="no" default="1/1/2014">
@@ -365,7 +413,7 @@
 				
 			
 			</cffunction>
-			
+			--->
 			
 			
 		

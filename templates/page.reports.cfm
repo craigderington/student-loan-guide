@@ -18,10 +18,7 @@
 			<!--- reports page --->
 			
 			
-			<link href="./css/pages/reports.css" rel="stylesheet">
-			
-			<script src="./js/charts/pie.js"></script>
-			<script src="./js/charts/bar.js"></script>
+			<link href="./css/pages/reports.css" rel="stylesheet">			
 			
 			
 					
@@ -153,17 +150,22 @@
 												<cfif isuserinrole( "admin" ) or isuserinrole( "co-admin" )>
 												
 													<tr>
-														<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.enrollment">Outstanding Enrollment Report</a></td>
+														<td class="description"><a href="#application.root#?event=page.reports.enrollment">Outstanding Enrollment Report</a></td>
 														<td align="center" class="value"><a href="#application.root#?event=page.reports.enrollment" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 													</tr>
 													
 													<tr>
-														<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.enrolled">Clients Enrolled Report</a></td>
+														<td class="description"><a href="#application.root#?event=page.reports.enrolled">Clients Enrolled Report</a></td>
 														<td align="center" class="value"><a href="#application.root#?event=page.reports.enrolled" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 													</tr>
 													
 													<tr>
-														<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.leadsource">Inquiry Summary Report</a></td>
+														<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.esign">E-Sign Follow Up Report</a></td>
+														<td align="center" class="value"><a href="#application.root#?event=page.reports.esign" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													</tr>
+													
+													<tr>
+														<td class="description"><a href="#application.root#?event=page.reports.leadsource">Inquiry Summary Report</a></td>
 														<td align="center" class="value"><a href="#application.root#?event=page.reports.leadsource" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 													</tr>
 
@@ -201,11 +203,11 @@
 										<tbody>
 											<cfoutput>
 												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.intake.pipeline">Intake Pipeline Report</a></td>
+													<td class="description"><a href="#application.root#?event=page.reports.intake.pipeline">Intake Pipeline Report</a></td>
 													<td align="center" class="value"><a href="#application.root#?event=page.reports.intake.pipline" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>													
 												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.intake">Intake Completed Report</a></td>
+													<td class="description"><a href="#application.root#?event=page.reports.intake">Intake Completed Report</a></td>
 													<td align="center" class="value"><a href="#application.root#?event=page.reports.intake" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>
 																								
@@ -239,19 +241,19 @@
 										<tbody>
 											<cfoutput>
 												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports">Cases Waiting Solutions</a></td>
+													<td class="description"><a href="#application.root#?event=page.reports">Cases Waiting Solutions</a></td>
 													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>
 												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports">Solutions Not Completed</a></td>
+													<td class="description"><a href="#application.root#?event=page.reports">Solutions Not Completed</a></td>
 													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>
 												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.advisor.accepted">Advisor Cases Waiting Acceptance </a></td>
+													<td class="description"><a href="#application.root#?event=page.reports.advisor.accepted">Advisor Cases Waiting Acceptance </a></td>
 													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>
 												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports">Completed Advisory Cases </a></td>
+													<td class="description"><a href="#application.root#?event=page.reports">Completed Advisory Cases </a></td>
 													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>
 																								
@@ -300,11 +302,11 @@
 										<tbody>
 											<cfoutput>
 												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.summary.example">Example Report 1</a></td>
+													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.summary.example">Example Summary Report 1</a></td>
 													<td align="center" class="value"><a href="#application.root#?event=page.reports.summary.example" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>													
 												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports">Not Defined</a></td>
+													<td class="description"><a href="#application.root#?event=page.reports">Undefined</a></td>
 													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>
 																								

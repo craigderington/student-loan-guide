@@ -88,7 +88,6 @@
 						and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 			</cfquery>
 			<cfreturn advisorteam>
-		</cffunction>
-		
+		</cffunction>	
 		
 	</cfcomponent>

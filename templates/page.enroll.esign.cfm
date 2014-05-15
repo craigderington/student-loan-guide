@@ -24,6 +24,8 @@
 			
 			
 			
+			
+			
 			<cfparam name="today" default="">
 			<cfparam name="totalfees" default="0.00">			
 			<cfset today = createodbcdatetime( now() ) />
@@ -187,6 +189,7 @@
 											
 											<!--- // show an infram with embedded enrollment documemnt --->
 											<div class="span5" style="margin-top:25px;">													
+												<a style="font-size:10px;" href="../docs/sla-client-agreement.pdf">Download this Document</a>
 												<iframe name="enrollagreement" src="../docs/sla-client-agreement.pdf" width="400" height="475" align="left" seamless></iframe>												
 											</div>
 											
@@ -476,11 +479,25 @@ Updating Your Personal Information: You are responsible for keeping your e-mail 
 																										<input type="password" class="input-large" name="routingnumber" id="routingnumber" value="<cfif isdefined( "form.routingnumber" )>#form.routingnumber#</cfif>">																		
 																									</div> <!-- /controls -->				
 																								</div> <!-- /control-group -->
+																								
+																								<div class="control-group">											
+																									<label class="control-label" for="email">Confirm Routing<span style="color:##ff0000;">*</span></label>
+																									<div class="controls">
+																										<input type="password" class="input-large" name="routingnumber2" id="routingnumber2" value="<cfif isdefined( "form.routingnumber2" )>#form.routingnumber2#</cfif>">																		
+																									</div> <!-- /controls -->				
+																								</div> <!-- /control-group -->
 
 																								<div class="control-group">											
 																									<label class="control-label" for="email">Account Number<span style="color:##ff0000;">*</span></label>
 																									<div class="controls">
 																										<input type="password" class="input-large" name="accountnumber" id="accountnumber" value="<cfif isdefined( "form.accountnumber" )>#form.accountnumber#</cfif>">																		
+																									</div> <!-- /controls -->				
+																								</div> <!-- /control-group -->
+																								
+																								<div class="control-group">											
+																									<label class="control-label" for="email">Confirm Account <span style="color:##ff0000;">*</span></label>
+																									<div class="controls">
+																										<input type="password" class="input-large" name="accountnumber2" id="accountnumber2" value="<cfif isdefined( "form.accountnumber2" )>#form.accountnumber2#</cfif>">																		
 																									</div> <!-- /controls -->				
 																								</div> <!-- /control-group -->
 																								
@@ -513,6 +530,7 @@ Updating Your Personal Information: You are responsible for keeping your e-mail 
 																									<input type="hidden" name="leadid" value="#leaddetail.leadid#" />																					
 																									<input type="hidden" name="__authToken" value="#randout#" />
 																									<input name="validate_require" type="hidden" value="leadid|'Lead ID' is a required field.;accounttype|Please select your type of bank account.;routingnumber|Please enter your routing number.;accountnumber|Please enter your account number.;dlnumber|Please enter your drivers license number.;dlstate|Please enter your drivers license State of Issue.">
+																									<input type="hidden" name="validate_password" value="routingnumber|routingnumber2|Sorry, the routing numbers entered do not match.  Please re-try...;accountnumber|accountnumber2|Sorry, the account numbers entered do not match.  Please re-enter and try again." />
 																								</div> <!-- /form-actions -->
 																							
 																						</fieldset>
