@@ -134,7 +134,10 @@
 											
 											<div class="row" style="height:100px;">										
 													
-													
+												<a href="#application.root#?event=page.menu.leadsources" class="shortcut">
+													<i class="shortcut-icon icon-map-marker"></i>
+													<span class="shortcut-label">Manage <br /> Lead Sources </span>	
+												</a>	
 												
 											</div>
 											

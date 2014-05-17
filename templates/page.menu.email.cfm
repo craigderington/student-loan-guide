@@ -65,7 +65,7 @@
 								<cfelse>
 									
 									<cfoutput>
-										<h5><strong>Showing #msglist.recordcount# Record<cfif msglist.recordcount gt 1>s</cfif></strong> <a href="#application.root#?event=#url.event#.add" class="btn btn-small btn-tertiary" style="float:right;"><i class="icon-envelope"></i> Add Message</a></h5>
+										<h5><strong>Showing #msglist.recordcount# Record<cfif msglist.recordcount gt 1>s</cfif></strong> <span class="pull-right"><a href="#application.root#?event=page.admin" style="margin-left:5px;" class="btn btn-tertiary btn-small"><i class="icon-home"></i> Admin Home</a><a href="#application.root#?event=#url.event#.add" style="margin-left:5px;" class="btn btn-small btn-default"><i class="icon-plus"></i> Add Message</a></span></h5>
 									</cfoutput>
 									
 									<table class="table table-bordered table-striped table-highlight">
