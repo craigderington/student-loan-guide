@@ -27,7 +27,7 @@
 				<link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 				<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />				
 				<link href="./css/font-awesome.min.css" rel="stylesheet">
-				<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">				
+				<link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type="text/css">				
 				<link href="./css/ui-lightness/jquery-ui-1.10.0.custom.min.css" rel="stylesheet">				
 				<link href="./css/base-admin-2.css" rel="stylesheet">
 				<link href="./css/base-admin-2-responsive.css" rel="stylesheet">
@@ -36,8 +36,8 @@
 				<link href="./css/pages/reports.css" rel="stylesheet">				
 				
 				<!--- // shortcut icon --->
-				<link rel="shortcut icon" href="http://www.studentloanadvisoronline.com/favicon.ico?v=2" type="image/x-icon" />
-				<link rel="icon" href="http://www.studentloanadvisoronline.com/favicon.ico?v=2" type="image/x-icon">
+				<link rel="shortcut icon" href="https://www.studentloanadvisoronline.com/favicon.ico?v=2" type="image/x-icon" />
+				<link rel="icon" href="https://www.studentloanadvisoronline.com/favicon.ico?v=2" type="image/x-icon">
 
 				<!--- // make sure that none of our dynamic pages are cached by the users browser --->
 				<cfheader name="cache-control" value="no-cache,no-store,must-revalidate" >

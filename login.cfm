@@ -17,7 +17,7 @@
 				<link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 				<link href="./css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />				
 				<link href="./css/font-awesome.min.css" rel="stylesheet">
-				<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">				
+				<link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">				
 				<link href="./css/ui-lightness/jquery-ui-1.10.0.custom.min.css" rel="stylesheet">				
 				<link href="./css/base-admin-2.css" rel="stylesheet">
 				<link href="./css/base-admin-2-responsive.css" rel="stylesheet">				
@@ -109,7 +109,7 @@
 					<div class="content clearfix">
 						
 						<cfoutput>
-						<form action="#application.root#?event=page.index" method="post" name="loginform">
+						<form action="https://www.studentloanadvisoronline.com/#application.root#?event=page.index" method="post" name="loginform">
 						
 							<h1>Sign In</h1>		
 							
