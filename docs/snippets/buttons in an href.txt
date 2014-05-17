@@ -1,0 +1,1 @@
+<a href="#application.root#?event=page.admin" style="margin-left:5px;" class="btn btn-tertiary btn-small"><i class="icon-home"></i> Admin Home</a>

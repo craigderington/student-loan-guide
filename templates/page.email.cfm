@@ -141,7 +141,7 @@
 												<cfoutput>
 												
 													
-													<h3><i class="icon-envelope"></i> Send Email Message <span class="pull-right"><a href="#application.root#?event=page.txtmsg" class="btn btn-small btn-secondary"><i class="icon-mobile-phone"></i> Send a Text Message</a></span></h3>
+													<h3><i class="icon-envelope"></i> Send Email Message <span class="pull-right"><a href="#application.root#?event=page.txtmsg" style="margin-left:5px;" class="btn btn-small btn-secondary"><i class="icon-mobile-phone"></i> Send a Text Message</a></span></h3>
 													
 													<p>Please enter your message in the text field below or select an email message from the library...</p>
 													

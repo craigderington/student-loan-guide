@@ -14,8 +14,6 @@
 			<!--- // set a few params --->
 			<cfparam name="today" default="">
 			<cfparam name="arrsolutionlist" default="">
-			<cfparam name="arrthisreasonlist" default="">
-			<cfparam name="thisoffset" default="false">
 			<cfparam name="counter" default="0">
 			<cfparam name="statucode" default="">
 			<cfset today = now() />
@@ -97,11 +95,6 @@
 											<cfset arrsolutionsubcat = listtoarray( form.solutionsubcat ) />
 											<cfset arrsolutionoptiontree = listtoarray( form.optiontree ) />
 											
-											<cfif structkeyexists( form, "myreason" )>
-												<cfset thisoffset = true />
-												<cfset arrthisreasonlist = listtoarray( form.myreason ) />
-											</cfif>
-											
 												<!--- // loop over the array and insert our plans --->
 												<cfloop from="1" to="#arraylen( arrsolutionlist )#" index="j" step="1">					
 													
@@ -128,10 +121,6 @@
 															   and msimptype like <cfqueryparam value="#trim( arrsolutionoption[j] )#" cfsqltype="cf_sql_varchar" />
 															   and msimpstepcat like <cfqueryparam value="#trim( arrsolutionsubcat[j] )#" cfsqltype="cf_sql_varchar" />
 															   and msimpstepstat = <cfqueryparam value="#trim( statuscode )#" cfsqltype="cf_sql_char" />
-															   
-															       <cfif thisoffset is true>
-																	  and msimpstepreason = <cfqueryparam value="#trim( arrthisreasonlist[j] )#" cfsqltype="cf_sql_varchar" />
-																   </cfif>
 														  order by msimpstepid asc
 														</cfquery>
 													
@@ -245,24 +234,12 @@
 																
 															</cfinvoke>
 															
-															<cfinvoke component="apis.com.implementation.implementgateway" method="getreasonlist" returnvariable="reasonlist">
-															
 															<cfset solutionlist = valuelist( solutionlistbyid.solutionid, ":" ) />									
 															
 															<tr>
 																<td><div align="center"><input type="checkbox" name="chksolutionlist" value="#solutionlist#" /></div>
 																<td><cfif servicerid eq -1>#nslservicer#<cfelse>#servname#</cfif></td>
-																<td>#solutionsubcat# #solutionoption#   
-																	<cfif trim( solutionsubcat ) is "wage garnishment" or trim( solutionsubcat ) is "tax offset">
-																		<span style="margin-left:5px;">Select Reason: 
-																			<select name="myreason" id="myreason" style="margin-left:5px;">
-																				<cfloop query="reasonlist">
-																					<option value="#myreason#">#myreason#</option>																			
-																				</cfloop>
-																			</select>
-																		</span>
-																	</cfif>
-																</td>
+																<td>#solutionsubcat# #solutionoption#</td>
 																<td><span class="label label-default" style="padding:5px;">#totalsolutions#</span></td>
 																<input type="hidden" name="servid" value="#servicerid#" />
 																<input type="hidden" name="counter" value="#counter#" />

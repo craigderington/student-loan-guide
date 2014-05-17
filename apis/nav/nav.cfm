@@ -362,6 +362,9 @@
 				<cfcase value="page.menu.steps">				
 					<cfinclude template="../../templates/page.menu.steps.cfm">
 				</cfcase>
+				<cfcase value="page.menu.leadsources">				
+					<cfinclude template="../../templates/page.menu.leadsources.cfm">
+				</cfcase>
 				<cfcase value="page.create.tasklist">				
 					<cfinclude template="../../templates/page.create.tasklist.cfm">
 				</cfcase>

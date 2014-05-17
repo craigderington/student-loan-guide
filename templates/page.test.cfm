@@ -105,6 +105,15 @@
 								--->
 								
 								
+								<cfoutput>
+								http<cfif cgi.HTTPS EQ 'On'>s</cfif>://#cgi.server_name##cgi.path_info#<cfif cgi.query_string NEQ ''>?#cgi.query_string#</cfif>
+								</cfoutput>
+								
+								<cfdump var="#cgi#" label="My CGI Vars">
+								
+								
+								
+								
 								
 								<table id="tablesorter" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
 									<thead>

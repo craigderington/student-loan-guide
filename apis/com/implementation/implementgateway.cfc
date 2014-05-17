@@ -103,6 +103,17 @@
 				<cfreturn implementedsolutions >
 			</cffunction>
 			
+			<cffunction name="getreasonlist" access="public" output="false" hint="I get the list of reasons for the TG and WO implementation plans.">			
+				<cfset var reasonlist = "" />					
+					<cfquery datasource="#application.dsn#" name="reasonlist">
+						select distinct( ms.msimpstepreason ) as myreason
+						  from masterstepsimpl ms
+						 where ms.msimpstepreason is not null
+						 order by myreason asc
+					</cfquery>					
+					<cfreturn reasonlist >
+			</cffunction>
+			
 			
 			<cffunction name="getplannotes" access="public" output="false" hint="I get the list of implementation plan master steps.">				
 				<cfargument name="planid" type="uuid" required="yes" default="">
