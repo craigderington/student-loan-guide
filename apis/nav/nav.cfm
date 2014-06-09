@@ -441,6 +441,12 @@
 				<cfcase value="page.admin.company">				
 					<cfinclude template="../../templates/page.admin.company.cfm">
 				</cfcase>
+				<cfcase value="page.admin.banking">				
+					<cfinclude template="../../templates/page.admin.banking.cfm">
+				</cfcase>
+				<cfcase value="page.admin.banking.summary">				
+					<cfinclude template="../../templates/page.admin.banking.summary.cfm">
+				</cfcase>
 				<cfcase value="page.getcompany">				
 					<cfinclude template="../../templates/page.getcompany.cfm">
 				</cfcase>

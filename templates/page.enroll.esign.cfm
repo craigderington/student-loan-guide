@@ -138,13 +138,24 @@
 																   set leadesign = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
 																       leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /> 
 																 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />														   
-															</cfquery>
+															</cfquery>														
 															
 															<!--- // mark the portal task complete --->
 															<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
 																<cfinvokeargument name="portaltaskid" value="1406">
 																<cfinvokeargument name="leadid" value="#session.leadid#">
 															</cfinvoke>
+															
+															<!--- // assign the intake advisor  --->
+															<cfinvoke component="apis.com.clients.assigngateway" method="assignintake" returnvariable="taskstatusmsg">
+																<cfinvokeargument name="companyid" value="#leaddetail.companyid#">
+																<cfinvokeargument name="leadid" value="#session.leadid#">
+															</cfinvoke>
+															
+															<!--- // notify the enrollment and intake advisors that the client has completed esign --->															
+															<cfinvoke component="apis.com.comms.commsgateway" method="sendclientesigncomplete" returnvariable="msgstatus">																
+																<cfinvokeargument name="leadid" value="#session.leadid#">
+															</cfinvoke>															
 															
 															<!--- // flag the lead summary as docs returned and signed --->
 															<cfquery datasource="#application.dsn#" name="summary">
@@ -189,7 +200,7 @@
 											
 											<!--- // show an infram with embedded enrollment documemnt --->
 											<div class="span5" style="margin-top:25px;">													
-												<a style="font-size:10px;" href="../docs/sla-client-agreement.pdf">Download this Document</a>
+												<a style="font-size:12px;" href="../docs/sla-client-agreement.pdf"><i class="icon-paste"></i> Download this Document</a>
 												<iframe name="enrollagreement" src="../docs/sla-client-agreement.pdf" width="400" height="475" align="left" seamless></iframe>												
 											</div>
 											

@@ -241,7 +241,7 @@
 											<cfif structkeyexists( form, "createleadlogin" )>
 												<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
 											<cfelseif structkeyexists( form, "saveleadlogin" )>
-												<cflocation url="#application.root#?event=page.summary" addtoken="no">
+												<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
 											<cfelse>
 												<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
 											</cfif>											
@@ -276,6 +276,7 @@
 										<div class="span8">
 											
 											<div class="tabbable">
+												<!---
 												<cfoutput>
 													<ul class="nav nav-tabs">
 														<li>
@@ -289,7 +290,7 @@
 														</li>
 													</ul>
 												</cfoutput>												
-
+												--->
 
 												<div class="tab-content">					
 													
@@ -297,7 +298,7 @@
 														<cfoutput>
 														
 															<h3><i class="icon-user"></i> User Login Information</h3>										
-															<p>Your client will use the information below to login to the Student Loan Advisor system to complete enrollment, e-sign their enrollment agreement, answer the questionnaire and enter their budget and financial summary.  Clients will be able to communicate directly with their Student Loan Advisor.  Pleas eensure the username is isn the correct email address format and the password is the last 4 of their SSN.
+															<p>Your client will use the information below to login to the Student Loan Advisor system to complete enrollment, e-sign their enrollment agreement, answer the questionnaire and enter their budget and financial summary.  Clients will be able to communicate directly with their Student Loan Advisor.  Please ensure the username is in the correct email address format.  For password security, the notification email sent to the client will inform them the <strong>default password is set to the last 6 of their SSN</strong>.
 															<br /><br />
 															
 															<form id="edit-lead-login-settings" class="form-horizontal" method="post" action="#application.root#?event=#url.event#">
@@ -316,6 +317,7 @@
 																		<label class="control-label" for="leadpassword">Password</label>
 																		<div class="controls">
 																			<input type="password" class="input-medium" name="leadpassword" id="leadpassword">
+																			<span class="help-block">Set to last 6 of client SSN.</span>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 

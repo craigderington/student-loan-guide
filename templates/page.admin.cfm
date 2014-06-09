@@ -172,9 +172,9 @@
 															<span class="shortcut-label">Departments<br />&nbsp;</span>
 														</a>
 														
-														<a href="#application.root#?reinit=true" onclick="javascript:return confirm('This will restart the application.  Do you wish to continue?');" class="shortcut">
-															<i class="shortcut-icon icon-off"></i>
-															<span class="shortcut-label">Restart<br /> Application</span>
+														<a href="#application.root#?event=page.admin.banking" class="shortcut">
+															<i class="shortcut-icon icon-money"></i>
+															<span class="shortcut-label">Company<br /> Banking Center</span>
 														</a>
 													
 													</div>

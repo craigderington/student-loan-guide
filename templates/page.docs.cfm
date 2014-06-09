@@ -319,7 +319,7 @@
 																								</a>
 																							</cfif>
 																							
-																							<cfif isuserinrole("admin") or isuserinrole("sls")>
+																							<cfif not isuserinrole( "bClient" )>
 																								<cfif trim( doctype ) is "E">
 																									<a href="#application.root#?event=#url.event#&fuseaction=deletedocument&docid=#docuuid#" class="btn btn-mini btn-inverse" onclick="return confirmsubmit();">
 																										<i class="btn-icon-only icon-trash"></i>										

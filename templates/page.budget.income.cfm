@@ -18,18 +18,19 @@
 			
 			
 			<!--- define our form params --->
-			<cfparam name="primarygrossmonthly" default="">
-			<cfparam name="primarynetincome" default="">
-			<cfparam name="primarypjt" default="">
-			<cfparam name="primarypjtdescr" default="">
-			<cfparam name="primarypension" default="">
-			<cfparam name="primaryssi" default="">
-			<cfparam name="primarychildsupport" default="">
-			<cfparam name="primaryrentalprop" default="">
-			<cfparam name="primaryfoodstamps" default="">
-			<cfparam name="primaryincomeother" default="">
-			<cfparam name="primaryincomeotherdescr" default="">
-			<cfparam name="primarytotalincome" default="">
+			<cfparam name="primarygrossmonthly" default="0.00">
+			<cfparam name="primarynetincome" default="0.00">
+			<cfparam name="primarypjt" default="0.00">
+			<cfparam name="primarypjtdescr" default="0.00">
+			<cfparam name="primarypension" default="0.00">
+			<cfparam name="primaryssi" default="0.00">
+			<cfparam name="primarychildsupport" default="0.00">
+			<cfparam name="primaryrentalprop" default="0.00">
+			<cfparam name="primaryfoodstamps" default="0.00">
+			<cfparam name="primaryincomeother" default="0.00">
+			<cfparam name="primaryincomeotherdescr" default="0.00">
+			<cfparam name="primarytotalincome" default="0.00">
+			<cfparam name="calcnetincome" default="0.00">
 			
 			
 			
@@ -111,7 +112,7 @@
 											<cfset income.incomeotherdescr = #form.primaryincomeotherdescr# />
 											
 											
-											<cfset income.totalincome = income.netincome + income.parttimeincome + income.pension + income.ssi + income.childsupport + income.rentalprop + income.foodstamps + income.incomeother />
+											<cfset income.totalincome = ( income.grossincome - totalprimarydeductions ) + income.parttimeincome + income.pension + income.ssi + income.childsupport + income.rentalprop + income.foodstamps + income.incomeother />
 											<cfset income.totalincome = numberformat( income.totalincome, "999.99" ) />
 											
 											<!--- // some other variables --->
@@ -123,8 +124,7 @@
 												<!--- // update the record --->
 												<cfquery datasource="#application.dsn#" name="saveincomedata">
 													update budget
-													   set primarygrossmonthly = <cfqueryparam value="#income.grossincome#" cfsqltype="cf_sql_float" />,
-													       primarynetincome = <cfqueryparam value="#income.netincome#" cfsqltype="cf_sql_float" />,
+													   set primarygrossmonthly = <cfqueryparam value="#income.grossincome#" cfsqltype="cf_sql_float" />,													       
 														   primaryparttimejob = <cfqueryparam value="#income.parttimeincome#" cfsqltype="cf_sql_float" />,
 														   primaryparttimejobdescr = <cfqueryparam value="#income.parttimedescr#" cfsqltype="cf_sql_varchar" />,
 														   primarypension = <cfqueryparam value="#income.pension#" cfsqltype="cf_sql_float" />,
@@ -134,7 +134,8 @@
 														   primaryfoodstamps = <cfqueryparam value="#income.foodstamps#" cfsqltype="cf_sql_float" />,
 														   primaryincomeothera = <cfqueryparam value="#income.incomeother#" cfsqltype="cf_sql_float" />,
 														   primaryincomeotheradescr = <cfqueryparam value="#income.incomeotherdescr#" cfsqltype="cf_sql_varchar" />,
-														   primarytotalincome = <cfqueryparam value="#income.totalincome#" cfsqltype="cf_sql_float" />
+														   primarytotalincome = <cfqueryparam value="#income.totalincome#" cfsqltype="cf_sql_float" />,														   
+														   primarynetincome = <cfqueryparam value="#income.netincome#" cfsqltype="cf_sql_float" />														   
 													 where budgetuuid = <cfqueryparam value="#income.budgetuuid#" cfsqltype="cf_sql_varchar" maxlength="35" />
 												</cfquery>											
 											
@@ -228,10 +229,13 @@
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 																	
+																	<cfset calcnetincome = numberformat( budget.primarygrossmonthly - totalprimarydeductions, "99999.99" ) />
+																	
 																	<div class="control-group">											
 																		<label class="control-label" for="primarynetincome">Net Income</label>
 																		<div class="controls">
-																			<input type="text" class="input-small" name="primarynetincome" value="#numberformat( budget.primarynetincome, 'L99.99' )#" />
+																			<input type="text" class="input-small" name="primarynetincome" value="#numberformat( calcnetincome, 'L99.99' )#" style="background-color:##ffffcc;font-weight:bold;"  />
+																			<span class="help-block">The net income field is auto-calculated.  Enter gross monthly income and deductions, then save.</span>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 
@@ -289,8 +293,8 @@
 																	<div class="control-group">											
 																		<label class="control-label" for="primarytotalincome">Total Income</label>
 																		<div class="controls">
-																			<input type="text" class="input-small" name="primarytotalincome" value="#numberformat( budget.primarytotalincome, 'L99.99' )#" readonly="true" />
-																			<p class="help-block">The total income field is auto-calculated</p>
+																			<input type="text" class="input-small" name="primarytotalincome" value="#numberformat( budget.primarytotalincome, 'L99.99' )#" readonly="true" style="background-color:red;color:white;font-weight:bold;" />
+																			<span class="help-block">The total income field is auto-calculated</span>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 																																						
@@ -299,7 +303,7 @@
 																	
 																	<div class="form-actions">													
 																		<button type="submit" class="btn btn-secondary" name="saveincome"><i class="icon-save"></i> Save Primary Income</button>																									
-																		<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.budget'"><i class="icon-remove-sign"></i> Cancel</a>													
+																		<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.budget'"><i class="icon-remove-sign"></i> Cancel</a>									
 																		<input name="utf8" type="hidden" value="&##955;">													
 																		<input type="hidden" name="leadid" value="#leaddetail.leadid#" />
 																		<input type="hidden" name="budgetuuid" value="#budget.budgetuuid#" />																		

@@ -51,7 +51,7 @@
 						<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 						<link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />				
 						<link href="../css/font-awesome.min.css" rel="stylesheet">
-						<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" >				
+						<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" >				
 						<link href="../css/ui-lightness/jquery-ui-1.10.0.custom.min.css" rel="stylesheet">				
 						<link href="../css/base-admin-2.css" rel="stylesheet">
 						<link href="../css/base-admin-2-responsive.css" rel="stylesheet">

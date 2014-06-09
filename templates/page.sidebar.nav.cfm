@@ -24,7 +24,7 @@
 								</a>              		
 							</li>
 							
-							<li <cfif trim( url.event ) is "page.summary" or trim( url.event ) is "page.lead.login">class="active"</cfif>>
+							<li <cfif trim( url.event ) is "page.summary">class="active"</cfif>>
 								<a href="#application.root#?event=page.summary">
 									<i class="icon-user"></i>
 										Contact Information
@@ -46,6 +46,22 @@
 										Fee Schedule
 									<i class="icon-chevron-right"></i>
 								</a>              		
+							</li>
+							
+							<li <cfif trim( url.event ) is "page.lead.login">class="active"</cfif>>
+								<a href="#application.root#?event=page.lead.login">
+									<i class="icon-lock"></i>
+										Client Login
+									<i class="icon-chevron-right"></i>
+								</a>              			              	
+							</li>
+							
+							<li <cfif trim( url.event ) is "page.banking">class="active"</cfif>>
+								<a href="#application.root#?event=page.banking">
+									<i class="icon-building"></i>
+										Client ACH Details
+									<i class="icon-chevron-right"></i>
+								</a>              			              	
 							</li>
 													
 							<li <cfif trim( url.event ) is "page.enroll.status">class="active"</cfif>>

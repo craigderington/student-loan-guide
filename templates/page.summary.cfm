@@ -282,6 +282,7 @@
 										<div class="span8">
 											
 											<div class="tabbable">
+												<!---
 												<cfif not isuserinrole( "bclient" )>
 													<cfoutput>
 													<ul class="nav nav-tabs">
@@ -297,21 +298,21 @@
 													</ul>
 													</cfoutput>
 												</cfif>												
-
+												--->
 
 												<div class="tab-content">					
 													
 													<div class="tab-pane active" id="tab1">
 														<cfoutput>
 														<h3><i class="icon-user"></i> Contact Information <span style="float:right;font-size:14px;">Entered On: #dateformat(leaddetail.leaddate, "mm/dd/yyyy")#</span></h3>										
-														<p style="color:##ff0000;">* Denotes a required field  <span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=swapstatus" onclick="return confirm('Are you sure you want to change this client\'s status?');" class="btn btn-small <cfif leaddetail.leadactive eq 1>btn-default"><i class="icon-remove-sign"></i> Inactivate File</a><cfelse>btn-success"><i class="icon-ok-sign"></i> Activate File</a></cfif></p>
+														<p style="color:##ff0000;">* Denotes a required field  <cfif not isuserinrole( "bclient" )><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=swapstatus" onclick="return confirm('Are you sure you want to change this client\'s status?');" class="btn btn-small <cfif leaddetail.leadactive eq 1>btn-default"><i class="icon-remove-sign"></i> Inactivate File</a><cfelse>btn-success"><i class="icon-ok-sign"></i> Activate File</a></cfif></span></cfif></p>
 														<br>
 														
 														<form id="edit-lead-profile" class="form-horizontal" method="post" action="#application.root#?event=#url.event#">
 															<fieldset>
 																<cfif not isuserinrole( "bclient" )>
 																	<div class="control-group">											
-																		<label class="control-label" for="leadsource">Lead Source</label>
+																		<label class="control-label" for="leadsource">Inquiry Source <span style="color:##ff0000;">*</span></label>
 																		<div class="controls">
 																			<select name="leadsource" id="leadsource">
 																			<cfloop query="leadsources">

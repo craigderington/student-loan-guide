@@ -13,8 +13,7 @@
 					<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
 					<cfset var companysettings = "" />
 					<cfquery datasource="#application.dsn#" name="companysettings">
-						select c.*
-						  from company c
+						select c.* from company c
 						 where c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 					</cfquery>
 					<cfreturn companysettings >

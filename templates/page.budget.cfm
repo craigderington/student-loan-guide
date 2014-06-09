@@ -164,12 +164,12 @@
 																		
 																		<div class="stat">								
 																			<h4>Total Monthly Net Income</h4>
-																			<span class="value">#dollarformat( budget.primarynetincome + budget.secondarynetincome - totaldeductions )#</span>																		
+																			<span class="value">#dollarformat( combinedtotalincome - totaldeductions )#</span>																		
 																		</div> <!-- .stat -->
 
 																		<div class="stat">								
 																			<h4>Total Monthly Disposable Income</h4>
-																			<span class="value">#dollarformat( budget.primarynetincome + budget.secondarynetincome - totaldeductions - totalexpenses )#</span>								
+																			<span class="value">#dollarformat( combinedtotalincome - totaldeductions - totalexpenses )#</span>								
 																		</div> <!-- .stat -->
 																		
 																	</div>	

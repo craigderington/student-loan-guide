@@ -160,6 +160,7 @@
 								
 							</div><!-- /.widget -->						
 							
+							<!--- // remove ** cld ** 6-8-2014 **
 							<div class="widget stacked">							
 								<div class="widget-header">		
 									<i class="icon-tasks"></i>							
@@ -179,6 +180,8 @@
 								</div>
 							
 							</div><!-- /.widget -->							
+							--->
+							
 							
 							<div class="widget stacked">							
 								<div class="widget-header">		

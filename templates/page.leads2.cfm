@@ -66,7 +66,7 @@
 												<form class="form-inline" name="filterresults" method="post">																				
 													
 													<select name="leadsource" style="margin-left:5px;" class="input-large" onchange="javascript:this.form.submit();">
-														<option value="">Select Lead Source</option>
+														<option value="">Select Inquiry Source</option>
 															<cfloop query="leadsources">
 																<option value="#leadsourceid#"<cfif isdefined( "form.leadsource" ) and form.leadsource eq leadsources.leadsourceid>selected</cfif>>#leadsource#</option>
 															</cfloop>												
@@ -117,7 +117,7 @@
 													<thead>
 														<tr>
 															<th width="5%">Actions</th>
-															<th>Lead Source</th>
+															<th>Inquiry Source</th>
 															<th>Name/ID</th>
 															<th>Contact</th>
 															<th>Email</th>									

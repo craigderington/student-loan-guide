@@ -6,10 +6,10 @@
 	<!--- Setup the application --->
 	<cfscript>
        this.name = hash( getcurrenttemplatepath() );
-       this.applicationTimeout = createtimespan(2,0,0,0);
+       this.applicationTimeout = createtimespan(1,0,0,0);
        this.clientmanagement = "true";       
        this.sessionmanagement = "true";
-       this.sessiontimeout = createtimespan(0,2,0,0);
+       this.sessiontimeout = createtimespan(0,23,59,0);
        this.loginstorage = "session";
 	   this.setclientcookies = "false";       
        this.scriptprotect = "all";    

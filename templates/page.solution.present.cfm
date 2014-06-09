@@ -71,6 +71,12 @@
 		     where leadid = <cfqueryparam value="#leaddetail.leadid#" cfsqltype="cf_sql_integer" />			   
 		</cfquery>
 		
+		<!--- // task automation // update task and mark completed --->
+		<cfinvoke component="apis.com.tasks.taskautomation" method="marktaskcompleted" returnvariable="taskmsg">
+			<cfinvokeargument name="leadid" value="#session.leadid#">
+			<cfinvokeargument name="taskref" value="spgen">
+		</cfinvoke>
+		
 		
 		
 		
@@ -335,7 +341,7 @@
 																	
 													</cfloop>
 																								
-													<!--- // do sub totals and average interest rate --->
+													<!--- // do sub totals and average interest rate 
 													<cfoutput>
 														<tr bgcolor="lightgoldenrodyellow" style="font-size:12px;font-family:Verdana;font-weight:bold;">
 															<td style="color:black;font-weight:bold;font-family:Verdana;font-size:12px;text-align:right;">TOTALS:</td>
@@ -344,7 +350,7 @@
 															<td>#numberformat(avgintrate, '999.99')#%</td>																								
 														</tr>
 													</cfoutput>
-																
+													--->			
 												</tbody>
 											</table>
 										</td>

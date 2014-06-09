@@ -27,6 +27,7 @@
 			<cfparam name="secondaryincomeother" default="0.00">
 			<cfparam name="secondaryincomeotherdescr" default="">
 			<cfparam name="secondarytotalincome" default="0.00">
+			<cfparam name="calcnetincome" default="0.00">
 			
 			
 			
@@ -118,7 +119,7 @@
 											<cfset income.incomeotherdescr = #trim( form.secondaryincomeotherdescr )# />
 											
 											
-											<cfset income.totalincome = income.netincome + income.parttimeincome + income.pension + income.ssi + income.childsupport + income.rentalprop + income.foodstamps + income.incomeother />
+											<cfset income.totalincome = ( income.grossincome - totalsecondarydeductions ) + income.parttimeincome + income.pension + income.ssi + income.childsupport + income.rentalprop + income.foodstamps + income.incomeother />
 											<cfset income.totalincome = numberformat( income.totalincome, "999.99" ) />									
 											
 											<!--- // some other variables --->
@@ -232,11 +233,12 @@
 																			<input type="text" class="input-small" name="secondarygrossmonthly" value="#numberformat( budget.secondarygrossmonthly, 'L99.99' )#" /><a href="javascript:;" style="margin-left:7px;" class="btn btn-default btn-mini" onclick="window.open('templates/secondary-payroll-deductions.cfm','','scrollbars=yes, top=300, left=450, width=680, height=590');"><i class="icon-money"></i> Enter Payroll Deductions <cfif totalsecondarydeductions neq 0.00> - Total: #dollarformat( totalsecondarydeductions )#</cfif></a>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
-																	
+																	<cfset calcnetincome = numberformat( budget.secondarygrossmonthly - totalsecondarydeductions, "99999.99" ) />
 																	<div class="control-group">											
 																		<label class="control-label" for="secondarynetincome">Net Income</label>
 																		<div class="controls">
-																			<input type="text" class="input-small" name="secondarynetincome" value="#numberformat( budget.secondarynetincome, 'L99.99' )#" />
+																			<input type="text" class="input-small" name="secondarynetincome" value="#numberformat( calcnetincome, 'L99.99' )#" style="background-color:##ffffcc;font-weight:bold;" />
+																			<span class="help-block">The net income field is auto-calculated.  Enter gross monthly income and deductions, then save.</span>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 
@@ -295,7 +297,7 @@
 																	<div class="control-group">											
 																		<label class="control-label" for="primaryincomeother">Total Income</label>
 																		<div class="controls">
-																			<input type="text" class="input-small" name="secondarytotalincome" value="#numberformat( budget.secondarytotalincome, 'L99.99' )#" readonly="true" />
+																			<input type="text" class="input-small" name="secondarytotalincome" value="#numberformat( budget.secondarytotalincome, 'L99.99' )#" readonly="true" style="background-color:red;color:white;font-weight:bold;" />
 																			<p class="help-block">The total income field is auto-calculated</p>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->

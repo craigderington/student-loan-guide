@@ -170,16 +170,35 @@
 					select l.leadid, l.leaduuid, ls.leadsource, l.leaddate, l.leadfirst, l.leadlast, l.leademail,
 					       l.leadphonenumber, l.leadphonetype, l.leadactive, l.leadconv, l.leadpassword, 
 						   l.leadusername, l.leadphonetype2, l.leadphonenumber2, l.leadsourceid, l.leadadd1,
-						   l.leadadd2, l.leadcity, l.leadstate, l.leadzip, l.leadmobileprovider,
-						   l.leaddobmonth, l.leaddobday, l.leaddobyear, l.leadimp, l.leadintakecompdate,
-						   l.leadwelcomehome, leadintakecompby, l.leadesign, c.companyid, c.companyname, c.dba,
-						   c.email as companyprimarycontact
+						   l.leadadd2, l.leadcity, l.leadstate, l.leadzip, l.leadmobileprovider, l.leadachhold, 
+						   l.leadachholdreason, l.leadachholddate, l.leaddobmonth, l.leaddobday, l.leaddobyear, 
+						   l.leadimp, l.leadintakecompdate, l.leadwelcomehome, leadintakecompby, l.leadesign, 
+						   c.companyid, c.companyname, c.dba, c.email as companyprimarycontact
 					  from leads l, leadsource ls, company c
 					 where l.leadsourceid = ls.leadsourceid
 					   and l.companyid = c.companyid
 					   and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />			   
 				</cfquery>				
 			<cfreturn leaddetail>			
+		</cffunction>
+		
+		<cffunction name="getleaddetailbyuuid" output="false" access="remote" hint="I get the lead details for the reports and other admin resources.">			
+			<cfargument name="leadid" required="yes" default="#url.leadid#" type="uuid">			
+			<cfset var leaddetailbyuuid = "" />				
+				<cfquery datasource="#application.dsn#" name="leaddetailbyuuid">
+					select l.leadid, l.leaduuid, ls.leadsource, l.leaddate, l.leadfirst, l.leadlast, l.leademail,
+					       l.leadphonenumber, l.leadphonetype, l.leadactive, l.leadconv, l.leadpassword, 
+						   l.leadusername, l.leadphonetype2, l.leadphonenumber2, l.leadsourceid, l.leadadd1,
+						   l.leadadd2, l.leadcity, l.leadstate, l.leadzip, l.leadmobileprovider, l.leadachhold, 
+						   l.leadachholdreason, l.leadachholddate, l.leaddobmonth, l.leaddobday, l.leaddobyear, 
+						   l.leadimp, l.leadintakecompdate, l.leadwelcomehome, leadintakecompby, l.leadesign, 
+						   c.companyid, c.companyname, c.dba, c.email as companyprimarycontact
+					  from leads l, leadsource ls, company c
+					 where l.leadsourceid = ls.leadsourceid
+					   and l.companyid = c.companyid
+					   and l.leaduuid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_varchar" maxlength="35" />			   
+				</cfquery>				
+			<cfreturn leaddetailbyuuid>			
 		</cffunction>
 
 		<cffunction name="getsls" output="false" access="remote" hint="I get the student loan specialists from the users table.">			

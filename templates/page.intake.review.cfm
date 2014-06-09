@@ -26,12 +26,14 @@
 						
 					<div class="widget stacked">							
 							
-							
+						<cfoutput>	
 						<div class="widget-header">		
 							<i class="icon-book"></i>							
-							<h3>Intake Review</h3>						
+							<h3>Intake Task Completion &amp; Review for #leaddetail.leadfirst# #leaddetail.leadlast#</h3>						
 						</div> <!-- //.widget-header -->
-							
+						</cfoutput>
+						
+						
 						<div class="widget-content">
 							
 							<!--- // form processing --->
@@ -64,7 +66,13 @@
 										<cfinvoke component="apis.com.clients.assigngateway" method="assignsls">
 											<cfinvokeargument name="companyid" value="#session.companyid#">
 											<cfinvokeargument name="leadid" value="#session.leadid#">
-										</cfinvoke>																				
+										</cfinvoke>
+
+										<!--- // task automation --->
+										<cfinvoke component="apis.com.tasks.taskautomation" method="marktaskcompleted" returnvariable="taskmsg">
+											<cfinvokeargument name="leadid" value="#session.leadid#">
+											<cfinvokeargument name="taskref" value="specnot">
+										</cfinvoke>
 											
 										<!--- // log the client activity --->
 										<cfquery datasource="#application.dsn#" name="logact">
@@ -109,7 +117,7 @@
 							<div class="span8">
 								
 								
-								<h3><i class="icon-search"></i> Review Intake Task Completion</h3>
+								<h3><i class="icon-book"></i> Review Intake Task Completion</h3>
 								<p>Please take a moment to review all of the client's intake data.  This includes the student loan debt worksheet, monthly budget, questionnaire and Adjusted Gross Income and Family Size.  Click the checkmark in the actions column next to each task item to go to that page.  Once all the data has been reviewed, please select an intake completion date and enter your initials to certify that intake has been completed.</p>
 								<br />							
 

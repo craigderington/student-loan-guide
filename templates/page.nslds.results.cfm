@@ -17,6 +17,10 @@
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
 			
+			<cfinvoke component="apis.com.nslds.nsldsgateway" method="getnsldszerobal" returnvariable="nsldszerobal">
+				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>
+			
 			
 			<!--- // update import flag to null --->
 			<cfif structkeyexists( url, "fuseaction" ) and url.fuseaction is "reset">				
@@ -259,15 +263,14 @@
 									<cfoutput>
 									<div class="well">
 										<p><i class="icon-check"></i> Filter Your NSLDS Results</p>
-										<form class="form-inline" name="filterresults" method="post"> Toggle Zero Balances
-											<input type="checkbox" name="togglezerobal" value="1"<cfif structkeyexists( form, "togglezerobal" )>checked</cfif> onclick="javascript:this.form.submit();">
-											<input type="text" name="loandates" style="margin-left:5px;" class="input-medium" placeholder="Select Date Filter" id="datepicker-inline4" value="<cfif isdefined( "form.loandates" )>#dateformat( form.loandates, 'mm/dd/yyyy' )#</cfif>">											
+										<form class="form-inline" name="filterresults" method="post">
 											<select name="loantypes" style="margin-left:5px;" class="input-xlarge" onchange="javascript:this.form.submit();">
 												<option value="">Filter Loan Types</option>
 												<cfloop query="loantypes">
 													<option value="#datacontent#"<cfif isdefined( "form.loantypes" ) and form.loantypes eq loantypes.datacontent>selected</cfif>>#datacontent#</option>
 												</cfloop>												
 											</select>
+											<input type="text" name="loandates" style="margin-left:5px;" class="input-medium" placeholder="Select Date Filter" id="datepicker-inline4" value="<cfif isdefined( "form.loandates" )>#dateformat( form.loandates, 'mm/dd/yyyy' )#</cfif>">											
 											<input type="hidden" name="filtermyresults">
 											<button type="submit" style="margin-left:5px;" name="filterresults" class="btn btn-small btn-secondary"><i class="icon-search"></i> Filter NSLDS</button>
 											<cfif structkeyexists( form, "filtermyresults" )><button type="reset" onclick="location.href='#application.root#?event=page.nslds.results'" style="margin-left:5px;" class="btn btn-small btn-primary"><i class="icon-check"></i> Reset List</button></cfif>
@@ -277,7 +280,7 @@
 									
 										<cfset counter = 1 />
 										<cfoutput>
-											<h5><i class="icon-folder-open"></i> Showing #nsldslist.recordcount# NSLDS Loan<cfif nsldslist.recordcount gt 1>s</cfif></h5>
+											<h5><i class="icon-folder-open"></i> Showing #nsldslist.recordcount# NSLDS Loan<cfif nsldslist.recordcount gt 1>s</cfif>  <span class="pull-right"><cfif nsldszerobal.recordcount GT 0><i class="icon-warning-sign" style="color:red;margin-left:10px;"></i> Not showing #nsldszerobal.recordcount# loan<cfif nsldszerobal.recordcount gt 1>s</cfif> with zero balance<cfif nsldszerobal.recordcount gt 1>s</cfif>.  <cfif not structkeyexists( url, "dozerobal" )><a style="margin-left:10px;" href="#application.root#?event=#url.event#&dozerobal=1">Show Zero Balance Loans</a><cfelse><a style="margin-left:10px;" href="#application.root#?event=#url.event#">Hide Zero Balance Loans</a></cfif></cfif></span></h5>
 										</cfoutput>
 										
 										<form id="nslds" name="nslds" method="post">

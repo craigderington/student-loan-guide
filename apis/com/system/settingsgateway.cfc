@@ -15,7 +15,7 @@
 			<cfset var compdetails = "" />
 			<cfquery datasource="#application.dsn#" name="compdetails">
 				select companyid, companyname, dba, address1, address2, city, state, zip, phone, fax, email, regcode, 
-				       active, complogo, advisory, implement, comptype, achprovider, achdatafile, 
+				       active, complogo, advisory, implement, comptype, achprovider, achdatafile, achprovideruniqueid,
 					   luckyorangecode, escrowservice, trustaccountbankname, trustaccountnumber, 
 					   trustaccountrouting
 				  from company

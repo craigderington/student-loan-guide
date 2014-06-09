@@ -111,7 +111,126 @@
 							
 							---->
 						<cfreturn msgstatus>
+					</cffunction>				
+					
+					
+					
+					<cffunction name="sendclientesigncomplete" access="public" output="false" hint="I trigger the advisor notification upon successful portal esign.">
+						<cfargument name="leadid" type="numeric" required="yes" default="#session.leadid#">						
+						<cfset msgstatus = "" />	
+						
+							<cfquery datasource="#application.dsn#" name="leadinfo">
+								select l.leadid, l.leadfirst, l.leadlast, u.userid, u.email, c.companyname, c.email as compemail
+								  from leads l, users u, company c
+								 where l.userid = u.userid
+								   and l.companyid = c.companyid
+								   and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
+							</cfquery>
+							
+							<cfquery datasource="#application.dsn#" name="intakeinfo">
+								select la.leadassignuserid, u.email
+								  from leadassignments la, users u
+								 where la.leadassignuserid = u.userid
+								   and la.leadassignleadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
+								   and la.leadassignrole = <cfqueryparam value="intake" cfsqltype="cf_sql_varchar" />
+							</cfquery>
+						
+							
+							<cfif isvalid( "email", leadinfo.email ) and isvalid( "email", leadinfo.compemail )>			
+								
+								
+								<cfmail from="#leadinfo.compemail# (#leadinfo.companyname#)" to="#leadinfo.email#" cc="#intakeinfo.email#" bcc="craig@efiscal.net" subject="SLA - Client Completed E-Sign on #dateformat( now(), "mm/dd/yyyy" )#" type="HTML">
+									<cfmailparam name="Reply-to" value="#leadinfo.email#">	
+										<html>
+											<head>
+												<title>Student Loan Advisor Online - Email Notification</title>						
+											</head>
+											
+											
+												<cfoutput>
+													<body>
+														<table width="60%"  border="0" cellspacing="0" cellpadding="25">
+															<tr>
+																<td colspan="2"><div align="center"><img src="http://www.efiscal.net/images/sla-email-header-1.png" width="447" height="40"></div></td>
+															</tr>
+																  
+															<tr>
+																<td colspan="2" style="font-family:Verdana;font-size:12px;color:red;text-align:center;">Please make note of this important message from Student Loan Advisor Online.</span></td>
+															</tr>
+																  
+																  
+																  <tr>
+																	<td style="font-family:Verdana;font-size:12px;font-weight:bold;background-color:##f2f2f2;text-align:center;">#leadinfo.companyname#</td>
+																	<td style="font-family:Verdana;font-size:12px;font-weight:bold;background-color:##f2f2f2;text-align:center;">Date: #dateformat( now(), "mm/dd/yyyy" )#</td>
+																  </tr>
+																  
+																  
+																  <tr>
+																	<td colspan="2"><table width="100%"  border="0" cellspacing="0" cellpadding="25">
+																	  <tr>
+																		<td colspan="2" style="font-family:Verdana;font-size:12px;font-weight:bold;">
+																			
+																			<cfoutput>
+																			<div align="center">
+																				#leadinfo.leadfirst# #leadinfo.leadlast# successfully completed the Student Loan Advisor Online Client Portal electronic signature section on #dateformat( now(), "mm/dd/yyyy" )#...
+																			</div>
+																			</cfoutput>
+																			<br /><br /><br /><br />
+																			
+																			
+																		
+																		
+																		</td>
+																	  </tr>
+																	  <tr>
+																		<td>&nbsp;</td>
+																		<td>&nbsp;</td>
+																	  </tr>
+																	  <tr>
+																		<td>&nbsp;</td>
+																		<td>&nbsp;</td>
+																	  </tr>
+																	</table></td>
+																  </tr>
+																  <tr>
+																	<td colspan="2"><div align="center">
+																	  <p style="font-family:Verdana:font-size:8px;text-align:center">This message is sent on behalf of <a href="http://www.studentloanadvisoronline.com" target="_blank">Student Loan Advisor Online</a></p>
+																	  </div></td>
+																  </tr>
+																</table>
+													</body>
+												</cfoutput>
+										</html>
+
+																
+								</cfmail>
+								
+								<cfset msgstatus = "Message sent successfully..." />
+								
+							
+							<cfelse>
+							
+								
+								<cfset msgstatus = "Lead email address not properly formattted..." />
+								
+							
+							</cfif>	
+							
+							<!--- //
+								<cfset msgstatus = structnew() />								
+								<cfset mcompayname = structinsert( msgstatus, "mcompanyname", arguments.companyname ) />
+								<cfset mcompanyemail = structinsert( msgstatus, "mcompanyemail", arguments.companyemail ) />
+								<cfset mleadid = structinsert( msgstatus, "mleadid", arguments.leadid ) />
+								<cfset msendto = structinsert( msgstatus, "msendto", arguments.sendto ) />
+							
+							---->
+						<cfreturn msgstatus>
 					</cffunction>
+					
+					
+					
+					
+					
 			
 			</cfcomponent>
 		

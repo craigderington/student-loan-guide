@@ -64,8 +64,15 @@
 							 where l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						</cfquery>
 						
+						<cfquery datasource="#application.dsn#" name="companyinfo">
+							select l.leadid, c.companyid, c.companyname, c.email
+							  from leads l, company c
+							 where l.companyid = c.companyid
+							   and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
+						</cfquery>
+						
 						<!--- // send the formatted email to the intake advisor --->
-						<cfmail from="#GetAuthUser()#" to="#intakers.email#" subject="SLA - New Client Assignment" type="HTML"><h2>*** AUTOMATED SYSTEM MESSAGE *** DO NOT REPLY ***</h2>
+						<cfmail from="#companyinfo.email# (#companyinfo.companyname#)" to="#intakers.email#" subject="SLA - New Client Assignment" type="HTML"><h2>*** AUTOMATED SYSTEM MESSAGE *** DO NOT REPLY ***</h2>
 	<br /><br />											
 	<p>You have been assigned a new client file.  Please login to the <a href="http://www.studentloanadvisoronline.com/">Student Loan Advisor Online</a> system to check the status of this new assignment. Details below.</p> 
 	<br />												

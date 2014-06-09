@@ -396,7 +396,7 @@
 					
 					
 					
-					<cfif leaddetail.leadesign eq 0 and leaddetail.leadconv eq 0>
+					<cfif leaddetail.leadesign eq 0 >
 						<div style="margin-top:425px;"></div>
 					<cfelse>
 						<div style="margin-top:125px;"></div>

@@ -96,7 +96,20 @@
 											<cfset lead.account = #trim( form.accountnumber )# />
 											<cfset lead.routing = #trim( rereplacenocase( form.routingnumber, "[^0-9]", "", "all" ))# />
 											<cfset lead.accttype = #trim( form.accttype )# />
-											<cfset lead.bankname = #trim( form.bankname )# />										
+											<cfset lead.bankname = #trim( form.bankname )# />
+
+											<!--- // admin banking settings --->
+											<cfif isdefined( "form.achhold" )>
+												<cfset lead.achhold = trim( form.achhold ) />
+											</cfif>
+											
+											<cfif isdefined( "form.achholddate" )>
+												<cfset lead.achholddate = form.achholddate />
+											</cfif>
+											
+											<cfif isdefined( "form.achholdreason" )>
+												<cfset lead.achholdreason = form.achholdreason />
+											</cfif>
 											
 											<!--- // some other variables --->
 											<cfset today = #createodbcdatetime(now())# />					
@@ -120,8 +133,26 @@
 																   esignrouting = <cfqueryparam value="#lead.routing#" cfsqltype="cf_sql_varchar" />,															   
 																   esignaccount = <cfqueryparam value="#lead.account#" cfsqltype="cf_sql_varchar" />
 															 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />							
-													</cfquery>											
+													</cfquery>
 													
+													
+													<!--- // check for admin banking settings vars --->
+													<cfif structkeyexists( lead, "achhold" )>												
+														<cfquery datasource="#application.dsn#" name="saveadminsettings">
+																update leads
+																   set leadachhold = <cfqueryparam value="#lead.achhold#" cfsqltype="cf_sql_char" />
+																	   
+																	   <cfif structkeyexists( lead, "achholddate" )>
+																	   , leadachholddate = <cfqueryparam value="#lead.achholddate#" cfsqltype="cf_sql_date" />
+																	   </cfif>
+																	   
+																	   <cfif structkeyexists( lead, "achholdreason" )>
+																	   , leadachholdreason = <cfqueryparam value="#lead.achholdreason#" cfsqltype="cf_sql_varchar" />
+																	   </cfif>
+																	   
+																 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />							
+														</cfquery>
+													</cfif>
 													<!--- // log the activity ---> 
 													<cfquery datasource="#application.dsn#" name="logact">
 														insert into activity(leadid, userid, activitydate, activitytype, activity)
@@ -212,6 +243,7 @@
 										<div class="span8">
 											
 											<div class="tabbable">
+												<!---
 												<cfoutput>
 													<ul class="nav nav-tabs">
 														<li>
@@ -225,7 +257,7 @@
 														</li>
 													</ul>
 												</cfoutput>												
-
+												--->
 
 												<div class="tab-content">					
 													
@@ -244,7 +276,7 @@
 																	<div class="control-group">											
 																		<label class="control-label" for="bankname">Name of Bank</label>
 																		<div class="controls">
-																			<input type="text" class="input-large" name="bankname" id="bankname" value="<cfif isdefined( "form.bankname" )>#form.bankname#<cfelse>#esigninfo.esignbankname#</cfif>" />
+																			<input type="text" class="input-large" name="bankname" id="bankname" value="<cfif isdefined( "form.bankname" )>#form.bankname#<cfelse><cfif esigninfo.esignbankname is not "">#esigninfo.esignbankname#<cfelse>Bank Name Not Saved</cfif></cfif>" />
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 
@@ -265,14 +297,14 @@
 																	<div class="control-group">											
 																		<label class="control-label" for="routingnumber">Routing Number</label>
 																		<div class="controls">
-																			<input type="text" class="input-medium" name="routingnumber" id="routingnumber" value="<cfif isdefined( "form.routingnumber" )>#form.routingnumber#<cfelse>**********#right( esigninfo.esignrouting, 5 )#</cfif>" />
+																			<input type="text" class="input-medium" name="routingnumber" id="routingnumber" value="<cfif isdefined( "form.routingnumber" )>#form.routingnumber#<cfelse><cfif esigninfo.esignrouting is not "">#trim( esigninfo.esignrouting )#</cfif></cfif>" />
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 
 																	<div class="control-group">											
 																		<label class="control-label" for="accountnumber">Account Number</label>
 																		<div class="controls">
-																			<input type="text" class="input-medium" name="accountnumber" id="accountnumber" value="<cfif isdefined( "form.accountnumber" )>#form.accountnumber#<cfelse>**********#right( esigninfo.esignaccount, 5 )#</cfif>">
+																			<input type="text" class="input-medium" name="accountnumber" id="accountnumber" value="<cfif isdefined( "form.accountnumber" )>#form.accountnumber#<cfelse><cfif esigninfo.esignaccount is not "">#trim( esigninfo.esignaccount )#</cfif></cfif>">
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 
@@ -283,7 +315,52 @@
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 																	
-																	<br /><br />						
+																	<br /><br />
+
+																	
+																	
+																	<!--- // for admin only --->
+																	
+																	<h6><i class="icon-exclamation-sign"></i> Administrative Settings </h6>
+																	<hr style="margin-top:5px;margin-bottom:10px;">
+																	
+																	<cfif not isuserinrole( "counselor" ) and not isuserinrole( "bclient" )>
+																	
+																		<div class="control-group">											
+																			<label class="control-label" for="accountnumber">ACH Hold</label>
+																			<div class="controls">
+																				<select class="input-small" name="achhold" id="achhold">
+																					<option value="Y"<cfif trim( leaddetail.leadachhold ) is "Y">selected</cfif>>YES</option>
+																					<option value="N"<cfif trim( leaddetail.leadachhold ) is "N">selected</cfif>>NO</option>
+																				</select>
+																			</div> <!-- /controls -->				
+																		</div> <!-- /control-group -->
+																		
+																		<cfif trim( leaddetail.leadachhold ) is "Y">
+																		
+																			<div class="control-group">											
+																				<label class="control-label" for="achholddate">ACH Hold Date</label>
+																				<div class="controls">
+																					<input type="text" class="input-medium" name="achholddate" id="datepicker-inline3" value="<cfif isdefined( "form.achholddate" )>#form.achholddate#<cfelse>#dateformat( leaddetail.leadachholddate, "mm/dd/yyyy" )#</cfif>" />
+																				</div> <!-- /controls -->				
+																			</div> <!-- /control-group -->
+
+																			<div class="control-group">											
+																				<label class="control-label" for="achholdreason">ACH Hold Reason</label>
+																				<div class="controls">
+																					<input type="text" class="input-xlarge" name="achholdreason" id="achholdreason" value="<cfif isdefined( "form.achholdreason" )>#form.achholdreason#<cfelse>#leaddetail.leadachholdreason#</cfif>" />
+																				</div> <!-- /controls -->				
+																			</div> <!-- /control-group -->
+																			
+																		
+																		</cfif>
+																	
+																	
+																	
+																	
+																	</cfif>
+
+																	
 																	
 																	<div class="form-actions">																		
 																		<button type="submit" class="btn btn-secondary" name="saveachdetails"><i class="icon-save"></i> Save Banking</button>																		

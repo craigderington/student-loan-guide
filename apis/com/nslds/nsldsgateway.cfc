@@ -47,20 +47,41 @@
 						   companyweb, nslrepaybegindate, nslloanstatuscode, nslloanstatusdate
 					  from nslds
 					 where leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
-						   <cfif structkeyexists( form, "filtermyresults" )>
-							  <cfif structkeyexists( form, "togglezerobal" )>						   
-								and nslloanbalance <> <cfqueryparam value="0.00" cfsqltype="cf_sql_float" />
-							  </cfif>
-							  <cfif structkeyexists( form, "loantypes" ) and form.loantypes is not "">
-							    and nslloantype = <cfqueryparam value="#trim( form.loantypes )#" cfsqltype="cf_sql_varchar" />
-							  </cfif>
-							  <cfif structkeyexists( form, "loandates" ) and form.loandates is not "">
-								and nslloandate <= <cfqueryparam value="#form.loandates#" cfsqltype="cf_sql_date" />
-							  </cfif>
-						   </cfif>
+					           
+							   
+							<cfif not structkeyexists( url, "dozerobal" )>   
+							   and nslloanbalance <> <cfqueryparam value="0.00" cfsqltype="cf_sql_float" />
+							</cfif>
+							
+							<cfif structkeyexists( form, "filtermyresults" )>								
+								<cfif structkeyexists( form, "loantypes" ) and form.loantypes is not "">
+									and nslloantype = <cfqueryparam value="#trim( form.loantypes )#" cfsqltype="cf_sql_varchar" />
+								</cfif>
+								<cfif structkeyexists( form, "loandates" ) and form.loandates is not "">
+									and nslloandate <= <cfqueryparam value="#form.loandates#" cfsqltype="cf_sql_date" />
+								</cfif>	
+							</cfif>						
 				  order by nslid asc 
 				</cfquery>
 				<cfreturn nsldslist>			
-			</cffunction>	
+			</cffunction>
+
+			
+			<cffunction name="getnsldszerobal" access="public" returntype="query" output="false" hint="I get the list of NSLDS records with zero balance">
+				<cfargument name="leadid" default="#session.leadid#" type="numeric">				
+				<cfset var nsldszerobal = "" />
+				<cfquery datasource="#application.dsn#" name="nsldszerobal">
+					select nslid, nsluuid, leadid, nslloantype, nslschool, nslloandate, nslloanbalance,
+					       nslloanintrate, nslintbalance, nslloanstatus, nslcurrentpay, nslservicer, converted,
+						   nslopeid, nslintratetype, nslservicertype, companyname, companyadd1, companyadd2,
+						   companycity, companystate, companyzip, companyphone, companyphoneext, companyemail,
+						   companyweb, nslrepaybegindate, nslloanstatuscode, nslloanstatusdate
+					  from nslds
+					 where leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
+					   and nslloanbalance = <cfqueryparam value="0.00" cfsqltype="cf_sql_float" />												
+				  order by nslid asc 
+				</cfquery>
+				<cfreturn nsldszerobal>			
+			</cffunction>
 		
 		</cfcomponent>

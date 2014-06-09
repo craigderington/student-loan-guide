@@ -416,6 +416,44 @@
 			--->
 			
 			
+			<cffunction name="getleadassignmentsbyrole" access="public" output="false" hint="I get the list of all lead role assignments.">
+				<cfargument name="leadid" default="#url.leadid#" type="uuid" required="yes">
+				<cfargument name="role" default="#url.role#" type="string" required="yes">
+				<cfset var leadassignmentsbyrole = "" />
+				<cfquery datasource="#application.dsn#" name="leadassignmentsbyrole">
+					select la.leadassignid, la.leadassigndate, la.leadassignleadid, la.leadassignuserid, la.leadassignrole, la.leadassignaccept,
+					       la.leadassignacceptdate, la.leadassigntransfer, la.leadassigntransfertoid, u.firstname, u.lastname,
+					       l.leaduuid, l.leadfirst, l.leadlast
+				      from leadassignments la, leads l, users u
+				     where la.leadassignleadid = l.leadid
+                       and la.leadassignuserid = u.userid
+				       and l.leaduuid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+	                   and la.leadassignrole = <cfqueryparam value="#arguments.role#" cfsqltype="cf_sql_varchar" />
+					   and la.leadassigntransfer = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+				  order by la.leadassigndate desc 
+				</cfquery>
+				<cfreturn leadassignmentsbyrole >
+			</cffunction>
+
+
+			<cffunction name="gettransferadvisorlist" access="public" output="false" returntype="query" hint="I get the transfer list and roles for the admin function.">
+				<cfargument name="companyid" default="#session.companyid#" type="numeric" required="yes">
+				<cfargument name="roletype" default="sls" type="string" required="yes">
+				<cfargument name="currentadvisorid" default="0" type="numeric" required="yes">
+				<cfset var transferadvisorlist = "" />
+				<cfquery datasource="#application.dsn#" name="transferadvisorlist">
+					select u.userid, u.role, u.firstname, u.lastname
+					  from users u
+					 where u.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+					   and u.role LIKE <cfqueryparam value="%#arguments.roletype#%" cfsqltype="cf_sql_varchar" />
+					   and u.userid <> <cfqueryparam value="#arguments.currentadvisorid#" cfsqltype="cf_sql_integer" />
+				  order by u.lastname asc
+				</cfquery>
+				<cfreturn transferadvisorlist>
+			</cffunction>
+			
+			
+			
 		
 		</cfcomponent>
 		

@@ -511,6 +511,10 @@
 																		<td>#dollarformat( budget.misctotal )#</td>
 																		<td><cfif combinedgrossincome neq 0.00><span class="label label-inverse">#numberformat( ( budget.misctotal / combinedgrossincome * 100.00 ), "99.99" )#%</span></cfif></td>
 																	</tr>
+																	<tr class="alert alert-notice">
+																		<td><a href="javascript:;">Total Expenses</a></td>
+																		<td colspan="2">#dollarformat( budget.sheltertotal + budget.misctotal + budget.domesticorder + budget.childcaretotal + budget.medtotal + budget.insurancetotal + budget.foodtotal + budget.transtotal + budget.utilitytotal + budget.autototal )#</td>																		
+																	</tr>
 																	</cfoutput>
 																</tbody>
 															</table>

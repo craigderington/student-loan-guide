@@ -236,7 +236,7 @@
 											<div class="shortcuts">
 												<a href="#application.root#?event=page.leads" class="shortcut">
 													<i class="shortcut-icon icon-bar-chart"></i>
-													<span class="shortcut-label">Leads</span>
+													<span class="shortcut-label">Inquiries</span>
 												</a>
 												
 												<a href="#application.root#?event=page.clients" class="shortcut">

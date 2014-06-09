@@ -61,6 +61,7 @@
 											<cfset stat.achprov = trim( form.achprov ) />
 											<cfset stat.achdata = trim( form.achdatafile ) />
 											<cfset stat.chatcode = urlencodedformat( form.chatcode ) />
+											<cfset stat.achprovid = trim( form.achprovid ) />
 																						
 											<!--- // some other variables --->
 											<cfset today = #CreateODBCDateTime(now())# />	
@@ -97,6 +98,7 @@
 													   luckyorangecode = <cfqueryparam value="#stat.chatcode#" cfsqltype="cf_sql_varchar" />,
 													   advisory = <cfqueryparam value="#stat.adv#" cfsqltype="cf_sql_bit" />,
 													   implement = <cfqueryparam value="#stat.imp#" cfsqltype="cf_sql_bit" />,
+													   achprovideruniqueid = <cfqueryparam value="#stat.achprovid#" cfsqltype="cf_sql_varchar" />,
 													   active = <cfqueryparam value="#stat.status#" cfsqltype="cf_sql_bit" />
 											     where companyid = <cfqueryparam value="#stat.compid#" cfsqltype="cf_sql_integer" /> 
 											</cfquery>																			
@@ -222,6 +224,13 @@
 																<label class="control-label" for="regcode">ACH Provider</label>
 																	<div class="controls">
 																		<input type="text" class="input-large" name="achprov" id="achprov" value="#compdetails.achprovider#" />
+																	</div> <!-- /controls -->				
+															</div> <!-- /control-group -->
+															
+															<div class="control-group">											
+																<label class="control-label" for="regcode">ACH Provider ID</label>
+																	<div class="controls">
+																		<input type="text" class="input-small" name="achprovid" id="achprovid" value="#compdetails.achprovideruniqueid#" />
 																	</div> <!-- /controls -->				
 															</div> <!-- /control-group -->
 															

@@ -36,6 +36,11 @@
 												<span class="shortcut-label">Company<br /> Settings</span>
 											</a>
 											
+											<a href="#application.root#?event=page.admin.banking" class="shortcut">
+												<i class="shortcut-icon icon-money"></i>
+												<span class="shortcut-label">Company <br /> Banking Center </span>	
+											</a>
+											
 											<a href="#application.root#?event=page.depts" class="shortcut">
 												<i class="shortcut-icon icon-building"></i>
 												<span class="shortcut-label">Manage<br /> Departments</span>
@@ -73,8 +78,10 @@
 													
 											<a href="#application.root#?event=page.menu.leadsources" class="shortcut">
 												<i class="shortcut-icon icon-exchange"></i>
-												<span class="shortcut-label">Manage <br /> Lead Sources </span>	
+												<span class="shortcut-label">Manage <br /> Inquiry Sources </span>	
 											</a>
+											
+											
 										
 										
 										</div>

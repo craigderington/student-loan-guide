@@ -148,7 +148,7 @@
 
 
 								
-									<!--- // show solution special notes - system generated --->
+									<!--- // show solution special notes - system generated 
 									<cfif solutionnotes.recordcount gt 0>										
 										<div class="alert alert-success">
 											<a class="close" data-dismiss="alert">&times;</a>
@@ -160,6 +160,7 @@
 												</ul>
 										</div>									
 									</cfif>
+									--->
 									
 									<!--- // begin list of debt worksheets --->
 									<cfif solutiondebtlist.recordcount gt 0>
