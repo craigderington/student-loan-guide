@@ -407,13 +407,14 @@
 																	<thead>
 																		<cfoutput>
 																		<tr>
-																			<th>Public Service Loan Forgiveness <span style="float:right;"><a href="#application.root#?event=page.tree" class="btn btn-mini btn-tertiary">Return to Option Tree</a>&nbsp;&nbsp;<a href="#application.root#?event=page.worksheet.solution&tree=#tree#&option=forgive&solution=pslf" class="btn btn-mini btn-primary">Choose This Solution</a></span></th>
+																			<th>Public Service Loan Forgiveness <span style="float:right;"><a href="#application.root#?event=page.tree" class="btn btn-mini btn-tertiary">Return to Option Tree</a>&nbsp;&nbsp;<a href="javascript:;" class="btn btn-mini btn-primary" disabled>Choose This Solution</a></span></th>
 																		</tr>
 																		</cfoutput>
 																	</thead>
-																	<tbody>
+																	<tbody>																		
 																		<tr>
 																			<td>
+																				<h5><i style="color:red;" class="icon-warning-sign"></i> <span style="color:red;font-weight:bold;"> This loan must first be consolidated before PSLF can be selected.  The <i>Chose This Solution</i> button has been disabled.</span></h5>
 																				<cfoutput query="pslist">
 																					<li style="margin-left:10px;margin-top:5px;"><strong>#title#</strong><br />
 																						#urldecode( pointtext )#</li>

@@ -27,7 +27,8 @@
 			
 			
 			<cfparam name="today" default="">
-			<cfparam name="totalfees" default="0.00">			
+			<cfparam name="totalfees" default="0.00">
+			<cfparam name="abano" default="false">
 			<cfset today = createodbcdatetime( now() ) />
 			
 			<!--- page to enroll and e-sign the enrollment documents --->
@@ -113,63 +114,85 @@
 															<cfset lead.zipcode = #trim( form.zipcode )# />
 															<cfset lead.payoption = #form.mpayoption# />
 															
-															<cfquery datasource="#application.dsn#" name="leadesign4">
-																update esign
-																   set esconfirmfullname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,
-																	   esignaccttype = <cfqueryparam value="#lead.accttype#" cfsqltype="cf_sql_varchar" />,
-																	   esdriverslicensenumber = <cfqueryparam value="#lead.dlnumber#" cfsqltype="cf_sql_varchar" />,
-																	   esdriverslicensestate = <cfqueryparam value="#lead.dlstate#" cfsqltype="cf_sql_varchar" />,
-																	   esignrouting = <cfqueryparam value="#lead.routing#" cfsqltype="cf_sql_varchar" />,
-																	   esignaccount = <cfqueryparam value="#lead.acctnumber#" cfsqltype="cf_sql_varchar" />,
-																	   esignacctnumber = <cfqueryparam value="#lead.accountname# (#lead.leadid#)" cfsqltype="cf_sql_varchar" />,
-																	   esignacctname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,
-																	   esignfeeoption = <cfqueryparam value="#lead.payoption#" cfsqltype="cf_sql_numeric" />,
-																	   esignacctadd1 = <cfqueryparam value="#lead.address#" cfsqltype="cf_sql_varchar" />,
-																	   esignacctcity = <cfqueryparam value="#lead.city#" cfsqltype="cf_sql_varchar" />,
-																	   esignacctstate = <cfqueryparam value="#lead.state#" cfsqltype="cf_sql_varchar" />,
-																	   esignacctzipcode = <cfqueryparam value="#lead.zipcode#" cfsqltype="cf_sql_varchar" />,
-																	   escompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-																 where esid = <cfqueryparam value="#lead.esid#" cfsqltype="cf_sql_integer" />														   
-															</cfquery>
+															<!--- // include the necessary udfs --->
+															<cfinclude template="../apis/udfs/validateABA.cfm">
+											
+															<!--- // check to make sure the routing number is valid, call the udf --->
+															<cfset abano = isAba( lead.routing )>
+											
+											
+															<cfif abano is true>
 															
-															<!-- // flag the lead as having completed e-sign -->
-															<cfquery datasource="#application.dsn#" name="updateleadsummary">
-																update leads
-																   set leadesign = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
-																       leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /> 
-																 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />														   
-															</cfquery>														
+																<!--- // update the esign and continue if routing number is a valid ABA number --->
+																<cfquery datasource="#application.dsn#" name="leadesign4">
+																	update esign
+																	   set esconfirmfullname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,
+																		   esignaccttype = <cfqueryparam value="#lead.accttype#" cfsqltype="cf_sql_varchar" />,
+																		   esdriverslicensenumber = <cfqueryparam value="#lead.dlnumber#" cfsqltype="cf_sql_varchar" />,
+																		   esdriverslicensestate = <cfqueryparam value="#lead.dlstate#" cfsqltype="cf_sql_varchar" />,
+																		   esignrouting = <cfqueryparam value="#lead.routing#" cfsqltype="cf_sql_varchar" />,
+																		   esignaccount = <cfqueryparam value="#lead.acctnumber#" cfsqltype="cf_sql_varchar" />,
+																		   esignacctnumber = <cfqueryparam value="#lead.accountname# (#lead.leadid#)" cfsqltype="cf_sql_varchar" />,
+																		   esignacctname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,
+																		   esignfeeoption = <cfqueryparam value="#lead.payoption#" cfsqltype="cf_sql_numeric" />,
+																		   esignacctadd1 = <cfqueryparam value="#lead.address#" cfsqltype="cf_sql_varchar" />,
+																		   esignacctcity = <cfqueryparam value="#lead.city#" cfsqltype="cf_sql_varchar" />,
+																		   esignacctstate = <cfqueryparam value="#lead.state#" cfsqltype="cf_sql_varchar" />,
+																		   esignacctzipcode = <cfqueryparam value="#lead.zipcode#" cfsqltype="cf_sql_varchar" />,
+																		   escompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+																	 where esid = <cfqueryparam value="#lead.esid#" cfsqltype="cf_sql_integer" />														   
+																</cfquery>
 															
-															<!--- // mark the portal task complete --->
-															<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
-																<cfinvokeargument name="portaltaskid" value="1406">
-																<cfinvokeargument name="leadid" value="#session.leadid#">
-															</cfinvoke>
+																<!-- // flag the lead as having completed e-sign -->
+																<cfquery datasource="#application.dsn#" name="updateleadsummary">
+																	update leads
+																	   set leadesign = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+																		   leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /> 
+																	 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />														   
+																</cfquery>														
 															
-															<!--- // assign the intake advisor  --->
-															<cfinvoke component="apis.com.clients.assigngateway" method="assignintake" returnvariable="taskstatusmsg">
-																<cfinvokeargument name="companyid" value="#leaddetail.companyid#">
-																<cfinvokeargument name="leadid" value="#session.leadid#">
-															</cfinvoke>
+																<!--- // mark the portal task complete --->
+																<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
+																	<cfinvokeargument name="portaltaskid" value="1406">
+																	<cfinvokeargument name="leadid" value="#session.leadid#">
+																</cfinvoke>
+																
+																<!--- // assign the intake advisor  --->
+																<cfinvoke component="apis.com.clients.assigngateway" method="assignintake" returnvariable="taskstatusmsg">
+																	<cfinvokeargument name="companyid" value="#leaddetail.companyid#">
+																	<cfinvokeargument name="leadid" value="#session.leadid#">
+																</cfinvoke>
+																
+																<!--- // notify the enrollment and intake advisors that the client has completed esign --->															
+																<cfinvoke component="apis.com.comms.commsgateway" method="sendclientesigncomplete" returnvariable="msgstatus">																
+																	<cfinvokeargument name="leadid" value="#session.leadid#">
+																</cfinvoke>															
 															
-															<!--- // notify the enrollment and intake advisors that the client has completed esign --->															
-															<cfinvoke component="apis.com.comms.commsgateway" method="sendclientesigncomplete" returnvariable="msgstatus">																
-																<cfinvokeargument name="leadid" value="#session.leadid#">
-															</cfinvoke>															
-															
-															<!--- // flag the lead summary as docs returned and signed --->
-															<cfquery datasource="#application.dsn#" name="summary">
-																update slsummary																	   
-																   set slenrollreturndate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />,
-																	   slenrolldocsuploaddate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />																		   
-																 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
-															</cfquery>
-															
-															<cfset session.leadesign = 1 />
-															
-															<cflocation url="#application.root#?event=#url.event#" addtoken="no">
+																<!--- // flag the lead summary as docs returned and signed --->
+																<cfquery datasource="#application.dsn#" name="summary">
+																	update slsummary																	   
+																	   set slenrollreturndate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />,
+																		   slenrolldocsuploaddate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />																		   
+																	 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
+																</cfquery>
+																
+																<cfset session.leadesign = 1 />
+																
+																<cflocation url="#application.root#?event=#url.event#" addtoken="no">
 														
+															<cfelse>
 															
+																<cfoutput>
+																	<div class="alert alert-error">
+																		<a class="close" data-dismiss="alert">&times;</a>
+																		<h5><error>Sorry, there were errors in your submission:</error></h2>
+																		<ul>
+																			<li class="formerror"><cfoutput>#form.routingnumber#</cfoutput> is an invalid routing number.  Please check your input and try again...</li>																
+																		</ul>
+																	</div>
+																</cfoutput>
+															
+															</cfif>
 														
 														</cfif>											
 													
@@ -351,10 +374,11 @@ Updating Your Personal Information: You are responsible for keeping your e-mail 
 															
 																<cfif clientfees.recordcount gt 0>
 																	
-																			<h4><i class="icon-money"></i> Fee Schedule</h4>										
-																					
-																			<br>
-																					
+																			<h4><i class="icon-money"></i> Fee Schedule</h4>															
+																			<br>																			
+																			<h6><i style="color:red;" class="icon-exclamation-sign"></i> <span style="color:red;">By entering your initials below, you are agreeing to the fee schedule as outlined in the table.  If you need to have payment dates adjusted, please contact your Enrollment Counselor before completing E-Sign.</span></h6>
+																			<br />
+																			
 																			<table class="table table-bordered table-striped table-highlight">
 																				<thead>
 																					<tr>																																			

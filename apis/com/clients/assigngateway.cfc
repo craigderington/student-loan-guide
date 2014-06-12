@@ -18,10 +18,37 @@
 					       l.leaduuid, l.leadfirst, l.leadlast
 				      from leadassignments la, leads l
 				     where la.leadassignleadid = l.leadid
-				       and la.leadassignuserid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" />				       
+				       and la.leadassignuserid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" />
+					   and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 				  order by la.leadassigndate desc 
 				</cfquery>
 				<cfreturn clientassignments >
+			</cffunction>
+			
+			<cffunction name="getintakeadvisor" access="public" output="false" hint="I get the list of the selected client advisor assignments.">
+				<cfargument name="leadid" default="#url.leadid#" type="uuid">
+				<cfset var clientintakeadvisor = "" />
+				<cfquery datasource="#application.dsn#" name="clientintakeadvisor">
+					select la.leadassignid, la.leadassigndate, la.leadassignleadid, la.leadassignuserid, la.leadassignrole					       
+				      from leadassignments la, leads l
+				     where la.leadassignleadid = l.leadid 
+					   and l.leaduuid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+					   and la.leadassignrole = <cfqueryparam value="intake" cfsqltype="cf_sql_char" />				  
+				</cfquery>
+				<cfreturn clientintakeadvisor >
+			</cffunction>
+			
+			<cffunction name="getslsadvisor" access="public" output="false" hint="I get the list of the selected client sls advisor assignments.">
+				<cfargument name="leadid" default="#url.leadid#" type="uuid">
+				<cfset var clientslsadvisor = "" />
+				<cfquery datasource="#application.dsn#" name="clientslsadvisor">
+					select la.leadassignid, la.leadassigndate, la.leadassignleadid, la.leadassignuserid, la.leadassignrole					       
+				      from leadassignments la, leads l
+				     where la.leadassignleadid = l.leadid 
+					   and l.leaduuid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+					   and la.leadassignrole = <cfqueryparam value="sls" cfsqltype="cf_sql_char" />				  
+				</cfquery>
+				<cfreturn clientslsadvisor >
 			</cffunction>
 			
 			

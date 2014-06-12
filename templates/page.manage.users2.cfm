@@ -64,7 +64,7 @@
 					<cfelse>
 					
 						<script>
-							alert('Sorry, this user can no tbe deleted from the system because there are active leads assigned.  Reassign these leads and then delete the user..."');
+							alert('Sorry, this user can no tbe deleted from the system because there are active clients assigned.  Reassign these clients and then delete the user..."');
 							self.location="javascript:history.back(-1);"
 						</script>
 					
@@ -204,7 +204,7 @@
 											<cfif userlist.recordcount gt 0>
 												
 												<cfoutput>
-													<h5><i style="margin-right:5px;" class="icon-th-large"></i> Found #userlist.recordcount# record<cfif userlist.recordcount gt 1>s</cfif>  <span class="pull-right"><a href="#application.root#?event=page.company.activity" style="margin-bottom:5px;" class="btn btn-medium btn-secondary"><i class="icon-bookmark"></i> View User Activity </a><a href="#application.root#?event=page.depts" style="margin-left:5px;margin-bottom:5px;" class="btn btn-medium btn-default"><i class="icon-building"></i> Manage Departments </a><a href="#application.root#?event=#url.event#.edit&fuseaction=edit.user&uid=0" style="margin-bottom:5px;margin-left:5px;" class="btn btn-medium btn-primary"><i class="icon-plus"></i> Add New User </a>     </span></h5>
+													<h5><i style="margin-right:5px;" class="icon-th-large"></i> Currently assigned user accounts:  #userlist.recordcount#.  Licenses remaining: #( compuserdetail.numlicenses - userlist.recordcount )# <span class="pull-right"><a href="#application.root#?event=page.company.activity" style="margin-bottom:5px;" class="btn btn-medium btn-secondary"><i class="icon-bookmark"></i> View User Activity </a><a href="#application.root#?event=page.depts" style="margin-left:5px;margin-bottom:5px;" class="btn btn-medium btn-default"><i class="icon-building"></i> Manage Departments </a><cfif compuserdetail.numlicenses neq userlist.recordcount><a href="#application.root#?event=#url.event#.edit&fuseaction=edit.user&uid=0" style="margin-bottom:5px;margin-left:5px;" class="btn btn-medium btn-primary"><i class="icon-plus"></i> Add New User </a></cfif>     </span></h5>
 												</cfoutput>
 												
 												

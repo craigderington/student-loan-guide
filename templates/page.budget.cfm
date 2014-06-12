@@ -32,19 +32,19 @@
 			<cfif budget.primarytotalincome is "">
 				<cfset primarytotalincome = 0.00 />
 			<cfelse>
-				<cfset primarytotalincome = budget.primarytotalincome />
+				<cfset primarytotalincome = budget.primarygrossmonthly />
 			</cfif>
 			
 			<cfif budget.secondarytotalincome is "">
 				<cfset secondarytotalincome = 0.00 />
 			<cfelse>
-				<cfset secondarytotalincome = budget.secondarytotalincome />
+				<cfset secondarytotalincome = budget.secondarygrossmonthly />
 			</cfif>
 			
 			<cfif budget.combinedtotalincome is "">
 				<cfset combinedtotalincome = 0.00 />
 			<cfelse>
-				<cfset combinedtotalincome = budget.primarytotalincome + budget.secondarytotalincome />
+				<cfset combinedtotalincome = primarytotalincome + secondarytotalincome />
 			</cfif>		
 			
 			<cfif totaldebt.sltotal is "">

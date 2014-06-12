@@ -271,9 +271,9 @@
 				<cfif trim( surveyq13.slqa ) is "yes">
 					<cfloop query="worksheets">
 						<cfif trim( loancode ) is "A" or trim( loancode ) is "B" or trim( loancode ) is "C" or trim( loancode ) is "G" or trim( loancode ) is "H" or trim( loancode ) is "O" or trim( loancode ) is "S" or trim( loancode ) is "P" or trim( loancode ) is "J" or trim( loancode ) is "AB" or trim( loancode ) is "AF">
-							<cfif trim( statuscoderefer ) is not "df" and trim( statuscoderefer ) is not "ba" and trim( statuscoderefer ) is not "dj" and trim( statuscoderefer ) is not "wg">
+							<cfif trim( statuscoderefer ) is not "df" and trim( statuscoderefer ) is not "ba" and trim( statuscoderefer ) is not "dj" and trim( statuscoderefer ) is not "wg">								
 								<cfset subcat2psforgive = true />
-								<cfset subcat2pslf = "yes" />						
+								<cfset subcat2pslf = "yes" />								
 							</cfif>
 						</cfif>
 					</cfloop>				

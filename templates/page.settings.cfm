@@ -213,6 +213,14 @@
 															</div> <!-- /control-group -->
 															
 															<div class="control-group">											
+																<label class="control-label" for="numliceses">Licenses</label>
+																	<div class="controls">
+																		<input type="text" class="input-mini disabled" name="numlicenses" id="numlicenses" value="#compdetails.numlicenses#" maxlength="2" disabled />
+																		<p class="help-block">Total number of purchased SLA software licenses
+																	</div> <!-- /controls -->				
+															</div> <!-- /control-group -->
+															
+															<div class="control-group">											
 																<label class="control-label" for="regcode">Company Type</label>
 																	<div class="controls">
 																		<input type="text" class="input-mini" name="comptype" id="comptype" value="#compdetails.comptype#" maxlength="2" />
@@ -239,7 +247,7 @@
 																	<div class="controls">
 																		<input type="text" class="input-large" name="achdatafile" id="achdatafile" value="#compdetails.achdatafile#" />
 																	</div> <!-- /controls -->				
-															</div> <!-- /control-group -->													
+															</div> <!-- /control-group -->															
 															
 															<div class="control-group">
 																<label class="control-label" for="adv">Program Settings</label>

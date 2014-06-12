@@ -108,9 +108,9 @@
 											
 											<!--- define our structure and set form values--->
 											<cfset lead = structnew() />
-											<cfset lead.leadid = #form.leadid# />											
-											<cfset lead.source = #form.leadsource# />
-											<cfset lead.status = #form.leadstatus# />
+											<cfset lead.leadid = form.leadid />											
+											<cfset lead.source = form.leadsource />
+											<cfset lead.status = form.leadstatus />
 											<cfset lead.first = trim( form.firstname ) />
 											<cfset lead.last = trim( form.lastname ) />
 											<cfset lead.add1 = trim( form.address1 ) />
@@ -119,7 +119,9 @@
 											<cfset lead.state = ucase(left( form.state, 2 )) />
 											<cfset lead.zip = left( form.zipcode,5 ) />					
 											<cfset lead.email = trim( form.emailaddress ) />
-											<cfset lead.enrollcounselor = #form.enrollmentcounselor# />
+											<cfset lead.enrollcounselor = form.enrollmentcounselor />
+											<cfset lead.intakeadvisor = form.intakeadvisor />
+											<cfset lead.slsadvisor = form.slsadvisor />
 											
 											<!--- get form checkbox data --->
 											<cfif isdefined( "form.chkactive" )>
@@ -178,7 +180,113 @@
 														   leadimp = <cfqueryparam value="#lead.leadimp#" cfsqltype="cf_sql_bit" />,
 														   leadwelcomehome = <cfqueryparam value="#lead.welcomemsg#" cfsqltype="cf_sql_bit" />
 													 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
-											</cfquery>										
+											</cfquery>
+
+											
+											<!--- // re-assign the client case to new advisors --->
+											<cfquery datasource="#application.dsn#" name="intakeadv">
+												select la.leadassignid, la.leadassignleadid, la.leadassignuserid, la.leadassignrole
+												  from leadassignments la
+												 where la.leadassignleadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
+												   and la.leadassignrole = <cfqueryparam value="intake" cfsqltype="cf_sql_char" />
+											</cfquery>
+											
+											<cfquery datasource="#application.dsn#" name="slsadv">
+												select la.leadassignid, la.leadassignleadid, la.leadassignuserid, la.leadassignrole
+												  from leadassignments la
+												 where la.leadassignleadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
+												   and la.leadassignrole = <cfqueryparam value="sls" cfsqltype="cf_sql_char" />
+											</cfquery>
+											
+											<cfif lead.intakeadvisor neq "" and lead.intakeadvisor neq 0 >
+												
+												<cfif intakeadv.recordcount eq 0>
+													
+													<!--- // assign the intake advisor --->
+													<cfquery datasource="#application.dsn#" name="assignintake">
+														insert into leadassignments(leadassigndate,leadassignleadid,leadassignuserid,leadassignrole)
+															values(
+																   <cfqueryparam value="#createodbcdatetime( now() )#" cfsqltype="cf_sql_timestamp" />,
+																   <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
+																   <cfqueryparam value="#lead.intakeadvisor#" cfsqltype="cf_sql_integer" />,
+																   <cfqueryparam value="intake" cfsqltype="cf_sql_varchar" />
+																  );
+													</cfquery>												
+													
+												<cfelse>
+												
+													<cfif lead.intakeadvisor neq intakeadv.leadassignuserid >
+														<!--- // update the existing assignment and mark as transferred --->
+														<cfquery datasource="#application.dsn#" name="saveintake">
+															update leadassignments
+															   set leadassignuserid = <cfqueryparam value="#lead.intakeadvisor#" cfsqltype="cf_sql_integer" />,
+																   leadassigntransfer = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+																   leadassigntransfertoid = <cfqueryparam value="#intakeadv.leadassignuserid#" cfsqltype="cf_sql_integer" />,
+																   leadassigntransferdate = <cfqueryparam value="#createodbcdatetime( now() )#" cfsqltype="cf_sql_timestamp" />,
+																   leadassignaccept = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />,
+																   leadassignacceptdate = NULL
+															 where leadassignid = <cfqueryparam value="#intakeadv.leadassignid#" cfsqltype="cf_sql_integer" />
+														</cfquery>
+														<!--- // log the activity --->
+														<cfquery datasource="#application.dsn#" name="logact">
+															insert into activity(leadid, userid, activitydate, activitytype, activity)
+																values (
+																		<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
+																		<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
+																		<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
+																		<cfqueryparam value="Record Modified" cfsqltype="cf_sql_varchar" />,
+																		<cfqueryparam value="#session.username# reassigned the case to a new intake advisor." cfsqltype="cf_sql_varchar" />
+																		); 
+														</cfquery>
+													</cfif>
+												</cfif>
+											</cfif>
+											
+											<cfif lead.slsadvisor neq "" and lead.slsadvisor neq 0 >
+												
+												<cfif slsadv.recordcount eq 0>
+												
+													<!--- // assign the student loan specialist --->
+													<cfquery datasource="#application.dsn#" name="assignsls">
+														insert into leadassignments(leadassigndate,leadassignleadid,leadassignuserid,leadassignrole)
+															values(
+																   <cfqueryparam value="#createodbcdatetime( now() )#" cfsqltype="cf_sql_timestamp" />,
+																   <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
+																   <cfqueryparam value="#lead.slsadvisor#" cfsqltype="cf_sql_integer" />,
+																   <cfqueryparam value="sls" cfsqltype="cf_sql_varchar" />
+																  );
+													</cfquery>
+												
+												<cfelse>
+												
+													<cfif lead.slsadvisor neq slsadv.leadassignuserid>
+														<!--- // update the existing assignment and mark as transferred --->
+														<cfquery datasource="#application.dsn#" name="savesls">
+															update leadassignments
+															   set leadassignuserid = <cfqueryparam value="#lead.slsadvisor#" cfsqltype="cf_sql_integer" />,
+																   leadassigntransfer = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+																   leadassigntransfertoid = <cfqueryparam value="#slsadv.leadassignuserid#" cfsqltype="cf_sql_integer" />,
+																   leadassigntransferdate = <cfqueryparam value="#createodbcdatetime( now() )#" cfsqltype="cf_sql_timestamp" />,
+																   leadassignaccept = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />,
+																   leadassignacceptdate = NULL
+															 where leadassignid = <cfqueryparam value="#slsadv.leadassignid#" cfsqltype="cf_sql_integer" />
+														</cfquery>
+														<!--- // log the activity --->
+														<cfquery datasource="#application.dsn#" name="logact">
+															insert into activity(leadid, userid, activitydate, activitytype, activity)
+																values (
+																		<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
+																		<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
+																		<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
+																		<cfqueryparam value="Record Modified" cfsqltype="cf_sql_varchar" />,
+																		<cfqueryparam value="#session.username# reassigned the case to a new student loan specialist." cfsqltype="cf_sql_varchar" />
+																		); 
+														</cfquery>
+													</cfif>
+												</cfif>
+											</cfif>
+											
+											
 											
 											<!--- // log the activity --->
 											<cfquery datasource="#application.dsn#" name="logact">
@@ -359,6 +467,14 @@
 										
 										<cfinvoke component="apis.com.admin.leadmanagementgateway" method="getleaddetail" returnvariable="leaddetail">
 											<cfinvokeargument name="leadid" value="#url.leadid#">
+										</cfinvoke>										
+										
+										<cfinvoke component="apis.com.clients.assigngateway" method="getintakeadvisor" returnvariable="clientintakeadvisor">
+											<cfinvokeargument name="leadid" value="#url.leadid#">
+										</cfinvoke>
+										
+										<cfinvoke component="apis.com.clients.assigngateway" method="getslsadvisor" returnvariable="clientslsadvisor">
+											<cfinvokeargument name="leadid" value="#url.leadid#">
 										</cfinvoke>
 										
 										<cfinvoke component="apis.com.admin.leadmanagementgateway" method="getenrollmentcounselors" returnvariable="enrollmentcounselors">
@@ -493,12 +609,14 @@
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 
+																	
 																	<div class="control-group">											
 																		<label class="control-label" for="leadsource">Intake Advisor</label>
 																		<div class="controls">
 																			<select name="intakeadvisor" id="intakeadvisor">
+																				<option value="0">Select Intake Advisor</option>
 																				<cfloop query="intakeadvisors">
-																					<option value="#userid#"<cfif leaddetail.userid eq intakeadvisors.userid>selected</cfif>>#firstname# #lastname#</option>
+																					<option value="#userid#"<cfif clientintakeadvisor.recordcount gt 0><cfif clientintakeadvisor.leadassignuserid eq intakeadvisors.userid>selected</cfif></cfif>>#firstname# #lastname#</option>
 																				</cfloop>
 																			</select>
 																		</div> <!-- /controls -->				
@@ -508,8 +626,9 @@
 																		<label class="control-label" for="leadsource">Student Loan Advisor</label>
 																		<div class="controls">
 																			<select name="slsadvisor" id="slsadvisor">
+																				<option value="0">Select Specialist</option>
 																				<cfloop query="slsadvisors">
-																					<option value="#userid#"<cfif leaddetail.userid eq slsadvisors.userid>selected</cfif>>#firstname# #lastname#</option>
+																					<option value="#userid#"<cfif clientslsadvisor.recordcount gt 0><cfif clientslsadvisor.leadassignuserid eq slsadvisors.userid>selected</cfif></cfif>>#firstname# #lastname#</option>
 																				</cfloop>
 																			</select>
 																		</div> <!-- /controls -->				

@@ -16,7 +16,8 @@
 							(select count(l.leadid) from leads l where l.leadconv = 0 and l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" /> <cfif not isuserinrole( "admin" ) and not isuserinrole( "co-admin" )> and l.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /></cfif>) as totalleads,
 							(select count(l.leadid) from leads l where l.leadconv = 1 and l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" /> <cfif not isuserinrole( "admin" ) and not isuserinrole( "co-admin" )> and l.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /></cfif>) as totalclients,
 							(select sum(slw.loanbalance) from slworksheet slw, leads l where slw.leadid = l.leadid and l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" /> <cfif not isuserinrole( "admin" ) and not isuserinrole( "co-admin" )> and l.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /></cfif>) as totaldebt,
-							(select count(slw.worksheetid) from slworksheet slw, leads l where slw.leadid = l.leadid and l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" /> <cfif not isuserinrole( "admin" ) and not isuserinrole( "co-admin" )> and l.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /></cfif>) as totalloans											  
+							(select count(slw.worksheetid) from slworksheet slw, leads l where slw.leadid = l.leadid and l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" /> <cfif not isuserinrole( "admin" ) and not isuserinrole( "co-admin" )> and l.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /></cfif>) as totalloans,
+							(select count(i.implementid) from implement i, leads l where i.leadid = l.leadid and l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" /> and i.impcompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /><cfif not isuserinrole( "admin" ) and not isuserinrole( "co-admin" )> and l.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /></cfif>) as totalplanscomp
 					  from company co
 					 where co.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />					 
 				</cfquery>				
@@ -93,6 +94,7 @@
 				   and la.leadassignuserid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" />
 				   and la.leadassignaccept = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 				   and la.leadassignacceptdate is null
+				   and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 			</cfquery>
 			<cfreturn newassign>
 		</cffunction>

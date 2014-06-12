@@ -60,6 +60,10 @@
 						<cfinvokeargument name="companyid" value="#session.companyid#">
 					</cfinvoke>
 					
+					<cfinvoke component="apis.com.tasks.remindergateway" method="getuserreminders" returnvariable="userreminderlist">
+						<cfinvokeargument name="userid" value="#session.userid#">
+					</cfinvoke>
+					
 					
 					
 					
@@ -177,12 +181,8 @@
 											</div> <!-- /stat -->
 											
 											<div class="stat">
-												<span class="stat-value">0</span>									
-												<cfif structkeyexists( session, "thisreminder" )>
-												<a href="#application.root#?event=page.reminders">Active Reminders</a>
-												<cfelse>
-												<a href="javascript:;">No Active Reminders</a>
-												</cfif>
+												<span class="stat-value">#userreminderlist.recordcount#</span>										
+												<a href="#application.root#?event=page.reminders">Your Reminders</a>												
 											</div> <!-- /stat -->
 											</cfoutput>	
 										</div> <!-- /stats -->										
@@ -390,58 +390,59 @@
 
 								<!--- // show client list --->
 								
-								<div class="widget stacked widget-table action-table">
+								<cfif not isuserinrole( "co-admin" )>
+									<div class="widget stacked widget-table action-table">
+											
+										<div class="widget-header">
+											<i class="icon-group"></i>
+											<h3>Recent Clients</h3>
+										</div> <!-- /. widget-header -->
 										
-									<div class="widget-header">
-										<i class="icon-group"></i>
-										<h3>Recent Clients</h3>
-									</div> <!-- /. widget-header -->
-									
-									<div class="widget-content">
-										
-										<cfif dashboardclients.recordcount gt 0>
-											<table class="table table-striped table-bordered">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Enroll Date</th>
-														<th class="td-actions">Actions</th>
-													</tr>
-												</thead>
-												<tbody>
-													<cfoutput query="dashboardclients" maxrows="6">
+										<div class="widget-content">
+											
+											<cfif dashboardclients.recordcount gt 0>
+												<table class="table table-striped table-bordered">
+													<thead>
 														<tr>
-															<td>#leadfirst# #leadlast#</td>
-															<td><span class="label label-inverse">#dateformat( slenrollreturndate, "mm/dd/yyyy" )#</span> <span style="margin-left:7px;" class="label label-info"><small>Days Enrolled: </small>&nbsp; #datediff( "d", leaddate, now() )#</span>
-															<td class="td-actions">
-																
-																<a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#" class="btn btn-small btn-warning">
-																	<i class="btn-icon-only icon-ok"></i>										
-																</a>
-
-																<a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#" class="btn btn-small btn-secondary">
-																	<i class="btn-icon-only icon-tasks"></i>										
-																</a>
-																
-															</td>
+															<th>Name</th>
+															<th>Enroll Date</th>
+															<th class="td-actions">Actions</th>
 														</tr>
-													</cfoutput>
-												</tbody>
-											</table>
-										<cfelse>
-											
-											<cfoutput>
-												<div style="padding:15px;margin-bottom:35px;">
-													<a href="#application.root#?event=page.lead.new" class="btn btn-default btn-medium"><i class="icon-user"></i> Create New Inquiry</a>
-												</div>
-											</cfoutput>
-											
-										</cfif>
-										
-									</div> <!-- / .widget-content -->
-								
-								</div> <!-- / .widget -->
+													</thead>
+													<tbody>
+														<cfoutput query="dashboardclients" maxrows="6">
+															<tr>
+																<td>#leadfirst# #leadlast#</td>
+																<td><span class="label label-inverse">#dateformat( slenrollreturndate, "mm/dd/yyyy" )#</span> <span style="margin-left:7px;" class="label label-info"><small>Days Enrolled: </small>&nbsp; #datediff( "d", leaddate, now() )#</span>
+																<td class="td-actions">
+																	
+																	<a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#" class="btn btn-small btn-warning">
+																		<i class="btn-icon-only icon-ok"></i>										
+																	</a>
+
+																	<a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#" class="btn btn-small btn-secondary">
+																		<i class="btn-icon-only icon-tasks"></i>										
+																	</a>
+																	
+																</td>
+															</tr>
+														</cfoutput>
+													</tbody>
+												</table>
+											<cfelse>
 												
+												<cfoutput>
+													<div style="padding:15px;margin-bottom:35px;">
+														<a href="#application.root#?event=page.lead.new" class="btn btn-default btn-medium"><i class="icon-user"></i> Create New Inquiry</a>
+													</div>
+												</cfoutput>
+												
+											</cfif>
+											
+										</div> <!-- / .widget-content -->
+									
+									</div> <!-- / .widget -->
+								</cfif>				
 							  </div> <!-- / .span6 -->
 							
 						  </div> <!-- / .row -->

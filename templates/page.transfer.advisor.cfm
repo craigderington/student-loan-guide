@@ -111,7 +111,9 @@
 																	   set leadassignuserid = <cfqueryparam value="#transfer.userid#" cfsqltype="cf_sql_integer" />,
 																		   leadassigntransfer = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
 																		   leadassigntransfertoid = <cfqueryparam value="#currentadvisorid#" cfsqltype="cf_sql_integer" />,
-																		   leadassigntransferdate = <cfqueryparam value="#createodbcdatetime( now() )#" cfsqltype="cf_sql_timestamp" />														   														   
+																		   leadassigntransferdate = <cfqueryparam value="#createodbcdatetime( now() )#" cfsqltype="cf_sql_timestamp" />,
+																		   leadassignaccept = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />,
+																		   leadassignacceptdate = NULL
 																	 where leadassignid = <cfqueryparam value="#currentassignid#" cfsqltype="cf_sql_integer" />
 															</cfquery>			
 																

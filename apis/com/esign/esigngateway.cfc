@@ -15,7 +15,8 @@
 							select es.esid, es.esuuid, es.leadid, es.esdatestamp, es.esuserip, es.esconfirm, es.esconfirminitials, es.esconfirmfullname,
 								   es.esignpaydate, es.esignpayamt, es.esignacctnumber, es.esignfeeoption, es.esignacctname, es.esignacctadd1, 
 								   es.esignacctcity, es.esignacctstate, es.esignacctzipcode, es.esignaccttype, es.esignrouting, es.esignaccount, 
-								   es.esignbankname, es.esignsignature, es.escompleted
+								   es.esignbankname, es.esignsignature, es.escompleted, es.esignccnumber, es.esignccexpdate, es.esignccv2,
+								   es.esignccname, es.esignpaytype
 							  from esign es
 							 where es.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						</cfquery>

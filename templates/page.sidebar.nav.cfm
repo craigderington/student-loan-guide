@@ -59,7 +59,7 @@
 							<li <cfif trim( url.event ) is "page.banking">class="active"</cfif>>
 								<a href="#application.root#?event=page.banking">
 									<i class="icon-building"></i>
-										Client ACH Details
+										Payment Information
 									<i class="icon-chevron-right"></i>
 								</a>              			              	
 							</li>

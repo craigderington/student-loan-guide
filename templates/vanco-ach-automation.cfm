@@ -64,7 +64,7 @@
 										<cfif achdetails.recordcount gt 0>
 											
 											<!--- CLD // 06-5-2014 //  Vanco Transaction Processing  // API Data Format to Text // 	--->
-											<cfheader name="content-disposition" value="attachment; filename=#UCASE( session.companyname )#-#dateformat( now(), "mm-dd-yyyy" )#-VANCO-ACH-DATAFILE-#thiscounter#.txt"><cfcontent type="text/txt"><cfoutput query="achdetails">#ljustify( companysettings.achprovideruniqueid, 10 )##ljustify( leadid, 15 )##ljustify( leadlast, 11 )##ljustify( leadfirst, 11 )##ljustify( leadadd1, 30 )##ljustify( leadcity, 25 )##ljustify( leadstate, 2 )##ljustify( leadzip, 9 )##ljustify( esignrouting, 9 )##ljustify( esignaccount, 17 )##ljustify( left( ucase( esignaccttype ), 1 ), 1 )##ljustify( thisspacer, 16 )##ljustify( thisspacer, 4 )##ljustify( numberformat( feeamount, "L9999.99" ), 8 )#M#ljustify( dateformat( feeduedate, "mm/dd/yyyy" ), 10 )##ljustify( dateformat( feeduedate, "mm/dd/yyyy" ), 10 )##ljustify( feeid, 10 )##thisbr#
+											<cfheader name="content-disposition" value="attachment; filename=#UCASE( session.companyname )#-#dateformat( now(), "mm-dd-yyyy" )#-VANCO-ACH-DATAFILE-#thiscounter#.txt"><cfcontent type="text/txt"><cfoutput query="achdetails">#companysettings.achprovideruniqueid#,#leadid#,#left( leadlast, 11 )#,#left( leadfirst, 11 )#,#left( leadadd1, 30 )#,#left( leadcity, 25 )#,#left( leadstate, 2 )#,#left( leadzip, 5 )#,#left( esignrouting,9 )#,#left( esignaccount, 17 )#,#left( ucase( esignaccttype ), 1 )#,,,#trim( numberformat( feeamount, "L99.99" ))#,M,#dateformat( feeduedate, "mm/dd/yyyy" )#,#dateformat( feeduedate, "mm/dd/yyyy" )#,#feeid##thisbr#
 </cfoutput>										
 											
 											

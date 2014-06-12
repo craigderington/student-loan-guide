@@ -35,7 +35,7 @@
 				<cfargument name="companyid" default="#session.companyid#" type="numeric" required="yes">
 				<cfset var compuserdetail = "" />
 				<cfquery datasource="#application.dsn#" name="compuserdetail">
-					select companyid, companyname
+					select companyid, companyname, numlicenses
 					  from company
 				     where companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" /> 
 				</cfquery>
