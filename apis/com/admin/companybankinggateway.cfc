@@ -15,9 +15,11 @@
 					<cfargument name="enddate" default="12/31/2014" type="date" required="yes">
 					<cfset var achdata = "" />
 					<cfquery datasource="#application.dsn#" name="achdata">
-						select 	l.leadid, l.leaduuid, l.leadfirst, l.leadlast, l.leadactive, l.leadachhold, l.leadachholdreason, l.leadachholddate,
-								f.feeid, f.feeuuid, f.feeduedate, f.feepaiddate, f.feeamount, f.feepaid, f.feestatus, f.feenote, f.feecollected, f.feeprogram,
-								e.esignrouting, e.esignaccount, sl.slenrollreturndate, sl.slenrolldocsuploaddate
+						select 	l.leadid, l.leaduuid, l.leadfirst, l.leadlast, l.leadactive, l.leadachhold, l.leadachholdreason, 
+								l.leadachholddate, f.feeid, f.feeuuid, f.feeduedate, f.feepaiddate, f.feeamount, f.feepaid, 
+								f.feestatus, f.feenote, f.feecollected, f.feeprogram, e.esignrouting, e.esignaccount, e.esignccnumber, 
+								e.esignccexpdate, e.esignccv2, e.esignccname, e.esignpaytype, sl.slenrollreturndate, sl.slenrolldocsuploaddate, 
+								f.feetransdate, f.feetrans, f.feereturnednsf, f.feepaytype, achbatchid
 						  from  fees f, leads l, slsummary sl, esign e
 						 where  f.leadid = l.leadid
 						   and  l.leadid = sl.leadid
@@ -29,10 +31,11 @@
 								<cfif structkeyexists( form, "filtermyresults" )>								
 									<cfif structkeyexists( form, "feetype" ) and form.feetype is not "--">
 										and f.feeprogram = <cfqueryparam value="#trim( form.feetype )#" cfsqltype="cf_sql_char" />
-									</cfif>								
-								</cfif>
-						   
-						   
+									</cfif>
+									<cfif structkeyexists( form, "paytype" ) and form.paytype is not "--">
+										and f.feepaytype = <cfqueryparam value="#trim( form.paytype )#" cfsqltype="cf_sql_char" />
+									</cfif>
+								</cfif>				   
 						   
                       order by  f.feeduedate asc
 					</cfquery>

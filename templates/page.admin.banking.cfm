@@ -92,10 +92,19 @@
 															<form class="form-inline" name="filterresults" method="post">					
 																
 																<select name="feetype" class="input-large" onchange="javascript:this.form.submit();">
-																	<option value="--">All Fees Due</option>
+																	<option value="--">Filter by Fee Type</option>
 																	<option value="A"<cfif isdefined( "form.feetype" ) and trim( form.feetype ) is "a">selected</cfif>>Advisory Only</option>
 																	<option value="I"<cfif isdefined( "form.feetype" ) and trim( form.feetype ) is "i">selected</cfif>>Implementation Only</option>
-																<select>															
+																<select>
+
+																<select name="paytype" class="input-large" onchange="javascript:this.form.submit();">
+																	<option value="--">Filter by Payment Type</option>
+																	<option value="ACH"<cfif isdefined( "form.paytype" ) and trim( form.paytype ) is "ach">selected</cfif>>ACH</option>
+																	<option value="CC"<cfif isdefined( "form.paytype" ) and trim( form.paytype ) is "cc">selected</cfif>>Credit Card</option>
+																	<option value="MO"<cfif isdefined( "form.paytype" ) and trim( form.paytype ) is "mo">selected</cfif>>Money Order</option>
+																	<option value="CHK"<cfif isdefined( "form.paytype" ) and trim( form.paytype ) is "chk">selected</cfif>>Check</option>
+																	<option value="CSH"<cfif isdefined( "form.paytype" ) and trim( form.paytype ) is "csh">selected</cfif>>Cash</option>
+																<select>
 																
 																<input type="text" name="startdate" style="margin-left:5px;" class="input-medium" placeholder="Start Date" id="datepicker-inline4" value="<cfif isdefined( "form.startdate" )>#dateformat( form.startdate, 'mm/dd/yyyy' )#<cfelse>#dateformat( startdate, 'mm/dd/yyyy' )#</cfif>">
 																<input type="text" name="enddate" style="margin-left:5px;" class="input-medium" placeholder="End Date" id="datepicker-inline5" value="<cfif isdefined( "form.enddate" )>#dateformat( form.enddate, 'mm/dd/yyyy' )#<cfelse>#dateformat( enddate, 'mm/dd/yyyy' )#</cfif>">
@@ -127,6 +136,7 @@
 																	<th width="5%">Actions</th>
 																	<th>Client Name</th>
 																	<th>Fee Type</th>
+																	<th>Pay Type</th>
 																	<th>Due Date</th>
 																	<th>Fee Amount</th>																	
 																	<th>Paid Date</th>
@@ -147,9 +157,10 @@
 																			</td>
 																			<td>#leadfirst# #leadlast#   <cfif leadactive neq 1><small><span style="color:red;margin-left:5px;">(Inactive)</span></small></cfif></td>
 																			<td><cfif trim( feeprogram ) is "a">Advisory<cfelseif trim( feeprogram ) is "i">Implementation</cfif></td>																				
+																			<td>#feepaytype#</td>
 																			<td>#dateformat( feeduedate, "mm/dd/yyyy" )#</td>
 																			<td>#dollarformat( feeamount )#  <cfif esignrouting is "" or esignaccount is ""><a href="javascript;:" rel="popover" style="color:red;margin-left:5px;" data-original-title="Warning: Missing Banking Information" data-content="This client has fees due and no ACH or banking details saved.  No payments will be released for processing with missing or incomplete banking information."><i class="icon-warning-sign"></i></a></cfif> <cfif trim( leadachhold ) is "Y"><a href="javascript;:" rel="popover" style="color:blue;margin-left:5px;" data-original-title="ACH Hold" data-content="This client is currently on ACH Hold.  <br/><br/> Hold Date: #dateformat( leadachholddate, 'mm/dd/yyyy' )#<br />Hold Reason: #leadachholdreason#"><i class="icon-warning-sign"></i></a></cfif></td>
-																			<td><cfif feepaiddate is not "">#dateformat( feepaiddate, "mm/dd/yyyy" )#<cfelse><span class="label label-warning">Not Paid</span></cfif></td>															
+																			<td><cfif feepaiddate is not ""><span class="label label-success">#dateformat( feepaiddate, "mm/dd/yyyy" )#</span><cfelseif feestatus is "pending" and feetransdate is not ""><span class="label label-warning">Sent on #dateformat( feetransdate, "mm/dd/yyyy" )#</span><cfelse><span class="label label-warning">Not Paid</span></cfif></td>															
 																			<td>#dollarformat( feepaid )#</td>
 																			<td><cfif trim( feestatus ) is "paid"><span class="label label-success">PAID</span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">PENDING</span><cfelseif trim( feestatus ) is "unpaid"><span class="label label-warning">UNPAID</span></cfif></td>
 																			<td><cfif feecollected eq 1><span class="label label-inverse">YES</span><cfelse><span class="label label-important">NO</span></cfif></td>																										
@@ -161,12 +172,12 @@
 																<!--- // show the totals row --->
 																<cfoutput>
 																	<tr style="font-size:16px;font-weight:bold;" class="alert alert-info">
-																		<td colspan="3">&nbsp;</td>
+																		<td colspan="4">&nbsp;</td>
 																		<td style="font-weight:bold;"><div align="left">TOTALS:</td>																		
 																		<td style="font-weight:bold;">#dollarformat( achtotals )#</td>
 																		<td style="font-weight:bold;">&nbsp;</td>
 																		<td style="font-weight:bold;">#dollarformat( achpaidtotals )#</td>
-																		<td colspan="2"><cfif achdata.recordcount gt 0><a href="templates/#companysettings.achdatafile#.cfm?sdate=#dateformat( startdate, "yyyy-mm-dd" )#&edate=#dateformat( enddate, "yyyy-mm-dd" )#" class="btn btn-small btn-inverse"><i class="icon-file-alt"></i> Generate #companysettings.achprovider# Data File</cfif></td>
+																		<td colspan="2"><cfif achdata.recordcount gt 0><a href="templates/#companysettings.achdatafile#.cfm?sdate=#dateformat( startdate, "yyyy-mm-dd" )#&edate=#dateformat( enddate, "yyyy-mm-dd" )#" onclick="javascript:window.location.href=window.location.href;" class="btn btn-small btn-inverse"><i class="icon-file-alt"></i> Generate #companysettings.achprovider# Data File</cfif></td>
 																	<tr>
 																</cfoutput>
 																

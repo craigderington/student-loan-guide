@@ -133,7 +133,7 @@
 							<div class="login-actions">
 								
 								<span class="login-checkbox">
-									<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+									<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" checked />
 									<label class="choice" for="Field">Keep me signed in</label>
 								</span>
 													

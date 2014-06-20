@@ -419,6 +419,12 @@
 				<cfcase value="page.reports.summary.example">
 					<cfinclude template="../../templates/page.reports.summary.example.cfm">
 				</cfcase>
+				<cfcase value="page.reports.solutions">
+					<cfinclude template="../../templates/page.reports.solutions.cfm">
+				</cfcase>
+				<cfcase value="page.reports.solutions.status">
+					<cfinclude template="../../templates/page.reports.solutions.status.cfm">
+				</cfcase>
 				<cfcase value="page.admin">				
 					<cfif isuserinrole( "admin" )>	
 						<cfinclude template="../../templates/page.admin.cfm">

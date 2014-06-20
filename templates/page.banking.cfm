@@ -96,6 +96,26 @@
 														   set esignpaytype = <cfqueryparam value="#trim( form.paymenttype )#" cfsqltype="cf_sql_varchar" />
 														 where esid = <cfqueryparam value="#esigninfo.esid#" cfsqltype="cf_sql_integer" />
 													</cfquery>
+													<!--- // update any remaining unpaid fees --->
+													<cfquery datasource="#application.dsn#" name="updatefeepaytypes">
+														update fees
+														   set feepaytype = <cfqueryparam value="#trim( form.paymenttype )#" cfsqltype="cf_sql_varchar" />
+														 where leadid = <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />
+														   and feepaiddate is null
+														   and feetransdate is null
+														   and feetrans = <cfqueryparam value="N" cfsqltype="cf_sql_char" />
+													</cfquery>
+														<!--- // log the activity --->
+														<cfquery datasource="#application.dsn#" name="logact">
+															insert into activity(leadid, userid, activitydate, activitytype, activity)
+																values (
+																		<cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />,
+																		<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
+																		<cfqueryparam value="#createodbcdate( now())#" cfsqltype="cf_sql_timestamp" />,
+																		<cfqueryparam value="Record Modified" cfsqltype="cf_sql_varchar" />,
+																		<cfqueryparam value="#session.username# changed the payment type to #form.paymenttype# for #leaddetail.leadfirst# #leaddetail.leadlast#." cfsqltype="cf_sql_varchar" />
+																		);
+														</cfquery>
 													<cflocation url="#application.root#?event=#url.event#" addtoken="no">
 												</cfif>
 											</cfif>
@@ -366,6 +386,9 @@
 																			<select name="paymenttype" class="input-medium" onchange="javascript:this.form.submit();">
 																				<option value="ACH"<cfif trim( esigninfo.esignpaytype ) is "ach">selected</cfif>>ACH</option>
 																				<option value="CC"<cfif trim( esigninfo.esignpaytype ) is "cc">selected</cfif>>Credit Card</option>
+																				<option value="MO"<cfif trim( esigninfo.esignpaytype ) is "mo">selected</cfif>>Money Order</option>
+																				<option value="CHK"<cfif trim( esigninfo.esignpaytype ) is "chk">selected</cfif>>Check</option>
+																				<option value="CSH"<cfif trim( esigninfo.esignpaytype ) is "csh">selected</cfif>>Cash</option>
 																			</select>
 																		</div>								
 																		<input type="hidden" name="leadid" value="#leaddetail.leadid#" />

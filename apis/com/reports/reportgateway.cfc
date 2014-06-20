@@ -6,6 +6,19 @@
 			<cffunction name="init" access="public" output="false" returntype="reportgateway" hint="I create an initialized report gateway object.">
 				<cfreturn this >
 			</cffunction>
+			
+			<cffunction name="getcounselorlist" access="public" output="false" returntype="query" hint="I get the list of counselors for the all of the filters.">
+				<cfargument name="companyid" default="#session.companyid#" type="numeric" required="yes">				
+				<cfset var counselorlist = "" />
+				<cfquery datasource="#application.dsn#" name="counselorlist">
+					select distinct(u.userid), u.role, u.firstname, u.lastname
+					  from users u, leads l
+					 where u.userid = l.userid
+					   and u.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />					   
+				  order by u.lastname asc
+				</cfquery>
+				<cfreturn counselorlist>
+			</cffunction>
 
 			<cffunction name="getreportroles" access="public" output="false" returntype="query" hint="I get the roles for the reports filter.">
 				<cfargument name="companyid" default="#session.companyid#" type="numeric" required="yes">
@@ -57,15 +70,16 @@
 				<cfset var enrollreport = "" />
 				<cfquery datasource="#application.dsn#" name="enrollreport">
 					select l.*, ls.leadsource, s.slenrolldate, s.slenrollcontacttype, s.slenrollclientmethod, s.slenrollclientdocsmethod,
-						   s.slenrollclientdocsdate, s.sloutcome, s.slenrollreturndate,
+						   s.slenrollclientdocsdate, s.sloutcome, s.slenrollreturndate, u.firstname + ' ' + u.lastname as enrolladvisor,
 						   datediff( day, l.leaddate, <cfqueryparam value="#arguments.thisdate#" cfsqltype="cf_sql_date" /> ) as leadage, 
 						   c.companyname, c.dba,
 						   (select max(notedate) from notes n where l.leadid = n.leadid) as lastnotedate,
 						   (select top 1 notetext from notes n where l.leadid = n.leadid order by noteid desc) as lastnotetext
-					  from leads l, leadsource ls, slsummary s, company c
+					  from leads l, leadsource ls, slsummary s, company c, users u
 					 where l.leadsourceid = ls.leadsourceid
 					   and l.leadid = s.leadid
 					   and l.companyid = c.companyid
+					   and l.userid = u.userid
 					   and c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 					   and l.leadconv = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 					   and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
@@ -389,6 +403,105 @@
 				  order by l.leaddate asc
 				</cfquery>
 				<cfreturn esignreport>
+			</cffunction>
+			
+			
+			<cffunction name="getsolutionreport" access="public" output="false" hint="I get the solution center report">				
+				<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+				<cfargument name="userid" type="numeric" required="no" default="#session.userid#">
+				<cfargument name="thisdate" type="date" required="yes" default="1/1/2014">
+				<cfset var solutionreport = "" />
+				<cfquery datasource="#application.dsn#" name="solutionreport">
+					select l.*, ls.leadsource, s.slenrolldate, s.slenrollcontacttype, s.slenrollclientmethod, s.slenrollclientdocsmethod,
+                           s.slenrollclientdocsdate, s.sloutcome, s.slenrollreturndate, datediff( day, l.leaddate, getdate() ) as leadage,
+                           c.companyname, c.dba, u.firstname as sladvisorfirst, u.lastname as sladvisorlast, la.leadassigndate, la.leadassignacceptdate,
+                           (select max(notedate) from notes n where l.leadid = n.leadid) as lastnotedate,
+                           (select top 1 notetext from notes n where l.leadid = n.leadid order by noteid desc) as lastnotetext,
+                           (select count(worksheetid) from slworksheet sl where l.leadid = sl.leadid ) as totaldebts,
+                           (select count(solutionid) from solution sn where l.leadid = sn.leadid and sn.solutioncompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /> ) as totalsolutions
+                      from leads l, leadsource ls, leadassignments la, slsummary s, company c, users u
+                     where l.leadsourceid = ls.leadsourceid
+                       and l.leadid = s.leadid
+                       and l.companyid = c.companyid
+					   and l.leadid = la.leadassignleadid
+					   and u.userid = la.leadassignuserid
+                       and c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+                       and l.leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+                       and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+                       and la.leadassignrole = <cfqueryparam value="sls" cfsqltype="cf_sql_varchar" />         
+							
+							<cfif structkeyexists( form, "filtermyresults" )>
+								
+								<cfif structkeyexists( form, "leadsource" ) and form.leadsource is not "" and form.leadsource is not "Select Lead Source">
+									and ls.leadsourceid = <cfqueryparam value="#form.leadsource#" cfsqltype="cf_sql_integer" />
+								</cfif>
+								
+								<cfif structkeyexists( form, "counselors" ) and form.counselors is not "" and form.counselors is not "Select Counselor">					   
+									and la.leadassignuserid = <cfqueryparam value="#form.counselors#" cfsqltype="cf_sql_integer" />
+									and la.leadassignrole = <cfqueryparam value="sls" cfsqltype="cf_sql_varchar" />
+								</cfif>
+								
+								<cfif structkeyexists( form, "startdate" ) and form.startdate is not "" and form.startdate is not "Select Start Date" and structkeyexists( form, "enddate" ) and form.enddate is not "" and form.enddate is not "Select End Date">
+									and l.leaddate between <cfqueryparam value="#form.startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#form.enddate#" cfsqltype="cf_sql_date" />
+								</cfif>											   
+							
+							</cfif>
+							
+				  order by l.leaddate asc
+				</cfquery>
+				<cfreturn solutionreport>
+			</cffunction>
+			
+			
+			
+			<cffunction name="getsolutionstatusreport" access="public" output="false" hint="I get the solution status report">				
+				<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+				<cfargument name="userid" type="numeric" required="no" default="#session.userid#">
+				<cfargument name="thisdate" type="date" required="yes" default="1/1/2014">
+				<cfargument name="sdate" type="date" required="yes" default="1/1/2014">
+				<cfargument name="edate" type="date" required="yes" default="1/1/2014">
+				<cfset var solutionstatusreport = "" />
+				<cfquery datasource="#application.dsn#" name="solutionstatusreport">
+					select l.leadid, l.leaduuid, l.leadfirst, l.leadlast, l.leadphonenumber, l.leademail, s.*, 
+						   sl.servname as nslservicer, sv.servname, sl.servicerid, sl.attendingschool,
+						   u.firstname as sladvisorfirst, u.lastname as sladvisorlast
+                      from leads l, company c, slworksheet sl, servicers sv, solution s, leadassignments la, users u
+                     where l.companyid = c.companyid
+                       and l.leadid = sl.leadid
+                       and s.leadid = l.leadid
+                       and sl.worksheetid = s.solutionworksheetid
+					   and sl.servicerid = sv.servid
+					   and l.leadid = la.leadassignleadid
+					   and la.leadassignuserid = u.userid
+                       and c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+                       and l.leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+                       and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+                       and sl.active = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+					   and la.leadassignrole = <cfqueryparam value="sls" cfsqltype="cf_sql_varchar" />
+							
+							<cfif structkeyexists( form, "filtermyresults" )>
+								
+								<cfif structkeyexists( form, "status" ) and form.status is not "" and form.status is not "Select Status">
+									and s.solutioncompleted = <cfqueryparam value="#form.status#" cfsqltype="cf_sql_bit" />
+									and sl.completed = <cfqueryparam value="#form.status#" cfsqltype="cf_sql_bit" /> 
+								</cfif>
+								
+								<cfif structkeyexists( form, "counselors" ) and form.counselors is not "" and form.counselors is not "Select Counselor">									
+									and la.leadassignuserid = <cfqueryparam value="#form.counselors#" cfsqltype="cf_sql_integer" />									
+								</cfif>
+								
+								<cfif structkeyexists( form, "startdate" ) and form.startdate is not "" and form.startdate is not "Select Start Date" and structkeyexists( form, "enddate" ) and form.enddate is not "" and form.enddate is not "Select End Date">
+									and s.solutiondate between <cfqueryparam value="#form.startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#form.enddate#" cfsqltype="cf_sql_date" />
+								</cfif>											   
+							<cfelse>
+								and s.solutioncompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+								and sl.completed = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+								and s.solutiondate between <cfqueryparam value="#arguments.sdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#arguments.edate#" cfsqltype="cf_sql_date" />
+							</cfif>
+							
+				  order by s.solutiondate asc
+				</cfquery>
+				<cfreturn solutionstatusreport>
 			</cffunction>
 			
 			

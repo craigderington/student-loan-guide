@@ -83,9 +83,9 @@
 									
 									
 									
-									
-										<h5><i class="icon-th-large"></i> This report found <cfoutput>#intakecompletedreport.recordcount#</cfoutput> client record<cfif intakecompletedreport.recordcount gt 1>s</cfif></h5>
-									
+										<cfoutput>
+											<h5><i class="icon-th-large"></i> This report found #intakecompletedreport.recordcount# client record<cfif intakecompletedreport.recordcount gt 1>s</cfif>		<span class="pull-right"><a href="#application.root#?event=page.reports" style="margin-bottom:5px;" class="btn btn-small btn-tertiary"><i class="icon-circle-arrow-left"></i> Reports Home</a><a href="#application.root#?event=page.reports.intake.pipeline" style="margin-left:5px;margin-bottom:5px;" class="btn btn-small btn-default"><i class="icon-list-alt"></i> Intake Pipeline Report</a></span></h5>
+										</cfoutput>
 									
 										<table id="tablesorter" class="table table-bordered table-striped table-highlight tablesorter">
 											<thead>
@@ -98,8 +98,7 @@
 													<th>Documents Return Date</th>
 													<th>Days to Complete</th>
 													<th>Last Note Date</th>
-													<th>Last Payment Date</th>
-													<th>Paid in Full</th>
+													<th>Last Payment Date</th>													
 													<th>Email/Text</th>
 												</tr>
 											</thead>
@@ -128,7 +127,6 @@
 															<td><cfif datediff( "d", slenrollclientdocsdate, leadintakecompdate ) gt 10><span class="label label-important">#datediff( "d", slenrollclientdocsdate, leadintakecompdate )#<cfelse><span class="label label-success">#datediff( "d", slenrollclientdocsdate, leadintakecompdate )#</cfif></td>
 															<td><cfif lastnotedate is not "">#dateformat( lastnotedate, "mm/dd/yyyy" )#<cfif lastnotetext is not "">&nbsp;&nbsp;<a href="javascript:;" rel="popover" data-content="#urldecode( lastnotetext )#" data-original-title="#leadfirst# #leadlast#'s Last Note"><i class="btn-icon-only icon-paper-clip"></i></a></cfif><cfelse>NO NOTES</cfif></td>
 															<td><cfif lastpaymentdate is not "">#dateformat( lastpaymentdate, "mm/dd/yyyy" )#<cfelse>NO PAYMENTS</cfif></td>
-															<td><cfif ( totalfees eq totalfeespaid ) and ( totalfeespaid neq 0.00 and totalfeespaid is not "" )><span class="label label-success">YES</span><cfelse><span class="label label-important">NO</span></cfif></td>
 															<td><a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.email" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-envelope"></i></a> <a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.txtmsg" target="_blank" style="margin-left:3px;"><i class="icon-phone"></i></a></td>
 														</tr>
 												</cfoutput>												

@@ -58,13 +58,21 @@
 							
 							
 							<cfif isuserinrole( "sls" )> 
+							   
 							   and l.leadid = la.leadassignleadid
 							   and ( la.leadassignuserid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /> and la.leadassignrole = <cfqueryparam value="sls" cfsqltype="cf_sql_char" /> )
+							
+							
 							<cfelseif isuserinrole( "intake" )> 
+							   
 							   and l.leadid = la.leadassignleadid
 							   and ( la.leadassignuserid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" /> and la.leadassignrole = <cfqueryparam value="intake" cfsqltype="cf_sql_char" /> )							
+							
+							
 							<cfelseif isuserinrole( "counselor" )>
+							   
 							   and l.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" />
+							
 							</cfif>
 							
 							
@@ -144,7 +152,8 @@
 				<cfquery datasource="#application.dsn#" name="clientfees">
 					select l.leadid, l.leaduuid, l.leadfirst, l.leadlast, f.feeid, f.feeuuid, f.feetype, 
 					       f.createddate, f.feeduedate, f.feepaiddate, f.feeamount, f.feepaid, f.feestatus, 
-						   f.userid, f.feenote, f.feecollected, u.firstname, u.lastname
+						   f.userid, f.feenote, f.feecollected, u.firstname, u.lastname, f.feetrans,
+						   f.feetransdate, f.feereturnednsf, f.feepaytype
 					  from leads l, fees f, users u
 					 where l.leadid = f.leadid
 					   and f.userid = u.userid

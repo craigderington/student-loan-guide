@@ -284,15 +284,15 @@
 																			</cfif>
 																	</td>
 																	<td><cfif feetype eq 1><span class="label label-default">Advisory</span><cfelseif feetype eq 2><span class="label label-info">Implementation</span><cfelseif feetype eq 3><span class="label label-success">Ancillary Fees</span><cfelse></cfif></td>
-																	<td>#dateformat( feeduedate, "mm/dd/yyyy" )#</td>
+																	<td>#dateformat( feeduedate, "mm/dd/yyyy" )# by <span style="margin-left:5px;" class="label label-info">#feepaytype#</span></td>
 																	<td>#dollarformat( feeamount )#</td>																	
-																	<td><cfif trim( feestatus ) is "paid"><span class="label label-success">#feestatus#</span><cfelse><span class="label label-error">#feestatus#</span></cfif></td>
+																	<td><cfif trim( feestatus ) is "paid"><span class="label label-success">#feestatus# <cfif feepaiddate is not ""> - #dateformat( feepaiddate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">#feestatus# <cfif feetransdate is not ""> - #dateformat( feetransdate, "mm/dd/yyyy" )#</cfif></span><cfelse><span class="label label-default">#feestatus#</span></cfif></td>
 																</tr>
 																<cfset feetotal = feetotal + feeamount />
 																</cfoutput>
 																
 																<cfoutput>
-																	<tr>
+																	<tr class="alert alert-info">
 																		<td colspan="3"><div align="right"><strong>Total Fees</strong></div></td>
 																		<td><strong>#dollarformat( feetotal )#</strong></td>
 																		<td>&nbsp;</td>

@@ -239,14 +239,14 @@
 										</thead>
 								
 										<tbody>
-											<cfoutput>
+											<cfoutput>												
 												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports">Cases Waiting Solutions</a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													<td class="description"><a href="#application.root#?event=page.reports.solutions">Client Solution Summary Report</a></td>
+													<td align="center" class="value"><a href="#application.root#?event=page.reports.solutions" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>
 												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports">Solutions Not Completed</a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													<td class="description"><a href="#application.root#?event=page.reports.solutions.status">Client Solution Status Report</a></td>
+													<td align="center" class="value"><a href="#application.root#?event=page.reports.solutions.status" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 												</tr>
 												<tr>
 													<td class="description"><a href="#application.root#?event=page.reports.advisor.accepted">Advisor Cases Waiting Acceptance </a></td>

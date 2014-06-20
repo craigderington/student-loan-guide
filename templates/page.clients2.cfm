@@ -26,9 +26,8 @@
 			<cfinvokeargument name="companyid" value="#session.companyid#">				
 		</cfinvoke>		
 		
-		<cfinvoke component="apis.com.reports.reportgateway" method="getreportroles" returnvariable="reportroles">
-			<cfinvokeargument name="companyid" value="#session.companyid#">
-			<cfinvokeargument name="roletype" value="counselor">
+		<cfinvoke component="apis.com.reports.reportgateway" method="getcounselorlist" returnvariable="counselorlist">
+			<cfinvokeargument name="companyid" value="#session.companyid#">			
 		</cfinvoke>
 		
 		
@@ -82,8 +81,8 @@
 													<cfif isuserinrole( "admin" ) or isuserinrole( "co-admin ") or isuserinrole( "sls" )>
 														<select name="counselors" style="margin-left:5px;" class="input-large" onchange="javascript:this.form.submit();">
 															<option value="">Select Counselors</option>
-															<cfloop query="reportroles">
-																<option value="#userid#"<cfif isdefined( "form.counselors" ) and form.counselors eq reportroles.userid>selected</cfif>>#firstname# #lastname#</option>
+															<cfloop query="counselorlist">
+																<option value="#userid#"<cfif isdefined( "form.counselors" ) and form.counselors eq counselorlist.userid>selected</cfif>>#firstname# #lastname#</option>
 															</cfloop>												
 														</select>
 													</cfif>
