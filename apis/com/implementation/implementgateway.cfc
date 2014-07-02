@@ -32,7 +32,7 @@
 				<cfargument name="solutionoption" type="string" required="yes" default="none">
 				<cfargument name="servid" type="numeric" required="yes" default="-1">
 				<cfargument name="srvname" type="string" required="yes" default="None">
-				
+				<cfargument name="solutionoptiontree" type="numeric" required="yes" default="1">
 				<cfset var solutionlistbyid = "" />
 				<cfquery datasource="#application.dsn#" name="solutionlistbyid">
 					  select solutionid, solutionuuid
@@ -45,7 +45,7 @@
 						 and s.solutionplancreated = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 						 and s.solutionoption = <cfqueryparam value="#arguments.solutionoption#" cfsqltype="cf_sql_varchar" />
 						 and s.solutionsubcat = <cfqueryparam value="#arguments.solutionsubcat#" cfsqltype="cf_sql_varchar" />						 
-						 
+						 and s.solutionoptiontree = <cfqueryparam value="#arguments.solutionoptiontree#" cfsqltype="cf_sql_numeric" />
 						<cfif arguments.servid neq -1>
 							and srv.servname = <cfqueryparam value="#arguments.srvname#" cfsqltype="cf_sql_varchar" />
 						<cfelse>

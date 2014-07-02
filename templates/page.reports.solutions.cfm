@@ -48,21 +48,18 @@
 										<cfoutput>
 											<div class="well">
 												<p><i class="icon-check"></i> Filter Your Results</p>
-												<form class="form-inline" name="filterresults" method="post">											
+												<form class="form-inline" name="filterresults" method="post">				
 													
-													<!---
-													<select name="status" style="margin-left:5px;" class="input-xlarge" onchange="javascript:this.form.submit();">
-														<option value="">Filter by Status</option>														
-															<option value="1"<cfif isdefined( "form.status" ) and form.status eq 1>selected</cfif>>Completed</option>
-															<option value="0"<cfif isdefined( "form.status" ) and form.status eq 1>selected</cfif>>Incomplete</option>										
-													</select>
-													--->
-													
-													<select name="counselors" style="margin-left:5px;" class="input-xlarge" onchange="javascript:this.form.submit();">
+													<select name="counselors" style="margin-left:5px;" class="input-large" onchange="javascript:this.form.submit();">
 														<option value="">Filter by Advisor</option>
 														<cfloop query="reportroles">
 															<option value="#userid#"<cfif isdefined( "form.counselors" ) and form.counselors eq reportroles.userid>selected</cfif>>#firstname# #lastname#</option>
 														</cfloop>												
+													</select>
+													
+													<select name="showthis" style="margin-left:5px;" class="input-medium" onchange="javascript:this.form.submit();">
+														<option value="false"<cfif isdefined( "form.showthis" ) and form.showthis eq "false">selected<cfelseif not isdefined( "form.showthis" )>selected</cfif>>All Records</option>
+														<option value="true"<cfif isdefined( "form.showthis" ) and form.showthis eq "true">selected</cfif>>Hide Completed</option>																									
 													</select>
 													
 													<input type="text" name="startdate" style="margin-left:5px;" class="input-medium" placeholder="Start Date" id="datepicker-inline4" value="<cfif isdefined( "form.startdate" )>#dateformat( form.startdate, 'mm/dd/yyyy' )#</cfif>">
@@ -85,7 +82,7 @@
 												<h5><i class="icon-th-large"></i> This report found #solutionreport.recordcount# client record<cfif solutionreport.recordcount gt 1>s</cfif>      <span class="pull-right"><a href="#application.root#?event=page.reports" style="margin-bottom:5px;" class="btn btn-small btn-tertiary"><i class="icon-circle-arrow-left"></i> Reports Home</a><a href="#application.root#?event=page.reports.solutions.status" style="margin-left:5px;margin-bottom:5px;" class="btn btn-small btn-default"><i class="icon-list-alt"></i> Solution Status Report</a></span>        </h5>
 											</cfoutput>
 											
-												<table class="table table-bordered table-striped table-highlight">
+												<table id="tablesorter" class="table tablesorter table-bordered table-striped table-highlight">
 													<thead>
 														<tr>
 															<th width="6%">Actions</th>																									
@@ -105,21 +102,43 @@
 															<cfinvoke component="apis.udfs.cleanphonenumber" method="formatphonenumber" returnvariable="phonenumber">
 																<cfinvokeargument name="phonenumber" value="#leadphonenumber#">
 															</cfinvoke>													
-																<tr>
-																	<td class="actions">
-																		<a title="Select Record" href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#" class="btn btn-mini btn-warning" target="_blank">
-																			<i class="btn-icon-only icon-ok"></i>										
-																		</a>																
-																	</td>																														
-																	<td>#leadfirst# #leadlast# (#leadid#)</td>
-																	<td>#phonenumber#</td>
-																	<td><a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.email" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-envelope"></i></a>  <a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.txtmsg" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-phone"></i></a></td>
-																	<td>#sladvisorfirst# #sladvisorlast#  <cfif leadassignacceptdate is ""><a style="margin-left:3px;" title="Transfer Advisor" href="javascript:;" onclick="window.open('templates/page.transfer.advisor.cfm?leadid=#leaduuid#&role=sls','','scrollbars=yes,width=840,height=540');"><i class="btn-icon-only icon-refresh"></i></a></cfif></td>
-																	<td>#dateformat( leadassigndate, "mm/dd/yyyy" )#</td>
-																	<td><cfif ( totaldebts eq totalsolutions ) and totalsolutions neq 0><span class="label label-success">#totaldebts# / #totalsolutions#</span><cfelseif totaldebts gt totalsolutions><span class="label label-important">#totaldebts# / #totalsolutions#</span></cfif></td>
-																	<td><cfif lastnotedate is not "">#dateformat( lastnotedate, "mm/dd/yyyy" )#<cfif lastnotetext is not "">&nbsp;&nbsp;<a href="javascript:;" rel="popover" data-content="#urldecode( lastnotetext )#" data-original-title="#leadfirst# #leadlast#'s Last Note"><i class="btn-icon-only icon-paper-clip"></i></a></cfif><cfelse>NO NOTES</cfif></td>
-																	<td><a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.tree" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-sitemap"></i></a></td>
-																</tr>
+																
+																<cfif not structkeyexists( form, "showthis" )>	
+																		<tr>
+																			<td class="actions">
+																				<a title="Select Record" href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#" class="btn btn-mini btn-warning" target="_blank">
+																					<i class="btn-icon-only icon-ok"></i>										
+																				</a>																
+																			</td>																														
+																			<td>#leadfirst# #leadlast# (#leadid#)</td>
+																			<td>#phonenumber#</td>
+																			<td><a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.email" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-envelope"></i></a>  <a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.txtmsg" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-phone"></i></a></td>
+																			<td>#sladvisorfirst# #sladvisorlast#  <cfif leadassignacceptdate is ""><a style="margin-left:3px;" title="Transfer Advisor" href="javascript:;" onclick="window.open('templates/page.transfer.advisor.cfm?leadid=#leaduuid#&role=sls','','scrollbars=yes,width=840,height=540');"><i class="btn-icon-only icon-refresh"></i></a></cfif></td>
+																			<td>#dateformat( leadassigndate, "mm/dd/yyyy" )#</td>
+																			<td><cfif ( totaldebts eq totalsolutions ) and totalsolutions neq 0><span class="label label-success">#totaldebts# / #totalsolutions#</span><cfelseif totaldebts gt totalsolutions><span class="label label-important">#totaldebts# / #totalsolutions#</span></cfif></td>
+																			<td><cfif lastnotedate is not "">#dateformat( lastnotedate, "mm/dd/yyyy" )#<cfif lastnotetext is not "">&nbsp;&nbsp;<a href="javascript:;" rel="popover" data-content="#urldecode( lastnotetext )#" data-original-title="#leadfirst# #leadlast#'s Last Note"><i class="btn-icon-only icon-paper-clip"></i></a></cfif><cfelse>NO NOTES</cfif></td>
+																			<td><a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.tree" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-sitemap"></i></a></td>
+																		</tr>
+																<cfelse>
+																		<cfif totalsolutions neq totaldebts>
+																			<tr>
+																				<td class="actions">
+																					<a title="Select Record" href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#" class="btn btn-mini btn-warning" target="_blank">
+																						<i class="btn-icon-only icon-ok"></i>										
+																					</a>																
+																				</td>																														
+																				<td>#leadfirst# #leadlast# (#leadid#)</td>
+																				<td>#phonenumber#</td>
+																				<td><a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.email" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-envelope"></i></a>  <a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.txtmsg" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-phone"></i></a></td>
+																				<td>#sladvisorfirst# #sladvisorlast#  <cfif leadassignacceptdate is ""><a style="margin-left:3px;" title="Transfer Advisor" href="javascript:;" onclick="window.open('templates/page.transfer.advisor.cfm?leadid=#leaduuid#&role=sls','','scrollbars=yes,width=840,height=540');"><i class="btn-icon-only icon-refresh"></i></a></cfif></td>
+																				<td>#dateformat( leadassigndate, "mm/dd/yyyy" )#</td>
+																				<td><cfif ( totaldebts eq totalsolutions ) and totalsolutions neq 0><span class="label label-success">#totaldebts# / #totalsolutions#</span><cfelseif totaldebts gt totalsolutions><span class="label label-important">#totaldebts# / #totalsolutions#</span></cfif></td>
+																				<td><cfif lastnotedate is not "">#dateformat( lastnotedate, "mm/dd/yyyy" )#<cfif lastnotetext is not "">&nbsp;&nbsp;<a href="javascript:;" rel="popover" data-content="#urldecode( lastnotetext )#" data-original-title="#leadfirst# #leadlast#'s Last Note"><i class="btn-icon-only icon-paper-clip"></i></a></cfif><cfelse>NO NOTES</cfif></td>
+																				<td><a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#&ref=page.tree" target="_blank" style="margin-left:3px;"><i class="btn-icon-only icon-sitemap"></i></a></td>
+																			</tr>																		
+																		</cfif>
+																</cfif>		
+																
 														</cfoutput>												
 													</tbody>
 												</table>

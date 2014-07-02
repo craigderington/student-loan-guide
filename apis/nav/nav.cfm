@@ -275,6 +275,9 @@
 				<cfcase value="page.solution.implement">				
 					<cfinclude template="../../templates/page.solution.implement.cfm">
 				</cfcase>
+				<cfcase value="page.advisor.review">				
+					<cfinclude template="../../templates/page.advisor.review.cfm">
+				</cfcase>
 				<cfcase value="page.references">				
 					<cfinclude template="../../templates/page.references.cfm">
 				</cfcase>
@@ -425,6 +428,9 @@
 				<cfcase value="page.reports.solutions.status">
 					<cfinclude template="../../templates/page.reports.solutions.status.cfm">
 				</cfcase>
+				<cfcase value="page.reports.implementation">
+					<cfinclude template="../../templates/page.reports.implementation.cfm">
+				</cfcase>			
 				<cfcase value="page.admin">				
 					<cfif isuserinrole( "admin" )>	
 						<cfinclude template="../../templates/page.admin.cfm">

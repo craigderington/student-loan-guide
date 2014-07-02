@@ -18,7 +18,8 @@
 						  FROM slworksheet
 						 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />		
+						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+						   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />		
 					</cfquery>
 					
 					<cfquery datasource="#application.dsn#" name="checkeda">
@@ -34,7 +35,8 @@
 						 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
-					  GROUP BY leadid
+						   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+					      GROUP BY leadid
 					</cfquery>
 					
 					<cfset wIntRate = NumberFormat(( wInt.weightInt/loanTotals.totalLoanAmount ) * 100.00, "9.999") />

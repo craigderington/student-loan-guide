@@ -38,6 +38,7 @@
 						</div>
 					</cfif>
 						
+					<cfif isuserinrole( "admin" ) or isuserinrole( "co-admin" )>
 						<div class="widget stacked">
 							
 							<cfoutput>
@@ -114,7 +115,7 @@
 							</div> <!-- /widget-content -->
 							
 						</div> <!-- /widget -->
-						
+					</cfif>	
 					</div> <!-- /span12 -->	
 					
 				  </div> <!-- /row -->	  
@@ -129,7 +130,7 @@
 								<cfoutput>
 								<div class="widget-header">
 									<span class="icon-list-alt"></span>
-									<h3 style="font-weight:bold;">#session.companyname# | Supervisor Enrollment Reports Menu</h3>
+									<h3 style="font-weight:bold;">#session.companyname# | Enrollment Reports Menu</h3>
 								</div> <!-- .widget-header -->
 								</cfoutput>
 								
@@ -147,7 +148,7 @@
 											<cfoutput>
 												
 												<!--- // start with supervisory reports --->
-												<cfif isuserinrole( "admin" ) or isuserinrole( "co-admin" )>
+												
 												
 													<tr>
 														<td class="description"><a href="#application.root#?event=page.reports.enrollment">Outstanding Enrollment Report</a></td>
@@ -160,7 +161,7 @@
 													</tr>
 													
 													<tr>
-														<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.esign">E-Sign Follow Up Report</a></td>
+														<td class="description"><a href="#application.root#?event=page.reports.esign">E-Sign Follow Up Report</a></td>
 														<td align="center" class="value"><a href="#application.root#?event=page.reports.esign" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
 													</tr>
 													
@@ -171,7 +172,7 @@
 
 													
 												
-												</cfif>
+												
 												
 											</cfoutput>
 										</tbody>
@@ -181,91 +182,95 @@
 								
 							</div> <!-- /widget -table -->
 
-							<div class="widget stacked widget-table">
-								
-								<cfoutput>
-								<div class="widget-header">
-									<span class="icon-list-alt"></span>
-									<h3>#session.companyname# | Supervisor Intake Reports Menu</h3>
-								</div> <!-- .widget-header -->
-								</cfoutput>
-								
-								<div class="widget-content">
-									<table class="table table-bordered table-striped">
-										
-										<thead>
-											<tr>								
-												<th>Report Name</th>
-												<th>Run Report</th>								
-											</tr>
-										</thead>
-								
-										<tbody>
-											<cfoutput>
-												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports.intake.pipeline">Intake Pipeline Report</a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports.intake.pipline" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
-												</tr>													
-												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports.intake">Intake Completed Report</a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports.intake" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
-												</tr>
-																								
-											</cfoutput>										
-										</tbody>
-									</table>
-									
-								</div> <!-- .widget-content -->
-								
-							</div><!-- / .widget-table -->
 							
-							<div class="widget stacked widget-table">
+							<cfif isuserinrole( "admin" ) or isuserinrole( "co-admin" ) or isuserinrole( "sls" )>
 								
-								<cfoutput>
-								<div class="widget-header">
-									<span class="icon-list-alt"></span>
-									<h3>#session.companyname# | Supervisor Advisory Reports Menu</h3>
-								</div> <!-- .widget-header -->
-								</cfoutput>
-								
-								<div class="widget-content">
-									<table class="table table-bordered table-striped">
+								<div class="widget stacked widget-table">
+									
+									<cfoutput>
+									<div class="widget-header">
+										<span class="icon-list-alt"></span>
+										<h3>#session.companyname# | Intake Reports Menu</h3>
+									</div> <!-- .widget-header -->
+									</cfoutput>
+									
+									<div class="widget-content">
+										<table class="table table-bordered table-striped">
+											
+											<thead>
+												<tr>								
+													<th>Report Name</th>
+													<th>Run Report</th>								
+												</tr>
+											</thead>
+									
+											<tbody>
+												<cfoutput>
+													<tr>
+														<td class="description"><a href="#application.root#?event=page.reports.intake.pipeline">Intake Pipeline Report</a></td>
+														<td align="center" class="value"><a href="#application.root#?event=page.reports.intake.pipline" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													</tr>													
+													<tr>
+														<td class="description"><a href="#application.root#?event=page.reports.intake">Intake Completed Report</a></td>
+														<td align="center" class="value"><a href="#application.root#?event=page.reports.intake" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													</tr>
+																									
+												</cfoutput>										
+											</tbody>
+										</table>
 										
-										<thead>
-											<tr>								
-												<th>Report Name</th>
-												<th>Run Report</th>								
-											</tr>
-										</thead>
+									</div> <!-- .widget-content -->
+									
+								</div><!-- / .widget-table -->
 								
-										<tbody>
-											<cfoutput>												
-												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports.solutions">Client Solution Summary Report</a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports.solutions" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+								<div class="widget stacked widget-table">
+									
+									<cfoutput>
+									<div class="widget-header">
+										<span class="icon-list-alt"></span>
+										<h3>#session.companyname# | Advisory Reports Menu</h3>
+									</div> <!-- .widget-header -->
+									</cfoutput>
+									
+									<div class="widget-content">
+										<table class="table table-bordered table-striped">
+											
+											<thead>
+												<tr>								
+													<th>Report Name</th>
+													<th>Run Report</th>								
 												</tr>
-												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports.solutions.status">Client Solution Status Report</a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports.solutions.status" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
-												</tr>
-												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports.advisor.accepted">Advisor Cases Waiting Acceptance </a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
-												</tr>
-												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports">Completed Advisory Cases </a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
-												</tr>
-																								
-											</cfoutput>										
-										</tbody>
-									</table>	
+											</thead>
+									
+											<tbody>
+												<cfoutput>												
+													<tr>
+														<td class="description"><a href="#application.root#?event=page.reports.solutions">Client Solution Summary Report</a></td>
+														<td align="center" class="value"><a href="#application.root#?event=page.reports.solutions" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													</tr>
+													<tr>
+														<td class="description"><a href="#application.root#?event=page.reports.solutions.status">Client Solution Status Report</a></td>
+														<td align="center" class="value"><a href="#application.root#?event=page.reports.solutions.status" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													</tr>
+													<tr>
+														<td class="description"><a href="#application.root#?event=page.reports.advisor.accepted">Advisor Cases Waiting Acceptance </a></td>
+														<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													</tr>
+													<!---
+													<tr>
+														<td class="description"><a href="#application.root#?event=page.reports">Completed Advisory Cases </a></td>
+														<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													</tr>
+													--->												
+												</cfoutput>										
+											</tbody>
+										</table>	
 
+										
+									</div> <!-- .widget-content -->
 									
-								</div> <!-- .widget-content -->
-								
-							</div><!-- / .widget-table -->
-							
+								</div><!-- / .widget-table -->
+							</cfif>
 							
 							
 							
@@ -277,52 +282,48 @@
 						
 						<div class="span6">
 							
-							
-							
-							
-							<div class="widget stacked widget-table">
+							<cfif isuserinrole( "admin" ) or isuserinrole( "co-admin" ) or isuserinrole( "sls" )>	
 								
-								<cfoutput>
-								<div class="widget-header">
-									<span class="icon-list-alt"></span>
-									<h3>#session.companyname# | Supervisor Summary Reports Menu</h3>
-								</div> <!-- .widget-header -->
-								</cfoutput>
 								
-								<div class="widget-content">
-									<table class="table table-bordered table-striped">
-										
-										<thead>
-											<tr>								
-												<th>Report Name</th>
-												<th>Run Report</th>								
-											</tr>
-										</thead>
-								
-										<tbody>
-											<cfoutput>
-												<tr>
-													<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.summary.example">Example Summary Report 1</a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports.summary.example" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
-												</tr>													
-												<tr>
-													<td class="description"><a href="#application.root#?event=page.reports">Undefined</a></td>
-													<td align="center" class="value"><a href="#application.root#?event=page.reports" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
-												</tr>
-																								
-											</cfoutput>										
-										</tbody>
-									</table>
+								<div class="widget stacked widget-table">
 									
-								</div> <!-- .widget-content -->
-								
-							</div><!-- / .widget-table -->
-							
+									<cfoutput>
+									<div class="widget-header">
+										<span class="icon-list-alt"></span>
+										<h3>#session.companyname# | Implementation Reports Menu</h3>
+									</div> <!-- .widget-header -->
+									</cfoutput>
+									
+									
+									<div class="widget-content">
+										<table class="table table-bordered table-striped">
+											
+											<thead>
+												<tr>								
+													<th>Report Name</th>
+													<th>Run Report</th>								
+												</tr>
+											</thead>
+									
+											<tbody>
+												<cfoutput>
+													<tr>
+														<td class="description"><span style="margin-right:5px;" class="label label-important">NEW</span><a href="#application.root#?event=page.reports.implementation">Implementation Report</a></td>
+														<td align="center" class="value"><a href="#application.root#?event=page.reports.implementation" class="btn btn-small btn-default"><i class="icon-laptop btn-icon-only"></i></a></td>
+													</tr>																			
+												</cfoutput>										
+											</tbody>
+										</table>
+										
+									</div> <!-- .widget-content -->
+									
+								</div><!-- / .widget-table -->
+							</cfif>
 						</div> <!-- / .span6 -->			
 						
 					
 					</div> <!-- / .row -->
-				    <div style="margin-top:100px;"></div>
+				    <div style="margin-top:250px;"></div>
 				  
 				</div> <!-- / .container -->
 				

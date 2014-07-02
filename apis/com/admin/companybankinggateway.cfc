@@ -16,14 +16,15 @@
 					<cfset var achdata = "" />
 					<cfquery datasource="#application.dsn#" name="achdata">
 						select 	l.leadid, l.leaduuid, l.leadfirst, l.leadlast, l.leadactive, l.leadachhold, l.leadachholdreason, 
-								l.leadachholddate, f.feeid, f.feeuuid, f.feeduedate, f.feepaiddate, f.feeamount, f.feepaid, 
+								l.leadachholddate, f.feeid, f.feeuuid, f.feeduedate, f.feepaiddate, f.feeamount, f.feepaid, f.feetype, 
 								f.feestatus, f.feenote, f.feecollected, f.feeprogram, e.esignrouting, e.esignaccount, e.esignccnumber, 
 								e.esignccexpdate, e.esignccv2, e.esignccname, e.esignpaytype, sl.slenrollreturndate, sl.slenrolldocsuploaddate, 
-								f.feetransdate, f.feetrans, f.feereturnednsf, f.feepaytype, achbatchid
-						  from  fees f, leads l, slsummary sl, esign e
+								f.feetransdate, f.feetrans, f.feereturnednsf, f.feepaytype, f.achbatchid, f.nsfreasonid, n.nsfreasondescr
+						  from  fees f, leads l, slsummary sl, esign e, nsfreasons n
 						 where  f.leadid = l.leadid
 						   and  l.leadid = sl.leadid
 						   and  l.leadid = e.leadid
+						   and  f.nsfreasonid = n.nsfreasonid
                            and  l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
                            and  ( f.feeduedate between <cfqueryparam value="#arguments.startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#arguments.enddate#" cfsqltype="cf_sql_date" /> )
 						   and  sl.slenrollreturndate <> ''
@@ -34,6 +35,9 @@
 									</cfif>
 									<cfif structkeyexists( form, "paytype" ) and form.paytype is not "--">
 										and f.feepaytype = <cfqueryparam value="#trim( form.paytype )#" cfsqltype="cf_sql_char" />
+									</cfif>
+									<cfif structkeyexists( form, "counselors" ) and form.counselors is not "--">
+										and l.userid = <cfqueryparam value="#trim( form.counselors )#" cfsqltype="cf_sql_integer" />
 									</cfif>
 								</cfif>				   
 						   
@@ -63,6 +67,11 @@
 							where  f.leadid = l.leadid
 							and  l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 							and  ( f.feeduedate between <cfqueryparam value="#arguments.startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#arguments.enddate#" cfsqltype="cf_sql_date" /> )                
+							<cfif structkeyexists( form, "filtermyresults" )>
+								
+								and l.userid = <cfqueryparam value="#form.counselors#" cfsqltype="cf_sql_integer" />
+								
+							</cfif>
 					</cfquery>
 					<cfreturn achsummarydata>
 				</cffunction>

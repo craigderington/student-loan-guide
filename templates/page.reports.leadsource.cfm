@@ -3,10 +3,11 @@
 			
 			
 			
-			<!--- // report security filter --->
+			<!--- // report security filter 
 			<cfif not isuserinrole( "admin" ) and not isuserinrole( "co-admin" )>
 				<cflocation url="#application.root#?event=page.reports&noaccess=1" addtoken="yes">
 			</cfif>
+			--->
 			
 			<!--- // get our data access components --->
 						
@@ -69,12 +70,14 @@
 														</cfloop>												
 													</select>									
 													
-													<select name="counselors" style="margin-left:5px;" class="input-large" onchange="javascript:this.form.submit();">
-														<option value="">Select Counselor</option>
-															<cfloop query="counselorlist">
-																<option value="#userid#"<cfif isdefined( "form.counselors" ) and form.counselors eq counselorlist.userid>selected</cfif>>#firstname# #lastname#</option>
-															</cfloop>												
-													</select>
+													<cfif not isuserinrole( "counselor" )>
+														<select name="counselors" style="margin-left:5px;" class="input-large" onchange="javascript:this.form.submit();">
+															<option value="">Select Counselor</option>
+																<cfloop query="counselorlist">
+																	<option value="#userid#"<cfif isdefined( "form.counselors" ) and form.counselors eq counselorlist.userid>selected</cfif>>#firstname# #lastname#</option>
+																</cfloop>												
+														</select>
+													</cfif>
 													<input type="text" name="startdate" style="margin-left:5px;" class="input-medium" placeholder="Start Date" id="datepicker-inline4" value="<cfif isdefined( "form.startdate" )>#dateformat( form.startdate, 'mm/dd/yyyy' )#</cfif>">
 													<input type="text" name="enddate" style="margin-left:5px;" class="input-medium" placeholder="End Date" id="datepicker-inline5" value="<cfif isdefined( "form.enddate" )>#dateformat( form.enddate, 'mm/dd/yyyy' )#</cfif>">
 													<input type="hidden" name="filtermyresults">

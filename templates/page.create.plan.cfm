@@ -236,6 +236,7 @@
 																<cfinvokeargument name="servid" value="#servicerid#">													
 																<cfinvokeargument name="solutionsubcat" value="#solutionsubcat#">
 																<cfinvokeargument name="solutionoption" value="#solutionoption#">
+																<cfinvokeargument name="solutionoptiontree" value="#solutionoptiontree#">
 																
 																<cfif servicerid eq -1>
 																	<cfinvokeargument name="srvname" value="#nslservicer#">

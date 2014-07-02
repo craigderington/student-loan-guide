@@ -165,53 +165,66 @@
 											<!--- // some other variables --->
 											<cfset today = #CreateODBCDateTime(now())# />											
 											
-											<cfloop from="1" to="#lead.numberpays#" index="i">										
-												<!--- // create the database records --->
-												<cfquery datasource="#application.dsn#" name="dofees">
-													insert into fees(feeuuid, leadid, feetype, createddate, feeduedate, feeamount, userid)
-														values (
-																<cfqueryparam value="#lead.feeuuid#" cfsqltype="cf_sql_varchar" />,
-																<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
-																<cfqueryparam value="#lead.feetype#" cfsqltype="cf_sql_integer" />,
-																<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
-																<cfqueryparam value="#lead.nextdate#" cfsqltype="cf_sql_date" />,
-																<cfqueryparam value="#lead.paymentamount#" cfsqltype="cf_sql_float" />,
-																<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />																
-															   );
-												</cfquery>
+											<cfif lead.numberpays lte 10>
 												
-												<cfset lead.nextdate = dateadd( "m", 1, lead.nextdate ) />
-												<cfset lead.feeuuid = #createuuid()# />
-											</cfloop>
-											
-											<cfif lead.startdate is not "" and lead.numberpays is not "">
-												<cfinvoke component="apis.com.tasks.taskautomation" method="marktaskcompleted" returnvariable="taskmsg">
-													<cfinvokeargument name="leadid" value="#session.leadid#">
-													<cfinvokeargument name="taskref" value="feesch">
-												</cfinvoke>
-											</cfif>
-											
-											
-											<!--- // log the activity --->
-											<cfquery datasource="#application.dsn#" name="logact">
-												insert into activity(leadid, userid, activitydate, activitytype, activity)
-													values (
-															<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
-															<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
-															<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
-															<cfqueryparam value="Record Added" cfsqltype="cf_sql_varchar" />,
-															<cfqueryparam value="#session.username# created the enrollment fee schedule for #leaddetail.leadfirst# #leaddetail.leadlast#." cfsqltype="cf_sql_varchar" />
-															);
-											</cfquery>																					
-											
-											<cfif structkeyexists( form, "savelead" )>
-												<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
-											<cfelseif structkeyexists( form, "saveleadcontinue" )>
-												<cflocation url="#application.root#?event=page.enroll.status" addtoken="no">
+												<cfloop from="1" to="#lead.numberpays#" index="i">										
+													<!--- // create the database records --->
+													<cfquery datasource="#application.dsn#" name="dofees">
+														insert into fees(feeuuid, leadid, feetype, createddate, feeduedate, feeamount, userid)
+															values (
+																	<cfqueryparam value="#lead.feeuuid#" cfsqltype="cf_sql_varchar" />,
+																	<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
+																	<cfqueryparam value="#lead.feetype#" cfsqltype="cf_sql_integer" />,
+																	<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
+																	<cfqueryparam value="#lead.nextdate#" cfsqltype="cf_sql_date" />,
+																	<cfqueryparam value="#lead.paymentamount#" cfsqltype="cf_sql_float" />,
+																	<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />																
+																   );
+													</cfquery>
+													
+													<cfset lead.nextdate = dateadd( "m", 1, lead.nextdate ) />
+													<cfset lead.feeuuid = #createuuid()# />
+												</cfloop>
+												
+												<cfif lead.startdate is not "" and lead.numberpays is not "">
+													<cfinvoke component="apis.com.tasks.taskautomation" method="marktaskcompleted" returnvariable="taskmsg">
+														<cfinvokeargument name="leadid" value="#session.leadid#">
+														<cfinvokeargument name="taskref" value="feesch">
+													</cfinvoke>
+												</cfif>
+												
+												
+												<!--- // log the activity --->
+												<cfquery datasource="#application.dsn#" name="logact">
+													insert into activity(leadid, userid, activitydate, activitytype, activity)
+														values (
+																<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
+																<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
+																<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
+																<cfqueryparam value="Record Added" cfsqltype="cf_sql_varchar" />,
+																<cfqueryparam value="#session.username# created the enrollment fee schedule for #leaddetail.leadfirst# #leaddetail.leadlast#." cfsqltype="cf_sql_varchar" />
+																);
+												</cfquery>																					
+												
+												<cfif structkeyexists( form, "savelead" )>
+													<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
+												<cfelseif structkeyexists( form, "saveleadcontinue" )>
+													<cflocation url="#application.root#?event=page.enroll.status" addtoken="no">
+												<cfelse>
+													<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
+												</cfif>
+												
 											<cfelse>
-												<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
+											
+												<div class="alert alert-error">
+													<a class="close" data-dismiss="alert">&times;</a>
+														<h5><error>There were errors in your submission:</error></h5>
+														<ul>
+															<li>Sorry, you can not create more than 10 fees at once...</li>
+														</ul>
+												</div>
+												
 											</cfif>
-								
 										<!--- If the required data is missing - throw the validation error --->
 										<cfelse>
 										
@@ -283,10 +296,10 @@
 																				</cfif>
 																			</cfif>
 																	</td>
-																	<td><cfif feetype eq 1><span class="label label-default">Advisory</span><cfelseif feetype eq 2><span class="label label-info">Implementation</span><cfelseif feetype eq 3><span class="label label-success">Ancillary Fees</span><cfelse></cfif></td>
+																	<td><cfif feetype eq 1><span class="label label-default">Advisory</span><cfelseif feetype eq 2><span class="label label-info">Implementation</span><cfelseif feetype eq 3><span class="label label-success">Ancillary Fees</span><cfelseif feetype eq 0><span class="label label-info">Returned Item</span><cfelse></cfif></td>
 																	<td>#dateformat( feeduedate, "mm/dd/yyyy" )# by <span style="margin-left:5px;" class="label label-info">#feepaytype#</span></td>
 																	<td>#dollarformat( feeamount )#</td>																	
-																	<td><cfif trim( feestatus ) is "paid"><span class="label label-success">#feestatus# <cfif feepaiddate is not ""> - #dateformat( feepaiddate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">#feestatus# <cfif feetransdate is not ""> - #dateformat( feetransdate, "mm/dd/yyyy" )#</cfif></span><cfelse><span class="label label-default">#feestatus#</span></cfif></td>
+																	<td><cfif trim( feestatus ) is "paid"><span class="label label-success">#feestatus# <cfif feepaiddate is not ""> - #dateformat( feepaiddate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">#feestatus# <cfif feetransdate is not ""> - #dateformat( feetransdate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "nsf"><span class="label label-info">#feestatus#<cfelse><span class="label label-default">#feestatus#</span></cfif></td>
 																</tr>
 																<cfset feetotal = feetotal + feeamount />
 																</cfoutput>

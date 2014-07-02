@@ -426,7 +426,7 @@
 					</div> <!-- //.row -->				
 				
 					<cfif solutionlist.recordcount lt 5>
-					<div style="height:450px;"></div>							
+					<div style="height:300px;"></div>							
 					<cfelse>
 					<div style="height:150px;"></div>
 					</cfif>

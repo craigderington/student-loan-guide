@@ -1,4 +1,4 @@
-		
+﻿		
 		
 		<cfcomponent displayname="studentloancalculator">
 		
@@ -105,7 +105,8 @@
 						  FROM slworksheet
 						 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />		
+						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+						   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />		
 					</cfquery>
 					
 					<!--- // get the weighted interest rate --->
@@ -116,6 +117,7 @@
 						 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+						   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 					  GROUP BY leadid
 					</cfquery>
 					
@@ -204,7 +206,8 @@
 						  FROM slworksheet
 						 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />	
+						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+						   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />	
 					</cfquery>
 
 					<cfif studentloans.irate LT 3.50 >
@@ -266,7 +269,8 @@
 						  FROM slworksheet
 						 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />		
+						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+						   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />		
 					</cfquery>
 			
 					<cfset DTI = loanTotals.totalLoanAmount / (arguments.agi/12) />
@@ -296,7 +300,8 @@
 						  FROM slworksheet
 						 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_numeric" />
 						   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />		
+						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+						   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />		
 					</cfquery>
 					
 					<cfquery datasource="#application.dsn#" name="wInt">
@@ -306,6 +311,7 @@
 						 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 						   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 						   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+					           AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 					  GROUP BY leadid
 					</cfquery>
 					
@@ -352,7 +358,8 @@
 							  FROM slworksheet
 							 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 							   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />		
+							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+						           AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />		
 						</cfquery>
 						
 						<cfquery datasource="#application.dsn#" name="wInt">
@@ -362,6 +369,7 @@
 							 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 							   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+							   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 						  GROUP BY leadid
 						</cfquery>
 						
@@ -422,7 +430,8 @@
 							  FROM slworksheet
 							 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 							   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />		
+							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+							   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />		
 						</cfquery>
 						
 						<cfquery datasource="#application.dsn#" name="wInt">
@@ -432,6 +441,7 @@
 							 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 							   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+							   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 						  GROUP BY leadid
 						</cfquery>
 						
@@ -494,7 +504,8 @@
 							  FROM slworksheet
 							 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_numeric" />
 							   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />		
+							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+							   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />		
 						</cfquery>
 						
 						<!--- Query needed to get the average interest rate --->
@@ -505,6 +516,7 @@
 							 WHERE leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 							   AND incconsol = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 							   AND loancodeid <> <cfqueryparam value="35" cfsqltype="cf_sql_integer" />
+							   AND completed = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 						  GROUP BY leadid
 						</cfquery>
 						

@@ -59,6 +59,29 @@
 			<cfreturn mtasklist >		
 		</cffunction>
 		
+		<cffunction name="getnsfreasons" output="false" returntype="query" access="remote" hint="I get the list nsf reasons for each company.">			
+			<cfargument name="companyid" default="444" type="numeric">			
+			<cfset var nsfreasonlist = "" />
+			<cfquery datasource="#application.dsn#" name="nsfreasonlist">
+				select nsfreasonid, companyid, nsfreasoncode, nsfreasondescr
+				  from nsfreasons
+				 where companyid = <cfqueryparam value="444" cfsqltype="cf_sql_integer" />
+			  order by nsfreasondescr asc
+			</cfquery>			
+			<cfreturn nsfreasonlist >		
+		</cffunction>
+		
+		<cffunction name="getnsfreason" output="false" returntype="query" access="remote" hint="I get the nsf reason for the automated email.">			
+			<cfargument name="nsfreasonid" default="0" type="numeric" required="yes">			
+			<cfset var nsfreasondetail = "" />
+			<cfquery datasource="#application.dsn#" name="nsfreasondetail">
+				select nsfreasonid, nsfreasoncode, nsfreasondescr
+				  from nsfreasons
+				 where nsfreasonid = <cfqueryparam value="#arguments.nsfreasonid#" cfsqltype="cf_sql_integer" />			  
+			</cfquery>			
+			<cfreturn nsfreasondetail >		
+		</cffunction>
+		
 		
 		
 	

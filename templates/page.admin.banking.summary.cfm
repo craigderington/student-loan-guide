@@ -33,7 +33,11 @@
 								<cfinvokeargument name="companyid" value="#session.companyid#">
 								<cfinvokeargument name="startdate" value="#startdate#">
 								<cfinvokeargument name="enddate" value="#enddate#">
-							</cfinvoke>	
+							</cfinvoke>
+
+							<cfinvoke component="apis.com.reports.reportgateway" method="getcounselorlist" returnvariable="counselorlist">
+								<cfinvokeargument name="companyid" value="#session.companyid#">			
+							</cfinvoke>
 							
 		
 							<!--- // format our numeric database values --->
@@ -96,6 +100,12 @@
 														<div class="well">
 															<p><i class="icon-check"></i> Filter Your Results</p>
 															<form class="form-inline" name="filterresults" method="post">								
+																<select name="counselors" style="margin-left:5px;" class="input-large" onchange="javascript:this.form.submit();">
+																	<option value="">Select Counselor</option>
+																		<cfloop query="counselorlist">
+																			<option value="#userid#"<cfif isdefined( "form.counselors" ) and form.counselors eq counselorlist.userid>selected</cfif>>#firstname# #lastname#</option>
+																		</cfloop>							
+																</select>																
 																<input type="text" name="startdate" style="margin-left:5px;" class="input-medium" placeholder="Start Date" id="datepicker-inline4" value="<cfif isdefined( "form.startdate" )>#dateformat( form.startdate, 'mm/dd/yyyy' )#<cfelse>#dateformat( startdate, 'mm/dd/yyyy' )#</cfif>">
 																<input type="text" name="enddate" style="margin-left:5px;" class="input-medium" placeholder="End Date" id="datepicker-inline5" value="<cfif isdefined( "form.enddate" )>#dateformat( form.enddate, 'mm/dd/yyyy' )#<cfelse>#dateformat( enddate, 'mm/dd/yyyy' )#</cfif>">
 																<input type="hidden" name="filtermyresults">

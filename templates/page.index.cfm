@@ -209,7 +209,7 @@
 											
 											<div class="stat">
 												<span class="stat-value">#dollarformat( mydashboard.totaldebt )#</span>									
-												Total Student Loan Debt
+												Total Student Loan Debt Enrolled
 											</div> <!-- /stat -->
 											
 											<div class="stat">

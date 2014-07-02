@@ -155,6 +155,15 @@
 											<i class="icon-chevron-right"></i>
 										</a>              		
 									</li>
+									
+									<li <cfif trim( url.event ) is "page.advisor.review">class="active"</cfif>>
+										<a href="#application.root#?event=page.advisor.review">
+											<i class="icon-flag"></i>
+											Advisor Review
+											<i class="icon-chevron-right"></i>
+										</a>              		
+									</li>
+									
 								</cfif>
 							</cfif>											
 													

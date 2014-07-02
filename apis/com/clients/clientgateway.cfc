@@ -183,7 +183,9 @@
 				<!--- // query our datasource for the results --->				
 				<cfquery datasource="#application.dsn#" name="feedetail">
 					select f.feeid, f.feeuuid, f.feetype, f.createddate, f.feeduedate, f.feepaiddate, 
-					       f.feeamount, f.feepaid, f.feestatus, f.feecollected
+					       f.feeamount, f.feepaid, f.feestatus, f.feecollected, f.userid, f.feenote, 
+						   f.feeprogram, f.feetrans, f.feetransdate, f.feereturnednsf, f.feepaytype, 
+						   f.achbatchid, f.nsfreasonid
 					  from fees f
 					 where feeuuid = <cfqueryparam value="#arguments.feeid#" cfsqltype="cf_sql_varchar" maxlength="35" />				   
 				</cfquery>				

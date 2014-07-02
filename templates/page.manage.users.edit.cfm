@@ -365,18 +365,30 @@
 														</div> <!-- /control-group -->						
 															
 														<br />												
-														<cfif compuserdetail.numlicenses neq userlist.recordcount>	
-														<div class="form-actions">															
-															<button type="submit" class="btn btn-secondary" name="saveuserprofile"><i class="icon-save"></i> Save User Profile</button>
-															<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.users'"><i class="icon-remove-sign"></i> Cancel</a>
-															<input name="utf8" type="hidden" value="&##955;">
-															<input type="hidden" name="__authToken" value="#randout#" />
-															<input type="hidden" name="thisuserid" value="<cfif userdetail.useruuid is "">0<cfelse>#userdetail.useruuid#</cfif>" />														
-															<input name="validate_require" type="hidden" value="firstname|Please enter your first name.  This field can not be blank.;lastname|Please enter your last name.  This field can not be blank.;email|Please enter your email address.  You can not receive email notifications without a valid email address." />
-															<input type="hidden" name="validate_email" value="email|The email address enter is invalid.  Please re-try..." />															
-														</div> <!-- /form-actions -->
+														<cfif ( structkeyexists( url, "uid" ) and url.uid eq 0 )>	
+															<cfif compuserdetail.numlicenses neq userlist.recordcount>
+																<div class="form-actions">															
+																	<button type="submit" class="btn btn-secondary" name="saveuserprofile"><i class="icon-save"></i> Save User Profile</button>
+																	<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.users'"><i class="icon-remove-sign"></i> Cancel</a>
+																	<input name="utf8" type="hidden" value="&##955;">
+																	<input type="hidden" name="__authToken" value="#randout#" />
+																	<input type="hidden" name="thisuserid" value="<cfif userdetail.useruuid is "">0<cfelse>#userdetail.useruuid#</cfif>" />														
+																	<input name="validate_require" type="hidden" value="firstname|Please enter your first name.  This field can not be blank.;lastname|Please enter your last name.  This field can not be blank.;email|Please enter your email address.  You can not receive email notifications without a valid email address." />
+																	<input type="hidden" name="validate_email" value="email|The email address enter is invalid.  Please re-try..." />															
+																</div> <!-- /form-actions -->
+															<cfelse>
+																<span style="color:red;margin-left:10px;"><i style="color:red;" class="icon-warning-sign"></i> Sorry, all of your company software licenses are currently in use.  No new users may be added at this time.</span>
+															</cfif>
 														<cfelse>
-														<span style="color:red;margin-left:10px;"><i style="color:red;" class="icon-warning-sign"></i> Sorry, all of your company software licenses are currently in use.  No new users may be added at this time.</span>
+															<div class="form-actions">															
+																<button type="submit" class="btn btn-secondary" name="saveuserprofile"><i class="icon-save"></i> Save User Profile</button>
+																<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.users'"><i class="icon-remove-sign"></i> Cancel</a>
+																<input name="utf8" type="hidden" value="&##955;">
+																<input type="hidden" name="__authToken" value="#randout#" />
+																<input type="hidden" name="thisuserid" value="<cfif userdetail.useruuid is "">0<cfelse>#userdetail.useruuid#</cfif>" />														
+																<input name="validate_require" type="hidden" value="firstname|Please enter your first name.  This field can not be blank.;lastname|Please enter your last name.  This field can not be blank.;email|Please enter your email address.  You can not receive email notifications without a valid email address." />
+																<input type="hidden" name="validate_email" value="email|The email address enter is invalid.  Please re-try..." />															
+															</div> <!-- /form-actions -->
 														</cfif>
 													</fieldset>
 												</form>

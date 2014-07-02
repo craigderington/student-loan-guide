@@ -83,6 +83,7 @@
 					   and c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 					   and l.leadconv = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
 					   and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+					   and s.slenrollclientdocsdate is not null
 
 							<cfif structkeyexists( form, "filtermyresults" )>
 								
@@ -98,6 +99,10 @@
 									and s.slenrolldate between <cfqueryparam value="#form.startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#form.enddate#" cfsqltype="cf_sql_date" />
 								</cfif>												   
 							
+							</cfif>
+							
+							<cfif isuserinrole( "counselor" )>
+								and l.userid = <cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />
 							</cfif>
 					   
 				  order by l.leaddate asc
@@ -143,6 +148,10 @@
 								
 												   
 							
+							</cfif>
+							
+							<cfif isuserinrole( "counselor" )>
+								and l.userid = <cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />
 							</cfif>
 					   
 				  order by l.leaddate asc
@@ -198,6 +207,8 @@
 													   
 							
 							</cfif>
+							
+							
 							
 				  order by l.leaddate asc
 				</cfquery>
@@ -378,7 +389,7 @@
 					 and l.userid = u.userid
 					 and c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />					 
 					 and l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />				 
-						 					
+					 and s.slenrollclientdocsmethod = <cfqueryparam value="ESIGN" cfsqltype="cf_sql_varchar" />	 					
 							
 							<cfif structkeyexists( form, "filtermyresults" )>
 								
@@ -398,6 +409,10 @@
 									and l.leaddate between <cfqueryparam value="#form.startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#form.enddate#" cfsqltype="cf_sql_date" />
 								</cfif>											   
 							
+							</cfif>
+							
+							<cfif isuserinrole( "counselor" )>
+								and l.userid = <cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />
 							</cfif>
 							
 				  order by l.leaddate asc
@@ -503,6 +518,50 @@
 				</cfquery>
 				<cfreturn solutionstatusreport>
 			</cffunction>
+			
+			
+			
+			
+			
+			<cffunction name="getimplementationreport" access="public" output="false" hint="I get the implementation status report">				
+				<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+				<cfargument name="userid" type="numeric" required="no" default="#session.userid#">
+				<cfargument name="thisdate" type="date" required="yes" default="1/1/2014">
+				<cfargument name="sdate" type="date" required="yes" default="1/1/2014">
+				<cfargument name="edate" type="date" required="yes" default="1/1/2014">
+				<cfset var implementationreport = "" />
+				<cfquery datasource="#application.dsn#" name="implementationreport">
+					   select l.leadid, l.leaduuid, l.leadfirst + ' ' + l.leadlast as clientname, 
+					          i.implementid, i.planuuid, i.servid, i.solutionid, i.solutionoption, 
+							  i.solutionsubcat, i.impstartdate, i.impenddate, i.impcompleted, i.plannotes, 
+							  s.servname
+						 from leads l, implement i, servicers s
+						where l.leadid = i.leadid
+						  and i.servid = s.servid
+						  and l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />		
+						  and i.impstartdate between <cfqueryparam value="#arguments.sdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#arguments.edate#" cfsqltype="cf_sql_date" />
+							
+						<cfif structkeyexists( form, "filtermyresults" )>						
+								
+							<cfif structkeyexists( form, "counselors" ) and form.counselors is not "" and form.counselors is not "Select Counselor">									
+								and l.userid = <cfqueryparam value="#form.counselors#" cfsqltype="cf_sql_integer" />									
+							</cfif>						
+
+							<cfif structkeyexists( form, "showthis" ) and form.showthis is true>									
+								and i.impcompleted <> <cfqueryparam value="1" cfsqltype="cf_sql_bit" />									
+							</cfif>
+							
+						</cfif>
+					
+						order by clientname asc
+				 
+				</cfquery>
+				<cfreturn implementationreport>
+			</cffunction>
+			
+			
+			
+			
 			
 			
 			<!---

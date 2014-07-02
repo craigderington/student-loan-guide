@@ -42,6 +42,63 @@
 							</div> <!-- //.widget-header -->
 							
 							<div class="widget-content">
+								
+								<cfquery datasource="#application.dsn#" name="getclientswithplans">
+									select distinct(i.implementid), l.leadid, i.solutionid
+									  from leads l, implement i, solution s
+									 where l.leadid = i.leadid
+									   and l.leadid = s.leadid
+									   and l.companyid = 446
+									   and s.solutioncompleted = 1
+								</cfquery>
+								
+							<cfoutput query="getclientswithplans">	
+								
+								<cfquery datasource="#application.dsn#" name="thisdata">
+									select *
+									from implementation i, leads l
+									where i.leadid = l.leadid
+									and i.solutionid in(<cfqueryparam value="#solutionid#" cfsqltype="cf_sql_integer" list="yes" />)
+									
+								</cfquery>
+							
+							
+							
+								
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</cfoutput>	
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
 								<cfparam name="mycode" default="">
 								<cfset mycode = "DN" />
 								

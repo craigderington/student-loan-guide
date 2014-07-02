@@ -172,8 +172,9 @@
 						   l.leadusername, l.leadphonetype2, l.leadphonenumber2, l.leadsourceid, l.leadadd1,
 						   l.leadadd2, l.leadcity, l.leadstate, l.leadzip, l.leadmobileprovider, l.leadachhold, 
 						   l.leadachholdreason, l.leadachholddate, l.leaddobmonth, l.leaddobday, l.leaddobyear, 
-						   l.leadimp, l.leadintakecompdate, l.leadwelcomehome, leadintakecompby, l.leadesign, 
-						   c.companyid, c.companyname, c.dba, c.email as companyprimarycontact
+						   l.leadimp, l.leadintakecompdate, l.leadwelcomehome, l.leadintakecompby, l.leadesign, 
+						   c.companyid, c.companyname, c.dba, c.email as companyprimarycontact, l.leadadvisorycompdate,
+						   l.leadadvisorycompby
 					  from leads l, leadsource ls, company c
 					 where l.leadsourceid = ls.leadsourceid
 					   and l.companyid = c.companyid
@@ -373,6 +374,24 @@
 				  order by mt.mtasktype, mt.mtaskorder asc
 				</cfquery>				
 			<cfreturn intaketasklist>			
+		</cffunction>
+		
+		
+		<cffunction name="getadvisortasks" output="false" access="remote" hint="I get the list of advisor tasks for the review.">			
+			<cfargument name="leadid" required="yes" default="#session.leadid#" type="numeric">			
+			<cfset var advisortasklist = "" />				
+				<cfquery datasource="#application.dsn#" name="advisortasklist">
+					select t.taskid, t.taskuuid, mt.mtasktype, mt.mtaskname, mt.mtaskdescr, t.userid, t.taskname, t.taskstatus,
+					       t.tasklastupdated, t.tasklastupdatedby, t.taskduedate, t.taskcompleteddate, t.taskcompletedby, t.tasknotes,
+						   mt.mtaskid
+					  from tasks t, mtask mt
+					 where t.mtaskid = mt.mtaskid
+					   and t.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_varchar" />
+					   and mt.mtasktype = <cfqueryparam value="O" cfsqltype="cf_sql_char" />
+					   and mt.mtaskid <> <cfqueryparam value="9905" cfsqltype="cf_sql_integer" />
+				  order by mt.mtasktype, mt.mtaskorder asc
+				</cfquery>				
+			<cfreturn advisortasklist>			
 		</cffunction>
 		
 		
