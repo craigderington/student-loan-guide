@@ -78,7 +78,7 @@
 															</cfloop>												
 														</select>
 													</cfif>
-													<input type="text" name="filterbyname" style="margin-left:5px;" class="input-large" placeholder="Filter By Name" id="filterbyname" value="<cfif isdefined( "form.filterbyname" )>#trim( form.filterbyname )#</cfif>" onchange="javascript:this.form.submit();" />
+													<input type="text" name="filterbyname" style="margin-left:5px;" class="input-medium" placeholder="Filter By Name" id="filterbyname" value="<cfif isdefined( "form.filterbyname" )>#trim( form.filterbyname )#</cfif>" onchange="javascript:this.form.submit();" />
 													<input type="text" name="startleaddate" style="margin-left:5px;" class="input-small" placeholder="Start Date" id="datepicker-inline4" value="<cfif isdefined( "form.startleaddate" )>#dateformat( form.startleaddate, 'mm/dd/yyyy' )#</cfif>">
 													<input type="text" name="endleaddate" style="margin-left:5px;" class="input-small" placeholder="End Date" id="datepicker-inline5" value="<cfif isdefined( "form.endleaddate" )>#dateformat( form.endleaddate, 'mm/dd/yyyy' )#</cfif>">
 													<input type="hidden" name="filtermyresults">

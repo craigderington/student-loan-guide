@@ -65,61 +65,77 @@
 											<cfparam name="leadid" default="">									
 											
 											
-											<!--- // do this --->
-											<cffile action="read" file="#fileuploadpath#" variable="filecontents">						
+											<!--- check to make sure the file upload path is not an empty string --->
+											<cfif trim( form.fileuploadpath ) is "">
+											
+												<div class="alert alert-error">
+													<a class="close" data-dismiss="alert">&times;</a>
+														<h5><error>There were errors in your submission:</error></h2>
+															<ul>
+																<li>You did not select a file to upload.  The process has terminated...</li>															
+															</ul>
+												</div>
+												
+											<cfelse>
+											
+											
+												<!--- // do this --->
+												<cffile action="read" file="#fileuploadpath#" variable="filecontents">						
 			
-											<!--- windows o/s new line characters --->
-											<cfset newLine	 = chr(13) & chr(10) />			
+												<!--- windows o/s new line characters --->
+												<cfset newLine	 = chr(13) & chr(10) />			
 											
 											
-												<!--- // start a new upload session and create a unique id to relate to this upload --->
-												<cfquery datasource="SLAdmin" name="txtupload">
-														insert into nsltxt(nsltxtuuid,leadid,nsltxtdate,nsltxtby,nsltxtcomp)
-															values(
-																   <cfqueryparam value="#createuuid()#" cfsqltype="cf_sql_varchar" maxlength="35" />,
-																   <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />,
-																   <cfqueryparam value="#createodbcdatetime( now() )#" cfsqltype="cf_sql_timestamp" />,
-																   <cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
-																   <cfqueryparam value="1" cfsqltype="cf_sql_bit" />								
-																   ); select @@identity as newuploadid						
-												</cfquery>
-												
-												
-												
-												<!--- // loop the file contents and insert the entire file to the database as rows --->
-												<cfloop list="#filecontents#" index="line" delimiters="#newLine#">
-													<cfquery datasource="SLAdmin" name="addtextdata">
-														insert into nsltxtdata(nsltxtid, datalabel, datacontent)
-															values(
-																   <cfqueryparam value="#txtupload.newuploadid#" cfsqltype="cf_sql_integer" />,
-																   <cfqueryparam value="#listfirst( line, ":" )#" cfsqltype="cf_sql_varchar" />,
-																   <cfqueryparam value="#listlast( line, ":" )#" cfsqltype="cf_sql_varchar" />								
-																   );							     
+													<!--- // start a new upload session and create a unique id to relate to this upload --->
+													<cfquery datasource="SLAdmin" name="txtupload">
+															insert into nsltxt(nsltxtuuid,leadid,nsltxtdate,nsltxtby,nsltxtcomp)
+																values(
+																	   <cfqueryparam value="#createuuid()#" cfsqltype="cf_sql_varchar" maxlength="35" />,
+																	   <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />,
+																	   <cfqueryparam value="#createodbcdatetime( now() )#" cfsqltype="cf_sql_timestamp" />,
+																	   <cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
+																	   <cfqueryparam value="1" cfsqltype="cf_sql_bit" />								
+																	   ); select @@identity as newuploadid						
 													</cfquery>
-												</cfloop>
-												
-												<cfset session.nslds = #txtupload.newuploadid# />
 												
 												
-												<cfif isuserinrole( "bclient" )>
-													<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
-														<cfinvokeargument name="portaltaskid" value="1408">
-														<cfinvokeargument name="leadid" value="#session.leadid#">
-													</cfinvoke>
-													<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
-														<cfinvokeargument name="portaltaskid" value="1409">
-														<cfinvokeargument name="leadid" value="#session.leadid#">
-													</cfinvoke>
-												</cfif>							
 												
-												<!--- // create a short pause --->
-												<cfscript>
-													thread = createobject( "java", "java.lang.Thread" );
-													thread.sleep(5000);
-												</cfscript>				
+													<!--- // loop the file contents and insert the entire file to the database as rows --->
+													<cfloop list="#filecontents#" index="line" delimiters="#newLine#">
+														<cfquery datasource="SLAdmin" name="addtextdata">
+															insert into nsltxtdata(nsltxtid, datalabel, datacontent)
+																values(
+																	   <cfqueryparam value="#txtupload.newuploadid#" cfsqltype="cf_sql_integer" />,
+																	   <cfqueryparam value="#listfirst( line, ":" )#" cfsqltype="cf_sql_varchar" />,
+																	   <cfqueryparam value="#listlast( line, ":" )#" cfsqltype="cf_sql_varchar" />								
+																	   );							     
+														</cfquery>
+													</cfloop>
 												
-												<!--- // then rediretc to the next step in the process --->															
-												<cflocation url="#application.root#?event=page.nslds.analyze" addtoken="yes">
+													<cfset session.nslds = #txtupload.newuploadid# />
+												
+												
+													<cfif isuserinrole( "bclient" )>
+														<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
+															<cfinvokeargument name="portaltaskid" value="1408">
+															<cfinvokeargument name="leadid" value="#session.leadid#">
+														</cfinvoke>
+														<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
+															<cfinvokeargument name="portaltaskid" value="1409">
+															<cfinvokeargument name="leadid" value="#session.leadid#">
+														</cfinvoke>
+													</cfif>							
+												
+													<!--- // create a short pause --->
+													<cfscript>
+														thread = createobject( "java", "java.lang.Thread" );
+														thread.sleep(5000);
+													</cfscript>				
+													
+													<!--- // then redirect to the next step in the process --->															
+													<cflocation url="#application.root#?event=page.nslds.analyze" addtoken="yes">
+											
+											</cfif>	
 													
 										<!--- If the required data is missing - throw the validation error --->
 										<cfelse>

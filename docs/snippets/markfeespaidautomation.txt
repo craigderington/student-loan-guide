@@ -1,0 +1,121 @@
+<cffunction name="markfeespaid" access="public" output="false" hint="I mark each companies fees paid based on date and ach hold days.">
+					<cfargument name="daystohold" type="numeric" required="no" default="3">
+					<cfargument name="triggerdate" type="date" required="no" default="1/1/2014">
+					<cfargument name="thisdate" type="date" required="yes" default="#now()#">					
+					<cfset var companyfees = "" />
+						<!--- // get our list of active company ID's --->
+						<cfquery datasource="#application.dsn#" name="companyach">
+							select companyid, dba, achdaystohold, email
+							  from company
+							 where active = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+						</cfquery>
+						
+						
+						<cfif companyach.recordcount gt 0>
+						
+						
+							<!--- // loop our active companies and get each company's active client fee payments --->
+							<cfloop query="companyach">
+							
+								<cfset arguments.daystohold = companyach.daystohold />
+								<cfset arguments.triggerdate = dateadd( "d", arguments.daystohold, thisdate ) />
+								<cfquery datasource="#application.dsn#" name="companyfees">
+									select l.leadid, l.leaduuid, l.leadfirst, l.leadlast,
+										   f.feeid, f.feeuuid, f.feetype, f.feeduedate, f.feepaiddate, f.feetrans,
+										   f.feeamount, f.feepaid, f.feestatus, f.feepaytype, f.feetransdate, f.achbatchid
+									  from leads l, fees f
+									 where l.leadid = f.leadid
+									   and l.companyid = <cfqueryparam value="#companyach.companyid#" cfsqltype="cf_sql_integer" />
+									   and f.feetransdate < <cfqueryparam value="#arguments.triggerdate#" cfsqltype="cf_sql_date" />
+									   and f.feetrans = <cfqueryparam value="Y" cfsqltype="cf_sql_char" />
+									   and f.achbatchid is not null
+									   and f.nsfreasonid = <cfqueryparam value="0" cfsqltype="cf_sql_integer" />
+									   and f.feepaytype = <cfqueryparam value="ach" cfsqltype="cf_sql_varchar" />
+									   and f.feestatus = <cfqueryparam value="pending" cfsqltype="cf_sql_varchar" />							   
+								</cfquery>
+								
+								
+									<!--- // if the companies have clients with fee payments ready to be marked paid, do it --->
+									<cfif companyfees.recordcount gt 0>
+									
+										<cfloop query="getcompanyfees">
+											
+											<cfset arguments.thisdate = createodbcdatetime( now() ) />
+												<cfquery datasource="#application.dsn#" name="markclientfeespaid">
+													update fees
+													   set feepaiddate = <cfqueryparam value="#arguments.thisdate#" cfsqltype="cf_sql_timestamp" />,
+														   feepaid = <cfqueryparam value="#companyfees.feeamount#" cfsqltype="cf_sql_float" />,
+														   feecollected = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+														   feestatus = <cfqueryparam value="PAID" cfsqltype="cf_sql_varchar" />
+													 where feeid = <cfqueryparam value="#companyfees.feeid#" cfsqltype="cf_sql_integer" />
+												</cfquery>
+										
+										</cfloop>								
+									
+									</cfif>
+								
+								<cfmail to="#companyach.email#" from="#companyach.email#" bcc="craig@efiscal.net" subject="SLA Banking Automation - Notification of Payments Marked Paid">*** AUTOMATED SYSTEM MESSAGE *** UNATTENDED MAILBOX *** PLEASE DO NOT REPLY ***
+								
+The Student Loan Advisor Online system banking automation has marked the following client ACH fee payments as paid with a transaction date before <cfoutput>#dateformat( arguments.triggerdate, "mm/dd/yyyy" )# </cfoutput>:
+
+
+<ul>
+	<cfoutput query="companyfees">
+		<li>#leadfirst# #leadlast# - #dollarformat( feeamount )# - Due Date: #dateformat( feeduedate, "mm/dd/yyyy" )# - Paid Date: #dateformat( arguments.thisdate, "mm/dd/yyyy" )#</li>
+	</cfoutput>
+</ul>	
+
+								
+								
+
+	</cfmail>
+								
+							
+							</cfloop>
+							
+							
+							<cfelse>
+							
+								<cfset companyfees = "No client fee payment records found..." />
+							
+							</cfif>
+							
+						<cfreturn companyfees>
+					
+				</cffunction>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+																	
+							
+							</cfloop>						
+							
+						</cfif>
+						
