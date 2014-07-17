@@ -15,7 +15,8 @@ $(function () {
 	
 	$( "#datepicker-multi" ).datepicker({
 		numberOfMonths: 2,
-		showButtonPanel: true
+		showButtonPanel: false,
+		altField: "#datepicker-inline"
 	});
 	
 	

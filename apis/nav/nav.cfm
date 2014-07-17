@@ -122,6 +122,9 @@
 				<cfcase value="page.enroll.esign">				
 					<cfinclude template="../../templates/page.enroll.esign.cfm">
 				</cfcase>
+				<cfcase value="page.enroll.docs">				
+					<cfinclude template="../../templates/page.enroll.docs.cfm">
+				</cfcase>
 				<cfcase value="page.implement.enroll">				
 					<cfinclude template="../../templates/page.implement.enroll.cfm">
 				</cfcase>
@@ -395,6 +398,9 @@
 				<cfcase value="page.client.agreement">				
 					<cfinclude template="../../templates/page.client.agreement.cfm">
 				</cfcase>
+				<cfcase value="page.client.agreement.email">				
+					<cfinclude template="../../templates/page.client.agreement.email.cfm">
+				</cfcase>
 				<cfcase value="page.message.center">				
 					<cfinclude template="../../templates/page.message.center.cfm">
 				</cfcase>
@@ -467,6 +473,12 @@
 				</cfcase>
 				<cfcase value="page.hash">				
 					<cfinclude template="../../templates/page.hash.cfm">
+				</cfcase>
+				<cfcase value="page.send.reminders">				
+					<cfinclude template="../../templates/page.send.reminders.cfm">
+				</cfcase>
+				<cfcase value="page.send.task.reminders">				
+					<cfinclude template="../../templates/page.send.taskreminders.cfm">
 				</cfcase>
 						
 					

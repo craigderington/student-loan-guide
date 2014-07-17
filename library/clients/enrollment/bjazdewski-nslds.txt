@@ -1,0 +1,802 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-04-10-22.23.22.259
+Student First Name:BRIAN
+Student Middle Initial:R
+Student Last Name:JAZDZEWSKI
+Student Street Address 1:1027 WEST MEADOW ROAD
+Student Street Address 2:
+Student City:DURANGO
+Student State Code:CO
+Student Country Code:US
+Student Zip Code:81303
+Student Enrollment Status:GRADUATED
+Student Enrollment Status Effective Date:12/20/2013
+Student Total All Loans Outstanding Principal:$35,500
+Student Total All Loans Outstanding Interest:$2,144
+Student Pell Lifetime Eligibility Used:275.008%
+Student Total All Grants:$7,948
+Total FEDERAL PERKINS Outstanding Principal:$2,000
+Total FEDERAL PERKINS Outstanding Interest:$0
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Principal:$8,500
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Interest:$1,051
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Principal:$16,750
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Interest:$70
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$3,000
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$1,023
+Total STAFFORD SUBSIDIZED Outstanding Principal:$5,250
+Total STAFFORD SUBSIDIZED Outstanding Interest:$0
+Loan Type:FEDERAL PERKINS
+Loan Award ID:
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:09/27/2013
+Loan Repayment Begin Date:09/15/2014
+Loan Period Begin Date:09/01/2013
+Loan Period End Date:12/31/2013
+Loan Amount:$2,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,000
+Loan Outstanding Principal Balance as of Date:03/09/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:
+Loan Interest Rate Type:
+Loan Interest Rate:5.00%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:01/01/2014
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/27/2013
+Loan Disbursement Date:09/27/2013
+Loan Disbursement Amount:$2,000
+Loan Contact Type:Current Servicer
+Loan Contact Name:FORT LEWIS COLLEGE
+Loan Contact Street Address 1:1000 RIM DRIVE
+Loan Contact Street Address 2:
+Loan Contact City:DURANGO
+Loan Contact State Code:CO
+Loan Contact Zip Code:813013999
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4037U14G01353001
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:09/04/2013
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:09/02/2013
+Loan Period End Date:12/20/2013
+Loan Amount:$2,500
+Loan Disbursed Amount:$2,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,500
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$57
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.86%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/04/2013
+Loan Disbursement Date:09/04/2013
+Loan Disbursement Amount:$2,500
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4037S14G01353002
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:09/04/2013
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:09/02/2013
+Loan Period End Date:12/20/2013
+Loan Amount:$625
+Loan Disbursed Amount:$625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$625
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$7
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.86%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/04/2013
+Loan Disbursement Date:09/04/2013
+Loan Disbursement Amount:$625
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4037S14G01353001
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:09/03/2013
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:09/02/2013
+Loan Period End Date:12/20/2013
+Loan Amount:$625
+Loan Disbursed Amount:$625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$625
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$7
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.86%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/03/2013
+Loan Disbursement Date:09/03/2013
+Loan Disbursement Amount:$625
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4037U13G01353001
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:08/27/2012
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:08/27/2012
+Loan Period End Date:04/26/2013
+Loan Amount:$2,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,000
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$195
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/27/2012
+Loan Disbursement Date:01/02/2013
+Loan Disbursement Amount:$1,000
+Loan Disbursement Date:08/27/2012
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4037S13G01353001
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:08/27/2012
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:08/27/2012
+Loan Period End Date:04/26/2013
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$5,500
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$56
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/27/2012
+Loan Disbursement Date:01/02/2013
+Loan Disbursement Amount:$2,750
+Loan Disbursement Date:08/27/2012
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4037S12G01353002
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:04/21/2012
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:04/30/2012
+Loan Period End Date:07/06/2012
+Loan Amount:$1,000
+Loan Disbursed Amount:$1,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,000
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:04/25/2012
+Loan Disbursement Date:04/25/2012
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4037U12G01353001
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:08/20/2011
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:08/29/2011
+Loan Period End Date:04/27/2012
+Loan Amount:$2,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,000
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$332
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/20/2011
+Loan Disbursement Date:01/06/2012
+Loan Disbursement Amount:$1,000
+Loan Disbursement Date:08/20/2011
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4037S12G01353001
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:08/20/2011
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:08/29/2011
+Loan Period End Date:04/27/2012
+Loan Amount:$4,500
+Loan Disbursed Amount:$4,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,500
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/20/2011
+Loan Disbursement Date:01/06/2012
+Loan Disbursement Amount:$2,250
+Loan Disbursement Date:08/20/2011
+Loan Disbursement Amount:$2,250
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4037S11G01353002
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:05/02/2011
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:05/02/2011
+Loan Period End Date:07/08/2011
+Loan Amount:$1,000
+Loan Disbursed Amount:$1,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,000
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:4.50%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/02/2011
+Loan Disbursement Date:05/02/2011
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4037U11G01353001
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:08/31/2010
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:08/30/2010
+Loan Period End Date:04/29/2011
+Loan Amount:$2,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,000
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$467
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/31/2010
+Loan Disbursement Date:01/03/2011
+Loan Disbursement Amount:$1,000
+Loan Disbursement Date:08/31/2010
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4037S11G01353001
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:08/31/2010
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:08/30/2010
+Loan Period End Date:04/29/2011
+Loan Amount:$3,500
+Loan Disbursed Amount:$3,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$3,500
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:4.50%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/31/2010
+Loan Disbursement Date:01/03/2011
+Loan Disbursement Amount:$1,750
+Loan Disbursement Date:08/31/2010
+Loan Disbursement Amount:$1,750
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4037209001353202
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:07/30/2009
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:08/31/2009
+Loan Period End Date:04/30/2010
+Loan Amount:$2,000
+Loan Disbursed Amount:$1,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,000
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$314
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:07/30/2009
+Loan Disbursement Date:08/25/2009
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:121 S 13TH ST
+Loan Contact Street Address 2:SUITE 201
+Loan Contact City:LINCOLN
+Loan Contact State Code:NE
+Loan Contact Zip Code:68508
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:*****4037109001353201
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:07/30/2009
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:08/31/2009
+Loan Period End Date:04/30/2010
+Loan Amount:$3,500
+Loan Disbursed Amount:$1,750
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,750
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.60%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:07/30/2009
+Loan Disbursement Date:08/25/2009
+Loan Disbursement Amount:$1,750
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:121 S 13TH ST
+Loan Contact Street Address 2:SUITE 201
+Loan Contact City:LINCOLN
+Loan Contact State Code:NE
+Loan Contact Zip Code:68508
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4037209001353300
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:01/16/2009
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:01/12/2009
+Loan Period End Date:05/01/2009
+Loan Amount:$2,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,000
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$709
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:01/16/2009
+Loan Disbursement Date:01/21/2009
+Loan Disbursement Amount:$2,000
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:121 S 13TH ST
+Loan Contact Street Address 2:SUITE 201
+Loan Contact City:LINCOLN
+Loan Contact State Code:NE
+Loan Contact Zip Code:68508
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF ED/2008-2009 LPCP
+Loan Contact Street Address 1:830 FIRST ST., NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:*****4037109001353300
+Loan Attending School Name:FORT LEWIS COLLEGE
+Loan Attending School OPEID:00135300
+Loan Date:01/16/2009
+Loan Repayment Begin Date:06/21/2014
+Loan Period Begin Date:01/12/2009
+Loan Period End Date:05/01/2009
+Loan Amount:$3,500
+Loan Disbursed Amount:$3,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$3,500
+Loan Outstanding Principal Balance as of Date:03/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:03/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.00%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/20/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:01/16/2009
+Loan Disbursement Date:01/21/2009
+Loan Disbursement Amount:$3,500
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:121 S 13TH ST
+Loan Contact Street Address 2:SUITE 201
+Loan Contact City:LINCOLN
+Loan Contact State Code:NE
+Loan Contact Zip Code:68508
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF ED/2008-2009 LPCP
+Loan Contact Street Address 1:830 FIRST ST., NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:FORT LEWIS COLLEGE
+Grant Attending School OPEID:00135300
+Grant Award Year:2013 - 2014
+Grant Scheduled Amount:$5,595
+Grant Award Amount:$2,798
+Grant Disbursed Amount:$2,798
+Grant Remaining Amount to be Paid:$2,797
+Grant First Time:No
+Grant Additional Eligibility:No
+Grant Contact Type:Attending School
+Grant Contact Name:FORT LEWIS COLLEGE
+Grant Contact Street Address 1:1000 RIM DRIVE
+Grant Contact Street Address 2:
+Grant Contact City:DURANGO
+Grant Contact State Code:CO
+Grant Contact Zip Code:813013999
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:FORT LEWIS COLLEGE
+Grant Attending School OPEID:00135300
+Grant Award Year:2012 - 2013
+Grant Scheduled Amount:$900
+Grant Award Amount:$900
+Grant Disbursed Amount:$900
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:No
+Grant Contact Type:Attending School
+Grant Contact Name:FORT LEWIS COLLEGE
+Grant Contact Street Address 1:1000 RIM DRIVE
+Grant Contact Street Address 2:
+Grant Contact City:DURANGO
+Grant Contact State Code:CO
+Grant Contact Zip Code:813013999
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:FORT LEWIS COLLEGE
+Grant Attending School OPEID:00135300
+Grant Award Year:2010 - 2011
+Grant Scheduled Amount:$3,400
+Grant Award Amount:$5,100
+Grant Disbursed Amount:$4,250
+Grant Remaining Amount to be Paid:-$850
+Grant First Time:Yes
+Grant Additional Eligibility:Yes
+Grant Contact Type:Attending School
+Grant Contact Name:FORT LEWIS COLLEGE
+Grant Contact Street Address 1:1000 RIM DRIVE
+Grant Contact Street Address 2:
+Grant Contact City:DURANGO
+Grant Contact State Code:CO
+Grant Contact Zip Code:813013999

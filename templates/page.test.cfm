@@ -43,6 +43,7 @@
 							
 							<div class="widget-content">
 								
+								<!--- // 
 								<cfquery datasource="#application.dsn#" name="getclientswithplans">
 									select distinct(i.implementid), l.leadid, i.solutionid
 									  from leads l, implement i, solution s
@@ -52,37 +53,45 @@
 									   and s.solutioncompleted = 1
 								</cfquery>
 								
-							<cfoutput query="getclientswithplans">	
-								
-								<cfquery datasource="#application.dsn#" name="thisdata">
-									select *
-									from implementation i, leads l
-									where i.leadid = l.leadid
-									and i.solutionid in(<cfqueryparam value="#solutionid#" cfsqltype="cf_sql_integer" list="yes" />)
+								<cfoutput query="getclientswithplans">	
 									
-								</cfquery>
-							
-							
-							
+									<cfquery datasource="#application.dsn#" name="thisdata">
+										select *
+										from implementation i, leads l
+										where i.leadid = l.leadid
+										and i.solutionid in(<cfqueryparam value="#solutionid#" cfsqltype="cf_sql_integer" list="yes" />)
+										
+									</cfquery>
 								
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							</cfoutput>	
+								</cfoutput>	
 								
+								--->
 								
+								<cfoutput>
+
+									<!-- // default param -->
+									<cfparam name="docsourceprefix" default="">
+									<cfparam name="sourcedocpath" default="">
+									<cfparam name="docsourcecompany" default="">
+									<cfparam name="docsourcedocument" default="">
+									<cfparam name="docsource" default="">
+									
+									<!--- // source pdf document --->
+									
+									
+									<cfset docsourceprefix = "D:\WWW\studentloanadvisoronline.com\library\company\" />
+									<cfset sourcedocpath = "/efiscal/efiscal-enrollment-agreement.pdf" />
+									<cfset docsourcecompany = listfirst( sourcedocpath, "/" ) />
+									<cfset docsourcedocument = listlast( sourcedocpath, "/" ) />
+									
+									
+									<cfset docsource = docsourceprefix & docsourcecompany & "\" & docsourcedocument />
+									
+									#sourcedocpath#<br />
+									#docsource#
+									
 								
-								
+								</cfoutput>
 								
 								
 								

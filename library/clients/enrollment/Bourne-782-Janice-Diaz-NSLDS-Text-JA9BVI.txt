@@ -1,0 +1,222 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-01-17-15.06.16.313
+Student First Name:JANICE
+Student Middle Initial:M
+Student Last Name:DIAZ
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:LESS THAN HALF TIME
+Student Enrollment Status Effective Date:07/31/2012
+Student Total All Loans Outstanding Principal:$25,658
+Student Total All Loans Outstanding Interest:$0
+Student Pell Lifetime Eligibility Used:0.000%
+Student Total All Grants:$0
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Principal:$10,711
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Interest:$0
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Principal:$4,149
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Interest:$0
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$10,798
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$0
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4180U12G01520001
+Loan Attending School Name:SEMINOLE STATE COLLEGE OF FLORIDA
+Loan Attending School OPEID:00152000
+Loan Date:09/08/2011
+Loan Repayment Begin Date:02/01/2013
+Loan Period Begin Date:08/22/2011
+Loan Period End Date:04/27/2012
+Loan Amount:$6,000
+Loan Disbursed Amount:$6,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$6,068
+Loan Outstanding Principal Balance as of Date:01/13/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:01/13/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:12/18/2012
+Loan Repayment Plan Scheduled Amount:$74
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/2013
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:08/01/2012
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/08/2011
+Loan Disbursement Date:01/26/2012
+Loan Disbursement Amount:$3,000
+Loan Disbursement Date:09/08/2011
+Loan Disbursement Amount:$3,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/SALLIE MAE
+Loan Contact Street Address 1:PO BOX 740351
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:800-722-1300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:www.SallieMae.com/FederalLoans
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4180S12G01520001
+Loan Attending School Name:SEMINOLE STATE COLLEGE OF FLORIDA
+Loan Attending School OPEID:00152000
+Loan Date:09/08/2011
+Loan Repayment Begin Date:02/01/2013
+Loan Period Begin Date:08/22/2011
+Loan Period End Date:04/27/2012
+Loan Amount:$4,500
+Loan Disbursed Amount:$4,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,149
+Loan Outstanding Principal Balance as of Date:01/13/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:01/13/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:12/18/2012
+Loan Repayment Plan Scheduled Amount:$44
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/2013
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:08/01/2012
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/08/2011
+Loan Disbursement Date:01/26/2012
+Loan Disbursement Amount:$2,250
+Loan Disbursement Date:09/08/2011
+Loan Disbursement Amount:$2,250
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/SALLIE MAE
+Loan Contact Street Address 1:PO BOX 740351
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:800-722-1300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:www.SallieMae.com/FederalLoans
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4180U11G01520001
+Loan Attending School Name:SEMINOLE STATE COLLEGE OF FLORIDA
+Loan Attending School OPEID:00152000
+Loan Date:10/07/2010
+Loan Repayment Begin Date:02/01/2013
+Loan Period Begin Date:08/23/2010
+Loan Period End Date:04/29/2011
+Loan Amount:$4,291
+Loan Disbursed Amount:$4,291
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,643
+Loan Outstanding Principal Balance as of Date:01/13/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:01/13/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:12/18/2012
+Loan Repayment Plan Scheduled Amount:$57
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/2013
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:08/01/2012
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:10/07/2010
+Loan Disbursement Date:10/07/2010
+Loan Disbursement Amount:$4,291
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/SALLIE MAE
+Loan Contact Street Address 1:PO BOX 740351
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:800-722-1300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:www.SallieMae.com/FederalLoans
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4180210001520001
+Loan Attending School Name:SEMINOLE STATE COLLEGE OF FLORIDA
+Loan Attending School OPEID:00152000
+Loan Date:09/01/2009
+Loan Repayment Begin Date:02/01/2013
+Loan Period Begin Date:08/26/2009
+Loan Period End Date:05/03/2010
+Loan Amount:$9,500
+Loan Disbursed Amount:$9,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$10,798
+Loan Outstanding Principal Balance as of Date:01/13/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:01/13/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:12/18/2012
+Loan Repayment Plan Scheduled Amount:$133
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:02/01/2013
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:08/01/2012
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/01/2009
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/01/2009
+Loan Disbursement Date:01/26/2010
+Loan Disbursement Amount:$4,750
+Loan Disbursement Date:09/29/2009
+Loan Disbursement Amount:$4,750
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/SALLIE MAE
+Loan Contact Street Address 1:P.O. BOX 9635
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:187739635
+Loan Contact Phone Number:800-722-1300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:www.salliemae.com
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/SALLIE MAE
+Loan Contact Street Address 1:PO BOX 740351
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:800-722-1300
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:www.SallieMae.com/FederalLoans

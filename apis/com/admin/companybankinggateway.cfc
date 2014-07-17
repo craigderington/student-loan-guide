@@ -86,7 +86,7 @@
 						<cfquery datasource="#application.dsn#" name="companyach">
 							select companyid, dba, achdaystohold, email
 							  from company
-							 where companyid = <cfqueryparam value="446" cfsqltype="cf_sql_integer" />
+							 where active = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 						</cfquery>
 						
 						

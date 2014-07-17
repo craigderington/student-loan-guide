@@ -2,20 +2,57 @@
 
 
 			<!--- // get our data access components --->
-			<cfinvoke component="apis.com.tasks.remindergateway" method="getreminders" returnvariable="reminderlist">
+			<cfinvoke component="apis.com.tasks.remindergateway" method="gettaskreminders" returnvariable="taskreminderlist">
 				<cfinvokeargument name="userid" value="#session.userid#">
-			</cfinvoke>		
+			</cfinvoke>	
 			
 			<cfinvoke component="apis.com.tasks.remindergateway" method="getuserreminders" returnvariable="userreminderlist">
 				<cfinvokeargument name="userid" value="#session.userid#">
+			</cfinvoke>	
+			
+			<cfinvoke component="apis.com.users.usergateway" method="getuserprofile" returnvariable="quserprofile">
+				<cfinvokeargument name="userid" value="#session.userid#">
 			</cfinvoke>
 			
+			<!--- // perform necessary user and task reminder management functions --->
 			<cfif structkeyexists( url, "fuseaction" )>
 				<cfif structkeyexists( url, "rmid" ) and isvalid( "uuid", url.rmid )>
 					<cfinvoke component="apis.com.tasks.remindergateway" method="getuserreminderdetail" returnvariable="userreminderdetail">
 						<cfinvokeargument name="reminderid" value="#url.rmid#">
 					</cfinvoke>
-				</cfif>
+					<cfif structkeyexists( url, "rmaction" )>
+						<cfset rmid = url.rmid />
+							<cfif trim( url.rmaction ) is "delete">							
+								<!--- // get the reminder pkid --->
+								<cfquery datasource="#application.dsn#" name="getreminder">
+									select reminderid 
+									  from userreminders
+									 where reminderuuid = <cfqueryparam value="#rmid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+								</cfquery>
+								<!--- // kill the reminder --->
+								<cfquery datasource="#application.dsn#" name="killreminder">
+									delete 
+									  from userreminders
+									 where reminderid = <cfqueryparam value="#getreminder.reminderid#" cfsqltype="cf_sql_integer" />
+								</cfquery>
+								<cflocation url="#application.root#?event=#url.event#&msg=complete&action=deleted" addtoken="no" />
+							<cfelseif trim( url.rmaction ) is "archive">							
+								<!--- // get the reminder pkid --->
+								<cfquery datasource="#application.dsn#" name="getreminder">
+									select reminderid
+									  from userreminders
+									 where reminderuuid = <cfqueryparam value="#rmid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+								</cfquery>
+								<!--- // archive the reminder --->
+								<cfquery datasource="#application.dsn#" name="killreminder">
+									update userreminders
+									   set showreminder = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+									 where reminderid = <cfqueryparam value="#getreminder.reminderid#" cfsqltype="cf_sql_integer" />
+								</cfquery>
+								<cflocation url="#application.root#?event=#url.event#&msg=complete&action=archived" addtoken="no" />
+							</cfif>
+					</cfif>					
+				</cfif>				
 			</cfif>
 			
 			
@@ -48,6 +85,46 @@
 							
 							<!--- // show system messages --->
 							
+							<cfif structkeyexists( url, "msg" ) and trim( url.msg ) is "complete">						
+								
+								<cfif structkeyexists( url, "action" ) and trim( url.action ) is "deleted">						
+									<div class="row">
+										<div class="span12">										
+											<div class="alert alert-info">
+												<button type="button" class="close" data-dismiss="alert">&times;</button>
+												<strong><i class="icon-check"></i> REMINDER STATUS:</strong>  The reminder was successfully deleted...
+											</div>										
+										</div>								
+									</div>
+								<cfelseif structkeyexists( url, "action" ) and trim( url.action ) is "archived">						
+									<div class="row">
+										<div class="span12">										
+											<div class="alert alert-success">
+												<button type="button" class="close" data-dismiss="alert">&times;</button>
+												<strong><i class="icon-check"></i> REMINDER STATUS:</strong>  The reminder was successfully archived...
+											</div>										
+										</div>								
+									</div>
+								</cfif>
+							<cfelseif structkeyexists( url, "msg" ) and trim( url.msg ) is "reminder.created">	
+								<div class="row">
+										<div class="span12">										
+											<div class="alert alert-success">
+												<button type="button" class="close" data-dismiss="alert">&times;</button>
+												<strong><i class="icon-check"></i> REMINDER STATUS: </strong>  The reminder was successfully created...
+											</div>										
+										</div>								
+									</div>
+							<cfelseif structkeyexists( url, "msg" ) and trim( url.msg ) is "reminder.saved">	
+								<div class="row">
+										<div class="span12">										
+											<div class="alert alert-success">
+												<button type="button" class="close" data-dismiss="alert">&times;</button>
+												<strong><i class="icon-check"></i> REMINDER STATUS:</strong>  The reminder was successfully updated...
+											</div>										
+										</div>								
+									</div>
+							</cfif>	
 							
 							<!--- // end system messages --->
 							
@@ -78,24 +155,20 @@
 											<cfset r.reminderid = form.reminderid />
 											<cfset r.userid = form.thisuserid />											
 											<cfset r.rmdate = form.reminderdate />
-											<cfset r.rmtimehour = form.reminderhour />
-											<cfset r.rmtimeminute = form.reminderminutes />
-											<cfset r.rmtimeofday = trim( form.rgtime ) />
+											<cfset r.rmtime = form.remindertime />
 											<cfset r.rmtype = trim( form.rgtype ) />
 											<cfset r.rmtext = left( form.remindertext, 1000 ) />
 											
 											<!--- // some other variables --->
-											<cfset today = #CreateODBCDateTime(now())# />
-											<cfset r.rmtime = createdatetime( year( r.rmdate ), month( r.rmdate ), day( r.rmdate ), r.rmtimehour, r.rmtimeminute, 0 ) />							
-											
-											
-											<cfif r.reminderid eq 0>
+											<cfset today = createodbcdatetime( now() ) />
+											<cfset r.rmtime = createdatetime( year( r.rmdate ), month( r.rmdate ), day( r.rmdate ), hour( r.rmtime ), minute( r.rmtime ), 0 ) />						
 											
 											<!---
 											<cfdump var="#r#" label="form structure">
 											--->
 											
-											
+											<cfif r.reminderid eq 0>
+												
 												<cfquery datasource="#application.dsn#" name="createreminder">
 													insert into userreminders(reminderuuid, userid, leadid, dateadded, reminderdate, remindertime, reminderampm, remindertext, alerttype, alertdeltatype, alertdeltanum, alertsent)
 														values(
@@ -105,15 +178,16 @@
 																<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
 																<cfqueryparam value="#r.rmdate#" cfsqltype="cf_sql_date" />,
 																<cfqueryparam value="#r.rmtime#" cfsqltype="cf_sql_timestamp" />,
-																<cfqueryparam value="#r.rmtimeofday#" cfsqltype="cf_sql_char" />,
+																<cfqueryparam value="pm" cfsqltype="cf_sql_char" />,
 																<cfqueryparam value="#r.rmtext#" cfsqltype="cf_sql_varchar" maxlength="1000" />,
 																<cfqueryparam value="#r.rmtype#" cfsqltype="cf_sql_varchar" />,
 																<cfqueryparam value="minute" cfsqltype="cf_sql_varchar" />,
 																<cfqueryparam value="15" cfsqltype="cf_sql_varchar" />,																
 																<cfqueryparam value="0" cfsqltype="cf_sql_bit" />													
 															   );
-												</cfquery>
-												
+												</cfquery>		
+													
+													<!--- // redirect to success message --->
 													<cflocation url="#application.root#?event=#url.event#&msg=reminder.created" addtoken="yes">
 											
 											<cfelse>
@@ -121,21 +195,16 @@
 												<cfquery datasource="#application.dsn#" name="savereminder">
 													update userreminders
 													   set reminderdate = <cfqueryparam value="#r.rmdate#" cfsqltype="cf_sql_date" />,
-													       remindertime = <cfqueryparam value="#r.rmtime#" cfsqltype="cf_sql_time" />,
-														   remindertext = <cfqueryparam value="#r.rmtext#" cfsqltype="cf_sql_varchar" maxlength="1000" />				   														   													   
+													       remindertime = <cfqueryparam value="#r.rmtime#" cfsqltype="cf_sql_timestamp" />,
+														   alerttype = <cfqueryparam value="#r.rmtype#" cfsqltype="cf_sql_char" />,
+														   remindertext = <cfqueryparam value="#r.rmtext#" cfsqltype="cf_sql_varchar" maxlength="1000" />														   
 													 where reminderuuid = <cfqueryparam value="#r.reminderid#" cfsqltype="cf_sql_varchar" maxlength="35" />
-												</cfquery>
+												</cfquery>										
 												
-												
-											
+													<!--- // redirect to success message --->
 													<cflocation url="#application.root#?event=#url.event#&msg=reminder.saved" addtoken="yes">
 												
-											</cfif>
-											
-											
-											
-											
-											
+											</cfif>										
 								
 										<!--- If the required data is missing - throw the validation error --->
 										<cfelse>
@@ -164,13 +233,13 @@
 										
 											<cfif userreminderlist.recordcount gt 0>
 											
-												<h3 style="margin-bottom:25px;"><i class="icon-calendar"></i> Your Personal Reminders</h3>
-												
+												<h5 style="margin-bottom:25px;"><i class="icon-calendar"></i> Your Personal Reminders</h5>
+												<p class="help-block">Hover your cursor over the &nbsp;<i class="icon-info-sign" style="color:red;"></i>&nbsp; for reminder text.</p>
 												
 													<ul style="list-style:none;">
 														
 														<cfoutput query="userreminderlist">
-															<li class="rlist">#dateformat( reminderdate , "mm/dd/yyyy" )# &nbsp;&nbsp;  #timeformat( remindertime, "hh:mm" )# #reminderampm# &nbsp;&nbsp;   <span class="pull-right"><i style="margin-right:5px;" class="icon-check<cfif alertsent eq 0>-empty</cfif>" title="Alert <cfif alertsent eq 0>Not</cfif> Sent"></i><a style="margin-right:5px;" title="Delete Reminder" href="index.cfm"><i class="icon-trash"></i></a> <a style="margin-right:5px" href="#application.root#?event=#url.event#&fuseaction=editreminder&rmid=#reminderuuid#" title="Edit Reminder"><i class="icon-edit"></i></a>   <a style="margin-right:5px;" title="Archive Reminder" href="index.cfm"><i class="icon-remove-sign"></i></a>    <a style="margin-right:5px" href="javascript:;" rel="popover" data-original-title="#dateformat( reminderdate, "mm/dd/yyyy" )#" data-content="#remindertext#"><i class="icon-info-sign"></i></a></span></li>
+															<li class="rlist">#dateformat( reminderdate , "mm/dd/yyyy" )# &nbsp;&nbsp;  #timeformat( remindertime, "hh:mm TT" )# &nbsp;&nbsp;   <span class="pull-right"><cfif trim( alerttype ) is "eml"><i class="icon-envelope" title="Email Message" style="margin-right:5px;"></i><cfelse><i class="icon-phone" title="Text Message" style="margin-right:5px;"></i></cfif><i style="margin-right:5px;" class="icon-check<cfif alertsent eq 0>-empty</cfif>" title="Alert <cfif alertsent eq 0>Not</cfif> Sent"></i><a style="margin-right:5px;" title="Delete Reminder" href="#application.root#?event=#url.event#&fuseaction=dothis&rmid=#reminderuuid#&rmaction=delete" onclick="javascript:return confirm('Confirm Delete?');"><i class="icon-trash"></i></a> <cfif alertsent eq 0><a style="margin-right:5px" href="#application.root#?event=#url.event#&fuseaction=editreminder&rmid=#reminderuuid#" title="Edit Reminder"><i class="icon-edit"></i></a></cfif>   <a style="margin-right:5px;" title="Archive Reminder" href="#application.root#?event=#url.event#&fuseaction=dothis&rmid=#reminderuuid#&rmaction=archive" onclick="javascript:return confirm('Confirm Archive?');"><i class="icon-remove-sign"></i></a>    <a style="margin-right:5px" href="javascript:;" rel="popover" data-original-title="#dateformat( reminderdate, "mm/dd/yyyy" )#" data-content="#remindertext#"><i class="icon-info-sign"></i></a></span></li>
 														</cfoutput>
 													
 													</ul>
@@ -185,65 +254,133 @@
 										
 											</cfif>
 
-											<cfif userreminderlist.recordcount gt 0>
-											
-												<h3 style="margin-top:25px;margin-bottom:25px;"><i class="icon-calendar"></i> Client Task Reminders</h3>
+											<cfif taskreminderlist.recordcount gt 0>
+											<br /><br />
+												<h5 style="margin-top:25px;margin-bottom:25px;"><i class="icon-calendar"></i> Client Task Reminders</h5>
 												
 												
 													<ul style="list-style:none;">
-														<!---
+														
 														<cfoutput query="taskreminderlist">
-															<li class="rlist">#dateformat( reminderdate , "mm/dd/yyyy" )# &nbsp;&nbsp;  #timeformat( remindertime, "hh:mm" )# #reminderampm# &nbsp;&nbsp;   <span class="pull-right"><i style="margin-right:5px;" class="icon-check<cfif alertsent eq 0>-empty</cfif>" title="Alert <cfif alertsent eq 0>Not</cfif> Sent"></i><a title="Delete Reminder" href="index.cfm"><i class="icon-remove-sign"></i></a> <a style="margin-left:5px;margin-right:5px" href="index.cfm" title="Edit Reminder"><i class="icon-edit"></i></a>    <a href="javascript:;" rel="popover" data-original-title="#dateformat( reminderdate, "mm/dd/yyyy" )#" data-content=#remindertext#"><i class="icon-info-sign"></i></a></span></li>
+															<li class="rlist">#dateformat( reminderdate , "mm/dd/yyyy" )# &nbsp;&nbsp;  #timeformat( remindertime, "hh:mm TT" )# <br/>
+															<span style="font-size:12px;">#leadfirst# #leadlast# (#leadid#) - #mtaskname#</span> <span class="pull-right"><cfif trim( alerttype ) is "eml"><i class="icon-envelope" title="Email Message" style="margin-right:5px;"></i><cfelse><i class="icon-phone" title="Text Message" style="margin-right:5px;"></i></cfif><i style="margin-right:5px;" class="icon-check<cfif alertsent eq 0>-empty</cfif>" title="Alert <cfif alertsent eq 0>Not</cfif> Sent"></i><a style="margin-right:5px;" title="Delete Reminder" href="javascript:;"><i class="icon-trash"></i></a> <cfif alertsent eq 0><a style="margin-right:5px" href="javascript:;" title="Edit Reminder"><i class="icon-edit"></i></a></cfif>   <a style="margin-right:5px;" title="Archive Reminder" href="javascript:;"><i class="icon-remove-sign"></i></a>    <a style="margin-right:5px" href="javascript:;" rel="popover" data-original-title="#dateformat( reminderdate, "mm/dd/yyyy" )#" data-content="#remindertext#"><i class="icon-info-sign"></i></a></span></li>
 														</cfoutput>
-														--->
+														
 													</ul>
 											</cfif>
 										
 										
 									</div>
 									
-									<div class="span5">
-										
+									<div class="span5">			
+																				
+										<div id="datepicker-multi"></div>									
+										<br />
 										<h4><i class="icon-calendar"></i> <cfif structkeyexists( url, "rmid" )>Edit<cfelse>Create</cfif> Reminder</h4>
 										
 										<div class="well">
 											<cfoutput>
 												<form class="form-horizontal" name="addreminder" method="post">
 
-													<div class="control-group">											
-														<label class="control-label" for="reminderdate">Reminder Date</label>
-															<div class="controls">
-																<input type="text" class="input-small" name="reminderdate" id="datepicker-inline" value="<cfif isdefined( "form.reminderdate" )>#dateformat( form.reminderdate, "mm/dd/yyyy" )#<cfelseif structkeyexists( url, "rmid" )>#dateformat( userreminderdetail.reminderdate, "mm/dd/yyyy" )#<cfelse>#dateformat( now(), "mm/dd/yyyy" )#</cfif>" />
-															</div> <!-- /controls -->				
-													</div> <!-- /control-group -->
+													<cfif not structkeyexists( url, "rmid" )>
+													
+														<div class="control-group">											
+															<label class="control-label" for="reminderdate">Reminder Date</label>
+																<div class="controls">
+																	<input type="text" class="input-small" name="reminderdate" id="datepicker-inline" value="<cfif isdefined( "form.reminderdate" )>#dateformat( form.reminderdate, "mm/dd/yyyy" )#<cfelse>#dateformat( now(), "mm/dd/yyyy" )#</cfif>" />
+																</div> <!-- /controls -->				
+														</div> <!-- /control-group -->
+													
+													<cfelse>
+													
+														<div class="control-group">											
+															<label class="control-label" for="reminderdate">Reminder Date</label>
+																<div class="controls">
+																	<input type="text" class="input-small" id="datepicker-inline4" name="reminderdate" value="<cfif isvalid( "uuid", url.rmid ) and userreminderdetail.reminderdate is not "">#dateformat( userreminderdetail.reminderdate, "mm/dd/yyyy" )#</cfif>" />
+																</div> <!-- /controls -->				
+														</div> <!-- /control-group -->
+
+													
+													</cfif>
 													
 													<div class="control-group">											
-														<label class="control-label" for="reminderhour">Reminder Time</label>
+														<label class="control-label" for="remindertime">Reminder Time</label>
 															<div class="controls">
-																<select name="reminderhour" class="input-mini">
-																	<cfloop from="1" to="12" index="i" step="1">
-																		<option value="#i#"<cfif isdefined( "form.reminderhour" ) and form.reminderhour eq i>selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq i>selected</cfif>>#i#</option>
-																	</cfloop>
-																</select>
-																<select name="reminderminutes" class="input-mini">
-																	<cfloop from="45" to="15" index="j" step="-15">
-																		<option value="<cfif len( j ) eq 1>0</cfif>#j#" <cfif isdefined( "form.reminderminutes" ) and form.reminderminutes eq j>selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "n", userreminderdetail.remindertime ) eq j>selected</cfif>><cfif len( j ) eq 1>0</cfif>#j#</option>
-																	</cfloop>
-																		<option value="00"<cfif isdefined( "form.reminderminutes" ) and form.reminderminutes eq 00>selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "n", userreminderdetail.remindertime ) eq 00>selected</cfif>>00</option>
-																</select>&nbsp;<input type="radio" name="rgtime" value="am" checked> AM  <input type="radio" name="rgtime" value="pm" /> PM																																														
+																<select name="remindertime" class="input-medium">
+																	<option value="08:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "08:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 8>selected</cfif>>8:00 am</option>
+																	<option value="08:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "08:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 8 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>8:15 am</option>
+																	<option value="08:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "08:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 8 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>8:30 am</option>
+																	<option value="08:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "08:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 8 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>8:45 am</option>
+																	<option value="09:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "09:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 9>selected</cfif>>9:00 am</option>
+																	<option value="09:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "09:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 9 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>9:15 am</option>
+																	<option value="09:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "09:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 9 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>9:30 am</option>
+																	<option value="09:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "09:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 9 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>9:45 am</option>
+																	<option value="10:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "10:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 10 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>10:00 am</option>
+																	<option value="10:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "10:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 10 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>10:15 am</option>
+																	<option value="10:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "10:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 10 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>10:30 am</option>
+																	<option value="10:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "10:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 10 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>10:45 am</option>
+																	<option value="11:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "11:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 11 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>11:00 am</option>
+																	<option value="11:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "11:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 11 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>11:15 am</option>
+																	<option value="11:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "11:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 11 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>11:30 am</option>
+																	<option value="11:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "11:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 11 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>11:45 am</option>
+																	<option value="12:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "12:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 12 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>12:00 pm</option>
+																	<option value="12:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "12:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 12 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>12:15 pm</option>
+																	<option value="12:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "12:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 12 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>12:30 pm</option>
+																	<option value="12:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "12:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 12 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>12:45 pm</option>
+																	<option value="13:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "13:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 13 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>1:00 pm</option>
+																	<option value="13:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "13:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 13 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>1:15 pm</option>
+																	<option value="13:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "13:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 13 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>1:30 pm</option>
+																	<option value="13:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "13:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 13 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>1:45 pm</option>
+																	<option value="14:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "14:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 14 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>2:00 pm</option>
+																	<option value="14:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "14:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 14 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>2:15 pm</option>
+																	<option value="14:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "14:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 14 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>2:30 pm</option>
+																	<option value="14:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "14:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 14 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>2:45 pm</option>
+																	<option value="15:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "15:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 15 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>3:00 pm</option>
+																	<option value="15:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "15:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 15 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>3:15 pm</option>
+																	<option value="15:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "15:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 15 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>3:30 pm</option>
+																	<option value="15:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "15:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 15 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>3:45 pm</option>
+																	<option value="16:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "16:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 16 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>4:00 pm</option>
+																	<option value="16:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "16:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 16 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>4:15 pm</option>
+																	<option value="16:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "16:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 16 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>4:30 pm</option>
+																	<option value="16:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "16:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 16 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>4:45 pm</option>
+																	<option value="17:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "17:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 17 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>5:00 pm</option>
+																	<option value="17:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "17:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 17 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>5:15 pm</option>
+																	<option value="17:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "17:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 17 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>5:30 pm</option>
+																	<option value="17:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "17:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 17 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>5:45 pm</option>
+																	<option value="18:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "18:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 18 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>6:00 pm</option>
+																	<option value="18:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "18:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 18 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>6:15 pm</option>
+																	<option value="18:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "18:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 18 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>6:30 pm</option>
+																	<option value="18:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "18:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 18 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>6:45 pm</option>
+																	<option value="19:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "19:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 19 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>7:00 pm</option>
+																	<option value="19:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "19:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 19 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>7:15 pm</option>
+																	<option value="19:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "19:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 19 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>7:30 pm</option>
+																	<option value="19:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "19:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 19 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>7:45 pm</option>
+																	<option value="20:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "20:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 20 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>8:00 pm</option>
+																	<option value="20:15"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "20:15">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 20 and datepart( "n", userreminderdetail.remindertime ) eq 15>selected</cfif>>8:15 pm</option>
+																	<option value="20:30"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "20:30">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 20 and datepart( "n", userreminderdetail.remindertime ) eq 30>selected</cfif>>8:30 pm</option>
+																	<option value="20:45"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "20:45">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 20 and datepart( "n", userreminderdetail.remindertime ) eq 45>selected</cfif>>8:45 pm</option>
+																	<option value="21:00"<cfif isdefined( "form.remindertime" ) and form.reminderhour is "21:00">selected<cfelseif structkeyexists( url, "rmid" ) and datepart( "h", userreminderdetail.remindertime ) eq 21 and datepart( "n", userreminderdetail.remindertime ) eq 0>selected</cfif>>9:00 pm</option>
+																	
+																</select>																																																													
 															</div> <!-- /controls -->				
 													</div> <!-- /control-group -->
 													<div class="control-group">
 															<label class="control-label" for="rgtype">Type</label>
 															<div class="controls">
 																<label class="radio">
-																	<input type="radio" name="rgtype" value="txt" checked<cfif structkeyexists( url, "rmid" ) and userreminderdetail.alerttype is "txt">checked</cfif> />
-																	Text
-																</label>
-																<label class="radio">
-																	<input type="radio" name="rgtype" value="eml" <cfif structkeyexists( url, "rmid" ) and userreminderdetail.alerttype is "eml">checked</cfif> />
+																	<input type="radio" name="rgtype" value="eml" <cfif isdefined( "form.rgtype" ) and trim( form.rgtype ) is "eml">checked<cfelseif structkeyexists( url, "rmid" ) and trim( userreminderdetail.alerttype ) is "eml">checked<cfelse>checked</cfif> />
 																	Email
 																</label>
+																<cfif ( trim( quserprofile.txtmsgaddress ) is not "" ) and ( trim( quserprofile.txtmsgprovider ) is not "" )>
+																	<label class="radio">
+																		<input type="radio" name="rgtype" value="txt" <cfif isdefined( "form.rgtype" ) and trim( form.rgtype ) is "txt">checked<cfelseif structkeyexists( url, "rmid" ) and trim( userreminderdetail.alerttype ) is "txt">checked</cfif> />
+																		Text
+																	</label>
+																<cfelse>
+																	<label class="radio">
+																		<small><i class="icon-warning-sign" style="color:red;"></i> Text Option Disabled <a href="#application.root#?event=page.profile">Click here to update</a></small>
+																	</label>
+																</cfif>
 															</div>
 													</div>
 													<div class="control-group">											
@@ -275,9 +412,7 @@
 												</form>
 											</cfoutput>
 										
-											<br />
-											<div id="datepicker-multi"></div>
-										
+											
 										
 										</div>
 										

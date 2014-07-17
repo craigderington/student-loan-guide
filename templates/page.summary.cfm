@@ -27,15 +27,27 @@
 					
 					<cfif getstatus.leadactive eq 1>
 						<cfset newstatus = 0 />
+						<cfquery datasource="#application.dsn#" name="inactivateuserlogin">
+							update users
+							   set active = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+							 where leadid = <cfqueryparam value="#leadid#" cfsqltype="cf_sql_integer" />
+						</cfquery>
 					<cfelse>
 						<cfset newstatus = 1 />
+						<cfquery datasource="#application.dsn#" name="inactivateuserlogin">
+							update users
+							   set active = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+							 where leadid = <cfqueryparam value="#leadid#" cfsqltype="cf_sql_integer" />
+						</cfquery>
 					</cfif>
 					
 					<cfquery datasource="#application.dsn#" name="changestatus">
 						update leads 
 						   set leadactive = <cfqueryparam value="#newstatus#" cfsqltype="cf_sql_bit" /> 
 						 where leadid = <cfqueryparam value="#getstatus.leadid#" cfsqltype="cf_sql_integer" />
-					</cfquery>		
+					</cfquery>
+
+					
 					
 					<cflocation url="#application.root#?event=#url.event#&msg=status.updated" addtoken="yes" />
 				</cfif>

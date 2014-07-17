@@ -18,20 +18,7 @@
 				   and t.taskuuid = <cfqueryparam value="#arguments.taskid#" cfsqltype="cf_sql_varchar" maxlength="35" />
 			</cfquery>
 			<cfreturn taskdetail>
-		</cffunction>
-		
-		<cffunction name="gettaskreminder" access="remote" returntype="query" output="false" hint="I get the task reminders">
-			<cfargument name="taskid" default="#url.taskid#" type="any">
-			<cfquery datasource="#application.dsn#" name="taskreminder">
-				select r.reminderid, r.taskuuid, r.reminderdate, r.remindertime, r.alerttype, r.alertdeltatype, r.alertdeltanum, r.alertsent
-				  from taskreminders r, tasks t
-				 where r.taskuuid = t.taskuuid
-				   and t.taskuuid = <cfqueryparam value="#arguments.taskid#" cfsqltype="cf_sql_varchar" maxlength="35" />
-			</cfquery>
-			<cfreturn taskreminder>
-		</cffunction>
-		
-		
+		</cffunction>				
 	
 	
 	</cfcomponent>

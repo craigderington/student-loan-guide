@@ -1,0 +1,784 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-03-03-18.38.41.540
+Student First Name:SARA
+Student Middle Initial: 
+Student Last Name:BOTSAY
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:WITHDRAWN
+Student Enrollment Status Effective Date:05/08/2008
+Student Total All Loans Outstanding Principal:$39,961
+Student Total All Loans Outstanding Interest:$3,186
+Student Pell Lifetime Eligibility Used:350.000%
+Student Total All Grants:$13,260
+Total DIRECT CONSOLIDATED UNSUBSIDIZED Outstanding Principal:$22,655
+Total DIRECT CONSOLIDATED UNSUBSIDIZED Outstanding Interest:$1,806
+Total DIRECT CONSOLIDATED SUBSIDIZED Outstanding Principal:$17,306
+Total DIRECT CONSOLIDATED SUBSIDIZED Outstanding Interest:$1,380
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$0
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$0
+Total STAFFORD SUBSIDIZED Outstanding Principal:$0
+Total STAFFORD SUBSIDIZED Outstanding Interest:$0
+Total FEDERAL PERKINS Outstanding Principal:$0
+Total FEDERAL PERKINS Outstanding Interest:$0
+Loan Type:DIRECT CONSOLIDATED UNSUBSIDIZED
+Loan Award ID:*****4427U10G77778101
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:04/19/2010
+Loan Repayment Begin Date:04/19/2010
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$21,567
+Loan Disbursed Amount:$21,567
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$22,655
+Loan Outstanding Principal Balance as of Date:01/31/2014
+Loan Outstanding Interest Balance:$1,806
+Loan Outstanding Interest Balance as of Date:01/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.75%
+Loan Repayment Plan Begin Date:05/10/2013
+Loan Repayment Plan Scheduled Amount:$184
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/03/2014
+Loan Status:DZ
+Loan Status Description:DEFAULTED, SIX CONSECUTIVE PAYMENTS, THEN MISSED PAYMENT(S)
+Loan Status Effective Date:12/31/2013
+Loan Status:DX
+Loan Status Description:DEFAULTED, SIX CONSECUTIVE PAYMENTS
+Loan Status Effective Date:12/17/2013
+Loan Status:DU
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:02/04/2013
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:07/24/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/28/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:05/01/2010
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:04/19/2010
+Loan Disbursement Date:04/19/2010
+Loan Disbursement Amount:$21,567
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT CONSOLIDATED SUBSIDIZED
+Loan Award ID:*****4427S10G77778101
+Loan Attending School Name:SCHOOL CODE FOR CONSOLIDATION LOANS
+Loan Attending School OPEID:88888800
+Loan Date:04/19/2010
+Loan Repayment Begin Date:04/19/2010
+Loan Period Begin Date:
+Loan Period End Date:
+Loan Amount:$16,475
+Loan Disbursed Amount:$16,475
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$17,306
+Loan Outstanding Principal Balance as of Date:01/31/2014
+Loan Outstanding Interest Balance:$1,380
+Loan Outstanding Interest Balance as of Date:01/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.75%
+Loan Repayment Plan Begin Date:05/10/2013
+Loan Repayment Plan Scheduled Amount:$141
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/03/2014
+Loan Status:DZ
+Loan Status Description:DEFAULTED, SIX CONSECUTIVE PAYMENTS, THEN MISSED PAYMENT(S)
+Loan Status Effective Date:12/31/2013
+Loan Status:DX
+Loan Status Description:DEFAULTED, SIX CONSECUTIVE PAYMENTS
+Loan Status Effective Date:12/17/2013
+Loan Status:DU
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:02/04/2013
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:07/24/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/28/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:05/01/2010
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:04/19/2010
+Loan Disbursement Date:04/19/2010
+Loan Disbursement Amount:$16,475
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Attending School OPEID:00201600
+Loan Date:02/19/2008
+Loan Repayment Begin Date:11/09/2008
+Loan Period Begin Date:08/28/2007
+Loan Period End Date:05/09/2008
+Loan Amount:$5,000
+Loan Disbursed Amount:$5,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:10/29/2010
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:10/29/2010
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:10/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/09/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:02/19/2008
+Loan Disbursement Date:02/21/2008
+Loan Disbursement Amount:$5,000
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:ILL  DESIGNATED ACCOUNT PURCHASE PR
+Loan Contact Street Address 1:1755 LAKE COOK RD
+Loan Contact Street Address 2:
+Loan Contact City:DEERFIELD
+Loan Contact State Code:IL
+Loan Contact Zip Code:60015
+Loan Contact Phone Number:800-366-5755
+Loan Contact Phone Extension:
+Loan Contact Email Address:IDAPPcustomerService@isac.org
+Loan Contact Web Site Address:www.idapp.com
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Attending School OPEID:00201600
+Loan Date:02/19/2008
+Loan Repayment Begin Date:11/09/2008
+Loan Period Begin Date:08/28/2007
+Loan Period End Date:05/09/2008
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:10/29/2010
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:10/29/2010
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:10/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/09/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:02/19/2008
+Loan Disbursement Date:02/21/2008
+Loan Disbursement Amount:$5,500
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:ILL  DESIGNATED ACCOUNT PURCHASE PR
+Loan Contact Street Address 1:1755 LAKE COOK RD
+Loan Contact Street Address 2:
+Loan Contact City:DEERFIELD
+Loan Contact State Code:IL
+Loan Contact Zip Code:60015
+Loan Contact Phone Number:800-366-5755
+Loan Contact Phone Extension:
+Loan Contact Email Address:IDAPPcustomerService@isac.org
+Loan Contact Web Site Address:www.idapp.com
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Attending School OPEID:00201600
+Loan Date:08/09/2006
+Loan Repayment Begin Date:11/09/2008
+Loan Period Begin Date:08/29/2006
+Loan Period End Date:05/10/2007
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/06/2010
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/06/2010
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:05/06/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/09/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/09/2006
+Loan Disbursement Date:12/29/2006
+Loan Disbursement Amount:$2,750
+Loan Disbursement Date:08/21/2006
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT BSFC
+Loan Contact Street Address 1:425 WALNUT ST.
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Attending School OPEID:00201600
+Loan Date:08/09/2006
+Loan Repayment Begin Date:11/09/2008
+Loan Period Begin Date:08/29/2006
+Loan Period End Date:05/10/2007
+Loan Amount:$5,000
+Loan Disbursed Amount:$5,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/06/2010
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/06/2010
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:05/06/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/09/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/09/2006
+Loan Disbursement Date:12/29/2006
+Loan Disbursement Amount:$2,500
+Loan Disbursement Date:08/21/2006
+Loan Disbursement Amount:$2,500
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT BSFC
+Loan Contact Street Address 1:425 WALNUT ST.
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Attending School OPEID:00201600
+Loan Date:08/01/2005
+Loan Repayment Begin Date:11/09/2008
+Loan Period Begin Date:08/29/2005
+Loan Period End Date:05/12/2006
+Loan Amount:$4,000
+Loan Disbursed Amount:$2,000
+Loan Canceled Amount:$2,000
+Loan Canceled Date:08/22/2005
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/06/2010
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/06/2010
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:05/06/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/09/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/01/2005
+Loan Disbursement Date:03/06/2006
+Loan Disbursement Amount:$1,000
+Loan Disbursement Date:01/09/2006
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT BSFC
+Loan Contact Street Address 1:425 WALNUT ST.
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Attending School OPEID:00201600
+Loan Date:08/01/2005
+Loan Repayment Begin Date:11/09/2008
+Loan Period Begin Date:08/29/2005
+Loan Period End Date:05/12/2006
+Loan Amount:$3,500
+Loan Disbursed Amount:$1,750
+Loan Canceled Amount:$1,750
+Loan Canceled Date:08/22/2005
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/06/2010
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/06/2010
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:05/06/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/09/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/01/2005
+Loan Disbursement Date:03/06/2006
+Loan Disbursement Amount:$875
+Loan Disbursement Date:01/09/2006
+Loan Disbursement Amount:$875
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT BSFC
+Loan Contact Street Address 1:425 WALNUT ST.
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:FEDERAL PERKINS
+Loan Award ID:
+Loan Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Attending School OPEID:00201600
+Loan Date:11/23/2004
+Loan Repayment Begin Date:03/01/2009
+Loan Period Begin Date:09/01/2004
+Loan Period End Date:06/30/2008
+Loan Amount:$5,250
+Loan Disbursed Amount:$5,250
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/24/2010
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:
+Loan Interest Rate Type:
+Loan Interest Rate:5.00%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PF
+Loan Status Description:PAID IN FULL
+Loan Status Effective Date:05/10/2010
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:12/01/2009
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/01/2009
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:01/01/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:11/23/2004
+Loan Disbursement Date:01/07/2008
+Loan Disbursement Amount:$4,000
+Loan Disbursement Date:01/08/2007
+Loan Disbursement Amount:$250
+Loan Disbursement Date:08/28/2006
+Loan Disbursement Amount:$250
+Loan Disbursement Date:01/10/2005
+Loan Disbursement Amount:$750
+Loan Contact Type:Current Servicer
+Loan Contact Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Contact Street Address 1:6363 SAINT CHARLES AVENUE
+Loan Contact Street Address 2:
+Loan Contact City:NEW ORLEANS
+Loan Contact State Code:LA
+Loan Contact Zip Code:701186195
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Loan Attending School OPEID:00201600
+Loan Date:11/01/2004
+Loan Repayment Begin Date:11/09/2008
+Loan Period Begin Date:08/30/2004
+Loan Period End Date:05/13/2005
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:05/06/2010
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/06/2010
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:PN
+Loan Status Description:NON-DEFAULTED, PAID IN FULL THROUGH CONSOLIDATION LOAN
+Loan Status Effective Date:05/06/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/02/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/09/2008
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:11/01/2004
+Loan Disbursement Date:01/03/2005
+Loan Disbursement Amount:$1,312
+Loan Disbursement Date:12/02/2004
+Loan Disbursement Amount:$1,313
+Loan Contact Type:Current Servicer
+Loan Contact Name:SALLIE MAE, INC.
+Loan Contact Street Address 1:220 LASLEY AVE
+Loan Contact Street Address 2:
+Loan Contact City:WILKES-BARRE
+Loan Contact State Code:PA
+Loan Contact Zip Code:18706
+Loan Contact Phone Number:888-272-5543
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Lender
+Loan Contact Name:US BANK ELT BSFC
+Loan Contact Street Address 1:425 WALNUT ST.
+Loan Contact Street Address 2:
+Loan Contact City:CINCINNATI
+Loan Contact State Code:OH
+Loan Contact Zip Code:452020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:USA FUNDS, INC.
+Loan Contact Street Address 1:P.O. BOX 6180
+Loan Contact Street Address 2:
+Loan Contact City:INDIANAPOLIS
+Loan Contact State Code:IN
+Loan Contact Zip Code:462066180
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Grant Attending School OPEID:00201600
+Grant Award Year:2007 - 2008
+Grant Scheduled Amount:$4,310
+Grant Award Amount:$4,310
+Grant Disbursed Amount:$4,310
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:LOYOLA UNIVERSITY NEW ORLEANS
+Grant Contact Street Address 1:6363 SAINT CHARLES AVENUE
+Grant Contact Street Address 2:
+Grant Contact City:NEW ORLEANS
+Grant Contact State Code:LA
+Grant Contact Zip Code:701186195
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Grant Attending School OPEID:00201600
+Grant Award Year:2006 - 2007
+Grant Scheduled Amount:$4,050
+Grant Award Amount:$4,050
+Grant Disbursed Amount:$4,050
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:LOYOLA UNIVERSITY NEW ORLEANS
+Grant Contact Street Address 1:6363 SAINT CHARLES AVENUE
+Grant Contact Street Address 2:
+Grant Contact City:NEW ORLEANS
+Grant Contact State Code:LA
+Grant Contact Zip Code:701186195
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Grant Attending School OPEID:00201600
+Grant Award Year:2005 - 2006
+Grant Scheduled Amount:$1,700
+Grant Award Amount:$850
+Grant Disbursed Amount:$850
+Grant Remaining Amount to be Paid:$850
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:LOYOLA UNIVERSITY NEW ORLEANS
+Grant Contact Street Address 1:6363 SAINT CHARLES AVENUE
+Grant Contact Street Address 2:
+Grant Contact City:NEW ORLEANS
+Grant Contact State Code:LA
+Grant Contact Zip Code:701186195
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:LOYOLA UNIVERSITY NEW ORLEANS
+Grant Attending School OPEID:00201600
+Grant Award Year:2004 - 2005
+Grant Scheduled Amount:$4,050
+Grant Award Amount:$4,050
+Grant Disbursed Amount:$4,050
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:LOYOLA UNIVERSITY NEW ORLEANS
+Grant Contact Street Address 1:6363 SAINT CHARLES AVENUE
+Grant Contact Street Address 2:
+Grant Contact City:NEW ORLEANS
+Grant Contact State Code:LA
+Grant Contact Zip Code:701186195

@@ -1,0 +1,18 @@
+<!--- begin page --->
+			<div class="main">
+				<div class="container">
+					<div class="row">
+						<div class="span12">
+							<div class="widget stacked">
+								<div class="widget-header">
+									<i class="icon-file"></i> 
+									<h3>Header Text</h3>									
+								</div><!-- / .widget-header -->
+								<div class="widget-content">
+									{{{ widget-content }}}
+								</div><!-- / .widget-content -->
+							</div><!-- / .widget -->							
+						</div><!-- / .span12 -->
+					</div><!-- / .row -->
+				</div><!-- / .container -->			
+			</div><!-- / .main -->

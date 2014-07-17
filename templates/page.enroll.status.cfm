@@ -14,6 +14,10 @@
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
 			
+			<cfinvoke component="apis.com.clients.clientgateway" method="getclientfeetotals" returnvariable="clientfeetotals">
+				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>							
+			
 			<!--- declare forms vars --->			
 			<cfparam name="enrolldate" default="">
 			<cfparam name="enrolldocs" default="">
@@ -35,7 +39,7 @@
 						<div class="span12">
 						
 						<!--- show system messages --->
-						<cfif structkeyexists(url, "msg") and url.msg is "saved">						
+						<cfif structkeyexists( url, "msg" ) and url.msg is "saved">						
 							<div class="row">
 								<div class="span12">										
 									<div class="alert alert-info">
@@ -43,7 +47,21 @@
 										<strong><i class="icon-check"></i> SUCCESS!</strong>  The client program enrollment status dates and settings were successfully updated.  Please use the navigation in the sidebar to continue...
 									</div>										
 								</div>								
-							</div>							
+							</div>
+						<cfelseif structkeyexists( url, "msg" ) and url.msg is "email" and structkeyexists( url, "status" ) and url.status is "sent">						
+							<div class="row">
+								<div class="span12">										
+									<div class="alert alert-block alert-info">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										<strong><i class="icon-check"></i> SUCCESS!</strong> The program enrollment documents were successfully sent to the client by email... 
+											<ul><cfoutput>
+													<li> The client program enrollment document was successfully sent to the client as an attachment. </li>
+													<li> The client agreement was also saved to the document library. Access the new enrollment document here.  <a title="Print Client Enrollment Document" name="thisdoc" target="_blank" href="../library/clients/enrollment/#leaddetail.leadfirst#-#leaddetail.leadlast#-#leaddetail.leadid#-Student-Loan-Advisor-Agreement.pdf">View New Enrollment Document</a></li>
+												</cfoutput>
+											</ul>
+									</div>										
+								</div>								
+							</div>
 						</cfif>
 						<!--- // end system messages --->
 						
@@ -224,14 +242,57 @@
 															<div class="control-group">											
 																<label class="control-label" for="Contact Method">Send Method</label>
 																<div class="controls">
-																	<select name="docsmethod" id="docsmethod" class="input-large">
+																	<select name="docsmethod" id="docsmethod" class="input-medium">
 																		<option value="">Select Send Method</option>
-																		<option value="Email"<cfif trim(leadsummary.slenrollclientdocsmethod) is "email">selected</cfif>>Email</option>
-																		<option value="Fax"<cfif trim(leadsummary.slenrollclientdocsmethod) is "fax">selected</cfif>>Fax</option>
-																		<option value="In Person"<cfif trim(leadsummary.slenrollclientdocsmethod) is "In Person">selected</cfif>>In Person</option>
-																		<option value="Post"<cfif trim(leadsummary.slenrollclientdocsmethod) is "Post">selected</cfif>>Post</option>
-																		<option value="ESIGN"<cfif trim(leadsummary.slenrollclientdocsmethod) is "ESIGN">selected</cfif>>E-Sign Invitation</option>
-																	</select>
+																		<option value="Email"<cfif trim( leadsummary.slenrollclientdocsmethod ) is "email">selected</cfif>>Email</option>
+																		<option value="Fax"<cfif trim( leadsummary.slenrollclientdocsmethod ) is "fax">selected</cfif>>Fax</option>
+																		<option value="In Person"<cfif trim( leadsummary.slenrollclientdocsmethod ) is "In Person">selected</cfif>>In Person</option>
+																		<option value="Post"<cfif trim( leadsummary.slenrollclientdocsmethod ) is "Post">selected</cfif>>Post</option>
+																		<option value="ESIGN"<cfif trim( leadsummary.slenrollclientdocsmethod ) is "ESIGN">selected</cfif>>E-Sign Invitation</option>
+																	</select>&nbsp;
+																	
+																	
+																	<!--- // 7-9-2014 // need to be able to print enrollment agreements for clients not signing electronically --->
+																	<!--- // only show links if the documents have not been returned, once returned, hide buttons --->
+																	<!--- // 7-15-2014 // alert user if the client has no fee schedule --->
+																	<cfif leadsummary.slenrollreturndate is "">
+																		
+																		<cfif trim( leadsummary.slenrollclientdocsmethod ) is "email">
+																			
+																			<!--- // if not client fees have been created, redirect and alert user --->
+																			<cfif clientfeetotals.numpayments eq 0>
+																				<a href="javascript:;" class="btn btn-small btn-default" onclick="javascript:alert('Sorry, you can not generate the enrollment agreement because the selected client does not have a valid fee schedule.');"><i class="icon-envelope"></i> Send Enrollment Documents by Email</a>
+																			<cfelse>
+																				<a href="#application.root#?event=page.enroll.docs&fuseaction=email&do=enrolldocs" class="btn btn-small btn-default"><i class="icon-envelope"></i> Send Enrollment Documents by Email</a>
+																			</cfif>
+																		
+																		<cfelseif trim( leadsummary.slenrollclientdocsmethod ) is "fax">
+																			
+																			<cfif clientfeetotals.numpayments eq 0>
+																				<a href="javascript:;" class="btn btn-small btn-default" onclick="javascript:alert('Sorry, you can not generate the enrollment agreement because the selected client does not have a valid fee schedule.');"><i class="icon-print"></i> Print Enrollment Documents</a>
+																			<cfelse>
+																				<a href="#application.root#?event=page.enroll.docs&fuseaction=print&do=enrolldocs" class="btn btn-small btn-default"><i class="icon-print"></i> Print Enrollment Documents</a>
+																			</cfif>
+																			
+																		<cfelseif trim( leadsummary.slenrollclientdocsmethod ) is "post">
+																			
+																			<cfif clientfeetotals.numpayments eq 0>
+																				<a href="javascript:;" class="btn btn-small btn-default" onclick="javascript:alert('Sorry, you can not generate the enrollment agreement because the selected client does not have a valid fee schedule.');"><i class="icon-truck"></i> Print Enrollment Documents</a>
+																			<cfelse>
+																				<a href="#application.root#?event=page.enroll.docs&fuseaction=print&do=enrolldocs" class="btn btn-small btn-default"><i class="icon-truck"></i> Print Enrollment Documents</a>
+																			</cfif>
+																			
+																		<cfelseif trim( leadsummary.slenrollclientdocsmethod ) is "in person">
+																			
+																			<cfif clientfeetotals.numpayments eq 0>
+																				<a href="javascript:;" class="btn btn-small btn-default" onclick="javascript:alert('Sorry, you can not generate the enrollment agreement because the selected client does not have a valid fee schedule.');"><i class="icon-user"></i> Print Enrollment Documents</a>
+																			<cfelse>
+																				<a href="#application.root#?event=page.enroll.docs&fuseaction=print&do=enrolldocs" class="btn btn-small btn-default"><i class="icon-user"></i> Print Enrollment Documents</a>
+																			</cfif>
+																		
+																		</cfif>
+																	</cfif>
+																	
 																</div> <!-- /controls -->				
 															</div> <!-- /control-group -->
 															

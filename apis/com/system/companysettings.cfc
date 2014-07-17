@@ -31,6 +31,18 @@
 					<cfreturn clientsettings >
 				</cffunction>
 				
+				<cffunction name="getcompanydocs" access="public" output="false" hint="I get the company document paths for enroll and impl agreements.">
+					<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+					<cfset var companydocs = "" />
+					<cfquery datasource="#application.dsn#" name="companydocs">
+						select c.companyid, c.dba, c.companyname, 
+						       c.enrollagreepath, c.implagreepath 
+						  from company c
+						 where c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+					</cfquery>
+					<cfreturn companydocs >
+				</cffunction>
+				
 				
 				
 		</cfcomponent>

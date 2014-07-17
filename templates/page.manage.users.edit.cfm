@@ -330,7 +330,7 @@
 															<div class="controls">
 																<select name="userrole" class="input-large" multiple size="5">															
 																	<cfif isuserinrole( "admin" )>
-																	<option value="admin"<cfif listcontains( userdetail.role, "admin" )>selected</cfif>>System Administrator</option>
+																	<option value="admin"<cfif listcontains( userdetail.role, "admin" ) and not listcontains( userdetail.role, "co-admin" )>selected</cfif>>System Administrator</option>
 																	</cfif>
 																	<option value="co-admin"<cfif listcontains( userdetail.role, "co-admin" )>selected</cfif>>Company Administrator</option>
 																	<option value="sls"<cfif listcontains( userdetail.role, "sls" )>selected</cfif>>Student Loan Advisor</option>

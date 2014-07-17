@@ -1,0 +1,1132 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-06-16-11.32.19.232
+Student First Name:BRUNO
+Student Middle Initial:J
+Student Last Name:BLOCK
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:WITHDRAWN
+Student Enrollment Status Effective Date:12/13/2013
+Student Total All Loans Outstanding Principal:$58,120
+Student Total All Loans Outstanding Interest:$5,239
+Student Pell Lifetime Eligibility Used:423.702%
+Student Total All Grants:$19,819
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Principal:$32,860
+Total DIRECT STAFFORD UNSUBSIDIZED Outstanding Interest:$4,512
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Principal:$21,260
+Total DIRECT STAFFORD SUBSIDIZED Outstanding Interest:$97
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$2,250
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$630
+Total STAFFORD SUBSIDIZED Outstanding Principal:$1,750
+Total STAFFORD SUBSIDIZED Outstanding Interest:$0
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U14G01343001
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:09/11/2013
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:08/26/2013
+Loan Period End Date:12/13/2013
+Loan Amount:$1,890
+Loan Disbursed Amount:$1,890
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,890
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$53
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.86%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/11/2013
+Loan Disbursement Date:09/11/2013
+Loan Disbursement Amount:$1,890
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U13G01343002
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:05/22/2013
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:08/27/2012
+Loan Period End Date:05/03/2013
+Loan Amount:$2,806
+Loan Disbursed Amount:$2,806
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,806
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$197
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/22/2013
+Loan Disbursement Date:05/22/2013
+Loan Disbursement Amount:$2,806
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U13G01343001
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:09/12/2012
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:08/27/2012
+Loan Period End Date:05/03/2013
+Loan Amount:$7,000
+Loan Disbursed Amount:$7,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$7,000
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$729
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/12/2012
+Loan Disbursement Date:01/29/2013
+Loan Disbursement Amount:$3,500
+Loan Disbursement Date:09/12/2012
+Loan Disbursement Amount:$3,500
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S13G01343001
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:09/12/2012
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:08/27/2012
+Loan Period End Date:05/03/2013
+Loan Amount:$2,694
+Loan Disbursed Amount:$2,694
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,694
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$43
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/12/2012
+Loan Disbursement Date:01/29/2013
+Loan Disbursement Amount:$0
+Loan Disbursement Date:09/12/2012
+Loan Disbursement Amount:$2,694
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U12G01343003
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:05/24/2012
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:05/14/2012
+Loan Period End Date:07/31/2012
+Loan Amount:$2,804
+Loan Disbursed Amount:$2,804
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,804
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$386
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/24/2012
+Loan Disbursement Date:05/24/2012
+Loan Disbursement Amount:$2,804
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S12G01343003
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:05/24/2012
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:05/14/2012
+Loan Period End Date:07/31/2012
+Loan Amount:$2,750
+Loan Disbursed Amount:$2,750
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,750
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/24/2012
+Loan Disbursement Date:05/24/2012
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S12G01343002
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:01/24/2012
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:01/09/2012
+Loan Period End Date:05/04/2012
+Loan Amount:$1,000
+Loan Disbursed Amount:$1,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,000
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:01/24/2012
+Loan Disbursement Date:01/24/2012
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U12G01343002
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:01/24/2012
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:01/09/2012
+Loan Period End Date:05/04/2012
+Loan Amount:$1,000
+Loan Disbursed Amount:$1,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,000
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$160
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:01/24/2012
+Loan Disbursement Date:01/24/2012
+Loan Disbursement Amount:$1,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U12G01343001
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:09/06/2011
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:08/22/2011
+Loan Period End Date:05/04/2012
+Loan Amount:$6,000
+Loan Disbursed Amount:$6,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$6,000
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$1,039
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/06/2011
+Loan Disbursement Date:01/25/2012
+Loan Disbursement Amount:$3,000
+Loan Disbursement Date:09/06/2011
+Loan Disbursement Amount:$3,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S12G01343001
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:09/06/2011
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:08/22/2011
+Loan Period End Date:05/04/2012
+Loan Amount:$4,500
+Loan Disbursed Amount:$4,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,500
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:3.40%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/06/2011
+Loan Disbursement Date:01/25/2012
+Loan Disbursement Amount:$2,250
+Loan Disbursement Date:09/06/2011
+Loan Disbursement Amount:$2,250
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U11G01343002
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:05/23/2011
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:05/16/2011
+Loan Period End Date:07/29/2011
+Loan Amount:$3,000
+Loan Disbursed Amount:$3,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$3,000
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$618
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/23/2011
+Loan Disbursement Date:05/23/2011
+Loan Disbursement Amount:$3,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S11G01343002
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:05/23/2011
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:05/16/2011
+Loan Period End Date:07/29/2011
+Loan Amount:$2,250
+Loan Disbursed Amount:$2,250
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,250
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:4.50%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/23/2011
+Loan Disbursement Date:05/23/2011
+Loan Disbursement Amount:$2,250
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U11G01343001
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:01/25/2011
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:01/10/2011
+Loan Period End Date:05/06/2011
+Loan Amount:$3,000
+Loan Disbursed Amount:$3,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$3,000
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$684
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:01/25/2011
+Loan Disbursement Date:01/25/2011
+Loan Disbursement Amount:$3,000
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S11G01343001
+Loan Attending School Name:WOODBURY UNIVERSITY
+Loan Attending School OPEID:00134300
+Loan Date:01/25/2011
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:01/10/2011
+Loan Period End Date:05/06/2011
+Loan Amount:$4,500
+Loan Disbursed Amount:$4,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$4,500
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:4.50%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:01/25/2011
+Loan Disbursement Date:01/25/2011
+Loan Disbursement Amount:$4,500
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763210001203202
+Loan Attending School Name:GLENDALE COMMUNITY COLLEGE
+Loan Attending School OPEID:00120300
+Loan Date:04/14/2010
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:02/16/2010
+Loan Period End Date:06/09/2010
+Loan Amount:$2,250
+Loan Disbursed Amount:$2,250
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,250
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$630
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:04/14/2010
+Loan Disbursement Date:04/21/2010
+Loan Disbursement Amount:$2,250
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:121 S 13TH ST
+Loan Contact Street Address 2:SUITE 201
+Loan Contact City:LINCOLN
+Loan Contact State Code:NE
+Loan Contact Zip Code:68508
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:*****4763110001203201
+Loan Attending School Name:GLENDALE COMMUNITY COLLEGE
+Loan Attending School OPEID:00120300
+Loan Date:04/14/2010
+Loan Repayment Begin Date:06/14/2014
+Loan Period Begin Date:02/16/2010
+Loan Period End Date:06/09/2010
+Loan Amount:$1,750
+Loan Disbursed Amount:$1,750
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,750
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.60%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/13/2013
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:04/14/2010
+Loan Disbursement Date:04/21/2010
+Loan Disbursement Amount:$1,750
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:121 S 13TH ST
+Loan Contact Street Address 2:SUITE 201
+Loan Contact City:LINCOLN
+Loan Contact State Code:NE
+Loan Contact Zip Code:68508
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S06G01261001
+Loan Attending School Name:PASADENA CITY COLLEGE
+Loan Attending School OPEID:00126100
+Loan Date:02/21/2006
+Loan Repayment Begin Date:04/20/2007
+Loan Period Begin Date:08/29/2005
+Loan Period End Date:06/17/2006
+Loan Amount:$1,456
+Loan Disbursed Amount:$1,456
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,337
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$20
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:2.35%
+Loan Repayment Plan Begin Date:04/20/2007
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/14/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/28/2008
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/18/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/20/2007
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:10/19/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:02/21/2006
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:11/02/2005
+Loan Disbursement Date:04/06/2006
+Loan Disbursement Amount:$728
+Loan Disbursement Date:02/21/2006
+Loan Disbursement Amount:$728
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U06G01261001
+Loan Attending School Name:PASADENA CITY COLLEGE
+Loan Attending School OPEID:00126100
+Loan Date:02/18/2006
+Loan Repayment Begin Date:04/20/2007
+Loan Period Begin Date:02/03/2006
+Loan Period End Date:06/17/2006
+Loan Amount:$2,044
+Loan Disbursed Amount:$2,044
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,000
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$241
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:2.35%
+Loan Repayment Plan Begin Date:04/20/2007
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/14/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/28/2008
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/18/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/20/2007
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:10/19/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:02/18/2006
+Loan Disbursement Date:04/06/2006
+Loan Disbursement Amount:$1,022
+Loan Disbursement Date:02/18/2006
+Loan Disbursement Amount:$1,022
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S05G01261001
+Loan Attending School Name:PASADENA CITY COLLEGE
+Loan Attending School OPEID:00126100
+Loan Date:10/01/2004
+Loan Repayment Begin Date:04/20/2007
+Loan Period Begin Date:08/30/2004
+Loan Period End Date:06/10/2005
+Loan Amount:$1,800
+Loan Disbursed Amount:$1,800
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$1,588
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$24
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:2.35%
+Loan Repayment Plan Begin Date:04/20/2007
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/14/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/28/2008
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:02/18/2008
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:04/20/2007
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:10/19/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:10/01/2004
+Loan Disbursement Date:02/04/2005
+Loan Disbursement Amount:$900
+Loan Disbursement Date:10/01/2004
+Loan Disbursement Amount:$900
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD SUBSIDIZED
+Loan Award ID:*****4763S03G01261001
+Loan Attending School Name:PASADENA CITY COLLEGE
+Loan Attending School OPEID:00126100
+Loan Date:05/28/2003
+Loan Repayment Begin Date:06/22/2004
+Loan Period Begin Date:01/13/2003
+Loan Period End Date:05/23/2003
+Loan Amount:$777
+Loan Disbursed Amount:$777
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$641
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$10
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:2.35%
+Loan Repayment Plan Begin Date:06/22/2004
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/14/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:08/28/2004
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/22/2004
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/21/2003
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/28/2003
+Loan Disbursement Date:05/29/2003
+Loan Disbursement Amount:$388
+Loan Disbursement Date:05/28/2003
+Loan Disbursement Amount:$389
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U03G01261001
+Loan Attending School Name:PASADENA CITY COLLEGE
+Loan Attending School OPEID:00126100
+Loan Date:05/28/2003
+Loan Repayment Begin Date:06/22/2004
+Loan Period Begin Date:01/13/2003
+Loan Period End Date:05/23/2003
+Loan Amount:$1,023
+Loan Disbursed Amount:$1,023
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$913
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$110
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:2.35%
+Loan Repayment Plan Begin Date:06/22/2004
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/14/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:08/28/2004
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/22/2004
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/21/2003
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/28/2003
+Loan Disbursement Date:05/29/2003
+Loan Disbursement Amount:$511
+Loan Disbursement Date:05/28/2003
+Loan Disbursement Amount:$512
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Loan Type:DIRECT STAFFORD UNSUBSIDIZED
+Loan Award ID:*****4763U02G01261001
+Loan Attending School Name:PASADENA CITY COLLEGE
+Loan Attending School OPEID:00126100
+Loan Date:03/19/2002
+Loan Repayment Begin Date:06/22/2004
+Loan Period Begin Date:08/20/2001
+Loan Period End Date:05/24/2002
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,447
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$295
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:2.35%
+Loan Repayment Plan Begin Date:06/22/2004
+Loan Repayment Plan Scheduled Amount:
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/14/2013
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:08/28/2004
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/22/2004
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/21/2003
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:03/19/2002
+Loan Disbursement Date:03/20/2002
+Loan Disbursement Amount:$1,312
+Loan Disbursement Date:03/19/2002
+Loan Disbursement Amount:$1,313
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/NELNET
+Loan Contact Street Address 1:PO BOX 740283
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:30348
+Loan Contact Phone Number:888-486-4722
+Loan Contact Phone Extension:
+Loan Contact Email Address:nelnetcustomersolutions@nelnet.com
+Loan Contact Web Site Address:www.nelnet.com
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:WOODBURY UNIVERSITY
+Grant Attending School OPEID:00134300
+Grant Award Year:2013 - 2014
+Grant Scheduled Amount:$5,645
+Grant Award Amount:$5,645
+Grant Disbursed Amount:$2,823
+Grant Remaining Amount to be Paid:$2,822
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:WOODBURY UNIVERSITY
+Grant Contact Street Address 1:7500 NORTH GLENOAKS BOULEVARD
+Grant Contact Street Address 2:
+Grant Contact City:BURBANK
+Grant Contact State Code:CA
+Grant Contact Zip Code:915041052
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:WOODBURY UNIVERSITY
+Grant Attending School OPEID:00134300
+Grant Award Year:2012 - 2013
+Grant Scheduled Amount:$5,550
+Grant Award Amount:$5,550
+Grant Disbursed Amount:$5,550
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:WOODBURY UNIVERSITY
+Grant Contact Street Address 1:7500 NORTH GLENOAKS BOULEVARD
+Grant Contact Street Address 2:
+Grant Contact City:BURBANK
+Grant Contact State Code:CA
+Grant Contact Zip Code:915041052
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:WOODBURY UNIVERSITY
+Grant Attending School OPEID:00134300
+Grant Award Year:2011 - 2012
+Grant Scheduled Amount:$4,700
+Grant Award Amount:$4,700
+Grant Disbursed Amount:$4,700
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:No
+Grant Contact Type:Attending School
+Grant Contact Name:WOODBURY UNIVERSITY
+Grant Contact Street Address 1:7500 NORTH GLENOAKS BOULEVARD
+Grant Contact Street Address 2:
+Grant Contact City:BURBANK
+Grant Contact State Code:CA
+Grant Contact Zip Code:915041052
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:WOODBURY UNIVERSITY
+Grant Attending School OPEID:00134300
+Grant Award Year:2010 - 2011
+Grant Scheduled Amount:$5,500
+Grant Award Amount:$11,000
+Grant Disbursed Amount:$3,758
+Grant Remaining Amount to be Paid:-$321
+Grant First Time:No
+Grant Additional Eligibility:Yes
+Grant Contact Type:Attending School
+Grant Contact Name:WOODBURY UNIVERSITY
+Grant Contact Street Address 1:7500 NORTH GLENOAKS BOULEVARD
+Grant Contact Street Address 2:
+Grant Contact City:BURBANK
+Grant Contact State Code:CA
+Grant Contact Zip Code:915041052
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:GLENDALE COMMUNITY COLLEGE
+Grant Attending School OPEID:00120300
+Grant Award Year:2010 - 2011
+Grant Scheduled Amount:$5,500
+Grant Award Amount:$2,063
+Grant Disbursed Amount:$2,063
+Grant Remaining Amount to be Paid:-$321
+Grant First Time:No
+Grant Additional Eligibility:No
+Grant Contact Type:Attending School
+Grant Contact Name:GLENDALE COMMUNITY COLLEGE
+Grant Contact Street Address 1:1500 NORTH VERDUGO ROAD
+Grant Contact Street Address 2:
+Grant Contact City:GLENDALE
+Grant Contact State Code:CA
+Grant Contact Zip Code:912082894
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:GLENDALE COMMUNITY COLLEGE
+Grant Attending School OPEID:00120300
+Grant Award Year:2009 - 2010
+Grant Scheduled Amount:$2,500
+Grant Award Amount:$2,500
+Grant Disbursed Amount:$625
+Grant Remaining Amount to be Paid:$1,875
+Grant First Time:No
+Grant Additional Eligibility:No
+Grant Contact Type:Attending School
+Grant Contact Name:GLENDALE COMMUNITY COLLEGE
+Grant Contact Street Address 1:1500 NORTH VERDUGO ROAD
+Grant Contact Street Address 2:
+Grant Contact City:GLENDALE
+Grant Contact State Code:CA
+Grant Contact Zip Code:912082894
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:PASADENA CITY COLLEGE
+Grant Attending School OPEID:00126100
+Grant Award Year:2004 - 2005
+Grant Scheduled Amount:$700
+Grant Award Amount:$700
+Grant Disbursed Amount:$300
+Grant Remaining Amount to be Paid:$400
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:PASADENA CITY COLLEGE
+Grant Contact Street Address 1:1570 EAST COLORADO BOULEVARD
+Grant Contact Street Address 2:
+Grant Contact City:PASADENA
+Grant Contact State Code:CA
+Grant Contact Zip Code:911062003

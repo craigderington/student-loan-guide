@@ -10,8 +10,12 @@
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
 			
+			<cfinvoke component="apis.com.esign.esigngateway" method="getesigninfo" returnvariable="esigninfo">
+				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>
 			
-			<!--- // delete selected fee - check query string param --->
+			
+			<!--- // delete selected fee // check query string param // --->
 			<cfif structkeyexists( url, "fuseaction" ) and url.fuseaction is "deletefee">				
 				<cfparam name="feeid" default="">
 				<cfparam name="today" default="">
@@ -49,23 +53,7 @@
 						self.location="javascript:history.back(-1);"
 					</script>
 				</cfif>			
-			</cfif>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			</cfif>		
 			
 			
 
@@ -86,7 +74,7 @@
 			
 						<div class="span12">
 						
-						<!--- system messages --->
+							<!--- system messages --->
 							<cfif structkeyexists(url, "msg") and url.msg is "saved">						
 								<div class="row">
 									<div class="span12">										
@@ -138,6 +126,7 @@
 
 									<!--- // begin form processing --->
 									<cfif isDefined("form.fieldnames")>
+										
 										<cfscript>
 											objValidation = createObject("component","apis.com.ui.validation").init();
 											objValidation.setFields(form);
@@ -148,13 +137,15 @@
 											
 											<!--- define our structure and set form values --->
 											<cfset lead = structnew() />
-											<cfset lead.leadid = #form.leadid# />
+											<cfset lead.leadid = form.leadid />
 											<cfset lead.feeuuid = #createuuid()# />
-											<cfset lead.startdate = #form.startdate# />
-											<cfset lead.numberpays = #form.paynum# />
-											<cfset lead.paymentamount = #form.payamt# />																					
-											<cfset lead.nextdate = #lead.startdate# />											
+											<cfset lead.startdate = form.startdate />
+											<cfset lead.numberpays = form.paynum />
+											<cfset lead.paymentamount = form.payamt />																					
+											<cfset lead.nextdate = lead.startdate />											
 											<cfset lead.paymentamount = rereplace( lead.paymentamount, "[\$,]", "", "all" ) />
+											<cfset lead.paymentamount = numberformat( lead.paymentamount, "999.99" ) />
+											<cfset lead.feepaytype = "ACH" />
 											
 											<cfif isdefined( "form.rgfeetype" )>
 												<cfset lead.feetype = #form.rgfeetype# />
@@ -163,14 +154,14 @@
 											</cfif>
 											
 											<!--- // some other variables --->
-											<cfset today = #CreateODBCDateTime(now())# />											
+											<cfset today = CreateODBCDateTime( now() ) />											
 											
 											<cfif lead.numberpays lte 10>
 												
 												<cfloop from="1" to="#lead.numberpays#" index="i">										
 													<!--- // create the database records --->
 													<cfquery datasource="#application.dsn#" name="dofees">
-														insert into fees(feeuuid, leadid, feetype, createddate, feeduedate, feeamount, userid)
+														insert into fees(feeuuid, leadid, feetype, createddate, feeduedate, feeamount, userid, feepaytype)
 															values (
 																	<cfqueryparam value="#lead.feeuuid#" cfsqltype="cf_sql_varchar" />,
 																	<cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />,
@@ -178,7 +169,8 @@
 																	<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
 																	<cfqueryparam value="#lead.nextdate#" cfsqltype="cf_sql_date" />,
 																	<cfqueryparam value="#lead.paymentamount#" cfsqltype="cf_sql_float" />,
-																	<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />																
+																	<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
+																	<cfqueryparam value="#lead.feepaytype#" cfsqltype="cf_sql_varchar" />
 																   );
 													</cfquery>
 													
@@ -186,13 +178,22 @@
 													<cfset lead.feeuuid = #createuuid()# />
 												</cfloop>
 												
+												<cfif lead.numberpays gt 1>
+													<cfif esigninfo.escompleted neq 1>
+														<cfquery datasource="#application.dsn#" name="updateesignpaycount">
+														   update esign
+															  set esignfeeoption = <cfqueryparam value="2" cfsqltype="cf_sql_numeric" />
+															where esid = <cfqueryparam value="#esigninfo.esid#" cfsqltype="cf_sql_integer" />
+														</cfquery>
+													</cfif>
+												</cfif>
+												
 												<cfif lead.startdate is not "" and lead.numberpays is not "">
 													<cfinvoke component="apis.com.tasks.taskautomation" method="marktaskcompleted" returnvariable="taskmsg">
 														<cfinvokeargument name="leadid" value="#session.leadid#">
 														<cfinvokeargument name="taskref" value="feesch">
 													</cfinvoke>
-												</cfif>
-												
+												</cfif>										
 												
 												<!--- // log the activity --->
 												<cfquery datasource="#application.dsn#" name="logact">
@@ -204,7 +205,7 @@
 																<cfqueryparam value="Record Added" cfsqltype="cf_sql_varchar" />,
 																<cfqueryparam value="#session.username# created the enrollment fee schedule for #leaddetail.leadfirst# #leaddetail.leadlast#." cfsqltype="cf_sql_varchar" />
 																);
-												</cfquery>																					
+												</cfquery>											
 												
 												<cfif structkeyexists( form, "savelead" )>
 													<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
@@ -225,6 +226,7 @@
 												</div>
 												
 											</cfif>
+										
 										<!--- If the required data is missing - throw the validation error --->
 										<cfelse>
 										
@@ -266,6 +268,7 @@
 													<cfif clientfees.recordcount gt 0 and not structkeyexists( url, "fuseaction" )>
 													
 														<table class="table table-bordered table-striped table-highlight">
+															
 															<thead>
 																<tr>
 																	<th width="15%">Actions</th>																	
@@ -275,33 +278,43 @@
 																	<th>Status</th>
 																</tr>
 															</thead>
+															
 															<tbody>
+																
 																<cfoutput query="clientfees">
-																<tr>
-																	<td class="actions">											
-																			
-																			<cfif isuserinrole("admin") or isuserinrole("sls") or isuserinrole("co-admin")>
-																				<cfif clientfees.feecollected neq 1>
-																					<a href="#application.root#?event=page.fee.edit&fuseaction=editfee&feeid=#feeuuid#" class="btn btn-small">
-																						<i class="btn-icon-only icon-pencil"></i>										
-																					</a>
+																	<tr>
+																		<td class="actions">											
+																				
+																				<cfif isuserinrole( "admin" ) or isuserinrole( "sls" ) or isuserinrole( "co-admin" )>
 																					
-																					<a href="#application.root#?event=#url.event#&fuseaction=deletefee&feeid=#feeuuid#" class="btn btn-small btn-inverse" onclick="return confirm('Are you sure you want to delete this fee?  This action can not be undone!');">
-																						<i class="btn-icon-only icon-trash"></i>										
-																					</a>
-																				<cfelse>
-																					<a href="javascript:;" class="btn btn-small btn-tertiary" rel="popover" data-original-title="Fee Record Information" data-content="Fees that have already been paid and collected can not be modified">
-																						<i class="btn-icon-only icon-exclamation-sign"></i>										
-																					</a>
+																					<cfif clientfees.feecollected neq 1>
+																						
+																						<a href="#application.root#?event=page.fee.edit&fuseaction=editfee&feeid=#feeuuid#" class="btn btn-small">
+																							<i class="btn-icon-only icon-pencil"></i>										
+																						</a>
+																						
+																						<a href="#application.root#?event=#url.event#&fuseaction=deletefee&feeid=#feeuuid#" class="btn btn-small btn-inverse" onclick="return confirm('Are you sure you want to delete this fee?  This action can not be undone!');">
+																							<i class="btn-icon-only icon-trash"></i>									
+																						</a>
+																						
+																					<cfelse>
+																					
+																						<a href="javascript:;" class="btn btn-small btn-tertiary" rel="popover" data-original-title="Fee Record Information" data-content="Fees that have already been paid and collected can not be modified">
+																							<i class="btn-icon-only icon-exclamation-sign"></i>									
+																						</a>
+																					
+																					</cfif>
+																				
 																				</cfif>
-																			</cfif>
-																	</td>
-																	<td><cfif feetype eq 1><span class="label label-default">Advisory</span><cfelseif feetype eq 2><span class="label label-info">Implementation</span><cfelseif feetype eq 3><span class="label label-success">Ancillary Fees</span><cfelseif feetype eq 0><span class="label label-info">Returned Item</span><cfelse></cfif></td>
-																	<td>#dateformat( feeduedate, "mm/dd/yyyy" )# by <span style="margin-left:5px;" class="label label-info">#feepaytype#</span></td>
-																	<td>#dollarformat( feeamount )#</td>																	
-																	<td><cfif trim( feestatus ) is "paid"><span class="label label-success">#feestatus# <cfif feepaiddate is not ""> - #dateformat( feepaiddate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">#feestatus# <cfif feetransdate is not ""> - #dateformat( feetransdate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "nsf"><span class="label label-info">#feestatus#<cfelse><span class="label label-default">#feestatus#</span></cfif></td>
-																</tr>
-																<cfset feetotal = feetotal + feeamount />
+																		</td>
+																		<td><cfif feetype eq 1><span class="label label-default">Advisory</span><cfelseif feetype eq 2><span class="label label-info">Implementation</span><cfelseif feetype eq 3><span class="label label-success">Ancillary Fees</span><cfelseif feetype eq 0><span class="label label-info">Returned Item</span><cfelse></cfif></td>
+																		<td>#dateformat( feeduedate, "mm/dd/yyyy" )# by <span style="margin-left:5px;" class="label label-info">#feepaytype#</span></td>
+																		<td>#dollarformat( feeamount )#</td>																	
+																		<td><cfif trim( feestatus ) is "paid"><span class="label label-success">#feestatus# <cfif feepaiddate is not ""> - #dateformat( feepaiddate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">#feestatus# <cfif feetransdate is not ""> - #dateformat( feetransdate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "nsf"><span class="label label-info">#feestatus#<cfelse><span class="label label-default">#feestatus#</span></cfif></td>
+																	</tr>
+																	
+																	<cfset feetotal = feetotal + feeamount />
+																
 																</cfoutput>
 																
 																<cfoutput>
@@ -311,6 +324,7 @@
 																		<td>&nbsp;</td>
 																	</tr>
 																</cfoutput>
+															
 															</tbody>
 														</table>
 														<span style="float:right;"><cfoutput><small>The enrollment fee schedule was created on #dateformat(clientfees.createddate, "mm/dd/yyyy")# by #clientfees.firstname# #clientfees.lastname#.</small></cfoutput></span>
@@ -387,9 +401,7 @@
 											
 											</div> <!-- /.tab-content -->
 											
-										</div> <!-- /.span8 -->
-			
-									
+										</div> <!-- /.span8 -->								
 					
 								</div> <!-- /. widget-content -->
 							

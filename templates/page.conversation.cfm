@@ -366,12 +366,12 @@
 																	
 																	<div class="form-actions">											
 																		<button type="submit" class="btn btn-secondary" name="askusnow"><i class="icon-save"></i> Post Your Question</button>
-																		<a href="#cgi.http_referer#" class="btn btn-primary"><i class="icon-repeat"></i> Cancel</a>
+																		<a href="#application.root#?event=page.conversation" class="btn btn-primary"><i class="icon-repeat"></i> Cancel</a>
 																		<input name="utf8" type="hidden" value="&##955;">
 																		<input type="hidden" name="convoid" value="0" />																		
 																		<input type="hidden" name="leadid" value="#leaddetail.leadid#" />																		
 																		<input type="hidden" name="__authToken" value="#randout#" />
-																		<input type="hidden" name="validate_require" value="leadid|The form is missing required data in order to post this data.  Please go back and try again...;rgadvid|Please select one of your advisors to whom to post this question." />
+																		<input type="hidden" name="validate_require" value="leadid|The form is missing required data in order to post this data.  Please go back and try again...;rgadvid|Please select one of your advisors to whom to post this question.;mytextarea|You must enter a question to post this message..." />
 																	</div>
 																	
 																	
@@ -417,13 +417,13 @@
 																			
 																			<div class="form-actions">											
 																				<button type="submit" class="btn btn-secondary" name="askusnow"><i class="icon-save"></i> Post Your Reply</button>
-																				<a href="#cgi.http_referer#" class="btn btn-primary"><i class="icon-repeat"></i> Cancel</a>
+																				<a href="#application.root#?event=page.conversation" class="btn btn-primary"><i class="icon-repeat"></i> Cancel</a>
 																				<input name="utf8" type="hidden" value="&##955;">													
 																				<input type="hidden" name="leadid" value="#leaddetail.leadid#" />
 																				<input type="hidden" name="convoid" value="#convothread.convoid#" />
 																				<input type="hidden" name="conuuid" value="#convothread.convouuid#" />																			
 																				<input type="hidden" name="__authToken" value="#randout#" />
-																				<input type="hidden" name="validate_require" value="leadid|The form is missing required data in order to post this data.  Please go back and try again...;convoid|The form has an internal error and required data is not present.  Please go back and try again..." />
+																				<input type="hidden" name="validate_require" value="leadid|The form is missing required data in order to post this data.  Please go back and try again...;convoid|The form structure is invalid.  Please go back and try again...;mytextarea|You must enter a question to post this message..." />
 																			</div>
 																			
 																			

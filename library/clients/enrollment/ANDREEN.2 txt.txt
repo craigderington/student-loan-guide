@@ -1,0 +1,1512 @@
+File Source:U.S. DEPARTMENT OF EDUCATION, NATIONAL STUDENT LOAN DATA SYSTEM (NSLDS)
+File Request Date:2014-06-09-10.49.13.402
+Student First Name:CHRISTOPHER
+Student Middle Initial:E
+Student Last Name:ANDREEN
+Student Street Address 1:
+Student Street Address 2:
+Student City:
+Student State Code:  
+Student Country Code:  
+Student Zip Code:
+Student Enrollment Status:WITHDRAWN
+Student Enrollment Status Effective Date:12/17/2009
+Student Total All Loans Outstanding Principal:$55,560
+Student Total All Loans Outstanding Interest:$1,126
+Student Pell Lifetime Eligibility Used:262.500%
+Student Total All Grants:$7,275
+Total STAFFORD UNSUBSIDIZED Outstanding Principal:$30,255
+Total STAFFORD UNSUBSIDIZED Outstanding Interest:$625
+Total STAFFORD SUBSIDIZED Outstanding Principal:$25,305
+Total STAFFORD SUBSIDIZED Outstanding Interest:$501
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:*****3180209004027102
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:07/31/2009
+Loan Repayment Begin Date:06/18/2010
+Loan Period Begin Date:08/26/2009
+Loan Period End Date:04/30/2010
+Loan Amount:$2,147
+Loan Disbursed Amount:$1,074
+Loan Canceled Amount:$1,073
+Loan Canceled Date:03/23/2010
+Loan Outstanding Principal Balance:$1,462
+Loan Outstanding Principal Balance as of Date:05/17/2014
+Loan Outstanding Interest Balance:$10
+Loan Outstanding Interest Balance as of Date:05/17/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:05/13/2014
+Loan Repayment Plan Scheduled Amount:$36
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/28/2014
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:12/31/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/06/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/09/2013
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/05/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/04/2012
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/12/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/26/2012
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:02/20/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/25/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/03/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/29/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/28/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/18/2009
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:07/31/2009
+Loan Disbursement Date:08/27/2009
+Loan Disbursement Amount:$1,074
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:P.O. BOX 69184
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171069184
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:*****3180109004027101
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:07/31/2009
+Loan Repayment Begin Date:06/18/2010
+Loan Period Begin Date:08/26/2009
+Loan Period End Date:04/30/2010
+Loan Amount:$3,353
+Loan Disbursed Amount:$1,677
+Loan Canceled Amount:$1,676
+Loan Canceled Date:03/23/2010
+Loan Outstanding Principal Balance:$2,070
+Loan Outstanding Principal Balance as of Date:05/17/2014
+Loan Outstanding Interest Balance:$12
+Loan Outstanding Interest Balance as of Date:05/17/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:5.60%
+Loan Repayment Plan Begin Date:05/13/2014
+Loan Repayment Plan Scheduled Amount:$50
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/28/2014
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:12/31/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/06/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/09/2013
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/05/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/04/2012
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/12/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/26/2012
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:02/20/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/25/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/03/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/29/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/28/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/18/2009
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:07/31/2009
+Loan Disbursement Date:08/27/2009
+Loan Disbursement Amount:$1,677
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:P.O. BOX 69184
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171069184
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF EDUCATION/2009-2010 LPCP
+Loan Contact Street Address 1:830 FIRST ST. NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:*****3180109004027100
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:10/17/2008
+Loan Repayment Begin Date:06/18/2010
+Loan Period Begin Date:08/27/2008
+Loan Period End Date:04/30/2009
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$6,891
+Loan Outstanding Principal Balance as of Date:05/17/2014
+Loan Outstanding Interest Balance:$42
+Loan Outstanding Interest Balance as of Date:05/17/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.00%
+Loan Repayment Plan Begin Date:05/13/2014
+Loan Repayment Plan Scheduled Amount:$81
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/28/2014
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:12/31/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/06/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/09/2013
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/05/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/04/2012
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/12/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/26/2012
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:02/20/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/25/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/03/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/29/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/18/2009
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:10/17/2008
+Loan Disbursement Date:12/30/2008
+Loan Disbursement Amount:$2,750
+Loan Disbursement Date:10/21/2008
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:P.O. BOX 69184
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171069184
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF ED/2008-2009 LPCP
+Loan Contact Street Address 1:830 FIRST ST., NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:*****3180209004027100
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:10/17/2008
+Loan Repayment Begin Date:06/18/2010
+Loan Period Begin Date:08/27/2008
+Loan Period End Date:04/30/2009
+Loan Amount:$7,000
+Loan Disbursed Amount:$7,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$9,992
+Loan Outstanding Principal Balance as of Date:05/17/2014
+Loan Outstanding Interest Balance:$69
+Loan Outstanding Interest Balance as of Date:05/17/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:05/13/2014
+Loan Repayment Plan Scheduled Amount:$122
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:01/28/2014
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:12/31/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/06/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/09/2013
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/05/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:08/04/2012
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/12/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/26/2012
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:02/20/2012
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/25/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/03/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:07/29/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:12/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/02/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/18/2009
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:10/17/2008
+Loan Disbursement Date:12/30/2008
+Loan Disbursement Amount:$3,500
+Loan Disbursement Date:10/21/2008
+Loan Disbursement Amount:$3,500
+Loan Contact Type:Current Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:P.O. BOX 69184
+Loan Contact Street Address 2:
+Loan Contact City:HARRISBURG
+Loan Contact State Code:PA
+Loan Contact Zip Code:171069184
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Contact Type:Current Lender
+Loan Contact Name:U.S. DEPT OF ED/2008-2009 LPCP
+Loan Contact Street Address 1:830 FIRST ST., NE
+Loan Contact Street Address 2:
+Loan Contact City:WASHINGTON
+Loan Contact State Code:DC
+Loan Contact Zip Code:202020000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current ED Servicer
+Loan Contact Name:DEPT OF ED/FEDLOAN SERVICING(PHEAA)
+Loan Contact Street Address 1:PO BOX 530210
+Loan Contact Street Address 2:
+Loan Contact City:ATLANTA
+Loan Contact State Code:GA
+Loan Contact Zip Code:303530210
+Loan Contact Phone Number:800-699-2908
+Loan Contact Phone Extension:
+Loan Contact Email Address:accountinfo@myfedloan.org
+Loan Contact Web Site Address:www.myfedloan.org
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:08/13/2007
+Loan Repayment Begin Date:06/18/2010
+Loan Period Begin Date:08/22/2007
+Loan Period End Date:04/24/2008
+Loan Amount:$5,000
+Loan Disbursed Amount:$5,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$7,249
+Loan Outstanding Principal Balance as of Date:04/30/2014
+Loan Outstanding Interest Balance:$219
+Loan Outstanding Interest Balance as of Date:04/30/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/13/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:04/20/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/20/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/16/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/12/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/11/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/18/2009
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/13/2007
+Loan Disbursement Date:01/11/2008
+Loan Disbursement Amount:$2,500
+Loan Disbursement Date:08/15/2007
+Loan Disbursement Amount:$2,500
+Loan Contact Type:Current Servicer
+Loan Contact Name:UTAH STATE BOARD OF REGENTS LSC
+Loan Contact Street Address 1:BOARD OF REGENTS' BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:84101
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Contact Type:Current Lender
+Loan Contact Name:UTAH STATE BOARD OF REGENTS
+Loan Contact Street Address 1:60 S 400 W,
+Loan Contact Street Address 2:BOARD OF REGENTS BLDG, THE GATEWAY
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:WWW.UTAHSBR.EDU
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:UTAH HIGHER EDUCATION ASSISTANCE AUTH.
+Loan Contact Street Address 1:THE GATEWAY, BOARD OF REGENTS BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:08/07/2007
+Loan Repayment Begin Date:06/18/2010
+Loan Period Begin Date:08/22/2007
+Loan Period End Date:04/24/2008
+Loan Amount:$5,500
+Loan Disbursed Amount:$5,500
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$6,762
+Loan Outstanding Principal Balance as of Date:04/30/2014
+Loan Outstanding Interest Balance:$204
+Loan Outstanding Interest Balance as of Date:04/30/2014
+Loan Interest Rate Type:FIXED
+Loan Interest Rate:6.80%
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/13/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:04/20/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/20/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/16/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/12/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/11/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:12/18/2009
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/07/2007
+Loan Disbursement Date:01/11/2008
+Loan Disbursement Amount:$2,750
+Loan Disbursement Date:08/14/2007
+Loan Disbursement Amount:$2,750
+Loan Contact Type:Current Servicer
+Loan Contact Name:UTAH STATE BOARD OF REGENTS LSC
+Loan Contact Street Address 1:BOARD OF REGENTS' BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:84101
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Contact Type:Current Lender
+Loan Contact Name:UTAH STATE BOARD OF REGENTS
+Loan Contact Street Address 1:60 S 400 W,
+Loan Contact Street Address 2:BOARD OF REGENTS BLDG, THE GATEWAY
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:WWW.UTAHSBR.EDU
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:UTAH HIGHER EDUCATION ASSISTANCE AUTH.
+Loan Contact Street Address 1:THE GATEWAY, BOARD OF REGENTS BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:01/13/2006
+Loan Repayment Begin Date:10/28/2006
+Loan Period Begin Date:01/04/2006
+Loan Period End Date:04/27/2006
+Loan Amount:$1,842
+Loan Disbursed Amount:$1,842
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,370
+Loan Outstanding Principal Balance as of Date:04/30/2014
+Loan Outstanding Interest Balance:$25
+Loan Outstanding Interest Balance as of Date:04/30/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/13/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:04/20/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/20/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/16/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/12/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/11/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/18/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:08/26/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/22/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/04/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/28/2006
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/28/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:01/13/2006
+Loan Disbursement Date:03/01/2006
+Loan Disbursement Amount:$921
+Loan Disbursement Date:01/17/2006
+Loan Disbursement Amount:$921
+Loan Contact Type:Current Servicer
+Loan Contact Name:UTAH STATE BOARD OF REGENTS LSC
+Loan Contact Street Address 1:BOARD OF REGENTS' BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:84101
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Contact Type:Current Lender
+Loan Contact Name:UTAH STATE BOARD OF REGENTS
+Loan Contact Street Address 1:60 S 400 W,
+Loan Contact Street Address 2:BOARD OF REGENTS BLDG, THE GATEWAY
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:WWW.UTAHSBR.EDU
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:UTAH HIGHER EDUCATION ASSISTANCE AUTH.
+Loan Contact Street Address 1:THE GATEWAY, BOARD OF REGENTS BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:01/13/2006
+Loan Repayment Begin Date:10/28/2006
+Loan Period Begin Date:01/04/2006
+Loan Period End Date:04/27/2006
+Loan Amount:$2,875
+Loan Disbursed Amount:$2,875
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$3,125
+Loan Outstanding Principal Balance as of Date:04/30/2014
+Loan Outstanding Interest Balance:$32
+Loan Outstanding Interest Balance as of Date:04/30/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/13/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:04/20/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/20/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/16/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/12/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/11/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/18/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:08/26/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/22/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/04/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/28/2006
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/28/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:01/13/2006
+Loan Disbursement Date:03/01/2006
+Loan Disbursement Amount:$1,437
+Loan Disbursement Date:01/17/2006
+Loan Disbursement Amount:$1,438
+Loan Contact Type:Current Servicer
+Loan Contact Name:UTAH STATE BOARD OF REGENTS LSC
+Loan Contact Street Address 1:BOARD OF REGENTS' BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:84101
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Contact Type:Current Lender
+Loan Contact Name:UTAH STATE BOARD OF REGENTS
+Loan Contact Street Address 1:60 S 400 W,
+Loan Contact Street Address 2:BOARD OF REGENTS BLDG, THE GATEWAY
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:WWW.UTAHSBR.EDU
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:UTAH HIGHER EDUCATION ASSISTANCE AUTH.
+Loan Contact Street Address 1:THE GATEWAY, BOARD OF REGENTS BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:09/12/2005
+Loan Repayment Begin Date:12/01/2013
+Loan Period Begin Date:08/24/2005
+Loan Period End Date:04/27/2006
+Loan Amount:$3,500
+Loan Disbursed Amount:$0
+Loan Canceled Amount:$3,500
+Loan Canceled Date:12/14/2005
+Loan Outstanding Principal Balance:$0
+Loan Outstanding Principal Balance as of Date:12/14/2005
+Loan Outstanding Interest Balance:$0
+Loan Outstanding Interest Balance as of Date:12/14/2005
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:CA
+Loan Status Description:CANCELLED
+Loan Status Effective Date:12/14/2005
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:09/12/2005
+Loan Disbursement Date:09/13/2005
+Loan Disbursement Amount:$0
+Loan Contact Type:Current Servicer
+Loan Contact Name:UTAH STATE BOARD OF REGENTS LSC
+Loan Contact Street Address 1:BOARD OF REGENTS' BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:84101
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Contact Type:Current Lender
+Loan Contact Name:KEY BANK NA
+Loan Contact Street Address 1:800 SUPERIOR AVE  MC OH-01-02-0423
+Loan Contact Street Address 2:
+Loan Contact City:CLEVELAND
+Loan Contact State Code:OH
+Loan Contact Zip Code:441140000
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:UTAH HIGHER EDUCATION ASSISTANCE AUTH.
+Loan Contact Street Address 1:THE GATEWAY, BOARD OF REGENTS BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:RED ROCKS COMMUNITY COLLEGE
+Loan Attending School OPEID:00954300
+Loan Date:08/25/2005
+Loan Repayment Begin Date:10/28/2006
+Loan Period Begin Date:08/22/2005
+Loan Period End Date:12/11/2005
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,653
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$171
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:04/09/2014
+Loan Status:DO
+Loan Status Description:DEFAULTED, THEN BANKRUPT, ACTIVE, OTHER
+Loan Status Effective Date:01/07/2014
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:10/24/2013
+Loan Status:DB
+Loan Status Description:DEFAULTED, THEN BANKRUPT, ACTIVE, CHAPTER 13
+Loan Status Effective Date:08/28/2013
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:03/15/2013
+Loan Status:DB
+Loan Status Description:DEFAULTED, THEN BANKRUPT, ACTIVE, CHAPTER 13
+Loan Status Effective Date:08/01/2012
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:09/12/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/01/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/02/2010
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/04/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/28/2006
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/28/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/25/2005
+Loan Disbursement Date:10/13/2005
+Loan Disbursement Amount:$1,312
+Loan Disbursement Date:09/08/2005
+Loan Disbursement Amount:$1,313
+Loan Contact Type:Current Lender
+Loan Contact Name:WELLS FARGO BANK ELT NELNET TRUST
+Loan Contact Street Address 1:3015 S PARKER RD
+Loan Contact Street Address 2:STE 400
+Loan Contact City:AURORA
+Loan Contact State Code:CO
+Loan Contact Zip Code:80014
+Loan Contact Phone Number:800-874-3150
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:www.nelnet.net
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:COLLEGE ASSIST
+Loan Contact Street Address 1:3015 SOUTH PARKER ROAD, SUITE 400
+Loan Contact Street Address 2:
+Loan Contact City:AURORA
+Loan Contact State Code:CO
+Loan Contact Zip Code:80014
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:RED ROCKS COMMUNITY COLLEGE
+Loan Attending School OPEID:00954300
+Loan Date:08/25/2005
+Loan Repayment Begin Date:10/28/2006
+Loan Period Begin Date:08/22/2005
+Loan Period End Date:12/11/2005
+Loan Amount:$3,158
+Loan Disbursed Amount:$3,158
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$3,838
+Loan Outstanding Principal Balance as of Date:05/31/2014
+Loan Outstanding Interest Balance:$247
+Loan Outstanding Interest Balance as of Date:05/31/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:04/09/2014
+Loan Status:DO
+Loan Status Description:DEFAULTED, THEN BANKRUPT, ACTIVE, OTHER
+Loan Status Effective Date:01/07/2014
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:10/24/2013
+Loan Status:DB
+Loan Status Description:DEFAULTED, THEN BANKRUPT, ACTIVE, CHAPTER 13
+Loan Status Effective Date:08/28/2013
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:03/15/2013
+Loan Status:DB
+Loan Status Description:DEFAULTED, THEN BANKRUPT, ACTIVE, CHAPTER 13
+Loan Status Effective Date:08/01/2012
+Loan Status:DF
+Loan Status Description:DEFAULTED, UNRESOLVED
+Loan Status Effective Date:09/12/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/02/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:04/01/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/02/2010
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/04/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/28/2006
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/28/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:08/25/2005
+Loan Disbursement Date:10/13/2005
+Loan Disbursement Amount:$1,579
+Loan Disbursement Date:09/08/2005
+Loan Disbursement Amount:$1,579
+Loan Contact Type:Current Lender
+Loan Contact Name:WELLS FARGO BANK ELT NELNET TRUST
+Loan Contact Street Address 1:3015 S PARKER RD
+Loan Contact Street Address 2:STE 400
+Loan Contact City:AURORA
+Loan Contact State Code:CO
+Loan Contact Zip Code:80014
+Loan Contact Phone Number:800-874-3150
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:www.nelnet.net
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:COLLEGE ASSIST
+Loan Contact Street Address 1:3015 SOUTH PARKER ROAD, SUITE 400
+Loan Contact Street Address 2:
+Loan Contact City:AURORA
+Loan Contact State Code:CO
+Loan Contact Zip Code:80014
+Loan Contact Phone Number:
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:05/31/2005
+Loan Repayment Begin Date:10/28/2006
+Loan Period Begin Date:05/02/2005
+Loan Period End Date:08/12/2005
+Loan Amount:$875
+Loan Disbursed Amount:$875
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$951
+Loan Outstanding Principal Balance as of Date:04/30/2014
+Loan Outstanding Interest Balance:$10
+Loan Outstanding Interest Balance as of Date:04/30/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/13/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:04/20/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/20/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/16/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/12/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/11/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/18/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:08/26/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/22/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/04/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/28/2006
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/28/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:05/31/2005
+Loan Disbursement Date:06/20/2005
+Loan Disbursement Amount:$875
+Loan Contact Type:Current Servicer
+Loan Contact Name:UTAH STATE BOARD OF REGENTS LSC
+Loan Contact Street Address 1:BOARD OF REGENTS' BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:84101
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Contact Type:Current Lender
+Loan Contact Name:UTAH STATE BOARD OF REGENTS
+Loan Contact Street Address 1:60 S 400 W,
+Loan Contact Street Address 2:BOARD OF REGENTS BLDG, THE GATEWAY
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:WWW.UTAHSBR.EDU
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:UTAH HIGHER EDUCATION ASSISTANCE AUTH.
+Loan Contact Street Address 1:THE GATEWAY, BOARD OF REGENTS BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Type:STAFFORD UNSUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:02/15/2005
+Loan Repayment Begin Date:10/28/2006
+Loan Period Begin Date:08/25/2004
+Loan Period End Date:04/28/2005
+Loan Amount:$4,000
+Loan Disbursed Amount:$4,000
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$5,344
+Loan Outstanding Principal Balance as of Date:04/30/2014
+Loan Outstanding Interest Balance:$55
+Loan Outstanding Interest Balance as of Date:04/30/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/13/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:04/20/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/20/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/16/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/12/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/11/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/18/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:08/26/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/22/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/04/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/28/2006
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/28/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:02/15/2005
+Loan Disbursement Date:02/17/2005
+Loan Disbursement Amount:$4,000
+Loan Contact Type:Current Servicer
+Loan Contact Name:UTAH STATE BOARD OF REGENTS LSC
+Loan Contact Street Address 1:BOARD OF REGENTS' BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:84101
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Contact Type:Current Lender
+Loan Contact Name:UTAH STATE BOARD OF REGENTS
+Loan Contact Street Address 1:60 S 400 W,
+Loan Contact Street Address 2:BOARD OF REGENTS BLDG, THE GATEWAY
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:WWW.UTAHSBR.EDU
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:UTAH HIGHER EDUCATION ASSISTANCE AUTH.
+Loan Contact Street Address 1:THE GATEWAY, BOARD OF REGENTS BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Type:STAFFORD SUBSIDIZED
+Loan Award ID:
+Loan Attending School Name:UTAH VALLEY UNIVERSITY
+Loan Attending School OPEID:00402700
+Loan Date:02/15/2005
+Loan Repayment Begin Date:10/28/2006
+Loan Period Begin Date:08/25/2004
+Loan Period End Date:04/28/2005
+Loan Amount:$2,625
+Loan Disbursed Amount:$2,625
+Loan Canceled Amount:$0
+Loan Canceled Date:
+Loan Outstanding Principal Balance:$2,853
+Loan Outstanding Principal Balance as of Date:04/30/2014
+Loan Outstanding Interest Balance:$30
+Loan Outstanding Interest Balance as of Date:04/30/2014
+Loan Interest Rate Type:VARIABLE
+Loan Interest Rate:
+Loan Repayment Plan Begin Date:
+Loan Repayment Plan Scheduled Amount:
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:11/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/13/2013
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:03/20/2013
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:04/20/2012
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/20/2011
+Loan Status:BK
+Loan Status Description:BANKRUPTCY CLAIM, ACTIVE
+Loan Status Effective Date:09/16/2011
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/12/2011
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:11/11/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:09/29/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:07/28/2010
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:06/18/2010
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:12/18/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:08/26/2009
+Loan Status:FB
+Loan Status Description:FORBEARANCE
+Loan Status Effective Date:05/22/2009
+Loan Status:DA
+Loan Status Description:DEFERRED
+Loan Status Effective Date:01/04/2007
+Loan Status:RP
+Loan Status Description:IN REPAYMENT
+Loan Status Effective Date:10/28/2006
+Loan Status:IG
+Loan Status Description:IN GRACE PERIOD
+Loan Status Effective Date:04/28/2006
+Loan Status:IA
+Loan Status Description:LOAN ORIGINATED
+Loan Status Effective Date:02/15/2005
+Loan Disbursement Date:02/17/2005
+Loan Disbursement Amount:$2,625
+Loan Contact Type:Current Servicer
+Loan Contact Name:UTAH STATE BOARD OF REGENTS LSC
+Loan Contact Street Address 1:BOARD OF REGENTS' BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:84101
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Loan Contact Type:Current Lender
+Loan Contact Name:UTAH STATE BOARD OF REGENTS
+Loan Contact Street Address 1:60 S 400 W,
+Loan Contact Street Address 2:BOARD OF REGENTS BLDG, THE GATEWAY
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:
+Loan Contact Web Site Address:WWW.UTAHSBR.EDU
+Loan Contact Type:Current Guaranty Agency
+Loan Contact Name:UTAH HIGHER EDUCATION ASSISTANCE AUTH.
+Loan Contact Street Address 1:THE GATEWAY, BOARD OF REGENTS BUILDING
+Loan Contact Street Address 2:60 S 400 W
+Loan Contact City:SALT LAKE CITY
+Loan Contact State Code:UT
+Loan Contact Zip Code:841011284
+Loan Contact Phone Number:877-336-7378
+Loan Contact Phone Extension:
+Loan Contact Email Address:uheaa@utahsbr.edu
+Loan Contact Web Site Address:uheaa.org
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UTAH VALLEY UNIVERSITY
+Grant Attending School OPEID:00402700
+Grant Award Year:2009 - 2010
+Grant Scheduled Amount:$4,900
+Grant Award Amount:$4,900
+Grant Disbursed Amount:$2,450
+Grant Remaining Amount to be Paid:$2,450
+Grant First Time:No
+Grant Additional Eligibility:No
+Grant Contact Type:Attending School
+Grant Contact Name:UTAH VALLEY UNIVERSITY
+Grant Contact Street Address 1:800 WEST UNIVERSITY PARKWAY
+Grant Contact Street Address 2:
+Grant Contact City:OREM
+Grant Contact State Code:UT
+Grant Contact Zip Code:840585999
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UTAH VALLEY UNIVERSITY
+Grant Attending School OPEID:00402700
+Grant Award Year:2006 - 2007
+Grant Scheduled Amount:$3,600
+Grant Award Amount:$1,800
+Grant Disbursed Amount:$900
+Grant Remaining Amount to be Paid:$2,700
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:UTAH VALLEY UNIVERSITY
+Grant Contact Street Address 1:800 WEST UNIVERSITY PARKWAY
+Grant Contact Street Address 2:
+Grant Contact City:OREM
+Grant Contact State Code:UT
+Grant Contact Zip Code:840585999
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UTAH VALLEY UNIVERSITY
+Grant Attending School OPEID:00402700
+Grant Award Year:2005 - 2006
+Grant Scheduled Amount:$3,000
+Grant Award Amount:$3,000
+Grant Disbursed Amount:$1,500
+Grant Remaining Amount to be Paid:$375
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:UTAH VALLEY UNIVERSITY
+Grant Contact Street Address 1:800 WEST UNIVERSITY PARKWAY
+Grant Contact Street Address 2:
+Grant Contact City:OREM
+Grant Contact State Code:UT
+Grant Contact Zip Code:840585999
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:RED ROCKS COMMUNITY COLLEGE
+Grant Attending School OPEID:00954300
+Grant Award Year:2005 - 2006
+Grant Scheduled Amount:$3,000
+Grant Award Amount:$1,125
+Grant Disbursed Amount:$1,125
+Grant Remaining Amount to be Paid:$375
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:RED ROCKS COMMUNITY COLLEGE
+Grant Contact Street Address 1:13300 WEST SIXTH AVENUE
+Grant Contact Street Address 2:
+Grant Contact City:LAKEWOOD
+Grant Contact State Code:CO
+Grant Contact Zip Code:802281255
+Grant Type:FEDERAL PELL GRANT
+Grant Attending School Name:UTAH VALLEY UNIVERSITY
+Grant Attending School OPEID:00402700
+Grant Award Year:2004 - 2005
+Grant Scheduled Amount:$1,300
+Grant Award Amount:$1,300
+Grant Disbursed Amount:$1,300
+Grant Remaining Amount to be Paid:$0
+Grant First Time:No
+Grant Additional Eligibility:N/A
+Grant Contact Type:Attending School
+Grant Contact Name:UTAH VALLEY UNIVERSITY
+Grant Contact Street Address 1:800 WEST UNIVERSITY PARKWAY
+Grant Contact Street Address 2:
+Grant Contact City:OREM
+Grant Contact State Code:UT
+Grant Contact Zip Code:840585999

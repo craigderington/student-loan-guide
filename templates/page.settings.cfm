@@ -62,6 +62,8 @@
 											<cfset stat.achdata = trim( form.achdatafile ) />
 											<cfset stat.chatcode = urlencodedformat( form.chatcode ) />
 											<cfset stat.achprovid = trim( form.achprovid ) />
+											<cfset stat.enrollagreepath = trim( form.enrollagreepath ) />
+											<cfset stat.implagreepath = trim( form.implagreepath ) />
 																						
 											<!--- // some other variables --->
 											<cfset today = #CreateODBCDateTime(now())# />	
@@ -99,7 +101,9 @@
 													   advisory = <cfqueryparam value="#stat.adv#" cfsqltype="cf_sql_bit" />,
 													   implement = <cfqueryparam value="#stat.imp#" cfsqltype="cf_sql_bit" />,
 													   achprovideruniqueid = <cfqueryparam value="#stat.achprovid#" cfsqltype="cf_sql_varchar" />,
-													   active = <cfqueryparam value="#stat.status#" cfsqltype="cf_sql_bit" />
+													   active = <cfqueryparam value="#stat.status#" cfsqltype="cf_sql_bit" />,
+													   enrollagreepath = <cfqueryparam value="#stat.enrollagreepath#" cfsqltype="cf_sql_varchar" />,
+													   implagreepath = <cfqueryparam value="#stat.implagreepath#" cfsqltype="cf_sql_varchar" />
 											     where companyid = <cfqueryparam value="#stat.compid#" cfsqltype="cf_sql_integer" /> 
 											</cfquery>																			
 											
@@ -216,7 +220,7 @@
 																<label class="control-label" for="numliceses">Licenses</label>
 																	<div class="controls">
 																		<input type="text" class="input-mini disabled" name="numlicenses" id="numlicenses" value="#compdetails.numlicenses#" maxlength="2" disabled />
-																		<p class="help-block">Total number of purchased SLA software licenses
+																		<p class="help-block">Total number of purchased SLA software licenses</p>
 																	</div> <!-- /controls -->				
 															</div> <!-- /control-group -->
 															
@@ -224,7 +228,7 @@
 																<label class="control-label" for="regcode">Company Type</label>
 																	<div class="controls">
 																		<input type="text" class="input-mini" name="comptype" id="comptype" value="#compdetails.comptype#" maxlength="2" />
-																		<p class="help-block">TE (Tax Exempt Non-Profit Business), NP (Non-Profit Business), FP (For Profit Business)
+																		<p class="help-block">TE (Tax Exempt Non-Profit Business), NP (Non-Profit Business), FP (For Profit Business)</p>
 																	</div> <!-- /controls -->				
 															</div> <!-- /control-group -->
 					
@@ -262,6 +266,22 @@
 																	</label>
 																</div>
 															</div>
+															
+															<div class="control-group">											
+																<label class="control-label" for="enrollagreepath">Enrollment Agreement</label>
+																	<div class="controls">
+																		<input type="text" class="input-xxlarge" name="enrollagreepath" id="enrollagreepath" value="#compdetails.enrollagreepath#" />
+																		<p class="help-block">The full path to the company client enrollment agreement in PDF format.  For pre-populating forms.</p>
+																	</div> <!-- /controls -->				
+															</div> <!-- /control-group -->
+															
+															<div class="control-group">											
+																<label class="control-label" for="implagreepath">Implementation Agreement</label>
+																	<div class="controls">
+																		<input type="text" class="input-xxlarge" name="implagreepath" id="implagreepath" value="#compdetails.implagreepath#" />
+																		<p class="help-block">The full path to the company implementation client agreement in PDF format.  For pre-populating forms.</p>
+																	</div> <!-- /controls -->				
+															</div> <!-- /control-group -->
 															
 															<div class="control-group">											
 																<label class="control-label" for="chatcode">Chat Code</label>

@@ -21,7 +21,8 @@
 			</cfif>
 			
 			<!--- define some page vars --->
-			<cfparam name="pplus" default="">			
+			<cfparam name="pplus" default="">
+			<cfparam name="totalloanrepayamt" default="0.00">
 			<cfset pplus = valuelist( worksheetlist.loancode ) />
 			
 			
@@ -138,7 +139,7 @@
 										<!--- // end data components for calculators --->
 																
 										
-										
+										<cfset totalloanrepayamt =  cloaninfo.totalloanamount + ( cloaninfo.totalloanamount  * ( cloaninfo.weightrate / 100.00 ) * ( cloanterm / 12 ) )  />
 
 										<cfoutput>	
 										
@@ -186,7 +187,7 @@
 														<td>#cloanterm#</td>
 														<td>#dollarformat( gradInitialPayAmt )#</td>
 														<td>#dollarformat( ( gradInitialPayAmt * cloanterm )  / 0.64  )#</td>
-														<td><a href="javascript:;" onclick="window.open('','','');" class="label label-default">View Detail</a>&nbsp;<span class="label label-important">See Note 1</span></td>
+														<td><a href="javascript:;" onclick="window.open('templates/graduatedrepaymentplan.cfm','','scollbars=no,location=no,width=830,height=720');" class="label label-default">View Detail</a>&nbsp;<span class="label label-important">See Note 1</span></td>
 													</tr>
 													
 													
@@ -197,7 +198,7 @@
 															<td>#mExtPay.mExtTerm#</td>
 															<td>#dollarformat( mExtPay.mExtPayAmt )#</td>
 															<td>#dollarformat( mExtPay.mExtPayAmt * mExtPay.mExtTerm )#</td>
-															<td><a href="javascript:;" onclick="window.open('','','');" class="label label-default">View Detail</a></td>
+															<td><a href="javascript:;" onclick="window.open('templates/extendedrepaymentplan.cfm','','scollbars=no,location=no,width=830,height=720');" class="label label-default">View Detail</a></td>
 														</tr>
 																						
 														<!--- // extended graduated --->
@@ -215,8 +216,8 @@
 														<td>Income Contingent</td>
 														<td><span class="label label-warning">See Note 2</span></td>
 														<td>#dollarformat( monthlyPaymentICR )#</td>
-														<td>#dollarformat( cloaninfo.totalloanamount + ( monthlyPaymentICR * ( 300 / 12 ) * ( cloaninfo.weightrate / 100.00 ) ))#</td>
-														<td><cfif qualifythisclient is true><a href="javascript:;" onclick="window.open('templates/icr-repaymentplan.cfm','','scollbars=no,location=no,width=830,height=720');" class="label label-default">View Detail</a><cfelse><span class="label label-important">Not Qualified</span></cfif></td>
+														<td>#dollarformat( totalloanrepayamt )# <!--- // replaced from #dollarformat( cloaninfo.totalloanamount + ( monthlyPaymentICR * ( 300 / 12 ) * ( cloaninfo.weightrate / 100.00 ) ))# ---></td>
+														<td><cfif qualifythisclient is true><a href="javascript:;" onclick="window.open('templates/icr-repaymentplan.cfm','','scollbars=no,location=no,width=830,height=760');" class="label label-default">View Detail</a><cfelse><span class="label label-important">Not Qualified</span></cfif></td>
 													</tr>
 																						
 													<!--- // income based ---> 
@@ -226,8 +227,8 @@
 																<td>Income Based</td>
 																<td><span class="label label-warning">See Note 2</span></td>
 																<td>#dollarformat( mIBR.mIBRPayAmt )#</td>
-																<td>#dollarformat( mIBR.mIBRPayAmt * 300 )#</td>
-																<td><cfif qualifythisclient is true><cfif mIBR.mIBRPayAmt gt 0.00><a href="javascript:;" onclick="window.open('','','');" class="label label-default">View Detail</a></cfif><cfelse><span class="label label-important">Not Qualified</span></cfif></td>
+																<td>#dollarformat( totalloanrepayamt )#  <!--- // replaced from #dollarformat( mIBR.mIBRPayAmt * 300 )# --->   </td>
+																<td><cfif qualifythisclient is true><cfif mIBR.mIBRPayAmt gt 0.00><a href="javascript:;" onclick="window.open('templates/ibr-repaymentplan.cfm','','scollbars=no,location=no,width=830,height=760');" class="label label-default">View Detail</a></cfif><cfelse><span class="label label-important">Not Qualified</span></cfif></td>
 															</tr>
 														</cfif>
 																						
@@ -236,8 +237,8 @@
 															<td>Pay As You Earn</td>
 															<td><span class="label label-warning">See Note 2</span>  <span style="margin-left:7px;" class="label label-inverse">See Note 4</span></td>
 															<td>#dollarformat( mIBR.mIBRPAYE )#</td>
-															<td>#dollarformat( mIBR.mIBRPAYE * 300 )#</td>
-															<td><cfif mIBR.mIBRPAYE gt 0.00><a href="javascript:;" onclick="window.open('','','');" class="label label-default">View Detail</a></cfif></td>
+															<td>#dollarformat( totalloanrepayamt )# <!--- // replaced from #dollarformat( mIBR.mIBRPAYE * 300 )# ---></td>
+															<td><cfif mIBR.mIBRPAYE gt 0.00><a href="javascript:;" onclick="window.open('templates/paye-repaymentplan.cfm','','scollbars=no,location=no,width=830,height=760');" class="label label-default">View Detail</a></cfif></td>
 														</tr>
 													</cfif>
 													

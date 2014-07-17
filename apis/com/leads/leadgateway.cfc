@@ -174,10 +174,11 @@
 						   l.leadachholdreason, l.leadachholddate, l.leaddobmonth, l.leaddobday, l.leaddobyear, 
 						   l.leadimp, l.leadintakecompdate, l.leadwelcomehome, l.leadintakecompby, l.leadesign, 
 						   c.companyid, c.companyname, c.dba, c.email as companyprimarycontact, l.leadadvisorycompdate,
-						   l.leadadvisorycompby
-					  from leads l, leadsource ls, company c
+						   l.leadadvisorycompby, u.firstname + ' ' + u.lastname as enrolladvisor
+					  from leads l, leadsource ls, company c, users u
 					 where l.leadsourceid = ls.leadsourceid
 					   and l.companyid = c.companyid
+					   and l.userid = u.userid
 					   and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />			   
 				</cfquery>				
 			<cfreturn leaddetail>			

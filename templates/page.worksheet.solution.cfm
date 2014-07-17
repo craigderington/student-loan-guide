@@ -28,8 +28,7 @@
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 				<cfinvokeargument name="loancodes" value="#loancodelist#">
 				<cfinvokeargument name="statuscode" value="#url.option#">
-			</cfinvoke>
-			
+			</cfinvoke>			
 			
 			<!--- // create our default form vars --->
 			<cfparam name="debtid" default="">
@@ -144,12 +143,9 @@
 										</cfif>
 									</cfif>
 									<!--- // end form processing --->
-							
-
-
 								
-									<!--- // show solution special notes - system generated 
-									<cfif solutionnotes.recordcount gt 0>										
+									<!--- // 5-17-2014 // show solution special notes - system generated 
+									<cfif solutionnotes.recordcount gt 0>									
 										<div class="alert alert-success">
 											<a class="close" data-dismiss="alert">&times;</a>
 												<h5><i class="icon-info-sign"></i>&nbsp;&nbsp; DEBT WORKSHEET SPECIAL INSTRUCTIONS</h5>
@@ -158,9 +154,9 @@
 														<li class="formerror">#solutionnotetext#</li>
 													</cfoutput>
 												</ul>
-										</div>									
+										</div>					
 									</cfif>
-									--->
+									// --->
 									
 									<!--- // begin list of debt worksheets --->
 									<cfif solutiondebtlist.recordcount gt 0>
@@ -231,13 +227,7 @@
 													<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.solution'"><i class="icon-shopping-cart"></i> View Solution Cart</a>													
 												</div>
 											</cfoutput>
-										</div>
-										
-										
-										
-										
-									
-									
+										</div>						
 									
 									</cfif>			
 

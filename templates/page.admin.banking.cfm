@@ -130,9 +130,62 @@ This email was automatically generated from the Student Loan Advisor Online syst
 		
 		
 		
-		
-		
-		
+							<!--- // 7-9-2014 // Melissa requests function to mark money orders paid --->
+							<cfif structkeyexists( url, "fuseaction" )>								
+								<cfif trim( url.fuseaction ) is "setMOpaid">
+									<cfparam name="feeid" default="">
+									<cfif structkeyexists( url, "feeid" )>
+										<cfparam name="feeid" default="">
+										<cfparam name="paytypelist" default="">
+										<cfset feeid = url.feeid />										
+										<!--- // check for a valid fee id --->
+										<cfif isvalid( "uuid", feeid )>
+										
+											<!--- // get fee detail --->
+											<cfquery datasource="#application.dsn#" name="getfeedetail">
+												select f.feeid, f.feeuuid, f.feestatus, f.feeamount, 
+												       f.feecollected, f.feepaytype
+												  from fees f
+												 where f.feeuuid = <cfqueryparam value="#feeid#" cfsqltype="cf_sql_varchar" maxlength="35" />											       
+											</cfquery>											
+												<!--- set the new params --->
+												<cfset mo = structnew() />
+												<cfset mo.feeid = getfeedetail.feeid />
+												<cfset mo.feepaytype = trim( getfeedetail.feepaytype ) />
+												<cfset mo.feestatus = getfeedetail.feestatus />
+												<cfset mo.feeamount = numberformat( getfeedetail.feeamount, "999.99" ) />
+												<cfset mo.feepaiddate = now() />
+												<cfset paytypelist = "MO,CHK,CSH" />
+													<!--- // check to make sure we have a money order record --->
+													<cfif listfind( paytypelist, mo.feepaytype, "," )>
+														<!--- // set mark the fee paid and redirect --->
+														<cfquery datasource="#application.dsn#" name="setfeepaid">
+															update fees
+															   set feepaid = <cfqueryparam value="#mo.feeamount#" cfsqltype="cf_sql_float" />,
+																   feepaiddate = <cfqueryparam value="#mo.feepaiddate#" cfsqltype="cf_sql_timestamp" />,
+																   feestatus = <cfqueryparam value="PAID" cfsqltype="cf_sql_varchar" />,
+																   feecollected = <cfqueryparam value="1" cfsqltype="1" />
+															 where feeid = <cfqueryparam value="#mo.feeid#" cfsqltype="cf_sql_integer" />
+														</cfquery>												
+														<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
+													<cfelse>
+														<!-- // alert user to operation error --->
+														<script>
+															alert('The fee record was found but is not the correct payment type.  Operation aborted!');
+															self.location="javascript:history.back(-1);"
+														</script>													
+													</cfif>												
+										<cfelse>									
+											<!--- // alert user to no record and redirect --->
+											<script>
+												alert('The fee record can not be found!');
+												self.location="javascript:history.back(-1);"
+											</script>									
+										</cfif>
+									</cfif>
+								</cfif>								
+							</cfif>
+							<!--- // end set money order function --->
 		
 		
 							
@@ -158,6 +211,22 @@ This email was automatically generated from the Student Loan Advisor Online syst
 									<div class="row">
 									
 										<div class="span12">
+										
+										
+											<!--- // system messages --->
+							
+											<cfif structkeyexists( url, "msg" ) and url.msg is "saved">						
+												<cfoutput>
+													<div class="row">
+														<div class="span12">										
+															<div class="alert alert-info">
+																<button type="button" class="close" data-dismiss="alert">&times;</button>
+																<strong><i class="icon-check"></i>SUCCESS!</strong>  The client's money order was successfully marked paid as of #dateformat( now(), "mm/dd/yyyy" )# @ #timeformat( now(), "hh:mm:ss tt")#.  Please select another record to continue.
+															</div>										
+														</div>								
+													</div>
+												</cfoutput>
+											</cfif>
 											
 											<div class="widget stacked">
 												
@@ -171,7 +240,7 @@ This email was automatically generated from the Student Loan Advisor Online syst
 												<div class="widget-content">						
 													
 												
-												<cfif not structkeyexists( url, "creatensf" )>
+												<cfif not structkeyexists( url, "creatensf" ) and not structkeyexists( url, "fuseaction" )>
 														
 													<!--- // report filter --->						
 													<cfoutput>
@@ -241,8 +310,11 @@ This email was automatically generated from the Student Loan Advisor Online syst
 																</tr>
 															</thead>
 															<tbody>
-																
+																<cfparam name="thispaytypelist" default="">
+																<cfparam name="thisfeepaytype" default="">
+																<cfset thispaytypelist = "MO,CHK,CSH" />
 																<cfoutput query="achdata">																		
+																		<cfset thisfeepaytype = trim( achdata.feepaytype ) />
 																		<tr>																			
 																			<td class="actions">
 																				<a href="#application.root#?event=page.getlead&fuseaction=leadgen&leadid=#leaduuid#" class="btn btn-mini btn-warning" target="_blank">
@@ -253,9 +325,9 @@ This email was automatically generated from the Student Loan Advisor Online syst
 																			<td><cfif trim( feeprogram ) is "a">Advisory<cfelseif trim( feeprogram ) is "i">Implementation<cfelseif trim( feeprogram ) is "n"><span class="label label-important">NSF</span></cfif></td>																				
 																			<td>#feepaytype#</td>
 																			<td>#dateformat( feeduedate, "mm/dd/yyyy" )#</td>
-																			<td>#dollarformat( feeamount )#  <cfif esignrouting is "" or esignaccount is ""><a href="javascript;:" rel="popover" style="color:red;margin-left:5px;" data-original-title="Warning: Missing Banking Information" data-content="This client has fees due and no ACH or banking details saved.  No payments will be released for processing with missing or incomplete banking information."><i class="icon-warning-sign"></i></a></cfif> <cfif trim( leadachhold ) is "Y"><a href="javascript;:" rel="popover" style="color:blue;margin-left:5px;" data-original-title="ACH Hold" data-content="This client is currently on ACH Hold.  <br/><br/> Hold Date: #dateformat( leadachholddate, 'mm/dd/yyyy' )#<br />Hold Reason: #leadachholdreason#"><i class="icon-warning-sign"></i></a></cfif></td>
+																			<td>#dollarformat( feeamount )#  <cfif ( trim( feepaytype ) is "ach" ) and ( esignrouting is "" or esignaccount is "" )><a href="javascript;:" rel="popover" style="color:red;margin-left:5px;" data-original-title="Warning: Missing Banking Information" data-content="This client has fees due and no ACH or banking details saved.  No payments will be released for processing with missing or incomplete banking information."><i class="icon-warning-sign"></i></a></cfif> <cfif trim( leadachhold ) is "Y"><a href="javascript;:" rel="popover" style="color:blue;margin-left:5px;" data-original-title="ACH Hold" data-content="This client is currently on ACH Hold.  <br/><br/> Hold Date: #dateformat( leadachholddate, 'mm/dd/yyyy' )#<br />Hold Reason: #leadachholdreason#"><i class="icon-warning-sign"></i></a></cfif></td>
 																			<td><cfif feepaiddate is not ""><span class="label label-default">#dateformat( feepaiddate, "mm/dd/yyyy" )#</span><cfelseif feestatus is "pending" and feetransdate is not ""><span class="label label-info">Sent on #dateformat( feetransdate, "mm/dd/yyyy" )#</span><cfelse><span class="label label-warning">Not Paid</span></cfif></td>															
-																			<td>#dollarformat( feepaid )#  <cfif feetype neq 0 and trim( feereturnednsf ) eq "N" and feetransdate is not ""><span class="pull-right"><a href="#application.root#?event=#url.event#&creatensf=true&feeid=#feeuuid#" title="Admin Settings"><i class="icon-cog"></i></a></span></cfif></td>
+																			<td>#dollarformat( feepaid )#  <cfif feetype neq 0 and trim( feereturnednsf ) eq "N" and feetransdate is not ""><span class="pull-right"><a href="#application.root#?event=#url.event#&creatensf=true&feeid=#feeuuid#" title="Create NSF"><i class="icon-cog"></i></a></span></cfif><cfif listfind( thispaytypelist, thisfeepaytype, "," ) and ( feepaiddate is "" )><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=setMOpaid&feeid=#feeuuid#" title="Mark Money Order Paid" onclick="javascript:return confirm('Mark Money Order Received?');"><i class="icon-money"></i></a></span></cfif></td>
 																			<td><cfif trim( feestatus ) is "paid"><span class="label label-success">PAID</span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">PENDING</span><cfelseif trim( feestatus ) is "unpaid"><span class="label label-warning">UNPAID</span><cfelseif trim( feestatus ) is "nsf"><span class="label label-important">NSF<cfif nsfreasondescr is not "none"> - #nsfreasondescr#</cfif></span></cfif></td>
 																			<td><cfif feecollected eq 1><span class="label label-success">YES</span><cfelse><span class="label label-important">NO</span></cfif></td>																										
 																		</tr>
@@ -301,7 +373,7 @@ This email was automatically generated from the Student Loan Advisor Online syst
 												
 
 
-												<cfelse>
+												<cfelseif structkeyexists( url, "creatensf" ) and url.creatensf is true >
 												
 												
 													<cfinvoke component="apis.com.clients.clientgateway" method="getfeedetail" returnvariable="feedetail">

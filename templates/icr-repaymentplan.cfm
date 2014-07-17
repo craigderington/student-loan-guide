@@ -12,7 +12,7 @@
 						<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 						<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 						<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-						<title>Income Contingent Repayment Plan</title>
+						<title>Income Contingent Repayment Plan (ICR)</title>
 							
 							<head>
 								<meta charset="utf-8">
@@ -21,7 +21,7 @@
 								<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 								<link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />				
 								<link href="../css/font-awesome.min.css" rel="stylesheet">
-								<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" >				
+								<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" >				
 								<link href="../css/ui-lightness/jquery-ui-1.10.0.custom.min.css" rel="stylesheet">				
 								<link href="../css/base-admin-2.css" rel="stylesheet">
 								<link href="../css/base-admin-2-responsive.css" rel="stylesheet">
@@ -126,12 +126,18 @@
 										
 										<div class="widget-header">		
 											<i class="icon-money"></i>							
-											<h3>Income Contingent Repayment Plan</h3>						
+											<h3>Income Contingent Repayment Plan (ICR)</h3>					
 										</div>				
 										
 										<div class="widget-content">						
 											
-											<h4>Income Contingent Repayment Plan</h4>
+											<h4>Income Contingent Repayment Plan (ICR)</h4>
+											
+											<div class="alert alert-error alert-block">												
+												<h6><strong><i class="icon-file-alt"></i> Special Note</strong></h6>
+												<p>This is an estimated repayment amount for the first year and total loan payment, based on the information you provided. This repayment amount will be recalculated annually based on your income (and the Poverty Guidelines for your family size as determined by the U.S Dept of Health & Human Service for ICR and your family size for IBR). The ICR and IBR Plans have a maximum term of 25 years.</p>
+											</div>			
+											
 											<p>Income Contingent Repayment Plan: The Income Contingent Repayment Plan (ICR) gives you the flexibility to meet your Direct Loan obligations without undue financial hardship. Each year, your monthly payments will be recalculated on the basis of your annual income, family size and the total amount of your Direct Loans.</p>
 											<p>You will pay an amount based on the Adjusted Gross Income (AGI) you report on your federal tax return, or, if you submit alternative documentation of income, you will pay an amount based on your current income. If you're married, the amount you pay will be based on your income and your spouse's income.</p>
 																						

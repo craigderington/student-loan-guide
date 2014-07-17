@@ -57,6 +57,8 @@
 											<cfset me.lname = #form.lastname# />
 											<cfset me.email = #form.email# />
 											<cfset me.pass = #form.password1# />
+											<cfset me.txtmsgprovider = #form.provider# />
+											<cfset me.txtmsgnumber = #form.phone# />
 																						
 											<!--- // some other variables --->
 											<cfset today = #CreateODBCDateTime(now())# />											
@@ -67,7 +69,9 @@
 												   set firstname = <cfqueryparam value="#me.fname#" cfsqltype="cf_sql_varchar" />,
 												       lastname = <cfqueryparam value="#me.lname#" cfsqltype="cf_sql_varchar" />,
 													   email = <cfqueryparam value="#me.email#" cfsqltype="cf_sql_varchar" />,
-													   passcode = <cfqueryparam value="#hash( me.pass, "SHA-384", "UTF-8" )#" cfsqltype="cf_sql_clob" maxlength="255" />
+													   passcode = <cfqueryparam value="#hash( me.pass, "SHA-384", "UTF-8" )#" cfsqltype="cf_sql_clob" maxlength="255" />,
+													   txtmsgaddress = <cfqueryparam value="#me.txtmsgnumber#" cfsqltype="cf_sql_varchar" />,
+													   txtmsgprovider = <cfqueryparam value="#me.txtmsgprovider#" cfsqltype="cf_sql_varchar" />
 												 where userid = <cfqueryparam value="#me.myuserid#" cfsqltype="cf_sql_integer" /> 
 											</cfquery>											
 											
@@ -154,7 +158,30 @@
 														</div> <!-- /controls -->				
 													</div> <!-- /control-group -->
 													
-													
+													<div class="control-group">											
+														<label class="control-label" for="email">Text Address</label>
+														<div class="controls">
+															<input type="text" class="input-medium" name="phone" id="phone" value="<cfif isdefined( "form.phone" )>#trim( form.phone )#<cfelse>#quserprofile.txtmsgaddress#</cfif>">
+																		
+																		
+																<!--- // add mobile provider for text messaging --->
+																<select name="provider" id="provider" class="input-medium">
+																	<option value="">Select Provider</option>															  
+																	<option value="@txt.att.net"<cfif trim( quserprofile.txtmsgprovider ) is "@txt.att.net">selected</cfif>>AT&amp;T</option>
+																	<option value="@message.alltel.com"<cfif trim( quserprofile.txtmsgprovider ) is "@message.alltel.com">selected</cfif>>Alltel</option>
+																	<option value="@myboostmobile.com"<cfif trim( quserprofile.txtmsgprovider ) is "@myboostmobile.com">selected</cfif>>Boost Mobile</option>
+																	<option value="@mycellone.com"<cfif trim( quserprofile.txtmsgprovider ) is "@mycellone.com">selected</cfif>>Cellular South</option>
+																	<option value="@cingularme.com"<cfif trim( quserprofile.txtmsgprovider ) is "@cingularme.com">selected</cfif>>Consumer Cellular</option>
+																	<option value="@mymetropcs.com"<cfif trim( quserprofile.txtmsgprovider ) is "@mymetropcs.com">selected</cfif>>Metro PCS</option>
+																	<option value="@messaging.nextel.com"<cfif trim( quserprofile.txtmsgprovider ) is "@messaging.nextel.com">selected</cfif>>Nextel</option>
+																	<option value="@messaging.sprintpcs.com"<cfif trim( quserprofile.txtmsgprovider ) is "@messaging.sprintpcs.com">selected</cfif>>Sprint</option>
+																	<option value="@gmomail.net"<cfif trim( quserprofile.txtmsgprovider ) is "@gmomail.net">selected</cfif>>T-Mobile</option>
+																	<option value="@vtext.com"<cfif trim( quserprofile.txtmsgprovider ) is "@vtext.com">selected</cfif>>Verizon</option>
+																	<option value="@vmobl.com"<cfif trim( quserprofile.txtmsgprovider ) is "@vmobl.com">selected</cfif>>Virgin Mobile</option>
+																</select>
+																		
+														</div>
+													</div>
 													<br /><br />
 													
 													<div class="control-group">											

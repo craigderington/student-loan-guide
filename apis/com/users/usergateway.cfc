@@ -53,7 +53,7 @@
 				<cfargument name="userid" required="yes" type="numeric" default="#session.userid#">				
 				<cfset var quserprofile = "">
 				<cfquery datasource="#application.dsn#" name="quserprofile">
-					select username, firstname, lastname, passcode, email
+					select username, firstname, lastname, passcode, email, txtmsgaddress, txtmsgprovider
 					  from users
 					 where userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" />				
 				</cfquery>				

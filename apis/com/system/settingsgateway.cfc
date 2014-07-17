@@ -17,7 +17,7 @@
 				select companyid, companyname, dba, address1, address2, city, state, zip, phone, fax, email, regcode, 
 				       active, complogo, advisory, implement, comptype, achprovider, achdatafile, achprovideruniqueid,
 					   luckyorangecode, escrowservice, trustaccountbankname, trustaccountnumber, numlicenses,
-					   trustaccountrouting
+					   trustaccountrouting, achdaystohold, enrollagreepath, implagreepath
 				  from company
 				 where companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 			</cfquery>
