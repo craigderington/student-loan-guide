@@ -64,6 +64,7 @@
 											<cfset stat.achprovid = trim( form.achprovid ) />
 											<cfset stat.enrollagreepath = trim( form.enrollagreepath ) />
 											<cfset stat.implagreepath = trim( form.implagreepath ) />
+											<cfset stat.esignagreepath1 = trim( form.esignagreepath1 ) />
 																						
 											<!--- // some other variables --->
 											<cfset today = #CreateODBCDateTime(now())# />	
@@ -82,11 +83,13 @@
 											</cfif>
 											
 											<!--- // check the company active status --->
-											<cfif isdefined( "form.rgstatus" )>
-												<cfif form.rgstatus eq 1>
-													<cfset stat.status = 1 />
-												<cfelse>
-													<cfset stat.status = 0 />
+											<cfif isuserinrole( "admin" )>
+												<cfif isdefined( "form.rgstatus" )>
+													<cfif form.rgstatus eq 1>
+														<cfset stat.status = 1 />
+													<cfelse>
+														<cfset stat.status = 0 />
+													</cfif>
 												</cfif>
 											</cfif>
 											
@@ -100,10 +103,13 @@
 													   luckyorangecode = <cfqueryparam value="#stat.chatcode#" cfsqltype="cf_sql_varchar" />,
 													   advisory = <cfqueryparam value="#stat.adv#" cfsqltype="cf_sql_bit" />,
 													   implement = <cfqueryparam value="#stat.imp#" cfsqltype="cf_sql_bit" />,
-													   achprovideruniqueid = <cfqueryparam value="#stat.achprovid#" cfsqltype="cf_sql_varchar" />,
-													   active = <cfqueryparam value="#stat.status#" cfsqltype="cf_sql_bit" />,
+													   achprovideruniqueid = <cfqueryparam value="#stat.achprovid#" cfsqltype="cf_sql_varchar" />,													   
 													   enrollagreepath = <cfqueryparam value="#stat.enrollagreepath#" cfsqltype="cf_sql_varchar" />,
-													   implagreepath = <cfqueryparam value="#stat.implagreepath#" cfsqltype="cf_sql_varchar" />
+													   implagreepath = <cfqueryparam value="#stat.implagreepath#" cfsqltype="cf_sql_varchar" />,
+													   esignagreepath1 = <cfqueryparam value="#stat.esignagreepath1#" cfsqltype="cf_sql_varchar" />
+													   <cfif isuserinrole( "admin" )>
+													   , active = <cfqueryparam value="#stat.status#" cfsqltype="cf_sql_bit" />
+													   </cfif>
 											     where companyid = <cfqueryparam value="#stat.compid#" cfsqltype="cf_sql_integer" /> 
 											</cfquery>																			
 											
@@ -119,20 +125,9 @@
 															);
 											</cfquery>																				
 											
+											<!--- // redirect to save message --->
+											<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">											
 											
-											<cfif stat.status eq 0>
-												
-												<script>
-													alert('You selected to inactivate the company.  This will end your session and log you out...');													
-												</script>
-												
-												<cflocation url="#application.root#?event=page.logout" addtoken="yes">
-											
-											<cfelse>											
-											
-												<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
-												
-											</cfif>
 								
 										<!--- If the required data is missing - throw the validation error --->
 										<cfelse>
@@ -284,6 +279,14 @@
 															</div> <!-- /control-group -->
 															
 															<div class="control-group">											
+																<label class="control-label" for="enrollagreepath">Portal ESIGN Agreement</label>
+																	<div class="controls">
+																		<input type="text" class="input-xxlarge" name="esignagreepath1" id="esignagreepath1" value="#compdetails.esignagreepath1#" />
+																		<p class="help-block">The full path to the company client portal enrollment agreement in PDF format.  Auto-generated document upon completion of e-sign.</p>
+																	</div> <!-- /controls -->				
+															</div> <!-- /control-group -->
+															
+															<div class="control-group">											
 																<label class="control-label" for="chatcode">Chat Code</label>
 																	<div class="controls">
 																		<textarea name="chatcode" rows="12" class="input-xxlarge span8">#urldecode( compdetails.luckyorangecode )#</textarea>
@@ -291,27 +294,30 @@
 																	</div> <!-- /controls -->				
 															</div> <!-- /control-group -->
 
-															<div class="control-group">
-																<label class="control-label" for="rgstatus">Active Status</label>
-																<div class="controls">
-																	<label class="checkbox">
-																		<input type="checkbox" name="rgstatus" value="1"<cfif compdetails.active eq 1>checked</cfif> />
-																		Company Active
-																	</label>
-																	<label class="checkbox">
-																		<input type="checkbox" name="rgstatus" value="0"<cfif compdetails.active eq 0>checked</cfif> />
-																		Company Inactive
-																	</label>
+															<!--- // 7-20-2014 // don't allow company admin to change this setting ---->
+															<cfif isuserinrole( "admin" )>
+																<div class="control-group">
+																	<label class="control-label" for="rgstatus">Active Status</label>
+																	<div class="controls">
+																		<label class="checkbox">
+																			<input type="checkbox" name="rgstatus" value="1"<cfif compdetails.active eq 1>checked</cfif> />
+																			Company Active
+																		</label>
+																		<label class="checkbox">
+																			<input type="checkbox" name="rgstatus" value="0"<cfif compdetails.active eq 0>checked</cfif> />
+																			Company Inactive
+																		</label>
+																	</div>
 																</div>
-															</div>
-																				
+															</cfif>
+															
 															<div class="form-actions">													
 																<button type="submit" class="btn btn-secondary" name="savesettings"><i class="icon-save"></i> Save Settings</button>																
 																<a href="#application.root#?event=page.index" class="btn btn-medium btn-primary"><i class="icon-remove-sign"></i> Cancel</a>
 																<input name="utf8" type="hidden" value="&##955;">							
 																<input type="hidden" name="compid" value="#compdetails.companyid#" />
 																<input type="hidden" name="__authToken" value="#randout#" />
-																<input name="validate_require" type="hidden" value="comptype|The company business type is required.;rgstatus|The companystatus is required to save this record." />
+																<input name="validate_require" type="hidden" value="apiregcode|The application programming interface is required to save this record.;comptype|The company business type is required.;" />
 															</div> <!-- /form-actions -->
 																				
 														</fieldset>

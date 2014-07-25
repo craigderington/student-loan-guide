@@ -120,7 +120,8 @@
 						<cfset msgstatus = "" />	
 						
 							<cfquery datasource="#application.dsn#" name="leadinfo">
-								select l.leadid, l.leadfirst, l.leadlast, u.userid, u.email, c.companyname, c.email as compemail
+								select l.leadid, l.leadfirst, l.leadlast, u.userid, l.leademail, 
+								       u.email, c.companyname, c.email as compemail
 								  from leads l, users u, company c
 								 where l.userid = u.userid
 								   and l.companyid = c.companyid

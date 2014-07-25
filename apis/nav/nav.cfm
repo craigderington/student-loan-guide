@@ -287,6 +287,9 @@
 				<cfcase value="page.reminders">				
 					<cfinclude template="../../templates/page.reminders.cfm">
 				</cfcase>
+				<cfcase value="page.reminder.edit">				
+					<cfinclude template="../../templates/page.reminder.edit.cfm">
+				</cfcase>
 				<cfcase value="page.close">				
 					<cfinclude template="../../templates/page.close.cfm">
 				</cfcase>				

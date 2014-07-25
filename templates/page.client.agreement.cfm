@@ -11,7 +11,7 @@
 					
 				<cfif session.leadid eq clientid>
 					
-					<cfif structkeyexists( url, "fuseaction" ) and url.fuseaction is "generatedocuments"> --->
+					<cfif structkeyexists( url, "fuseaction" ) and url.fuseaction is "generatedocuments">
 			
 							<!--- // defaults params --->			
 							<cfparam name="today" default="">
@@ -138,6 +138,7 @@
 								<!--- // populate the pdf forms vars --->
 								<cfpdfform action="populate" source="#docsource#" overwrite="yes">
 									
+									<cfpdfformparam name="CLIENTFIRSTNAME" value="#clientfirstname#" />
 									<cfpdfformparam name="CLIENTFULLNAME" value="#clientfullname#" />
 									<cfpdfformparam name="DOCUMENTDATE" value="#dateformat( documentdate, "mm/dd/yyyy" )#" />
 									<cfpdfformparam name="FIRSTPAYAMOUNT" value="#numberformat( firstpayamount, "L999.99" )#" />

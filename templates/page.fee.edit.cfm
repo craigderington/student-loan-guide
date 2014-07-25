@@ -160,11 +160,16 @@
 																	<div class="control-group">											
 																		<label class="control-label" for="feeamt">Payment Amount</label>
 																		<div class="controls">
-																			<input type="text" class="input-small" id="feeamt" name="feeamt" value="#numberformat( feedetail.feeamount, 'L99.99')#">
+																			<input type="text" class="input-small" id="feeamt" name="feeamt" value="#numberformat( feedetail.feeamount, 'L99.99')#" <cfif isuserinrole( "counselor" )>readonly="true"</cfif>>
+																			<cfif isuserinrole( "counselor" )>
+																				<p style="color:red;" class="help-block">Your user permissions only permit you to modify the payment date.</p>																				
+																			</cfif>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->																			
 																	
 																	<br /><br />
+																	
+																	<cfif ( trim( feedetail.feestatus ) is not "pending" ) and ( trim( feedetail.feestatus ) is not "paid" )>
 																	
 																	<div class="form-actions">													
 																		<button type="submit" class="btn btn-secondary" name="savelead"><i class="icon-save"></i> Edit Fee</button>																	
@@ -174,6 +179,16 @@
 																		<input type="hidden" name="__authToken" value="#randout#" />
 																		<input name="validate_require" type="hidden" value="feeid|Opps, sorry... the form can not be posted due to an internal error.  Please re-load the page and try again.;feeduedate|The fee due date is required to create the fees.;feeamt|Please enter the fee amount to modify this fee record." />																	
 																	</div> <!-- /form-actions -->
+																	
+																	<cfelse>
+																	
+																		<div class="form-actions">													
+																		
+																			This record can not be modified as the payment activity shows the payment has been processed...
+																		
+																		</div>
+																	
+																	</cfif>
 																</fieldset>
 															</form>
 														</cfoutput>
@@ -192,7 +207,7 @@
 						</div><!-- / .span12 -->
 					
 					</div> <!-- / .row -->
-				
+					<div style="margin-top:100px;"></div>
 				</div> <!-- / .container -->
 			
 			</div> <!-- / .main -->

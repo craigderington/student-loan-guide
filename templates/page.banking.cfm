@@ -273,7 +273,7 @@
 																	<cfset lead.leadid = form.leadid />
 																	<cfset lead.ccname = trim( form.ccname ) />
 																	<cfset lead.ccnum = rereplace( form.ccacctnum, "[^0-9,]", "", "all" ) />
-																	<cfset lead.ccexpdate = trim( form.ccexpdate ) />
+																	<cfset lead.ccexpdate = trim( replace( form.ccexpdate, "/", "", "all" ) ) />
 																	<cfset lead.ccv2 = trim( form.ccv2 ) />																	
 																	<cfset today = #createodbcdatetime(now())# />	
 																		
@@ -542,7 +542,7 @@
 																			<label class="control-label" for="ccexpdate"><strong>Expiration Date</strong></label>
 																			<div class="controls">
 																				<input type="text" class="input-mini" name="ccexpdate" id="ccexpdate" value="<cfif isdefined( "form.ccexpdate" )>#form.ccexpdate#<cfelse><cfif esigninfo.esignccexpdate is not "">#trim( esigninfo.esignccexpdate )#</cfif></cfif>">
-																				<span class="help-block">Enter in the format MM/YY</span>
+																				<span class="help-block">Enter in the format MMYY</span>
 																			</div> <!-- /controls -->				
 																		</div> <!-- /control-group -->
 

@@ -12,7 +12,8 @@
 			<!--- // defaults params --->			
 			<cfparam name="today" default="">
 			<cfparam name="authkeytoken" default="">
-			<cfparam name="ipaddress" default="">			
+			<cfparam name="ipaddress" default="">
+			<cfparam name="paytotal" default="0.00">
 			
 			<!--- // assign default values --->
 			<cfset today = now() />			
@@ -20,6 +21,13 @@
 			
 			
 			<!--- // get our data access components --->
+			
+			
+			<!--- // 7-15-2014 // systemize the e-sign documentation process --->	
+			<cfinvoke component="apis.com.portal.portalgateway" method="getcompanyportaldocs" returnvariable="companyportaldocs">
+				<cfinvokeargument name="leadid" value="#clientid#">
+			</cfinvoke>
+			
 			<cfinvoke component="apis.com.leads.leadgateway" method="getleaddetail" returnvariable="leaddetail">
 				<cfinvokeargument name="leadid" value="#clientid#">
 			</cfinvoke>
@@ -41,116 +49,119 @@
 			
 			
 			<!--- // define the pdf form params --->
+			<cfparam name="ACCOUNTNUMBER" default="#esigninfo.esignaccount#" />
+			<cfparam name="ACCTTYPE" default="1" />
+			<cfparam name="AUTHKEYTOKEN1" default="#esigninfo.esuuid#" />
+			<cfparam name="AUTHKEYTOKEN2" default="#esigninfo.esuuid#" />	
+			<cfparam name="AUTHORIZEDSIGNATURE" default="#leaddetail.leadfirst# #leaddetail.leadlast#" />
+			<cfparam name="AUTHSIGDATE" default="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
+			<cfparam name="CITY" default="#esigninfo.esignacctcity#" />
+			<cfparam name="CLIENTACCOUNTNAME" default="#leaddetail.leadfirst# #leaddetail.leadlast# (#leaddetail.leadid#)" />
+			<cfparam name="CLIENTSIGNATURE" default="#leaddetail.leadfirst# #leaddetail.leadlast#" />			
 			<cfparam name="CLIENTFIRSTNAME" default="#leaddetail.leadfirst#" />
 			<cfparam name="CLIENTFULLNAME" default="#leaddetail.leadfirst# #leaddetail.leadlast#" />
 			<cfparam name="DOCUMENTDATE" default="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
-			<cfparam name="CLIENTSIGNATUREPRIMARY" default="#leaddetail.leadfirst# #leaddetail.leadlast#" />
-			<cfparam name="COSIGNERIFAPP" default="" />
-			<cfparam name="SIGNATUREDATE1" default="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
-			<cfparam name="SIGNATURE2DATE" default="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
-			<cfparam name="AUTHKEYTOKEN" default="#esigninfo.esuuid#" />
-			<cfparam name="IPADDRESS" default="#esigninfo.esuserip#" />					
-			<cfparam name="CLIENTACCOUNTNUMBER" default="#leaddetail.leadfirst# #leaddetail.leadlast# (#leaddetail.leadid#)" />						
 			<cfparam name="FIRSTPAYDATE" default="#dateformat( clientfees.feeduedate, "mm/dd/yyyy" )#" />
-			<cfparam name="NAMEONACCOUNT" default="#esigninfo.esignacctname#" />
-			<cfparam name="ADDRESS" default="#esigninfo.esignacctadd1#" />
-			<cfparam name="CITY" default="#esigninfo.esignacctcity#" />
-			<cfparam name="STATE" default="#esigninfo.esignacctstate#" />
+			<cfparam name="IPADDRESS" default="#esigninfo.esuserip#" />
+			<cfparam name="IPADDRESS2" default="#esigninfo.esuserip#" />
+			<cfparam name="ROUTINGNUMBER" default="#esigninfo.esignrouting#" />			
+			<cfparam name="SIGNATUREDATE1" default="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
+			<cfparam name="SIGNATUREDATE2" default="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
+			<cfparam name="SPOUSEFULLNAME" default="" />					
+			<cfparam name="STATE" default="#esigninfo.esignacctstate#" />			
+			<cfparam name="STREETADDRESS" default="#esigninfo.esignacctadd1#" />	
 			<cfparam name="ZIPCODE" default="#esigninfo.esignacctzipcode#" />
-			<cfparam name="ROUTINGNUMBER" default="#esigninfo.esignrouting#" />
-			<cfparam name="ACCOUNTNUMBER" default="#esigninfo.esignaccount#" />
-			<cfparam name="AUTHORIZEDSIGNATURE" default="#leaddetail.leadfirst# #leaddetail.leadlast#" />					
-			<cfparam name="AUTHKEYTOKEN2" default="#esigninfo.esuuid#" />
-			<cfparam name="SIGNATUREDATE" default="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
-			<cfparam name="IPADDRESS2" default="#ipaddress#" />
 			
-			
-			<cfif esigninfo.esignfeeoption eq 1>
-				<cfparam name="MDAYOPTION1" default="#datepart( 'd', firstpaydate )#" />
-				<cfparam name="PAYOPTION1" default="On" />
-				<cfparam name="PAYOPTION2" default="Off" />
-				<cfparam name="MDAYOPTION2" default="" />
+			<cfif esigninfo.esignfeeoption eq 1>				
+				<cfparam name="PAYOPTION" default="1" />								
 				<cfparam name="NUMBERPAYMENTS" default="#clientfeetotals.numpayments#">
 				<cfparam name="PAY1AMOUNT" default="#clientfeetotals.totalfees#">
 				<cfparam name="PAY2AMOUNT" default="">
+				<cfparam name="PAYTOTAL" default="">
+				<cfparam name="FIRSTPAYAMOUNT" default="#clientfeetotals.totalfees#">
+				<cfparam name="FIRSTPAYDATE" default="#dateformat( firstpaydate, "mm/dd/yyyy" )#">
 			<cfelse>
-				<cfparam name="PAYOPTION1" default="Off" />
-				<cfparam name="MDAYOPTION1" default="" />
-				<cfparam name="PAYOPTION2" default="On" />
-				<cfparam name="MDAYOPTION2" default="#datepart( 'd', firstpaydate )#" />
+				<cfparam name="PAYOPTION" default="2" />							
 				<cfparam name="NUMBERPAYMENTS" default="#clientfeetotals.numpayments#">
 				<cfparam name="PAY2AMOUNT" default="#round( clientfeetotals.totalfees / clientfeetotals.numpayments )#">
 				<cfparam name="PAY1AMOUNT" default="">
-			</cfif>
+				<cfparam name="PAYTOTAL" default="#clientfeetotals.totalfees#">
+				<cfparam name="FIRSTPAYAMOUNT" default="#round( clientfeetotals.totalfees / clientfeetotals.numpayments )#">
+				<cfparam name="FIRSTPAYDATE" default="#dateformat( firstpaydate, "mm/dd/yyyy" )#">
+			</cfif>							
 			
 			<cfif trim( esigninfo.esignaccttype ) is "Checking">
-				<cfparam name="CHECKINGACCOUNT" default="On" />
-				<cfparam name="SAVINGSACCOUNT" default="Off" />
+				<cfparam name="ACCTTYPE" default="1" />			
 			<cfelse>
-				<cfparam name="SAVINGSACCOUNT" default="On" />
-				<cfparam name="CHECKINGACCOUNT" default="Off" />
+				<cfparam name="ACCTTYPE" default="2" />				
 			</cfif>
 			
 			
 			
 		
-			<!-- // default param -->
-			<cfparam name="docsource" default="">			
-			
-			<!--- // source pdf document --->
-			<cfset docsource = "D:\WWW\studentloanadvisoronline.com\docs\sla-client-agreement5.pdf" />
+			<!-- // default source document params -->
+			<cfparam name="docsourceprefix" default="">
+			<cfparam name="sourcedocpath" default="">
+			<cfparam name="docsourcecompany" default="">
+			<cfparam name="docsourcedocument" default="">
+			<cfparam name="docsource" default="">
+							
+			<!--- // set default source document params --->			
+			<cfset docsourceprefix = "D:\WWW\studentloanadvisoronline.com\library\company\" />
+			<cfset sourcedocpath = companyportaldocs.esignagreepath1 />
+			<cfset docsourcecompany = listfirst( sourcedocpath, "/" ) />
+			<cfset docsourcedocument = listlast( sourcedocpath, "/" ) />
+							
+			<!--- // set the actual document source we will be using to generate the pdf document --->
+			<cfset docsource = docsourceprefix & docsourcecompany & "\" & docsourcedocument />	
  
  
 			<!--- // read the pdf and set a result variable --->
 			<cfpdfform action="read" source="#docsource#" result="formData"/>
 				
 				
-				<!----<cfdump var="#formData#" label="formData" />--->		
+			<!---<cfdump var="#formData#" label="formData" />--->	
 				
 				
-				
+				<!--- // populate the form --->
 				<cfpdfform action="populate" source="#docsource#" overwrite="yes">
-					<cfpdfformparam name="CLIENTFIRSTNAME" value="#clientfirstname#" />
-					<cfpdfformparam name="CLIENTFULLNAME" value="#clientfullname#" />
-					<cfpdfformparam name="DOCUMENTDATE" value="#documentdate#" />
-					<cfpdfformparam name="CLIENTSIGNATUREPRIMARY" value="#clientfullname#" />
-					<cfpdfformparam name="COSIGNERIFAPP" value="" />
-					<cfpdfformparam name="SIGNATUREDATE1" value="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
-					<cfpdfformparam name="SIGNATURE2DATE" value="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
-					<cfpdfformparam name="AUTHKEYTOKEN" value="#authkeytoken#" />
-					<cfpdfformparam name="IPADDRESS" value="#ipaddress#" />					
-					<cfpdfformparam name="CLIENTACCOUNTNUMBER" value="#clientaccountnumber#" />
-					<cfpdfformparam name="MDAYOPTION1" value="#mdayoption1#" />
-					<cfpdfformparam name="PAYOPTION1" value="#payoption1#" />
-					<cfpdfformparam name="PAYOPTION2" value="#payoption2#" />
-					<cfpdfformparam name="MDAYOPTION2" value="#mdayoption2#" />					
-					<cfpdfformparam name="FIRSTPAYDATE" value="#dateformat( firstpaydate, "mm/dd/yyyy" )#" />
-					<cfpdfformparam name="NAMEONACCOUNT" value="#clientfullname#" />
-					<cfpdfformparam name="ADDRESS" value="#address#" />
-					<cfpdfformparam name="CITY" value="#city#" />
-					<cfpdfformparam name="STATE" value="#state#" />
-					<cfpdfformparam name="ZIPCODE" value="#zipcode#" />
-					<cfpdfformparam name="CHECKINGACCOUNT" value="#checkingaccount#" />
-					<cfpdfformparam name="SAVINGSACCOUNT" value="#savingsaccount#" />
-					<cfpdfformparam name="ROUTINGNUMBER" value="#routingnumber#" />
 					<cfpdfformparam name="ACCOUNTNUMBER" value="#accountnumber#" />
+					<cfpdfformparam name="ACCTTYPE" value="#accttype#" />
+					<cfpdfformparam name="AUTHKEYTOKEN1" value="#authkeytoken1#" />
+					<cfpdfformparam name="AUTHKEYTOKEN2" value="#authkeytoken2#" />	
 					<cfpdfformparam name="AUTHORIZEDSIGNATURE" value="#clientfullname#" />
-					<cfpdfformparam name="SIGNATUREDATE" value="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
-					<cfpdfformparam name="AUTHKEYTOKEN2" value="#authkeytoken2#" />					
-					<cfpdfformparam name="IPADDRESS2" value="#ipaddress#" />
-					<cfpdfformparam name="NUMBERPAYMENTS" value="#numberpayments#" />
-					<cfpdfformparam name="PAY1AMOUNT" value="#pay1amount#" />
-					<cfpdfformparam name="PAY2AMOUNT" value="#pay2amount#" />
+					<cfpdfformparam name="AUTHSIGDATE" value="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />					
+					<cfpdfformparam name="CITY" value="#city#" />
+					<cfpdfformparam name="CLIENTACCOUNTNAME" value="#clientaccountname#" />	
+					<cfpdfformparam name="CLIENTFULLNAME" value="#clientfullname#" />
+					<cfpdfformparam name="CLIENTFIRSTNAME" value="#clientfirstname#" />
+					<cfpdfformparam name="CLIENTSIGNATURE" value="#clientfullname#" />					
+					<cfpdfformparam name="DOCUMENTDATE" value="#documentdate#" />
+					<cfpdfformparam name="FIRSTPAYAMOUNT" value="#dollarformat( firstpayamount )#" />					
+					<cfpdfformparam name="FIRSTPAYDATE" value="#dateformat( firstpaydate, "mm/dd/yyyy" )#" />
+					<cfpdfformparam name="IPADDRESS" value="#ipaddress#" />					
+					<cfpdfformparam name="IPADDRESS2" value="#ipaddress#" />			
+					<cfpdfformparam name="NUMBERPAYMENTS" value="#numberpayments#" />									
+					<cfpdfformparam name="PAY1AMOUNT" value="#dollarformat( pay1amount )#" />
+					<cfpdfformparam name="PAY2AMOUNT" value="#dollarformat( pay2amount )#" />				
+					<cfpdfformparam name="PAYOPTION" value="#payoption#" />					
+					<cfpdfformparam name="PAYTOTAL" value="#dollarformat( paytotal )#" />					
+					<cfpdfformparam name="ROUTINGNUMBER" value="#routingnumber#" />									
+					<cfpdfformparam name="SIGNATUREDATE1" value="#dateformat( esigninfo.esdatestamp, "mm/dd/yyyy" )#" />
+					<cfpdfformparam name="SIGNATUREDATE2" value="" />
+					<cfpdfformparam name="SPOUSEFULLNAME" value="" />
+					<cfpdfformparam name="STATE" value="#ucase( state )#" />
+					<cfpdfformparam name="STREETADDRESS" value="#streetaddress#" />
+					<cfpdfformparam name="ZIPCODE" value="#zipcode#" />		
+					
 				</cfpdfform>
 			
 			
-			<!---
 			
-			
-			<cfpdf action="read" name="pdfData" source="testPDF.pdf" />
-			
-			
-			<cfdump var="#leaddetail#" label="lead">
-			<cfdump var="#clientfees#" label="fees">
-			<cfdump var="#esigninfo#" label="esign">
-			--->
+					<!---		
+					<cfpdf action="read" name="pdfData" source="testPDF.pdf" />					
+					<cfdump var="#leaddetail#" label="lead">
+					<cfdump var="#clientfees#" label="fees">
+					<cfdump var="#esigninfo#" label="esign">
+					<cfdump var="#companyportaldocs#" label="portaldocs">		
+					--->

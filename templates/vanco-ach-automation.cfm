@@ -19,9 +19,10 @@
 
 									<!--- get our data access components --->
 									<cfquery datasource="#application.dsn#" name="achdetails">
-										select 	l.leadid, l.leaduuid, l.leadfirst, l.leadlast, l.leadadd1, l.leadcity, l.leadstate, l.leadzip, l.leadactive, l.leadachhold, l.leadachholdreason, l.leadachholddate,
-												f.feeid, f.feeuuid, f.feeduedate, f.feepaiddate, f.feeamount, f.feepaid, f.feestatus, f.feenote, f.feecollected, f.feeprogram, f.feepaytype,
-												e.esignrouting, e.esignaccount, e.esignaccttype, sl.slenrollreturndate, sl.slenrolldocsuploaddate
+										select 	l.leadid, l.leaduuid, l.leadfirst, l.leadlast, l.leadadd1, l.leadcity, l.leadstate, l.leadzip, l.leadactive, l.leadachhold, 
+												l.leadachholdreason, l.leadachholddate, f.feeid, f.feeuuid, f.feeduedate, f.feepaiddate, f.feeamount, f.feepaid, f.feestatus, 
+												f.feenote, f.feecollected, f.feeprogram, f.feepaytype, e.esignrouting, e.esignaccount, e.esignaccttype, sl.slenrollreturndate, 
+												sl.slenrolldocsuploaddate, e.esignpaytype, e.esignccname, e.esignccnumber, e.esignccv2, e.esignccexpdate
 										  from  fees f, leads l, slsummary sl, esign e
 										 where  f.leadid = l.leadid
 										   and  l.leadid = sl.leadid
@@ -29,12 +30,15 @@
 										   and  l.companyid = <cfqueryparam value="#session.companyid#" cfsqltype="cf_sql_integer" />
 										   and  l.leadachhold = <cfqueryparam value="N" cfsqltype="cf_sql_char" />
 										   and  l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+										   <!--- // not a good idea, but we have to remove this for CC payments
 										   and  e.esignrouting <> ''										   
 										   and  e.esignaccount <> ''
-										   and  e.esignaccttype <> ''
+										   and  e.esignaccttype <> '' 
+										   --->
 										   and  sl.slenrollreturndate <> ''
 										   and  sl.slenrolldocsuploaddate <> ''
-										   and  f.feepaytype = <cfqueryparam value="ACH" cfsqltype="cf_sql_char" />
+										   and  ( f.feepaytype = <cfqueryparam value="ACH" cfsqltype="cf_sql_char" /> OR
+										          f.feepaytype = <cfqueryparam value="CC" cfsqltype="cf_sql_char" /> )
 										   and  f.feetrans = <cfqueryparam value="N" cfsqltype="cf_sql_char" />
 										   and  f.feetransdate is null
 										   and  ( f.feeduedate between <cfqueryparam value="#startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#enddate#" cfsqltype="cf_sql_date" /> )										     
@@ -67,7 +71,7 @@
 										<cfif achdetails.recordcount gt 0>
 											
 											<!--- CLD // 06-5-2014 //  Vanco Transaction Processing  // API Data Format to Text // 	--->
-											<cfheader name="content-disposition" value="attachment; filename=#UCASE( session.companyname )#-#dateformat( now(), "mm-dd-yyyy" )#-VANCO-ACH-DATAFILE-#thiscounter#.txt"><cfcontent type="text/txt"><cfoutput query="achdetails">#companysettings.achprovideruniqueid#,#leadid#,#left( leadlast, 11 )#,#left( leadfirst, 11 )#,#left( leadadd1, 30 )#,#left( leadcity, 25 )#,#left( leadstate, 2 )#,#left( leadzip, 5 )#,#left( esignrouting,9 )#,#left( esignaccount, 17 )#,#left( ucase( esignaccttype ), 1 )#,,,#trim( numberformat( feeamount, "L99.99" ))#,M,#dateformat( feeduedate, "mm/dd/yyyy" )#,#dateformat( feeduedate, "mm/dd/yyyy" )#,#feeid##thisbr#
+											<cfheader name="content-disposition" value="attachment; filename=#UCASE( session.companyname )#-#dateformat( now(), "mm-dd-yyyy" )#-VANCO-ACH-DATAFILE-#thiscounter#.txt"><cfcontent type="text/txt"><cfoutput query="achdetails">#companysettings.achprovideruniqueid#,#leadid#,#left( leadlast, 11 )#,#left( leadfirst, 11 )#,#left( leadadd1, 30 )#,#left( leadcity, 25 )#,#left( leadstate, 2 )#,#left( leadzip, 5 )#,<cfif trim( feepaytype ) is "ach">#left( esignrouting,9 )#,#left( esignaccount, 17 )#,#left( ucase( esignaccttype ), 1 )#,,,<cfelseif trim( feepaytype ) is "cc">,,,,#esignccnumber#,#esignccexpdate#,</cfif>#trim( numberformat( feeamount, "L99.99" ))#,M,#dateformat( feeduedate, "mm/dd/yyyy" )#,#dateformat( feeduedate, "mm/dd/yyyy" )#,#feeid##thisbr#
 </cfoutput>									
 											
 											

@@ -88,6 +88,36 @@
 						and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 			</cfquery>
 			<cfreturn advisorteam>
-		</cffunction>	
+		</cffunction>
+		
+		<cffunction name="getcompanyportaldocs" access="public" output="false" hint="I get the company document paths for esign agreements.">
+			<cfargument name="leadid" type="numeric" required="yes" default="#session.leadid#">
+			<cfset var companyportaldocs = "" />
+				<cfquery datasource="#application.dsn#" name="companyportaldocs">
+						select c.companyid, c.dba, c.companyname, 
+						       c.enrollagreepath, c.implagreepath,
+							   c.esignagreepath1, c.esignagreepath2
+						  from company c, leads l
+						 where c.companyid = l.companyid
+						   and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
+					</cfquery>
+			<cfreturn companyportaldocs >
+		</cffunction>
+
+		<cffunction name="getcompanyportalpaytypes" access="public" output="false" hint="I get the company payment types allowed for each company for client portal.">
+			<cfargument name="leadid" type="numeric" required="yes" default="#session.leadid#">
+			<cfset var companyportalpaytypes = "" />
+				<cfquery datasource="#application.dsn#" name="companyportalpaytypes">
+						select l.leadid, c.companyid, cpt.companypaytypeid, cpt.companypaytypedescr, cpt.companypaytypeactive
+						  from leads l, company c, companypaytypes cpt
+					     where l.companyid = c.companyid
+						    and c.companyid = cpt.companyid
+							and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />						    
+						    and cpt.companypaytypeactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+						    and ( cpt.companypaytypedescr = <cfqueryparam value="ACH" cfsqltype="cf_sql_char" /> OR
+						          cpt.companypaytypedescr = <cfqueryparam value="CC" cfsqltype="cf_sql_char" /> )					
+				 </cfquery>
+			<cfreturn companyportalpaytypes >
+		</cffunction>
 		
 	</cfcomponent>

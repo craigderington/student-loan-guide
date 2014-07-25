@@ -16,6 +16,16 @@
 			
 			<cfinvoke component="apis.com.esign.esigngateway" method="getesigninfo" returnvariable="esigninfo">
 				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>		
+			
+			<!--- // 7-15-2014 // systemize the e-sign documentation process --->	
+			<cfinvoke component="apis.com.portal.portalgateway" method="getcompanyportaldocs" returnvariable="companyportaldocs">
+				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>
+			
+			<!--- // 7-20/2014 // add company pay types allowed since some companies will have payment types other than ACH --->
+			<cfinvoke component="apis.com.portal.portalgateway" method="getcompanyportalpaytypes" returnvariable="companyportalpaytypes">
+				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
 			
 			
@@ -62,11 +72,11 @@
 											<cfif objValidation.getErrorCount() is 0>
 												
 													<cfset lead = structnew() />
-													<cfset lead.leadid = #form.leadid# />												
-													<cfset lead.step = #form.stepnumber# />
-													<cfset lead.nextstep = #form.stepnumber# + 1 />
+													<cfset lead.leadid = form.leadid />												
+													<cfset lead.step = form.stepnumber />
+													<cfset lead.nextstep = form.stepnumber + 1 />
 													<cfset lead.userip = #cgi.remote_addr# />
-													<cfset lead.esid = #esigninfo.esid# />											
+													<cfset lead.esid = esigninfo.esid />											
 												
 														<cfif lead.step eq 1>														
 															
@@ -101,98 +111,193 @@
 															<cflocation url="#application.root#?event=#url.event#&fuseaction=donext&step=#lead.nextstep#" addtoken="yes">
 														
 														<cfelseif lead.step eq 4>
+															
+															<cfset paytype = #form.paytype# />
+																<cfquery datasource="#application.dsn#" name="leadesign4">
+																	update esign
+																	   set esignpaytype = <cfqueryparam value="#paytype#" cfsqltype="cf_sql_varchar" />
+																	 where esid = <cfqueryparam value="#lead.esid#" cfsqltype="cf_sql_integer" />														   
+																</cfquery>													
+															
+															<cflocation url="#application.root#?event=#url.event#&fuseaction=donext&step=#lead.nextstep#" addtoken="yes">
 														
+														
+														<cfelseif lead.step eq 5>
+															
+															<cfset lead.accountname = "#trim( form.firstname )# #trim( form.lastname )#" />
 															<cfset lead.dlnumber = #form.dlnumber# />
 															<cfset lead.dlstate = #left( form.dlstate, 2 )# />
-															<cfset lead.routing = #trim( form.routingnumber )# />
-															<cfset lead.acctnumber = #trim( form.accountnumber )# />
-															<cfset lead.accountname = "#trim( form.firstname )# #trim( form.lastname )#" />
-															<cfset lead.accttype = #trim( form.accounttype )# />
 															<cfset lead.address = #trim( form.streetaddress )# />
 															<cfset lead.city = #trim( form.city )# />
 															<cfset lead.state = #trim( ucase( form.state ))# />
-															<cfset lead.zipcode = #trim( form.zipcode )# />
-															<cfset lead.payoption = #form.mpayoption# />
+															<cfset lead.zipcode = #trim( form.zipcode )# />							
+															<cfset lead.payoption = form.mpayoption />
 															
-															<!--- // include the necessary udfs --->
-															<cfinclude template="../apis/udfs/validateABA.cfm">
+															
+															<cfif trim( form.ptype ) is "ach">
+																
+																<cfset lead.routing = #trim( form.routingnumber )# />
+																<cfset lead.acctnumber = #trim( form.accountnumber )# />
+																<cfset lead.accttype = #trim( form.accounttype )# />																											
+															
+																<!--- // include the necessary udfs --->
+																<cfinclude template="../apis/udfs/validateABA.cfm">
 											
-															<!--- // check to make sure the routing number is valid, call the udf --->
-															<cfset abano = isAba( lead.routing )>
+																<!--- // check to make sure the routing number is valid, call the udf --->
+																<cfset abano = isAba( lead.routing )>
 											
 											
-															<cfif abano is true>
+																<cfif abano is true>
 															
-																<!--- // update the esign and continue if routing number is a valid ABA number --->
-																<cfquery datasource="#application.dsn#" name="leadesign4">
-																	update esign
-																	   set esconfirmfullname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,
-																		   esignaccttype = <cfqueryparam value="#lead.accttype#" cfsqltype="cf_sql_varchar" />,
-																		   esdriverslicensenumber = <cfqueryparam value="#lead.dlnumber#" cfsqltype="cf_sql_varchar" />,
-																		   esdriverslicensestate = <cfqueryparam value="#lead.dlstate#" cfsqltype="cf_sql_varchar" />,
-																		   esignrouting = <cfqueryparam value="#lead.routing#" cfsqltype="cf_sql_varchar" />,
-																		   esignaccount = <cfqueryparam value="#lead.acctnumber#" cfsqltype="cf_sql_varchar" />,
-																		   esignacctnumber = <cfqueryparam value="#lead.accountname# (#lead.leadid#)" cfsqltype="cf_sql_varchar" />,
-																		   esignacctname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,
-																		   esignfeeoption = <cfqueryparam value="#lead.payoption#" cfsqltype="cf_sql_numeric" />,
-																		   esignacctadd1 = <cfqueryparam value="#lead.address#" cfsqltype="cf_sql_varchar" />,
-																		   esignacctcity = <cfqueryparam value="#lead.city#" cfsqltype="cf_sql_varchar" />,
-																		   esignacctstate = <cfqueryparam value="#lead.state#" cfsqltype="cf_sql_varchar" />,
-																		   esignacctzipcode = <cfqueryparam value="#lead.zipcode#" cfsqltype="cf_sql_varchar" />,
-																		   escompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-																	 where esid = <cfqueryparam value="#lead.esid#" cfsqltype="cf_sql_integer" />														   
-																</cfquery>
-															
-																<!-- // flag the lead as having completed e-sign -->
-																<cfquery datasource="#application.dsn#" name="updateleadsummary">
-																	update leads
-																	   set leadesign = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
-																		   leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /> 
-																	 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />														   
-																</cfquery>														
-															
-																<!--- // mark the portal task complete --->
-																<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
-																	<cfinvokeargument name="portaltaskid" value="1406">
-																	<cfinvokeargument name="leadid" value="#session.leadid#">
-																</cfinvoke>
+																	<!--- // update the esign and continue if routing number is a valid ABA number --->
+																	<cfquery datasource="#application.dsn#" name="leadesign5">
+																		update esign
+																		   set esconfirmfullname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,																			   
+																			   esdriverslicensenumber = <cfqueryparam value="#lead.dlnumber#" cfsqltype="cf_sql_varchar" />,
+																			   esdriverslicensestate = <cfqueryparam value="#lead.dlstate#" cfsqltype="cf_sql_varchar" />,																		   
+																			   esignaccttype = <cfqueryparam value="#lead.accttype#" cfsqltype="cf_sql_varchar" />,
+																			   esignrouting = <cfqueryparam value="#lead.routing#" cfsqltype="cf_sql_varchar" />,
+																			   esignaccount = <cfqueryparam value="#lead.acctnumber#" cfsqltype="cf_sql_varchar" />,
+																			   esignacctnumber = <cfqueryparam value="#lead.accountname# (#lead.leadid#)" cfsqltype="cf_sql_varchar" />,
+																			   esignacctname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,																	   
+																			   esignfeeoption = <cfqueryparam value="#lead.payoption#" cfsqltype="cf_sql_numeric" />,
+																			   esignacctadd1 = <cfqueryparam value="#lead.address#" cfsqltype="cf_sql_varchar" />,
+																			   esignacctcity = <cfqueryparam value="#lead.city#" cfsqltype="cf_sql_varchar" />,
+																			   esignacctstate = <cfqueryparam value="#lead.state#" cfsqltype="cf_sql_varchar" />,
+																			   esignacctzipcode = <cfqueryparam value="#lead.zipcode#" cfsqltype="cf_sql_varchar" />,
+																			   escompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+																		 where esid = <cfqueryparam value="#lead.esid#" cfsqltype="cf_sql_integer" />														   
+																	</cfquery>
+																	
+																	<!-- // flag the lead as having completed e-sign -->
+																	<cfquery datasource="#application.dsn#" name="updateleadsummary">
+																		update leads
+																		   set leadesign = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+																			   leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /> 
+																		 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />														   
+																	</cfquery>														
 																
-																<!--- // assign the intake advisor  --->
-																<cfinvoke component="apis.com.clients.assigngateway" method="assignintake" returnvariable="taskstatusmsg">
-																	<cfinvokeargument name="companyid" value="#leaddetail.companyid#">
-																	<cfinvokeargument name="leadid" value="#session.leadid#">
-																</cfinvoke>
+																	<!--- // mark the portal task complete --->
+																	<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
+																		<cfinvokeargument name="portaltaskid" value="1406">
+																		<cfinvokeargument name="leadid" value="#session.leadid#">
+																	</cfinvoke>
+																	
+																	<!--- // assign the intake advisor  --->
+																	<cfinvoke component="apis.com.clients.assigngateway" method="assignintake" returnvariable="taskstatusmsg">
+																		<cfinvokeargument name="companyid" value="#leaddetail.companyid#">
+																		<cfinvokeargument name="leadid" value="#session.leadid#">
+																	</cfinvoke>
+																	
+																	<!--- // notify the enrollment and intake advisors that the client has completed esign --->															
+																	<cfinvoke component="apis.com.comms.commsgateway" method="sendclientesigncomplete" returnvariable="msgstatus">																
+																		<cfinvokeargument name="leadid" value="#session.leadid#">
+																	</cfinvoke>															
 																
-																<!--- // notify the enrollment and intake advisors that the client has completed esign --->															
-																<cfinvoke component="apis.com.comms.commsgateway" method="sendclientesigncomplete" returnvariable="msgstatus">																
-																	<cfinvokeargument name="leadid" value="#session.leadid#">
-																</cfinvoke>															
-															
-																<!--- // flag the lead summary as docs returned and signed --->
-																<cfquery datasource="#application.dsn#" name="summary">
-																	update slsummary																	   
-																	   set slenrollreturndate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />,
-																		   slenrolldocsuploaddate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />																		   
-																	 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
-																</cfquery>
+																	<!--- // flag the lead summary as docs returned and signed --->
+																	<cfquery datasource="#application.dsn#" name="summary">
+																		update slsummary																	   
+																		   set slenrollreturndate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />,
+																			   slenrolldocsuploaddate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />																		   
+																		 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
+																	</cfquery>
+																	
+																	<cfset session.leadesign = 1 />
+																	
+																	<cflocation url="#application.root#?event=#url.event#" addtoken="no">
 																
-																<cfset session.leadesign = 1 />
+																<cfelse>
 																
-																<cflocation url="#application.root#?event=#url.event#" addtoken="no">
-														
-															<cfelse>
+																	<cfoutput>
+																		<div class="alert alert-error">
+																			<a class="close" data-dismiss="alert">&times;</a>
+																			<h5><error>Sorry, there were errors in your submission:</error></h2>
+																			<ul>
+																				<li class="formerror"><cfoutput>#form.routingnumber#</cfoutput> is an invalid routing number.  Please check your input and try again...</li>																
+																			</ul>
+																		</div>
+																	</cfoutput>																
+																
+																</cfif>														
+																
+																
+															<cfelseif trim( form.ptype ) is "cc">
+																
+																<cfset lead.ccname = form.ccname />
+																<cfset lead.ccnumber = form.ccacctnum />
+																<cfset lead.ccexpdate = replace( form.ccexpdate, "/", "", "all" ) />
+																<cfset lead.ccv2 = left( form.ccv2, 4) />														
 															
-																<cfoutput>
-																	<div class="alert alert-error">
-																		<a class="close" data-dismiss="alert">&times;</a>
-																		<h5><error>Sorry, there were errors in your submission:</error></h2>
-																		<ul>
-																			<li class="formerror"><cfoutput>#form.routingnumber#</cfoutput> is an invalid routing number.  Please check your input and try again...</li>																
-																		</ul>
-																	</div>
-																</cfoutput>
+																	<!--- // update the esign and continue ---> 
+																	<cfquery datasource="#application.dsn#" name="leadesign52">
+																		update esign
+																		   set esconfirmfullname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,																			   
+																			   esdriverslicensenumber = <cfqueryparam value="#lead.dlnumber#" cfsqltype="cf_sql_varchar" />,
+																			   esdriverslicensestate = <cfqueryparam value="#lead.dlstate#" cfsqltype="cf_sql_varchar" />,																		   
+																			   esignccname = <cfqueryparam value="#lead.ccname#" cfsqltype="cf_sql_varchar" />,
+																			   esignccnumber = <cfqueryparam value="#lead.ccnumber#" cfsqltype="cf_sql_varchar" />,
+																			   esignccexpdate = <cfqueryparam value="#lead.ccexpdate#" cfsqltype="cf_sql_varchar" />,
+																			   esignccv2 = <cfqueryparam value="#lead.ccv2#" cfsqltype="cf_sql_varchar" />,
+																			   esignacctnumber = <cfqueryparam value="#lead.accountname# (#lead.leadid#)" cfsqltype="cf_sql_varchar" />,
+																			   esignacctname = <cfqueryparam value="#lead.accountname#" cfsqltype="cf_sql_varchar" />,																	   
+																			   esignfeeoption = <cfqueryparam value="#lead.payoption#" cfsqltype="cf_sql_numeric" />,
+																			   esignacctadd1 = <cfqueryparam value="#lead.address#" cfsqltype="cf_sql_varchar" />,
+																			   esignacctcity = <cfqueryparam value="#lead.city#" cfsqltype="cf_sql_varchar" />,
+																			   esignacctstate = <cfqueryparam value="#lead.state#" cfsqltype="cf_sql_varchar" />,
+																			   esignacctzipcode = <cfqueryparam value="#lead.zipcode#" cfsqltype="cf_sql_varchar" />,
+																			   escompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+																		 where esid = <cfqueryparam value="#lead.esid#" cfsqltype="cf_sql_integer" />														   
+																	</cfquery>
+																	
+																	<!--- // 7-25-2014 // update the payment type for the current fee schedule to CC --->
+																	<cfquery datasource="#application.dsn#" name="updateleadsummary2">
+																		update fees
+																		   set feepaytype = <cfqueryparam value="CC" cfsqltype="cf_sql_char" />																			   
+																		 where leadid = <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />														   
+																	</cfquery>
+																	
+																	<!-- // flag the lead as having completed e-sign ---> 
+																	<cfquery datasource="#application.dsn#" name="updateleadsummary2">
+																		update leads
+																		   set leadesign = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+																			   leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /> 
+																		 where leadid = <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />														   
+																	</cfquery>														
+																
+																	<!--- // mark the portal task complete --->
+																	<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
+																		<cfinvokeargument name="portaltaskid" value="1406">
+																		<cfinvokeargument name="leadid" value="#session.leadid#">
+																	</cfinvoke>
+																	
+																	<!--- // assign the intake advisor  --->
+																	<cfinvoke component="apis.com.clients.assigngateway" method="assignintake" returnvariable="taskstatusmsg">
+																		<cfinvokeargument name="companyid" value="#leaddetail.companyid#">
+																		<cfinvokeargument name="leadid" value="#session.leadid#">
+																	</cfinvoke>
+																	
+																	<!--- // notify the enrollment and intake advisors that the client has completed esign --->															
+																	<cfinvoke component="apis.com.comms.commsgateway" method="sendclientesigncomplete" returnvariable="msgstatus">																
+																		<cfinvokeargument name="leadid" value="#session.leadid#">
+																	</cfinvoke>															
+																
+																	<!--- // flag the lead summary as docs returned and signed --->
+																	<cfquery datasource="#application.dsn#" name="summary2">
+																		update slsummary																	   
+																		   set slenrollreturndate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />,
+																			   slenrolldocsuploaddate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />																		   
+																		 where leadid = <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />
+																	</cfquery>
+																	
+																	<cfset session.leadesign = 1 />
+																	
+																	<cflocation url="#application.root#?event=#url.event#" addtoken="no">
 															
-															</cfif>
+																	
+																	<!--- // dump vars for dev testing
+																	<cfdump var="#lead#" labe="Lead Form Vars">
+																	--->
+															</cfif>								
 														
 														</cfif>											
 													
@@ -222,11 +327,13 @@
 										<div class="tab-pane active" id="tab1">											
 											
 											<!--- // show an infram with embedded enrollment documemnt --->
-											<div class="span5" style="margin-top:25px;">													
-												<a style="font-size:12px;" href="../docs/sla-client-agreement.pdf"><i class="icon-paste"></i> Download this Document</a>
-												<iframe name="enrollagreement" src="../docs/sla-client-agreement.pdf" width="400" height="475" align="left" seamless></iframe>												
-											</div>
-											
+											<!--- // 7-15-2014 // systemize the e-sign enrollment documentation process for all client portal companies --->
+											<cfoutput>
+												<div class="span5" style="margin-top:25px;">													
+													<a style="font-size:12px;" href="../library/company#companyportaldocs.esignagreepath1#"><i class="icon-paste"></i> Download this Document</a>
+													<iframe name="enrollagreement" src="../library/company#companyportaldocs.esignagreepath1#" width="400" height="475" align="left" seamless></iframe>												
+												</div>
+											</cfoutput>
 											
 											<div class="span6" style="margin-left:10px;margin-top:25px;padding:5px;">
 														
@@ -435,15 +542,72 @@ Updating Your Personal Information: You are responsible for keeping your e-mail 
 																		</cfif><!-- / / .client-fees -->
 															
 															
-															
+															<!--- // break up the existing workflow to change the interface to allow user to select their payment type based on each company's settings --->
 															<cfelseif url.step eq 4>
+															
+															
+																<cfoutput>
+																
+																	<cfparam name="paytypes" default="">
+																	<cfparam name="nstep" default="">
+																	<cfset nstep = url.step + 1 />
+																	<cfset paytypes = valuelist( companyportalpaytypes.companypaytypedescr, "," ) />
+																	
+																		<!--- // if the company only has a single allowed payment type - set the value automatically and redirect to the next step --->
+																		<cfif listlen( paytypes ) eq 1>
+																		
+																			<cfquery datasource="#application.dsn#" name="setpaytype">
+																				update esign
+																				   set esignpaytype = <cfqueryparam value="#companyportalpaytypes.companypaytypedescr#" cfsqltype="cf_sql_varchar" />
+																				 where esid = <cfqueryparam value="#esigninfo.esid#" cfsqltype="cf_sql_integer" />
+																			</cfquery>
+																			
+																			<cflocation url="#application.root#?event=#url.event#&fuseaction=donext&step=#nstep#" addtoken="yes">
+																		
+																		<!--- // otherwise // show the payment type form --->
+																		
+																		<cfelse>
+																		
+																			
+																			<div class="well" style="padding:35px;">
+																				<form id="edit-lead-profile" class="form-horizontal" method="post" action="#application.root#?event=#url.event#&fuseaction=donext&step=#url.step#">
+																					<fieldset>													
+																						<h5 style="margin-bottom:15px;"><strong><i class="icon-money"></i> Select Payment Type</strong></h5>																						
+																							<div class="control-group">																							
+																								<select name="paytype" id="paytype" onchange="javascript:this.form.submit();">
+																									<option value="" selected>Select Type</option>
+																									<cfloop query="companyportalpaytypes">
+																										<option value="#companypaytypedescr#">#companypaytypedescr#</option>
+																									</cfloop>
+																								</select>																								
+																							</div> <!-- /control-group -->
+																							<p class="help-block">The e-sign process will continue upon your payment type selection...</p>
+																							<input type="hidden" name="stepnumber" value="4" />
+																							<input type="hidden" name="leadid" value="#leaddetail.leadid#" />
+																							
+																					</fieldset>
+																				</form>				
+																			</div>
+																		
+																		</cfif>
+																	
+																	
+																	
+																</cfoutput>
+															
+															
+															
+															
+															
+															
+															<cfelseif url.step eq 5>
 															
 																<cfoutput>
 																					<h4><i class="icon-user"></i> Payment Information</h4>										
 																					<p style="color:##ff0000;">* Denotes a required field</p>
 																					<br>
 																					
-																					<form id="edit-lead-profile" class="form-horizontal" method="post" action="#application.root#?event=#url.event#&fuseaction=donext&step=#url.step#">
+																					<form id="edit-esign-profile" class="form-horizontal" method="post" action="#application.root#?event=#url.event#&fuseaction=donext&step=#url.step#">
 																						<fieldset>													
 
 																							<div class="control-group">											
@@ -492,53 +656,7 @@ Updating Your Personal Information: You are responsible for keeping your e-mail 
 																							
 																							<br /><br />
 																							
-																							<h5>Banking Details</h5>
-
-																								<div class="control-group">
-																									<label class="control-label" for="accounttype">Account Type</label>
-																									<div class="controls">
-																										<label class="radio">
-																											<input type="radio" name="accounttype" value="Checking" checked="checked">
-																											Checking
-																										</label>
-																										<label class="radio">
-																											<input type="radio" name="accounttype" value="Savings">
-																											Savings
-																										</label>
-																									</div>
-																								</div>
-																								
-																								<div class="control-group">											
-																									<label class="control-label" for="email">Routing Number<span style="color:##ff0000;">*</span></label>
-																									<div class="controls">
-																										<input type="password" class="input-large" name="routingnumber" id="routingnumber" value="<cfif isdefined( "form.routingnumber" )>#form.routingnumber#</cfif>">																		
-																									</div> <!-- /controls -->				
-																								</div> <!-- /control-group -->
-																								
-																								<div class="control-group">											
-																									<label class="control-label" for="email">Confirm Routing<span style="color:##ff0000;">*</span></label>
-																									<div class="controls">
-																										<input type="password" class="input-large" name="routingnumber2" id="routingnumber2" value="<cfif isdefined( "form.routingnumber2" )>#form.routingnumber2#</cfif>">																		
-																									</div> <!-- /controls -->				
-																								</div> <!-- /control-group -->
-
-																								<div class="control-group">											
-																									<label class="control-label" for="email">Account Number<span style="color:##ff0000;">*</span></label>
-																									<div class="controls">
-																										<input type="password" class="input-large" name="accountnumber" id="accountnumber" value="<cfif isdefined( "form.accountnumber" )>#form.accountnumber#</cfif>">																		
-																									</div> <!-- /controls -->				
-																								</div> <!-- /control-group -->
-																								
-																								<div class="control-group">											
-																									<label class="control-label" for="email">Confirm Account <span style="color:##ff0000;">*</span></label>
-																									<div class="controls">
-																										<input type="password" class="input-large" name="accountnumber2" id="accountnumber2" value="<cfif isdefined( "form.accountnumber2" )>#form.accountnumber2#</cfif>">																		
-																									</div> <!-- /controls -->				
-																								</div> <!-- /control-group -->
-																								
-																								<br />
-																								
-																								<h5>Drivers License Number and State of Issue</h5>
+																							<h5 style="padding-bottom:10px;">Drivers License Number and State of Issue</h5>
 																								
 																								<div class="control-group">											
 																									<label class="control-label" for="email">DL Number<span style="color:##ff0000;">*</span></label>
@@ -554,19 +672,121 @@ Updating Your Personal Information: You are responsible for keeping your e-mail 
 																									</div> <!-- /controls -->				
 																								</div> <!-- /control-group -->
 																								
+																							<br /><br />
 																							
-																								<br />											
+																							<cfif trim( esigninfo.esignpaytype ) is "ACH">
 																							
-																								<div class="form-actions">													
-																									<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.portal.home'"><i class="icon-remove-sign"></i> Cancel</a>
-																									<button type="submit" class="btn btn-secondary" name="savelead"> Continue <i class="icon-circle-arrow-right"></i></button>											
-																									<input name="utf8" type="hidden" value="&##955;">													
-																									<input type="hidden" name="stepnumber" value="4" />
-																									<input type="hidden" name="leadid" value="#leaddetail.leadid#" />																					
-																									<input type="hidden" name="__authToken" value="#randout#" />
-																									<input name="validate_require" type="hidden" value="leadid|'Lead ID' is a required field.;accounttype|Please select your type of bank account.;routingnumber|Please enter your routing number.;accountnumber|Please enter your account number.;dlnumber|Please enter your drivers license number.;dlstate|Please enter your drivers license State of Issue.">
-																									<input type="hidden" name="validate_password" value="routingnumber|routingnumber2|Sorry, the routing numbers entered do not match.  Please re-try...;accountnumber|accountnumber2|Sorry, the account numbers entered do not match.  Please re-enter and try again." />
-																								</div> <!-- /form-actions -->
+																							
+																									<h5 style="padding-bottom:10px;">Your Banking Details</h5>
+																									<br />
+																										<div class="control-group">
+																											<label class="control-label" for="accounttype">Account Type</label>
+																											<div class="controls">
+																												<label class="radio">
+																													<input type="radio" name="accounttype" value="Checking" checked="checked">
+																													Checking
+																												</label>
+																												<label class="radio">
+																													<input type="radio" name="accounttype" value="Savings">
+																													Savings
+																												</label>
+																											</div>
+																										</div>
+																										
+																										<div class="control-group">											
+																											<label class="control-label" for="email">Routing Number<span style="color:##ff0000;">*</span></label>
+																											<div class="controls">
+																												<input type="password" class="input-large" name="routingnumber" id="routingnumber" value="<cfif isdefined( "form.routingnumber" )>#form.routingnumber#</cfif>">																		
+																											</div> <!-- /controls -->				
+																										</div> <!-- /control-group -->
+																										
+																										<div class="control-group">											
+																											<label class="control-label" for="email">Confirm Routing<span style="color:##ff0000;">*</span></label>
+																											<div class="controls">
+																												<input type="password" class="input-large" name="routingnumber2" id="routingnumber2" value="<cfif isdefined( "form.routingnumber2" )>#form.routingnumber2#</cfif>">																		
+																											</div> <!-- /controls -->				
+																										</div> <!-- /control-group -->
+
+																										<div class="control-group">											
+																											<label class="control-label" for="email">Account Number<span style="color:##ff0000;">*</span></label>
+																											<div class="controls">
+																												<input type="password" class="input-large" name="accountnumber" id="accountnumber" value="<cfif isdefined( "form.accountnumber" )>#form.accountnumber#</cfif>">																		
+																											</div> <!-- /controls -->				
+																										</div> <!-- /control-group -->
+																										
+																										<div class="control-group">											
+																											<label class="control-label" for="email">Confirm Account <span style="color:##ff0000;">*</span></label>
+																											<div class="controls">
+																												<input type="password" class="input-large" name="accountnumber2" id="accountnumber2" value="<cfif isdefined( "form.accountnumber2" )>#form.accountnumber2#</cfif>">																		
+																											</div> <!-- /controls -->				
+																										</div> <!-- /control-group -->
+																										
+																										
+																										<br />											
+																							
+																										<div class="form-actions">													
+																											<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.portal.home'"><i class="icon-remove-sign"></i> Cancel</a>
+																											<button type="submit" class="btn btn-secondary" name="savelead"> Continue <i class="icon-circle-arrow-right"></i></button>											
+																											<input name="utf8" type="hidden" value="&##955;">
+																											<input type="hidden" name="ptype" value="ach">
+																											<input type="hidden" name="stepnumber" value="5" />
+																											<input type="hidden" name="leadid" value="#leaddetail.leadid#" />																					
+																											<input type="hidden" name="__authToken" value="#randout#" />
+																											<input name="validate_require" type="hidden" value="leadid|'Lead ID' is a required field.;accounttype|Please select your type of bank account.;routingnumber|Please enter your routing number.;accountnumber|Please enter your account number.;dlnumber|Please enter your drivers license number.;dlstate|Please enter your drivers license State of Issue.">																						
+																										</div> <!-- /form-actions -->
+																								
+																								
+																								<cfelseif trim( esigninfo.esignpaytype ) is "CC">														
+																		
+																										<h5 style="padding-bottom:10px;">Enter Your Credit Card Information</h5>
+																		
+																										<div class="control-group">											
+																											<label class="control-label" for="ccexpdate"><strong>Card Holder Name</strong></label>
+																											<div class="controls">
+																												<input type="text" class="input-large" name="ccname" id="ccname" value="<cfif isdefined( "form.ccname" )>#form.ccname#</cfif>">
+																											</div> <!-- /controls -->				
+																										</div> <!-- /control-group -->
+																										
+																										<div class="control-group">											
+																											<label class="control-label" for="ccacctnum"><strong>Account Number</strong></label>
+																											<div class="controls">
+																												<input type="text" class="input-large" name="ccacctnum" id="ccacctnum" value="<cfif isdefined( "form.ccacctnum" )>#form.ccacctnum#</cfif>" />
+																											</div> <!-- /controls -->				
+																										</div> <!-- /control-group -->
+
+																										<div class="control-group">											
+																											<label class="control-label" for="ccexpdate"><strong>Expiration Date</strong></label>
+																											<div class="controls">
+																												<input type="text" class="input-mini" name="ccexpdate" id="ccexpdate" value="<cfif isdefined( "form.ccexpdate" )>#form.ccexpdate#</cfif>">
+																												<span class="help-block">Enter in the format MMYY</span>
+																											</div> <!-- /controls -->				
+																										</div> <!-- /control-group -->
+
+																										<div class="control-group">											
+																											<label class="control-label" for="ccexpdate"><strong>Security Code</strong></label>
+																											<div class="controls">
+																												<input type="text" class="input-mini" name="ccv2" id="ccv2" value="<cfif isdefined( "form.ccv2" )>#form.ccv2#</cfif>">
+																												<span class="help-block">Please enter the 3 digit code on the back of the card.  AMEX is 4 digits on front of card.</span>																		
+																											</div> <!-- /controls -->				
+																										</div> <!-- /control-group -->
+																										
+																										<br />											
+																							
+																										<div class="form-actions">													
+																											<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.portal.home'"><i class="icon-remove-sign"></i> Cancel</a>
+																											<button type="submit" class="btn btn-secondary" name="savelead"> Continue <i class="icon-circle-arrow-right"></i></button>											
+																											<input name="utf8" type="hidden" value="&##955;">
+																											<input type="hidden" name="ptype" value="cc">
+																											<input type="hidden" name="stepnumber" value="5" />
+																											<input type="hidden" name="leadid" value="#leaddetail.leadid#" />																					
+																											<input type="hidden" name="__authToken" value="#randout#" />
+																											<input name="validate_require" type="hidden" value="leadid|'Lead ID' is a required field.;ccname|Please the name on the credit card.;ccacctnum|Please enter your credit card number.;ccexpdate|Please enter credit card expiration date in MMYY format.;ccv2|Please enter your cards security number.;dlnumber|Please enter your drivers license number.;dlstate|Please enter your drivers license State of Issue.">																						
+																										</div> <!-- /form-actions -->
+																										
+																										
+																								
+																								</cfif>																					
+																								
 																							
 																						</fieldset>
 																					</form>

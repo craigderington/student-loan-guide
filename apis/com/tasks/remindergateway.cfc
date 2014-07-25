@@ -46,7 +46,7 @@
 					   and t.leadid = l.leadid
 					   and t.mtaskid = mt.mtaskid
 					   and t.userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" />
-					   <!---and t.taskstatus <> <cfqueryparam value="Completed" cfsqltype="cf_sql_varchar" />--->
+					   and tr.showreminder = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 				  order by t.leadid
 				</cfquery>
 				<cfreturn taskreminderlist >

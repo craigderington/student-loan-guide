@@ -156,7 +156,7 @@
 											 where l.companyid = c.companyid
 											   and l.leadid = <cfqueryparam value="#loginquery.leadid#" cfsqltype="cf_sql_integer" />
 										</cfquery>
-										<cfset session.companyname = "#clientcompany.dba#" />
+										<cfset session.companyname = "#clientcompany.dba#" />										
 									</cfif>
 								</cfif>
 								

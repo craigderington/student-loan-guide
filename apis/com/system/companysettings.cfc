@@ -36,12 +36,25 @@
 					<cfset var companydocs = "" />
 					<cfquery datasource="#application.dsn#" name="companydocs">
 						select c.companyid, c.dba, c.companyname, 
-						       c.enrollagreepath, c.implagreepath 
+						       c.enrollagreepath, c.implagreepath,
+							   c.esignagreepath1, c.esignagreepath2
 						  from company c
 						 where c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 					</cfquery>
 					<cfreturn companydocs >
 				</cffunction>
+				
+				<cffunction name="getcompanypaytypes" access="public" output="false" hint="I get the company payment types allowed for each company for client portal and fees.">
+					<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+					<cfset var companypaytypes = "" />
+					<cfquery datasource="#application.dsn#" name="companypaytypes">
+						select cpt.companypaytypeid, cpt.companypaytypedescr, cpt.companypaytypeactive
+						  from companypaytypes cpt
+					     where cpt.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+						   and cpt.companypaytypeactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+					</cfquery>
+					<cfreturn companypaytypes >
+				</cffunction>		
 				
 				
 				

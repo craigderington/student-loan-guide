@@ -28,7 +28,7 @@
 					<cfquery datasource="#application.dsn#" name="convolist">
 						select c.convoid, c.convouuid, c.userid, c.advisorid, c.convodatetime, c.convostatus, c.convoclosed,
 							   l.leadfirst, l.leadlast, u.firstname as advisorfirst, u.lastname as advisorlast,
-							   (select count(*) from conversation_reply cr where cr.convoid = c.convoid and cr.replyread = 0 and cr.userid <> <cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />) as totalnewmsgs
+							   (select count(*) from conversation_reply cr where cr.convoid = c.convoid and cr.replyread = 0 and cr.userid <> <cfif isuserinrole( "bclient" )><cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" /><cfelse><cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" /></cfif>) as totalnewmsgs
 						  from conversation c, leads l, users u
 						 where c.userid = l.leadid
 						   and c.advisorid = u.userid
@@ -84,7 +84,7 @@
 				
 				<!--- // get the conversation --->
 				<cfquery datasource="#application.dsn#" name="convodetail2">
-					select c.convoid, c.convouuid
+					select c.convoid, c.convouuid, userid, advisorid
 					  from conversation c
 					 where c.convouuid = <cfqueryparam value="#arguments.thread#" cfsqltype="cf_sql_varchar" maxlength="35" />
 				</cfquery>			

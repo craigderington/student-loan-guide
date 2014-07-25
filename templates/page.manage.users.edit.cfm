@@ -99,6 +99,12 @@
 														<cfset user.password = "" />
 														<cfset user.confirmpass = "" />
 													</cfif>
+													
+													<cfif isdefined( "form.chkstatus" )>
+														<cfset user.status = #form.chkstatus# />
+													<cfelse>
+														<cfset user.status = 0 />
+													</cfif>
 																								
 													<!--- // some other variables --->
 													<cfset today = #CreateODBCDateTime(now())# />																							
@@ -200,7 +206,8 @@
 																		   lastname = <cfqueryparam value="#user.lastname#" cfsqltype="cf_sql_varchar" />,
 																		   acl = <cfqueryparam value="#user.acl#" cfsqltype="cf_sql_numeric" />,
 																		   role = <cfqueryparam value="#user.role#" cfsqltype="cf_sql_varchar" />,
-																		   email = <cfqueryparam value="#user.email#" cfsqltype="cf_sql_varchar" />
+																		   email = <cfqueryparam value="#user.email#" cfsqltype="cf_sql_varchar" />,
+																		   active = <cfqueryparam value="#user.status#" cfsqltype="cf_sql_bit" />
 																		   <cfif trim( user.password ) is not "">
 																		   , passcode = <cfqueryparam value="#hash( user.password, "SHA-384", "UTF-8" )#" cfsqltype="cf_sql_clob" />
 																		   </cfif>
@@ -343,7 +350,14 @@
 														<div class="control-group">											
 															<label class="control-label" for="acl">Access Level</label>
 															<div class="controls">
-																<input type="text" class="input-mini" id="acl" name="acl" value="#userdetail.acl#">
+																<input type="text" class="input-mini" id="acl" name="acl" value="#userdetail.acl#" />
+															</div> <!-- /controls -->				
+														</div> <!-- /control-group -->
+														
+														<div class="control-group">											
+															<label class="control-label" for="acl">Active</label>
+															<div class="controls">
+																<input type="checkbox" class="input-mini" value="1" id="chkstatus" name="chkstatus" <cfif userdetail.active eq 1>checked</cfif> />
 															</div> <!-- /controls -->				
 														</div> <!-- /control-group -->
 														

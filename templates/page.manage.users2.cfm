@@ -221,6 +221,7 @@
 															<th>First Name</th>
 															<th>Last Name</th>													
 															<th>Role</th>
+															<th>Status</th>
 														</tr>
 													</thead>
 													<tbody>
@@ -239,6 +240,7 @@
 															<td>#firstname#</td>
 															<td>#lastname#</td>													
 															<td><span class="label label-inverse">#role#</span></td>
+															<td><cfif active eq 1><span class="label label-success">Active</span><cfelse><span class="label label-default">Inactive</span></cfif>
 														</tr>
 														</cfoutput>
 													</tbody>

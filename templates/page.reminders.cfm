@@ -14,7 +14,7 @@
 				<cfinvokeargument name="userid" value="#session.userid#">
 			</cfinvoke>
 			
-			<!--- // perform necessary user and task reminder management functions --->
+			<!--- // perform necessary user reminder management functions // --->
 			<cfif structkeyexists( url, "fuseaction" )>
 				<cfif structkeyexists( url, "rmid" ) and isvalid( "uuid", url.rmid )>
 					<cfinvoke component="apis.com.tasks.remindergateway" method="getuserreminderdetail" returnvariable="userreminderdetail">
@@ -54,6 +54,69 @@
 					</cfif>					
 				</cfif>				
 			</cfif>
+			
+			
+			
+			
+			<!--- // perform necessary client task reminder management functions // --->			
+			<cfif structkeyexists( url, "taskaction" )>
+				<cfparam name="thisaction" default="">
+				<cfset thisaction = trim( url.taskaction ) />
+					<cfif structkeyexists( url, "taskid" ) and isvalid( "uuid", url.taskid )>
+						<cfparam name="taskid" default="">
+						<cfset taskid = url.taskid />
+							
+							<!--- // get task by task uuid --->
+							<cfquery datasource="#application.dsn#" name="gettask">
+								select taskid, taskuuid, mtaskid, leadid
+								  from tasks
+								 where taskuuid = <cfqueryparam value="#taskid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+							</cfquery>
+						
+							<cfif structkeyexists( url, "rid" )>
+								<cfparam name="reminderid" default="">
+								<cfset reminderid = url.rid />
+									<!--- // get the task reminder --->
+									<cfquery datasource="#application.dsn#" name="gettaskreminder">
+										select reminderid, taskuuid, userid, reminderdate, remindertime
+										  from taskreminders
+										 where taskuuid = <cfqueryparam value="#taskid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+										   and reminderid = <cfqueryparam value="#reminderid#" cfsqltype="cf_sql_integer" />
+									</cfquery>
+									
+									
+										<!-- // perform the requested action --->
+										<cfif thisaction is "deletereminder">
+										
+											<cfquery datasource="#application.dsn#" name="gettaskreminder">
+												delete from taskreminders
+												 where taskuuid = <cfqueryparam value="#taskid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+												   and reminderid = <cfqueryparam value="#reminderid#" cfsqltype="cf_sql_integer" />
+											</cfquery>
+											
+											<cflocation url="#application.root#?event=#url.event#&msg=complete&action=deleted" addtoken="no">
+										
+										<cfelseif thisaction is "archivereminder">
+										
+											<cfquery datasource="#application.dsn#" name="gettaskreminder">
+												update taskreminders
+												   set showreminder = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+												 where taskuuid = <cfqueryparam value="#taskid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+												   and reminderid = <cfqueryparam value="#reminderid#" cfsqltype="cf_sql_integer" />
+											</cfquery>
+											
+											<cflocation url="#application.root#?event=#url.event#&msg=complete&action=archived" addtoken="no">
+										
+										</cfif>						
+									
+									
+							</cfif>
+						
+					</cfif>
+			
+			</cfif>
+			
+			
 			
 			
 			<!--- // extra styling --->
@@ -255,7 +318,10 @@
 											</cfif>
 
 											<cfif taskreminderlist.recordcount gt 0>
+											
 											<br /><br />
+												
+												
 												<h5 style="margin-top:25px;margin-bottom:25px;"><i class="icon-calendar"></i> Client Task Reminders</h5>
 												
 												
@@ -263,7 +329,7 @@
 														
 														<cfoutput query="taskreminderlist">
 															<li class="rlist">#dateformat( reminderdate , "mm/dd/yyyy" )# &nbsp;&nbsp;  #timeformat( remindertime, "hh:mm TT" )# <br/>
-															<span style="font-size:12px;">#leadfirst# #leadlast# (#leadid#) - #mtaskname#</span> <span class="pull-right"><cfif trim( alerttype ) is "eml"><i class="icon-envelope" title="Email Message" style="margin-right:5px;"></i><cfelse><i class="icon-phone" title="Text Message" style="margin-right:5px;"></i></cfif><i style="margin-right:5px;" class="icon-check<cfif alertsent eq 0>-empty</cfif>" title="Alert <cfif alertsent eq 0>Not</cfif> Sent"></i><a style="margin-right:5px;" title="Delete Reminder" href="javascript:;"><i class="icon-trash"></i></a> <cfif alertsent eq 0><a style="margin-right:5px" href="javascript:;" title="Edit Reminder"><i class="icon-edit"></i></a></cfif>   <a style="margin-right:5px;" title="Archive Reminder" href="javascript:;"><i class="icon-remove-sign"></i></a>    <a style="margin-right:5px" href="javascript:;" rel="popover" data-original-title="#dateformat( reminderdate, "mm/dd/yyyy" )#" data-content="#remindertext#"><i class="icon-info-sign"></i></a></span></li>
+															<span style="font-size:12px;">#leadfirst# #leadlast# (#leadid#) - #mtaskname#</span> <span class="pull-right"><cfif trim( alerttype ) is "eml"><i class="icon-envelope" title="Email Message" style="margin-right:5px;"></i><cfelse><i class="icon-phone" title="Text Message" style="margin-right:5px;"></i></cfif><i style="margin-right:5px;" class="icon-check<cfif alertsent eq 0>-empty</cfif>" title="Alert <cfif alertsent eq 0>Not</cfif> Sent"></i><a style="margin-right:5px;" title="Delete Reminder" href="#application.root#?event=#url.event#&taskaction=deletereminder&taskid=#taskuuid#&rid=#reminderid#" onclick="javascript:return confirm('Delete Task Reminder?');"><i class="icon-trash"></i></a> <cfif alertsent eq 0><a style="margin-right:5px" href="#application.root#?event=page.reminder.edit&taskid=#taskuuid#&rmid=#reminderid#" title="Edit Reminder"><i class="icon-edit"></i></a></cfif>   <a style="margin-right:5px;" title="Archive Reminder" href="#application.root#?event=#url.event#&taskaction=archivereminder&taskid=#taskuuid#&rid=#reminderid#" onclick="javascript:return confirm('Archive Task Reminder?');"><i class="icon-remove-sign"></i></a>    <a style="margin-right:5px" href="javascript:;" rel="popover" data-original-title="#dateformat( reminderdate, "mm/dd/yyyy" )#" data-content="#remindertext#"><i class="icon-info-sign"></i></a></span></li>
 														</cfoutput>
 														
 													</ul>

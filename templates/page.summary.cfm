@@ -24,7 +24,7 @@
 						  from leads l
 						 where l.leadid = <cfqueryparam value="#leadid#" cfsqltype="cf_sql_integer" />
 					</cfquery>
-					
+					<!--- // what action are we taking?  activate or inactivate --->
 					<cfif getstatus.leadactive eq 1>
 						<cfset newstatus = 0 />
 						<cfquery datasource="#application.dsn#" name="inactivateuserlogin">
@@ -40,15 +40,12 @@
 							 where leadid = <cfqueryparam value="#leadid#" cfsqltype="cf_sql_integer" />
 						</cfquery>
 					</cfif>
-					
+					<!--- // now change the status --->
 					<cfquery datasource="#application.dsn#" name="changestatus">
 						update leads 
 						   set leadactive = <cfqueryparam value="#newstatus#" cfsqltype="cf_sql_bit" /> 
 						 where leadid = <cfqueryparam value="#getstatus.leadid#" cfsqltype="cf_sql_integer" />
-					</cfquery>
-
-					
-					
+					</cfquery>					
 					<cflocation url="#application.root#?event=#url.event#&msg=status.updated" addtoken="yes" />
 				</cfif>
 			</cfif>
@@ -294,7 +291,7 @@
 										<div class="span8">
 											
 											<div class="tabbable">
-												<!---
+												<!--- // 4-26-2014 // split to own navigation menu items in sub-nav-sidebar
 												<cfif not isuserinrole( "bclient" )>
 													<cfoutput>
 													<ul class="nav nav-tabs">
@@ -317,7 +314,7 @@
 													<div class="tab-pane active" id="tab1">
 														<cfoutput>
 														<h3><i class="icon-user"></i> Contact Information <span style="float:right;font-size:14px;">Entered On: #dateformat(leaddetail.leaddate, "mm/dd/yyyy")#</span></h3>										
-														<p style="color:##ff0000;">* Denotes a required field  <cfif not isuserinrole( "bclient" )><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=swapstatus" onclick="return confirm('Are you sure you want to change this client\'s status?');" class="btn btn-small <cfif leaddetail.leadactive eq 1>btn-default"><i class="icon-remove-sign"></i> Inactivate File</a><cfelse>btn-success"><i class="icon-ok-sign"></i> Activate File</a></cfif></span></cfif></p>
+														<p style="color:##ff0000;">* Denotes a required field  <cfif not isuserinrole( "bclient" )><cfif isuserinrole( "counselor" ) and leaddetail.leadintakecompdate is ""><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=swapstatus" onclick="return confirm('Are you sure you want to change this client\'s status?');" class="btn btn-small <cfif leaddetail.leadactive eq 1>btn-default"><i class="icon-remove-sign"></i> Inactivate File</a><cfelse>btn-success"><i class="icon-ok-sign"></i> Activate File</a></cfif></span><cfelseif not isuserinrole( "counselor" )><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=swapstatus" onclick="return confirm('Are you sure you want to change this client\'s status?');" class="btn btn-small <cfif leaddetail.leadactive eq 1>btn-default"><i class="icon-remove-sign"></i> Inactivate File</a><cfelse>btn-success"><i class="icon-ok-sign"></i> Activate File</a></span></cfif></cfif></cfif></p>
 														<br>
 														
 														<form id="edit-lead-profile" class="form-horizontal" method="post" action="#application.root#?event=#url.event#">

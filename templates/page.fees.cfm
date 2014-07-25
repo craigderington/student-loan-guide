@@ -285,21 +285,29 @@
 																	<tr>
 																		<td class="actions">											
 																				
-																				<cfif isuserinrole( "admin" ) or isuserinrole( "sls" ) or isuserinrole( "co-admin" )>
+																				<cfif isuserinrole( "admin" ) or isuserinrole( "sls" ) or isuserinrole( "co-admin" ) or isuserinrole( "intake" ) or isuserinrole( "counselor" )>
 																					
 																					<cfif clientfees.feecollected neq 1>
 																						
-																						<a href="#application.root#?event=page.fee.edit&fuseaction=editfee&feeid=#feeuuid#" class="btn btn-small">
-																							<i class="btn-icon-only icon-pencil"></i>										
-																						</a>
+																						<cfif clientfees.feetransdate is "">
 																						
-																						<a href="#application.root#?event=#url.event#&fuseaction=deletefee&feeid=#feeuuid#" class="btn btn-small btn-inverse" onclick="return confirm('Are you sure you want to delete this fee?  This action can not be undone!');">
-																							<i class="btn-icon-only icon-trash"></i>									
-																						</a>
+																							<a href="#application.root#?event=page.fee.edit&fuseaction=editfee&feeid=#feeuuid#" class="btn btn-small">
+																								<i class="btn-icon-only icon-pencil"></i>										
+																							</a>
+																							
+																							<a href="#application.root#?event=#url.event#&fuseaction=deletefee&feeid=#feeuuid#" class="btn btn-small btn-inverse" onclick="return confirm('Are you sure you want to delete this fee?  This action can not be undone!');">
+																								<i class="btn-icon-only icon-trash"></i>									
+																							</a>
+																						<cfelse>
 																						
+																							<a href="javascript:;" class="btn btn-small btn-warning" rel="popover" data-original-title="Fee Record Information" data-content="Only fee payments that have not already been sent to the processor may be edited.">
+																							<i class="btn-icon-only icon-warning-sign"></i>									
+																						</a>
+																							
+																						</cfif>	
 																					<cfelse>
 																					
-																						<a href="javascript:;" class="btn btn-small btn-tertiary" rel="popover" data-original-title="Fee Record Information" data-content="Fees that have already been paid and collected can not be modified">
+																						<a href="javascript:;" class="btn btn-small btn-tertiary" rel="popover" data-original-title="Fee Record Information" data-content="Sorry, fee payments that have already been paid and collected can not be modified">
 																							<i class="btn-icon-only icon-exclamation-sign"></i>									
 																						</a>
 																					

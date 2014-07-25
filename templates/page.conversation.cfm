@@ -22,7 +22,7 @@
 			
 			
 			
-			<!--- // invoke compone to close the thread --->
+			<!--- // invoke component to close the thread --->
 			<cfif structkeyexists( url, "fuseaction" ) and url.fuseaction is "closethread">
 				<cfif structkeyexists( url, "thread" ) and isvalid( "uuid", url.thread )>
 					<cfset thisthread = #trim( url.thread )# />
@@ -32,8 +32,20 @@
 						       convostatus = <cfqueryparam value="Closed" cfsqltype="cf_sql_varchar" />
 						 where convouuid = <cfqueryparam value="#thisthread#" cfsqltype="cf_sql_varchar" maxlength="35" />
 					</cfquery>
-					<cflocation url="#application.root#?event=page.conversation&msg=thread.closed" addtoken="no">
-				</cfif>
+					<cfif isuserinrole( "bclient" )>
+						<cflocation url="#application.root#?event=page.conversation&msg=thread.closed" addtoken="no">
+					<cfelse>
+						<cfif structkeyexists( session, "leadid" )>
+							<cfparam name="tempQ" default="">
+							<cfparam name="tempR" default="">
+							<cfset tempQ = structdelete( session, "leadid" ) />
+							<cfset tempR = structdelete( session, "leadconv" ) />
+							<cflocation url="#application.root#?event=page.message.center&msg=thread.closed" addtoken="yes">
+						<cfelse>
+							<cflocation url="#application.root#?event=page.message.center&msg=thread.closed" addtoken="yes">
+						</cfif>						
+					</cfif>
+				</cfif>				
 			</cfif>	
 			
 			
@@ -222,7 +234,7 @@
 													<cfelse>
 														<cfparam name="tempA" default="">
 														<cfparam name="tempZ" default="">
-														<cfset tempA = structdelete( session, "leadid") />
+														<cfset tempA = structdelete( session, "leadid" ) />
 														<cfset tempZ = structdelete( session, "leadconv" ) />
 														<cflocation url="#application.root#?event=page.message.center" addtoken="yes">
 													</cfif>
@@ -287,7 +299,7 @@
 																		<td>#advisorfirst# #advisorlast#</td>
 																		<td>#dateformat( convodatetime, "mm/dd/yyyy" )# @ #timeformat( convodatetime, "hh:mm tt" )# </td>
 																		<td><cfif convostatus is "open"><span style="padding:3px;" class="label label-success">Open</span><cfelse><span style="padding:3px;" class="label label-info">Closed</span></cfif></td>
-																		<td><cfif totalnewmsgs eq 0><span style="padding:3px;" class="label label-success">#totalnewmsgs#</span><cfelse><span style="padding:3px;" class="label label-important">#totalnewmsgs#</span></cfif></td>
+																		<td><cfif totalnewmsgs eq 0><span style="padding:3px;" class="label label-default">#totalnewmsgs#</span><cfelse><span style="padding:3px;" class="label label-success">#totalnewmsgs#</span></cfif></td>
 																	</tr>
 																</cfoutput>												
 															</tbody>
@@ -386,8 +398,13 @@
 														</cfinvoke>
 														
 														<cfinvoke component="apis.com.convo.convogateway" method="markreplyread" returnvariable="convothreadid">
-															<cfinvokeargument name="thread" value="#url.thread#">
-															<cfinvokeargument name="userid" value="#session.userid#">
+															<cfinvokeargument name="thread" value="#url.thread#">															
+															<cfif isuserinrole( "bclient" )>
+																<cfinvokeargument name="userid" value="#session.leadid#">
+															<cfelse>
+																<cfinvokeargument name="userid" value="#session.userid#">
+															</cfif>
+															
 														</cfinvoke>
 														
 															<cfoutput>																
