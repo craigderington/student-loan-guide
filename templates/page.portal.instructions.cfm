@@ -7,6 +7,7 @@
 			</cfinvoke>
 			
 			<cfinvoke component="apis.com.portal.portalgateway" method="getportalinstructions" returnvariable="portalinstructcontent">
+				<cfinvokeargument name="companyid" value="#session.companyid#">
 				<cfif structkeyexists( url, "icat" )>
 					<cfinvokeargument name="icat" value="#url.icat#">
 				<cfelse>
@@ -44,16 +45,23 @@
 										<cfinclude template="page.portal.sidebar.cfm">			
 									</div> <!-- /.span3 -->
 			
+									<cfif portalinstructcontent.recordcount gt 0>
+										
+										<div class="span8">
+											<cfoutput>										
+											<h3 style="margin-bottom:5px;"><i class="icon-book"></i> #portalinstructcontent.instructcategory#</h3>
+											
+												#urldecode( portalinstructcontent.instructtext )#
+											
+											</cfoutput>
+										</div>
 									
-									<div class="span8">
-										<cfoutput>										
-										<h3 style="margin-bottom:5px;"><i class="icon-book"></i> #portalinstructcontent.instructcategory#</h3>
-										
-											#urldecode( portalinstructcontent.instructtext )#
-										
-										</cfoutput>
-									</div>
-				
+									<cfelse>
+									
+										<small><i class="icon-exclamation-sign"></i> No Content Defined.</small>
+									
+									
+									</cfif>
 									
 					
 								</div> <!-- / .widget-content -->

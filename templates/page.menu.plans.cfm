@@ -127,7 +127,7 @@
 								<!--- // begin form processing --->
 									<cfif isDefined("form.fieldnames")>
 										<cfscript>
-											objValidation = createObject("component","apis.com.ui.validation").init();
+											objValidation = createobject( "component","apis.com.ui.validation" ).init();
 											objValidation.setFields(form);
 											objValidation.validate();
 										</cfscript>

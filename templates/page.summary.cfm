@@ -156,18 +156,18 @@
 												<cfset lead.source = #getls.leadsourceid# />
 											</cfif>
 
-											<cfset lead.first = #form.firstname# />
-											<cfset lead.last = #form.lastname# />
-											<cfset lead.add1 = #form.streetaddress# />
-											<cfset lead.add2 = #form.address2# />
-											<cfset lead.city = #form.city# />
-											<cfset lead.state = #ucase(left(form.state, 2))# />
-											<cfset lead.zip = #left(form.zipcode,5)# />
-											<cfset lead.phonetype = #form.phonetype# />
-											<cfset lead.phone = #trim( left( form.phone,12 ))# />
-											<cfset lead.altphonetype = #form.altphonetype# />
-											<cfset lead.altphone = #trim( form.altphone )# />
-											<cfset lead.email = #form.email# />
+											<cfset lead.first = trim( form.firstname ) />
+											<cfset lead.last = trim( form.lastname ) />
+											<cfset lead.add1 = trim( form.streetaddress ) />
+											<cfset lead.add2 = trim( form.address2 ) />
+											<cfset lead.city = trim( form.city ) />
+											<cfset lead.state = ucase(left(form.state, 2)) />
+											<cfset lead.zip = left(form.zipcode,5) />
+											<cfset lead.phonetype = form.phonetype />
+											<cfset lead.phone = trim( left( form.phone,12 )) />
+											<cfset lead.altphonetype = form.altphonetype />
+											<cfset lead.altphone = trim( form.altphone ) />
+											<cfset lead.email = trim( form.email ) />
 											<cfset lead.company = #session.companyid# />
 											<cfset lead.userid = #session.userid# />
 											
@@ -194,11 +194,11 @@
 											<cfquery datasource="#application.dsn#" name="saveleaddetails">
 													update leads
 													   set leadsourceid = <cfqueryparam value="#lead.source#" cfsqltype="cf_sql_integer" />,
-														   leadfirst = <cfqueryparam value="#lead.first#" cfsqltype="cf_sql_varchar" />,
-														   leadlast = <cfqueryparam value="#lead.last#" cfsqltype="cf_sql_varchar" />,
-														   leadadd1 = <cfqueryparam value="#lead.add1#" cfsqltype="cf_sql_varchar" />,
-														   leadadd2 = <cfqueryparam value="#lead.add2#" cfsqltype="cf_sql_varchar" />,
-														   leadcity = <cfqueryparam value="#lead.city#" cfsqltype="cf_sql_varchar" />,
+														   leadfirst = <cfqueryparam value="#trim( lead.first )#" cfsqltype="cf_sql_varchar" />,
+														   leadlast = <cfqueryparam value="#trim( lead.last )#" cfsqltype="cf_sql_varchar" />,
+														   leadadd1 = <cfqueryparam value="#trim( lead.add1 )#" cfsqltype="cf_sql_varchar" />,
+														   leadadd2 = <cfqueryparam value="#trim( lead.add2 )#" cfsqltype="cf_sql_varchar" />,
+														   leadcity = <cfqueryparam value="#trim( lead.city )#" cfsqltype="cf_sql_varchar" />,
 														   leadstate = <cfqueryparam value="#lead.state#" cfsqltype="cf_sql_varchar" />,
 														   leadzip = <cfqueryparam value="#lead.zip#" cfsqltype="cf_sql_varchar" />,
 														   leadphonetype = <cfqueryparam value="#lead.phonetype#" cfsqltype="cf_sql_varchar" />,

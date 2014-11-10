@@ -8,6 +8,11 @@
 			
 			<cfif structkeyexists( url, "event" ) and url.event is not "page.portal.welcome">
 			
+				
+				<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
+					<cfinvokeargument name="companyid" value="#session.companyid#">
+				</cfinvoke>
+				
 				<cfoutput>
 				
 				<div class="subnavbar">
@@ -30,12 +35,17 @@
 										</a>	    				
 									</li>							
 									
-									<li <cfif structkeyexists( url, "event" ) and trim( url.event ) is "page.enroll.esign">class="active"</cfif>>
-										<a href="#application.root#?event=page.enroll.esign">
-											<i class="icon-pencil"></i>
-											<span>E-Sign</span>
-										</a>	    				
-									</li>
+									<!--- // 9-9-2014 // modify header to add conditional operator for ESIGN --->
+									<cfif companysettings.useportal eq 1>
+									
+										<li <cfif structkeyexists( url, "event" ) and trim( url.event ) is "page.enroll.esign">class="active"</cfif>>
+											<a href="#application.root#?event=page.enroll.esign">
+												<i class="icon-pencil"></i>
+												<span>E-Sign</span>
+											</a>	    				
+										</li>
+									
+									</cfif>
 									
 									<cfif session.leadesign eq 1>
 										<li <cfif structkeyexists( url, "event" ) and trim( url.event ) is "page.portal.instructions" >class="active"</cfif>>

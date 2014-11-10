@@ -19,10 +19,11 @@
 
 									<!--- get our data access components --->
 									<cfquery datasource="#application.dsn#" name="achdetails">
-										select 	l.leadid, l.leaduuid, l.leadfirst, l.leadlast, l.leadadd1, l.leadcity, l.leadstate, l.leadzip, l.leadactive, l.leadachhold, 
+										select 	l.leadid, l.leaduuid, l.leadfirst, l.leadlast, l.leadactive, l.leadachhold, 
 												l.leadachholdreason, l.leadachholddate, f.feeid, f.feeuuid, f.feeduedate, f.feepaiddate, f.feeamount, f.feepaid, f.feestatus, 
 												f.feenote, f.feecollected, f.feeprogram, f.feepaytype, e.esignrouting, e.esignaccount, e.esignaccttype, sl.slenrollreturndate, 
-												sl.slenrolldocsuploaddate, e.esignpaytype, e.esignccname, e.esignccnumber, e.esignccv2, e.esignccexpdate
+												sl.slenrolldocsuploaddate, e.esignpaytype, e.esignccname, e.esignccnumber, e.esignccv2, e.esignccexpdate, 
+												e.esignacctname, e.esignacctadd1, e.esignacctcity, e.esignacctstate, e.esignacctzipcode
 										  from  fees f, leads l, slsummary sl, esign e
 										 where  f.leadid = l.leadid
 										   and  l.leadid = sl.leadid
@@ -30,7 +31,7 @@
 										   and  l.companyid = <cfqueryparam value="#session.companyid#" cfsqltype="cf_sql_integer" />
 										   and  l.leadachhold = <cfqueryparam value="N" cfsqltype="cf_sql_char" />
 										   and  l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-										   <!--- // not a good idea, but we have to remove this for CC payments
+										   <!--- // 7-20-2014 // not a good idea, but we have to remove this for CC payments
 										   and  e.esignrouting <> ''										   
 										   and  e.esignaccount <> ''
 										   and  e.esignaccttype <> '' 
@@ -71,7 +72,7 @@
 										<cfif achdetails.recordcount gt 0>
 											
 											<!--- CLD // 06-5-2014 //  Vanco Transaction Processing  // API Data Format to Text // 	--->
-											<cfheader name="content-disposition" value="attachment; filename=#UCASE( session.companyname )#-#dateformat( now(), "mm-dd-yyyy" )#-VANCO-ACH-DATAFILE-#thiscounter#.txt"><cfcontent type="text/txt"><cfoutput query="achdetails">#companysettings.achprovideruniqueid#,#leadid#,#left( leadlast, 11 )#,#left( leadfirst, 11 )#,#left( leadadd1, 30 )#,#left( leadcity, 25 )#,#left( leadstate, 2 )#,#left( leadzip, 5 )#,<cfif trim( feepaytype ) is "ach">#left( esignrouting,9 )#,#left( esignaccount, 17 )#,#left( ucase( esignaccttype ), 1 )#,,,<cfelseif trim( feepaytype ) is "cc">,,,,#esignccnumber#,#esignccexpdate#,</cfif>#trim( numberformat( feeamount, "L99.99" ))#,M,#dateformat( feeduedate, "mm/dd/yyyy" )#,#dateformat( feeduedate, "mm/dd/yyyy" )#,#feeid##thisbr#
+											<cfheader name="content-disposition" value="attachment; filename=#UCASE( session.companyname )#-#dateformat( now(), "mm-dd-yyyy" )#-VANCO-ACH-DATAFILE-#thiscounter#.txt"><cfcontent type="text/txt"><cfoutput query="achdetails">#companysettings.achprovideruniqueid#,#leadid#,#left( listfirst( esignacctname, " " ), 11 )#,#left( listlast( esignacctname, " " ), 11 )#,#left( esignacctadd1, 30 )#,#left( esignacctcity, 25 )#,#left( esignacctstate, 2 )#,#left( esignacctzipcode, 5 )#,<cfif trim( feepaytype ) is "ach">#left( esignrouting, 9 )#,#left( esignaccount, 17 )#,#left( ucase( esignaccttype ), 1 )#,,,<cfelseif trim( feepaytype ) is "cc">,,,#esignccnumber#,#esignccexpdate#,</cfif>#trim( numberformat( feeamount, "L99.99" ))#,M,#dateformat( feeduedate, "mm/dd/yyyy" )#,#dateformat( feeduedate, "mm/dd/yyyy" )#,#feeid##thisbr#
 </cfoutput>									
 											
 											

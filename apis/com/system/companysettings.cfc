@@ -13,8 +13,17 @@
 					<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
 					<cfset var companysettings = "" />
 					<cfquery datasource="#application.dsn#" name="companysettings">
-						select c.* from company c
-						 where c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+						 select c.companyid, c.companyname, c.dba, c.address1, c.address2, c.city,
+								c.state, c.zip, c.phone, c.fax, c.email, c.regcode, c.active, c.complogo,
+								c.advisory, c.implement, c.comptype, c.achprovider, c.achdatafile, 
+								c.luckyorangecode, c.escrowservice, c.trustaccountbankname, 
+								c.trustaccountnumber, c.trustaccountrouting, c.achprovideruniqueid, 
+								c.numlicenses, c.achdaystohold, c.enrollagreepath, c.implagreepath, 
+								c.esignagreepath1, c.esignagreepath2, c.useportal, c.vancowebserviceid, 
+								c.vancourlpath, c.vancoframeid, c.vancoenckey, c.vancows, c.useportalconvo,
+								c.useportalactlog
+						   from company c
+						  where c.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 					</cfquery>
 					<cfreturn companysettings >
 				</cffunction>
@@ -54,7 +63,18 @@
 						   and cpt.companypaytypeactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
 					</cfquery>
 					<cfreturn companypaytypes >
-				</cffunction>		
+				</cffunction>
+
+				<cffunction name="getcompanywelcomemessage" access="public" output="false" hint="I get the company welcome message.">
+					<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+					<cfset var companywelcomemessage = "" />
+					<cfquery datasource="#application.dsn#" name="companywelcomemessage">
+						select wm.welcomemessageid, wm.companyid, wm.welcomemessagetext
+						  from welcomemessage wm
+						 where wm.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+					</cfquery>					
+					<cfreturn companywelcomemessage >
+				</cffunction>
 				
 				
 				

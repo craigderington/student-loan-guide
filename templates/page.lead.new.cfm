@@ -10,6 +10,11 @@
 					<cfinvokeargument name="companyid" value="#session.companyid#">
 				</cfinvoke>
 				
+				<!--- // CLD 9-9-2014 // get some company settings --->
+				<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
+					<cfinvokeargument name="companyid" value="#session.companyid#">
+				</cfinvoke>
+				
 				
 				
 				<!--- define our form variables --->
@@ -56,13 +61,13 @@
 											<!--- define our structure and set form values--->
 											<cfset lead = structnew() />
 											<cfset lead.leaduniqid = #createuuid()# />
-											<cfset lead.source = #form.leadsource# />
-											<cfset lead.first = #form.firstname# />
-											<cfset lead.last = #form.lastname# />
-											<cfset lead.email = #form.email# />
+											<cfset lead.source = form.leadsource />
+											<cfset lead.first = trim( form.firstname ) />
+											<cfset lead.last = trim( form.lastname ) />
+											<cfset lead.email = trim( form.email ) />
 											<cfset lead.company = #session.companyid# />
 											<cfset lead.userid = #session.userid# />
-											<cfset lead.phonenum = #form.phone# />
+											<cfset lead.phonenum = trim( form.phone ) />
 											<cfset lead.provider = #form.provider# />
 											
 											<!--- // some other variables --->
@@ -84,20 +89,25 @@
 												<cfif checkdupe.recordcount eq 0>
 													
 													<cfquery datasource="#application.dsn#" name="createlead">
-														insert into leads(leaduuid, companyid, userid, leadsourceid, leaddate, leadfirst, leadlast, leademail, leadphonetype, leadphonenumber, leadmobileprovider, leadactive)
+														insert into leads(leaduuid, companyid, userid, leadsourceid, leaddate, leadfirst, leadlast, leademail, leadphonetype, leadphonenumber, leadmobileprovider, leadactive, leadesign)
 															values (
 																	<cfqueryparam value="#lead.leaduniqid#" cfsqltype="cf_sql_varchar" maxlength="35" />,
 																	<cfqueryparam value="#lead.company#" cfsqltype="cf_sql_integer" />,
 																	<cfqueryparam value="#lead.userid#" cfsqltype="cf_sql_integer" />,
 																	<cfqueryparam value="#lead.source#" cfsqltype="cf_sql_integer" />,
 																	<cfqueryparam value="#today#" cfsqltype="cf_sql_date" />,
-																	<cfqueryparam value="#lead.first#" cfsqltype="cf_sql_varchar" />,
-																	<cfqueryparam value="#lead.last#" cfsqltype="cf_sql_varchar" />,
-																	<cfqueryparam value="#lead.email#" cfsqltype="cf_sql_varchar" />,
+																	<cfqueryparam value="#trim( lead.first )#" cfsqltype="cf_sql_varchar" />,
+																	<cfqueryparam value="#trim( lead.last )#" cfsqltype="cf_sql_varchar" />,
+																	<cfqueryparam value="#trim( lead.email )#" cfsqltype="cf_sql_varchar" />,
 																	<cfqueryparam value="Mobile" cfsqltype="cf_sql_varchar" />,
 																	<cfqueryparam value="#lead.phonenum#" cfsqltype="cf_sql_varchar" />,
 																	<cfqueryparam value="#lead.provider#" cfsqltype="cf_sql_varchar" />,
-																	<cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+																	<cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+																	<cfif companysettings.useportal eq 1> 
+																	  <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+																   <cfelse>
+																      <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+																   </cfif>
 																   ); select @@identity as newleadid
 													</cfquery>
 													
@@ -109,7 +119,7 @@
 																	<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
 																	<cfqueryparam value="Student Loan Help" cfsqltype="cf_sql_varchar" />,
 																	<cfqueryparam value="0.00" cfsqltype="cf_sql_float" />,
-																	<cfqueryparam value="0.00" cfsqltype="cf_sql_float" />															
+																	<cfqueryparam value="0.00" cfsqltype="cf_sql_float" />														
 																   ); 
 													</cfquery>
 
@@ -130,7 +140,11 @@
 																   <cfqueryparam value="#createuuid()#" cfsqltype="cf_sql_varchar" maxlength="35" />,
 																   <cfqueryparam value="#createlead.newleadid#" cfsqltype="cf_sql_integer" />,
 																   <cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
-																   <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+																   <cfif companysettings.useportal eq 1> 
+																	  <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+																   <cfelse>
+																      <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+																   </cfif>
 																   );
 													</cfquery>
 													

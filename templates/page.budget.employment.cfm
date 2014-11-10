@@ -208,8 +208,11 @@
 														</ul>
 														</cfoutput>												
 														
-														Please enter the client's employment information to include the employers name, address, income payment frequency, employment position, number of dependents and spouse name and identifying information.
-														
+														<cfif isuserinrole( "bclient" )>
+															Please enter your employment information to include the employers name, address, income payment frequency, employment position, number of dependents and spouse name and identifying information.
+														<cfelse>
+															Please enter the client's employment information to include the employers name, address, income payment frequency, employment position, number of dependents and spouse name and identifying information.
+														</cfif>
 													<br>																					
 													
 													

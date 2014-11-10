@@ -1,0 +1,44 @@
+<img src="img/spinner.gif" alt="please wait system working" height="150" width="150">
+											
+											<br />
+											
+											<i class="icon-spinner icon-spin icon-4x"></i>
+											<cfset today = now() />
+											<cfset thisleadid = 1145 />
+											<cfset thistransuuid = "0D8D2A02-9599-358B-1B68BE837ADC9300" <!---#createuuid()#--->  />
+											<!--- // get the individual values and create a structure 		
+											<cfquery datasource="#application.dsn#" name="getvancodata">					
+												select leadid as thisvancolead,							
+														(select vancovalue from vancodecryptdata where vancolabel = <cfqueryparam value="paymentmethodref" cfsqltype="cf_sql_varchar" /> and leadid = <cfqueryparam value="#thisleadid#" cfsqltype="cf_sql_integer" /> and vancouuid = <cfqueryparam value="#thistransuuid#" cfsqltype="cf_sql_varchar" maxlength="35" /> ) as thispaymethref,
+														(select vancovalue from vancodecryptdata where vancolabel = <cfqueryparam value="transactionref" cfsqltype="cf_sql_varchar" /> and leadid = <cfqueryparam value="#thisleadid#" cfsqltype="cf_sql_integer" /> and vancouuid = <cfqueryparam value="#thistransuuid#" cfsqltype="cf_sql_varchar" maxlength="35" /> ) as thistransref,
+														(select vancovalue from vancodecryptdata where vancolabel = <cfqueryparam value="customerref" cfsqltype="cf_sql_varchar" /> and leadid = <cfqueryparam value="#thisleadid#" cfsqltype="cf_sql_integer" /> and vancouuid = <cfqueryparam value="#thistransuuid#" cfsqltype="cf_sql_varchar" maxlength="35" /> ) as thiscustref,
+														(select vancovalue from vancodecryptdata where vancolabel = <cfqueryparam value="requestid" cfsqltype="cf_sql_varchar" /> and leadid = <cfqueryparam value="#thisleadid#" cfsqltype="cf_sql_integer" /> and vancouuid = <cfqueryparam value="#thistransuuid#" cfsqltype="cf_sql_varchar" maxlength="35" /> ) as thisreqid,
+														(select vancovalue from vancodecryptdata where vancolabel = <cfqueryparam value="ccauthcode" cfsqltype="cf_sql_varchar" /> and leadid = <cfqueryparam value="#thisleadid#" cfsqltype="cf_sql_integer" /> and vancouuid = <cfqueryparam value="#thistransuuid#" cfsqltype="cf_sql_varchar" maxlength="35" /> ) as thisccauthcode,
+														(select vancovalue from vancodecryptdata where vancolabel = <cfqueryparam value="cardtype" cfsqltype="cf_sql_varchar" /> and leadid = <cfqueryparam value="#thisleadid#" cfsqltype="cf_sql_integer" /> and vancouuid = <cfqueryparam value="#thistransuuid#" cfsqltype="cf_sql_varchar" maxlength="35" /> ) as thiscardtype
+												  from vancodecryptdata
+												 where leadid = <cfqueryparam value="#thisleadid#" cfsqltype="cf_sql_integer" />
+												   and vancouuid = <cfqueryparam value="#thistransuuid#" cfsqltype="cf_sql_varchar" maxlength="35" />
+											  group by leadid				 
+											</cfquery>
+											
+											<cfquery datasource="#application.dsn#" name="savevancotransaction">
+												insert into vancotransactions(vancotranslogid, vancouuid, leadid, customerref, paymentmethodref, transactionref, requestid, requestdate, paymentamount, ccauthcode, cardtype)
+													values(
+														   <cfqueryparam value="807695" cfsqltype="cf_sql_integer" />,
+														   <cfqueryparam value="#thistransuuid#" cfsqltype="cf_sql_varchar" maxlength="35" />,
+														   <cfqueryparam value="#getvancodata.thisvancolead#" cfsqltype="cf_sql_integer" />,												  
+														   <cfqueryparam value="#getvancodata.thiscustref#" cfsqltype="cf_sql_varchar" />,
+														   <cfqueryparam value="#getvancodata.thispaymethref#" cfsqltype="cf_sql_varchar" />,
+														   <cfqueryparam value="#getvancodata.thistransref#" cfsqltype="cf_sql_varchar" />,
+														   <cfqueryparam value="#getvancodata.thisreqid#" cfsqltype="cf_sql_varchar" />,												  
+														   <cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
+														   <cfqueryparam value="1.00" cfsqltype="cf_sql_float" />,
+														   <cfqueryparam value="#getvancodata.thisccauthcode#" cfsqltype="cf_sql_varchar" />,
+														   <cfqueryparam value="#getvancodata.thiscardtype#" cfsqltype="cf_sql_varchar" />
+																										   
+														  );
+											</cfquery>
+											--->
+	
+	
+	

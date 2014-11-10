@@ -209,9 +209,9 @@
 															<li><a href="#application.root#?event=page.budget.income2">Spouse/Co-Borrower Income</a></li>
 															<li><a href="#application.root#?event=page.budget.expenses">Expenses</a></li>															
 														</ul>
-														</cfoutput>
+														</cfoutput>							
 														
-														
+														<h5 style="color:red;"><i class="icon-info-sign"></i> Enter Gross Monthly Income, then click Save Primary Income!  Then enter payroll deductions, if any...</h5>
 														
 														<br />
 														
@@ -225,7 +225,7 @@
 																	<div class="control-group">											
 																		<label class="control-label" for="primarygrossmonthly">Gross Monthly Income</label>
 																		<div class="controls">
-																			<input type="text" class="input-small" name="primarygrossmonthly" value="#numberformat( budget.primarygrossmonthly, 'L99.99' )#" /><a href="javascript:;" style="margin-left:7px;" class="btn btn-default btn-mini" onclick="window.open('templates/primary-payroll-deductions.cfm','','scrollbars=yes, top=300, left=450, width=680, height=590');"><i class="icon-money"></i> Enter Payroll Deductions <cfif totalprimarydeductions neq 0.00> - Total: #dollarformat( totalprimarydeductions )#</cfif></a>
+																			<input type="text" class="input-small" name="primarygrossmonthly" value="#numberformat( budget.primarygrossmonthly, 'L99.99' )#" /><cfif budget.primarygrossmonthly neq 0.00><a href="javascript:;" style="margin-left:7px;" class="btn btn-default btn-mini" onclick="window.open('templates/primary-payroll-deductions.cfm','','scrollbars=yes, top=300, left=450, width=680, height=590');"><i class="icon-money"></i> Enter Payroll Deductions <cfif totalprimarydeductions neq 0.00> - Total: #dollarformat( totalprimarydeductions )#</cfif></cfif></a>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 																	

@@ -1,4 +1,4 @@
-<cfcomponent
+<cfcomponent	
 	displayname="Application"
 	output="true"
 	hint="Handle the application.">	
@@ -95,13 +95,21 @@
 			name="TargetPage"
 			type="string"
 			required="true"
-			/>			
+			/>
 			
 			<!--- // if the URL query string contains a reinit param, restart all application vars --->
 			<cfif structkeyexists( url, "reinit" ) and url.reinit is "true" >
 				<cfset onApplicationStart() />
 			</cfif>
-		
+			
+			<!--- // for direct web service api calls 
+			<cfif trim( right( arguments.TargetPage, 4 )) eq ".cfc">
+				<cfset structdelete( this, "OnRequestStart" ) />				
+				<cfset structdelete( variables, "OnRequestStart" ) />				
+			</cfif>		
+			--->
+			
+			<!--- // perform login function --->
 			<cflogin>
 				<cfif NOT IsDefined("cflogin")>
 					<cfinclude template="login.cfm">
@@ -156,7 +164,8 @@
 											 where l.companyid = c.companyid
 											   and l.leadid = <cfqueryparam value="#loginquery.leadid#" cfsqltype="cf_sql_integer" />
 										</cfquery>
-										<cfset session.companyname = "#clientcompany.dba#" />										
+										<cfset session.companyname = "#clientcompany.dba#" />
+										<cfset session.companyid = clientcompany.companyid />
 									</cfif>
 								</cfif>
 								
@@ -186,21 +195,21 @@
 						</cfif>
 					</cfif>    
 				</cfif>
-			</cflogin>
-		
+			</cflogin>			
+			
 			<cfif GetAuthUser() NEQ "">
 				<cfoutput>
 					 <form action="securitytest.cfm" method="Post">
 						<input type="submit" Name="Logout" value="Logout">
 					</form>
 				</cfoutput>
-			</cfif>	
+			</cfif>		
 		
 		<!--- Return out. --->
 		<cfreturn true />
 	</cffunction>
  
- 
+	
 	<cffunction
 		name="OnRequest"
 		access="public"
@@ -221,7 +230,7 @@
 		<!--- Return out. --->
 		<cfreturn />
 	</cffunction>
- 
+	
  
 	<cffunction
 		name="OnRequestEnd"
@@ -326,6 +335,5 @@
 			
 		<!--- Return out. --->
 		<cfreturn />
-	</cffunction>
- 
+	</cffunction> 
 </cfcomponent>

@@ -145,7 +145,7 @@
 											<cfset lead.nextdate = lead.startdate />											
 											<cfset lead.paymentamount = rereplace( lead.paymentamount, "[\$,]", "", "all" ) />
 											<cfset lead.paymentamount = numberformat( lead.paymentamount, "999.99" ) />
-											<cfset lead.feepaytype = "ACH" />
+											<cfset lead.feepaytype = trim( form.paytype ) />
 											
 											<cfif isdefined( "form.rgfeetype" )>
 												<cfset lead.feetype = #form.rgfeetype# />
@@ -365,6 +365,20 @@
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->																			
 																	
+																	<div class="control-group">
+																			<label class="control-label" for="rgfeetype">Payment Type</label>
+																			<div class="controls">
+																				<select name="paytype" id="paytype" class="input-medium">
+																					<option value="ACH">ACH</option>
+																					<option value="CC" selected>Credit Card</option>
+																					<option value="MO">Money Order</option>
+																					<option value="CHK">Check</option>
+																					<option value="CSH">Cash</option>																			
+																				</select>
+																			</div>
+																		</div>
+																	
+																	
 																	<cfif leaddetail.leadimp eq 1>
 																		<div class="control-group">
 																			<label class="control-label" for="rgfeetype">Type</label>
@@ -390,7 +404,7 @@
 																	<div class="form-actions">													
 																		<button type="submit" class="btn btn-secondary" name="savelead"><i class="icon-save"></i> Create Fee Schedule</button>																										
 																		<button type="submit" class="btn btn-tertiary" name="saveleadcontinue"><i class="icon-refresh"></i> Create Schedule &amp; Continue</button>
-																		<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.summary'"><i class="icon-remove-sign"></i> Cancel</a>													
+																		<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=#url.event#'"><i class="icon-remove-sign"></i> Cancel</a>													
 																		<input name="utf8" type="hidden" value="&##955;">													
 																		<input type="hidden" name="leadid" value="#leaddetail.leadid#" />																	
 																		<input type="hidden" name="__authToken" value="#randout#" />

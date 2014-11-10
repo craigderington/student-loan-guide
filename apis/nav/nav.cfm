@@ -173,6 +173,9 @@
 				<cfcase value="page.banking">				
 					<cfinclude template="../../templates/page.banking.cfm">
 				</cfcase>
+				<cfcase value="page.vanco">				
+					<cfinclude template="../../templates/page.vanco.cfm">
+				</cfcase>
 				<cfcase value="page.worksheet">				
 					<cfinclude template="../../templates/page.worksheet.cfm">
 				</cfcase>
@@ -453,6 +456,21 @@
 				<cfcase value="page.settings">				
 					<cfinclude template="../../templates/page.settings.cfm">
 				</cfcase>
+				<cfcase value="page.settings.api">				
+					<cfinclude template="../../templates/page.settings.api.cfm">
+				</cfcase>
+				<cfcase value="page.settings.docs">				
+					<cfinclude template="../../templates/page.settings.docs.cfm">
+				</cfcase>
+				<cfcase value="page.settings.webservices">				
+					<cfinclude template="../../templates/page.settings.webservices.cfm">
+				</cfcase>
+				<cfcase value="page.settings.other">				
+					<cfinclude template="../../templates/page.settings.other.cfm">
+				</cfcase>
+				<cfcase value="page.settings.welcomemessage">				
+					<cfinclude template="../../templates/page.settings.welcomemessage.cfm">
+				</cfcase>
 				<cfcase value="page.manage.leads">				
 					<cfinclude template="../../templates/page.manage.leads.cfm">
 				</cfcase>
@@ -483,9 +501,27 @@
 				<cfcase value="page.send.task.reminders">				
 					<cfinclude template="../../templates/page.send.taskreminders.cfm">
 				</cfcase>
-						
-					
-				
+				<cfcase value="page.vanco.login">				
+					<cfinclude template="../../templates/page.vanco.login.cfm">
+				</cfcase>
+				<cfcase value="page.vanco.logout">				
+					<cfinclude template="../../templates/page.vanco.logout.cfm">
+				</cfcase>
+				<cfcase value="page.vanco.weblogin">				
+					<cfinclude template="../../templates/page.vanco.weblogin.cfm">
+				</cfcase>
+				<cfcase value="page.vanco.response">				
+					<cfinclude template="../../templates/page.vanco.response.cfm">
+				</cfcase>
+				<cfcase value="page.vanco.response2">				
+					<cfinclude template="../../templates/page.vanco.response2.cfm">
+				</cfcase>
+				<cfcase value="page.vanco.eftaddcompletetransaction">				
+					<cfinclude template="../../templates/page.vanco.eftaddcompletetransaction.cfm">
+				</cfcase>
+				<cfcase value="page.api.docs">				
+					<cfinclude template="../../templates/page.api.docs.cfm">
+				</cfcase>
 				<!--- default case --->
 				<cfdefaultcase>
 					<cfinclude template="../../templates/page.index.cfm">

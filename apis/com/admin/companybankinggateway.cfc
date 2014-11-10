@@ -103,11 +103,11 @@
 										  from leads l, fees f
 										 where l.leadid = f.leadid
 										   and l.companyid = <cfqueryparam value="#companyach.companyid#" cfsqltype="cf_sql_integer" />
-										   and f.feetransdate < <cfqueryparam value="7/12/2014" cfsqltype="cf_sql_date" />
+										   and f.feetransdate < <cfqueryparam value="#arguments.triggerdate#" cfsqltype="cf_sql_date" />
 										   and f.feetrans = <cfqueryparam value="Y" cfsqltype="cf_sql_char" />
 										   and f.achbatchid is not null
 										   and f.nsfreasonid = <cfqueryparam value="0" cfsqltype="cf_sql_integer" />
-										   and f.feepaytype = <cfqueryparam value="ach" cfsqltype="cf_sql_varchar" />
+										   and ( f.feepaytype = <cfqueryparam value="ach" cfsqltype="cf_sql_varchar" /> OR f.feepaytype = <cfqueryparam value="cc" cfsqltype="cf_sql_varchar" /> )
 										   and f.feestatus = <cfqueryparam value="pending" cfsqltype="cf_sql_varchar" />							   
 									</cfquery>
 									

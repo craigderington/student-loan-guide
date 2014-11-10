@@ -1,0 +1,11 @@
+select c.companyid, c.companyname, c.dba, c.address1, c.address2, c.city,
+c.state, c.zip, c.phone, c.fax, c.email, c.regcode, c.active, c.complogo,
+c.advisory, c.implement, c.comptype, c.achprovider, c.achdatafile, 
+c.lcukyorangecode, c.escrowservice, c.trustaccountbankname, 
+c.trustaccountnumber, c.trustaccountrouting, c.achprovideruniqueid, 
+c.numlicenses, c.achdaystohold, c.enrollagreepath, c.implagreepath, 
+c.esignagreepath1, c.esignagreepath2, c.useportal, c.vancowebserviceid, 
+c.vancourlpath, c.vancoframeid, c.vancoenckey, c.vancows, c.useportalconvo,
+c.useportalactlog
+from company c
+where c.companyid = 444

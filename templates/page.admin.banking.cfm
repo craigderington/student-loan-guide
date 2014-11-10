@@ -43,7 +43,8 @@
 							
 							
 							<cfif structkeyexists( form, "creatensf" ) and structkeyexists( form, "feeid" )>
-								<cfparam name="feeid" default="">								
+								<cfparam name="feeid" default="">
+								<cfparam name="returnreason" default="">
 								<cfif isvalid( "uuid", form.feeid )>								
 									<cfset feeid = form.feeid />									
 									<cfquery datasource="#application.dsn#" name="getfeedetail">
@@ -56,12 +57,16 @@
 									</cfquery>
 									<cfset appendfeenote = getfeedetail.feenote />
 									<cfset appendfeenote = appendfeenote & " - returned NSF" />
-									
+									<cfset returnreason = trim( form.nsfreason ) />
 									<cfquery datasource="#application.dsn#" name="marknsf">
 										update fees
 										   set feepaiddate = <cfqueryparam value="#thisdate#" cfsqltype="cf_sql_date" />,
 										       feepaid = <cfqueryparam value="#getfeedetail.feeamount#" cfsqltype="cf_sql_float" />,
-											   feestatus = <cfqueryparam value="NSF" cfsqltype="cf_sql_varchar" />,
+											   <cfif trim( returnreason ) is "refund">
+												feestatus = <cfqueryparam value="REFUND" cfsqltype="cf_sql_varchar" />,
+											   <cfelse>
+												feestatus = <cfqueryparam value="NSF" cfsqltype="cf_sql_varchar" />,
+											   </cfif>
 											   feenote = <cfqueryparam value="#appendfeenote#" cfsqltype="cf_sql_varchar" />,
 											   feecollected = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
 											   feereturnednsf = <cfqueryparam value="#thisdate#" cfsqltype="cf_sql_timestamp" />
@@ -79,19 +84,24 @@
 													<cfqueryparam value="-#getfeedetail.feeamount#" cfsqltype="cf_sql_float" />,
 													<cfqueryparam value="#thisdate#" cfsqltype="cf_sql_timestamp" />,
 													<cfqueryparam value="-#getfeedetail.feeamount#" cfsqltype="cf_sql_float" />,
-													<cfqueryparam value="NSF generated receipt" cfsqltype="cf_sql_varchar" />,
-													<cfqueryparam value="NSF" cfsqltype="cf_sql_varchar" />,
+													<cfif trim( returnreason ) is "refund">
+														<cfqueryparam value="Refund - System generated receipt" cfsqltype="cf_sql_varchar" />,
+														<cfqueryparam value="REFUND" cfsqltype="cf_sql_varchar" />,
+													<cfelse>
+														<cfqueryparam value="NSF generated receipt" cfsqltype="cf_sql_varchar" />,
+														<cfqueryparam value="NSF" cfsqltype="cf_sql_varchar" />,
+													</cfif>
 													<cfqueryparam value="n" cfsqltype="cf_sql_char" />,
 													<cfqueryparam value="#getfeedetail.feepaytype#" cfsqltype="cf_sql_char" />,
 													<cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
 													<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
 													<cfqueryparam value="Y" cfsqltype="cf_sql_char" />,
-													<cfqueryparam value="#form.nsfreason#" cfsqltype="cf_sql_integer" />
+													<cfqueryparam value="#returnreason#" cfsqltype="cf_sql_integer" />
 													);
 									</cfquery>
 									
 										<!--- // if the user has selected the check box to send an email notification to the client, send it now --->
-										<cfif structkeyexists( form, "chksendnotify" )>
+										<cfif structkeyexists( form, "chksendnotify" ) and trim( returnreason ) is not "refund">
 											<cfinvoke component="apis.com.system.settingsgateway" method="getnsfreason" returnvariable="nsfreasondetail">
 												<cfinvokeargument name="nsfreasonid" value="#form.nsfreason#">
 											</cfinvoke>
@@ -99,7 +109,7 @@
 												<cfinvokeargument name="companyid" value="#session.companyid#">
 											</cfinvoke>
 											
-											<cfmail from="#companysettings.dba#<#companysettings.email#>" to="#getfeedetail.leademail#" cc="craig@efiscal.net,#getauthuser()#" subject="Notification - Payment Returned NSF">*** AUTOMATED SYSTEM NOTIFICATION *** UNATTENDED MAILBOX ***  PLEASE DO NOT REPLY
+											<cfmail from="#companysettings.dba#(#companysettings.email#)" to="#getfeedetail.leademail#" cc="craig@efiscal.net,#getauthuser()#" subject="Notification - Payment Returned NSF">*** AUTOMATED SYSTEM NOTIFICATION *** UNATTENDED MAILBOX ***  PLEASE DO NOT REPLY
 
 Please note that your payment for #dollarformat( getfeedetail.feeamount )# on #dateformat( getfeedetail.feeduedate, "mm/dd/yyyy" )# was returned by your bank for the following reason:
 
@@ -327,9 +337,9 @@ This email was automatically generated from the Student Loan Advisor Online syst
 																			<td>#dateformat( feeduedate, "mm/dd/yyyy" )#</td>
 																			<td>#dollarformat( feeamount )#  <cfif ( trim( feepaytype ) is "ach" ) and ( esignrouting is "" or esignaccount is "" )><a href="javascript;:" rel="popover" style="color:red;margin-left:5px;" data-original-title="Warning: Missing Banking Information" data-content="This client has fees due and no ACH or banking details saved.  No payments will be released for processing with missing or incomplete banking information."><i class="icon-warning-sign"></i></a></cfif> <cfif ( trim( feepaytype ) is "cc" ) and ( esignccnumber is "" or esignccexpdate is "" )><a href="javascript;:" rel="popover" style="color:red;margin-left:5px;" data-original-title="Warning: Missing Credit Card Information" data-content="This credit card client has fees due and no credit card information saved in the system.  No payments will be released for processing with missing or incomplete credit card information."><i class="icon-warning-sign"></i></a></cfif><cfif trim( leadachhold ) is "Y"><a href="javascript;:" rel="popover" style="color:blue;margin-left:5px;" data-original-title="ACH Hold" data-content="This client is currently on ACH Hold.  <br/><br/> Hold Date: #dateformat( leadachholddate, 'mm/dd/yyyy' )#<br />Hold Reason: #leadachholdreason#"><i class="icon-warning-sign"></i></a></cfif></td>
 																			<td><cfif feepaiddate is not ""><span class="label label-default">#dateformat( feepaiddate, "mm/dd/yyyy" )#</span><cfelseif feestatus is "pending" and feetransdate is not ""><span class="label label-info">Sent on #dateformat( feetransdate, "mm/dd/yyyy" )#</span><cfelse><span class="label label-warning">Not Paid</span></cfif></td>															
-																			<td>#dollarformat( feepaid )#  <cfif feetype neq 0 and trim( feereturnednsf ) eq "N" and feetransdate is not ""><span class="pull-right"><a href="#application.root#?event=#url.event#&creatensf=true&feeid=#feeuuid#" title="Create NSF"><i class="icon-cog"></i></a></span></cfif><cfif listfind( thispaytypelist, thisfeepaytype, "," ) and ( feepaiddate is "" )><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=setMOpaid&feeid=#feeuuid#" title="Mark Money Order Paid" onclick="javascript:return confirm('Mark Money Order Received?');"><i class="icon-money"></i></a></span></cfif></td>
+																			<td>#dollarformat( feepaid )#  <cfif feetype neq 0 and trim( feereturnednsf ) eq "N" and feetransdate is not ""><span class="pull-right"><a href="#application.root#?event=#url.event#&creatensf=true&feeid=#feeuuid#" title="Create Return"><i class="icon-cog"></i></a></span></cfif><cfif listfind( thispaytypelist, thisfeepaytype, "," ) and ( feepaiddate is "" )><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=setMOpaid&feeid=#feeuuid#" title="Mark Money Order Paid" onclick="javascript:return confirm('Mark Money Order Received?');"><i class="icon-money"></i></a></span></cfif></td>
 																			<td><cfif trim( feestatus ) is "paid"><span class="label label-success">PAID</span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">PENDING</span><cfelseif trim( feestatus ) is "unpaid"><span class="label label-warning">UNPAID</span><cfelseif trim( feestatus ) is "nsf"><span class="label label-important">NSF<cfif nsfreasondescr is not "none"> - #nsfreasondescr#</cfif></span></cfif></td>
-																			<td><cfif feecollected eq 1><span class="label label-success">YES</span><cfelse><span class="label label-important">NO</span></cfif></td>																										
+																			<td><cfif feestatus is "nsf"><span class="label label-inverse">N/A</span></cfif><cfif ( trim( feestatus ) is "paid" ) and ( feecollected eq 1 )><span class="label label-success">YES</span><cfelseif ( trim( feestatus ) is "pending" or trim( feestatus ) is "unpaid" ) and ( feecollected eq 0 )><span class="label label-inverse">NO</span></cfif></td>																										
 																		</tr>
 																		<cfset achtotals = achtotals + feeamount />
 																		<cfset achpaidtotals = achpaidtotals + feepaid />

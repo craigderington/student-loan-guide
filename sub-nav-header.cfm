@@ -63,7 +63,7 @@
 									
 										
 											
-										<li class="dropdown" <cfif structkeyexists( url, "event" ) and url.event is "page.library">class="active"</cfif>>					
+										<li class="dropdown <cfif structkeyexists( url, "event" ) and ( trim( url.event ) contains "page.library" or trim( url.event ) is "page.api.docs" )>active</cfif>">					
 											<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
 												<i class="icon-book"></i>
 													<span>Library</span>
@@ -72,7 +72,10 @@
 												
 											<ul class="dropdown-menu">
 												<li><a href="#application.root#?event=page.library.forms">Forms Library</a></li>																						
-												<li><a href="#application.root#?event=page.library.forms.upload">Upload Forms</a></li>										
+												<li><a href="#application.root#?event=page.library.forms.upload">Upload Forms</a></li>
+												<cfif ( isuserinrole( "admin" ) or isuserinrole( "co-admin" ))>
+													<li><a href="#application.root#?event=page.api.docs">API Documentation</a></li>
+												</cfif>
 											</ul>    				
 										</li>
 											

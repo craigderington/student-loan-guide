@@ -294,7 +294,7 @@
 																				<th>Months in Repayment</th>
 																				<th>Monthly Payment</th>
 																				<th>Total Payments</th>
-																				<!---<th>Details</th>--->
+																				<th>Details</th>
 																			</tr>
 																		</thead>
 																		<tbody>
@@ -304,7 +304,7 @@
 																				<td>#cloanterm#</td>
 																				<td>#dollarformat( monthlyPaymentStd )#</td>
 																				<td>#dollarformat( monthlyPaymentStd * cloanterm )#</td>
-																				<!---<td><span class="label label-default">View Detail</span></td>--->
+																				<td><a href="javascript:;" onclick="window.open('templates/standardrepaymentplan.cfm','','scollbars=no,location=no,width=830,height=720');" class="label label-default">View Detail</a></td>
 																			</tr>																	
 																			
 																			<!--- graduated --->																				
@@ -313,7 +313,7 @@
 																				<td>#cloanterm#</td>
 																				<td>#dollarformat( gradInitialPayAmt )#  <span style="margin-left:7px;" class="label label-important">See Note 1</span></td>
 																				<td>#dollarformat( ( gradInitialPayAmt * cloanterm )  / 0.64  )#</td>
-																				<!---<td><span class="label label-default">View Detail</span>&nbsp;<span class="label label-inverse">See Note 1</span></td>--->
+																				<td><a href="javascript:;" onclick="window.open('templates/graduatedrepaymentplan.cfm','','scollbars=no,location=no,width=830,height=720');" class="label label-default">View Detail</a>&nbsp;<span class="label label-important">See Note 1</span></td>
 																			</tr>
 																			<!--- // extended --->
 																			<cfif cloaninfo.totalloanamount GT 30000 >
@@ -322,7 +322,7 @@
 																				<td>#mExtPay.mExtTerm#</td>
 																				<td>#dollarformat( mExtPay.mExtPayAmt )#</td>
 																				<td>#dollarformat( mExtPay.mExtPayAmt * mExtPay.mExtTerm )#</td>
-																				<!---<td><span class="label label-default">View Detail</span></td>--->
+																				<td><a href="javascript:;" onclick="window.open('templates/extendedrepaymentplan.cfm','','scollbars=no,location=no,width=830,height=720');" class="label label-default">View Detail</a></td>
 																			</tr>
 																			<!--- // extended graduated --->
 																			<tr>																																							
@@ -330,7 +330,7 @@
 																				<td>#strExtGrad.newloanterm#</td>
 																				<td>#dollarformat( strExtGrad.gradExtInitialPayAmt )#  <span style="margin-left:7px;" class="label label-important">See Note 2</span></td>
 																				<td>#dollarformat( strExtGrad.gradExtInitialPayAmt * strExtGrad.newloanterm )#</td>
-																				<!---<td><span class="label label-default">View Detail</span></td>--->
+																				<td><span class="label label-default">View Detail</span></td>
 																			</tr>
 																			</cfif>																			
 																			<!--- // income contingent --->
@@ -339,7 +339,7 @@
 																				<td><span class="label label-warning">See Note 2</span></td>
 																				<td>#dollarformat( monthlyPaymentICR )#</td>
 																				<td>#dollarformat( monthlyPaymentICR * 300 )#</td>
-																				<!---<td><cfif qualifythisclient is true><span class="label label-default">View Detail</span><cfelse><span class="label label-important">Not Qualified</span></cfif></td>--->
+																				<td><cfif qualifythisclient is true><a href="javascript:;" onclick="window.open('templates/icr-repaymentplan.cfm','','scollbars=no,location=no,width=830,height=760');" class="label label-default">View Detail</a><cfelse><span class="label label-important">Not Qualified</span></cfif></td>
 																			</tr>
 																			<!--- // income based --->
 																			<cfif not listcontains( pplus, "T", ",") and not listcontains( pplus, "U", ",") and not listcontains( pplus, "X", ",")>
@@ -349,7 +349,7 @@
 																						<td><span class="label label-warning">See Note 2</span></td>
 																						<td>#dollarformat( mIBR.mIBRPayAmt )#</td>
 																						<td>#dollarformat( mIBR.mIBRPayAmt * 300 )#</td>
-																						<!---<td><cfif qualifythisclient is true><span class="label label-default">View Detail</span><cfelse><span class="label label-important">Not Qualified</span></cfif></td>--->
+																						<td><cfif qualifythisclient is true><cfif mIBR.mIBRPayAmt gt 0.00><a href="javascript:;" onclick="window.open('templates/ibr-repaymentplan.cfm','','scollbars=no,location=no,width=830,height=760');" class="label label-default">View Detail</a></cfif><cfelse><span class="label label-important">Not Qualified</span></cfif></td>
 																					</tr>
 																				</cfif>
 																				<!--- // pay as you earn --->
@@ -358,7 +358,7 @@
 																						<td><span class="label label-warning">See Note 2</span>  <span style="margin-left:7px;" class="label label-inverse">See Note 4</span></td>
 																						<td>#dollarformat( mIBR.mIBRPAYE )#</td>
 																						<td>#dollarformat( mIBR.mIBRPAYE * 300 )#</td>
-																						<!---<td><span class="label label-default">View Detail</span></td>--->
+																						<td><cfif mIBR.mIBRPAYE gt 0.00><a href="javascript:;" onclick="window.open('templates/paye-repaymentplan.cfm','','scollbars=no,location=no,width=830,height=760');" class="label label-default">View Detail</a></cfif></td>
 																					</tr>
 																			</cfif>
 																		</tbody>

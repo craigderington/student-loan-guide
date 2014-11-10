@@ -189,7 +189,14 @@
 																	   email = <cfqueryparam value="#comp.email#" cfsqltype="cf_sql_varchar" />,
 																	   active = <cfqueryparam value="#comp.status#" cfsqltype="cf_sql_bit" />
 																 where companyid = <cfqueryparam value="#checkdupecomp.companyid#" cfsqltype="cf_sql_integer" />
-															</cfquery>											
+															</cfquery>
+
+															<!--- // if the company status is inactive // then inactivate all of their users --->
+															<cfquery datasource="#application.dsn#" name="killusers">
+																update users
+																   set active = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+																 where companyid = <cfqueryparam value="#checkdupecomp.companyid#" cfsqltype="cf_sql_integer" />
+															</cfquery>
 															
 															<!--- // log the user activity --->
 															<cfquery datasource="#application.dsn#" name="logact2">

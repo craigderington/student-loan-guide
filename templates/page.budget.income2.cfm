@@ -216,8 +216,8 @@
 														</ul>
 														</cfoutput>
 														
-														
-														
+														<h5 style="color:red;"><i class="icon-info-sign"></i> Enter Co-Borrower Gross Monthly Income, then click Save Income!  Then enter co-borrower payroll deductions, if any...</h5>
+																								
 														<br />
 														
 														
@@ -230,7 +230,7 @@
 																	<div class="control-group">											
 																		<label class="control-label" for="primarygrossmonthly">Gross Monthly Income</label>
 																		<div class="controls">
-																			<input type="text" class="input-small" name="secondarygrossmonthly" value="#numberformat( budget.secondarygrossmonthly, 'L99.99' )#" /><a href="javascript:;" style="margin-left:7px;" class="btn btn-default btn-mini" onclick="window.open('templates/secondary-payroll-deductions.cfm','','scrollbars=yes, top=300, left=450, width=680, height=590');"><i class="icon-money"></i> Enter Payroll Deductions <cfif totalsecondarydeductions neq 0.00> - Total: #dollarformat( totalsecondarydeductions )#</cfif></a>
+																			<input type="text" class="input-small" name="secondarygrossmonthly" value="#numberformat( budget.secondarygrossmonthly, 'L99.99' )#" /><cfif budget.secondarygrossmonthly neq 0.00><a href="javascript:;" style="margin-left:7px;" class="btn btn-default btn-mini" onclick="window.open('templates/secondary-payroll-deductions.cfm','','scrollbars=yes, top=300, left=450, width=680, height=590');"><i class="icon-money"></i> Enter Payroll Deductions <cfif totalsecondarydeductions neq 0.00> - Total: #dollarformat( totalsecondarydeductions )#</cfif></cfif></a>
 																		</div> <!-- /controls -->				
 																	</div> <!-- /control-group -->
 																	<cfset calcnetincome = numberformat( budget.secondarygrossmonthly - totalsecondarydeductions, "99999.99" ) />

@@ -37,6 +37,10 @@
 				<cfinvokeargument name="solcomp" value="1">
 			</cfinvoke>
 			
+			<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
+				<cfinvokeargument name="leadid" value="#session.companyid#">
+			</cfinvoke>
+			
 			<cfinvoke component="apis.com.convo.convogateway" method="getconvo" returnvariable="convolist">
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
@@ -71,24 +75,22 @@
 						</div>
 								
 					<cfelse>
-						<div class="row">
-							<div class="span12">						
-								<cfoutput>
-								<div class="alert alert-block alert-info">
-									<button type="button" class="close" data-dismiss="alert">&times;</button>											
-									<h4><i class="icon-home"></i> OK, LET'S GET STARTED!</h4>
-									<p style="margin-top:7px;">Now that you have provided your electronic signature and have officially enrolled in Student Loan Advisory Program, please <strong><a href="#application.root#?event=page.portal.instructions">View Instructions</a></strong> to help you navigate your client portal.</p>
+						<cfif companysettings.useportal eq 1>
+							<div class="row">
+								<div class="span12">						
+									<cfoutput>									
+										<div class="alert alert-block alert-info">
+											<button type="button" class="close" data-dismiss="alert">&times;</button>											
+											<h4><i class="icon-home"></i> OK, LET'S GET STARTED!</h4>
+											<p style="margin-top:7px;">Now that you have provided your electronic signature and have officially enrolled in Student Loan Advisory Program, please <strong><a href="#application.root#?event=page.portal.instructions">View Instructions</a></strong> to help you navigate your client portal.</p>
+										</div>									
+									</cfoutput>
 								</div>
-								</cfoutput>
-							</div>
-						</div>						
-					</cfif>
-											
-				
+							</div>	
+						</cfif>											
+					</cfif>				
 					
-					
-					
-							
+					<!--- // begin portal home page --->		
 					<cfif leaddetail.leadesign eq 1 and leaddetail.leadconv eq 1>		
 					<div class="row">
 

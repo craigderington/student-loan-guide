@@ -52,8 +52,9 @@
 											
 											<!--- define our structure and set form values --->
 											<cfset fee = structnew() />
-											<cfset fee.feeid = #form.feeid# />
-											<cfset fee.duedate = #form.feeduedate# />
+											<cfset fee.feepaytype = trim( form.feepaytype ) />
+											<cfset fee.feeid = form.feeid />
+											<cfset fee.duedate = createodbcdate( form.feeduedate ) />
 											<cfset fee.amount = #rereplace( form.feeamt, "[\$,]", "", "all" )# />
 											
 											<!--- // some other variables --->
@@ -72,7 +73,8 @@
 													<cfquery datasource="#application.dsn#" name="savefee">
 														update fees
 														   set feeduedate = <cfqueryparam value="#fee.duedate#" cfsqltype="cf_sql_date" />,
-														       feeamount = <cfqueryparam value="#fee.amount#" cfsqltype="cf_sql_float" />
+														       feeamount = <cfqueryparam value="#fee.amount#" cfsqltype="cf_sql_float" />,
+															   feepaytype = <cfqueryparam value="#fee.feepaytype#" cfsqltype="cf_sql_varchar" />
 														 where feeid = <cfqueryparam value="#feeinfo.feeid#" cfsqltype="cf_sql_integer" /> 
 													</cfquery>
 													
@@ -149,6 +151,19 @@
 													<cfoutput>
 														<form id="edit-fee" class="form-horizontal" method="post" action="#application.root#?event=#url.event#&fuseaction=#url.fuseaction#&feeid=#url.feeid#">
 															<fieldset>
+															
+																	<div class="control-group">											
+																		<label class="control-label" for="feepaytype"><strong>Payment Type</strong></label>
+																			<div class="controls">																	
+																				<select name="feepaytype" id="feepaytype" class="input-medium">
+																					<option value="ACH"<cfif trim( feedetail.feepaytype ) is "ach">selected</cfif>>ACH</option>
+																					<option value="CC"<cfif trim( feedetail.feepaytype ) is "cc">selected</cfif>>Credit Card</option>
+																					<option value="MO"<cfif trim( feedetail.feepaytype ) is "mo">selected</cfif>>Money Order</option>
+																					<option value="CHK"<cfif trim( feedetail.feepaytype ) is "chk">selected</cfif>>Check</option>
+																					<option value="CSH"<cfif trim( feedetail.feepaytype ) is "csh">selected</cfif>>Cash</option>
+																				</select>
+																			</div>										
+																	</div>	
 																
 																	<div class="control-group">											
 																		<label class="control-label" for="feeduedate">Fee Due Date</label>

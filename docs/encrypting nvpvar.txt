@@ -1,0 +1,34 @@
+Encrypting nvpvar
+
+All Web Services described on this website utilize a nvpvar variable that contains the encrypted value of some credential information. Below are the steps to take for encrypting this value.
+
+Create a JSON struct of data by either serializing your argument collection within your HTTP POST; or by manually creating a JSON structure of required variables, which are then serialized into key pair values. For more information about JSON, please click here.  http://www.json.org/
+
+json_struct {
+clientid = 'your-client-id',
+username = 'your-username',
+passcode = 'your-password',
+apikey = 'your-api-key'
+}
+
+set variable = serializeJSON( json_struct )
+
+Zip the string using zlib compression.
+
+Pad the string with spaces so the length is divisible by 16.
+
+Encrypt the string using AES256-ECB.
+ASCII values displayed in the example below.
+
+Note: To ensure proper security, a unique Encryption Key will be provided by SLA for each user. This key will need to be used when encrypting the nvpvar value. In this example, the key used was: jfhdusywlf83jx@37$2idksu9Kdheokq
+
+Convert encrypted value to a URL safe Base64 string.
+
+Assign the value to the nvpvar variable in the POST request:
+
+For the LOGIN SERVICE, your API Key is encrypted and passed with your username, client ID and password.
+
+You will be required to decrypt the login reponse to extract the session ID needed for all other web services.
+
+
+

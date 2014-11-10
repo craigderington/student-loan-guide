@@ -92,12 +92,10 @@
 															</div>												
 														</span>
 													</h3>
-													</cfoutput>
+													</cfoutput>													
+														
+													<p>For the most accurate information for your FEDERAL loans, we ask you to access your NSLDS (National Student Loan Data System) file and upload into the debt worksheet.   For instructions on how to access this information, please <a href="javascript:;" onclick="window.open('templates/page.instructions.cfm#worksheet','','scrollbars=yes,location=no,status=no,width=821,height=711');"> click here <i class="icon-question-sign"></i></a>.</p>
 													
-														<p>The Student Loan Debt Worksheet will display the student loans selected by the user and it is assumed user has entered ALL federal student loans into the worksheet. The information contained is an estimation based on the data provided by the user.</p> 
-
-														<p>For the most accurate information for your FEDERAL loans, we ask you to access your NSLDS (National Student Loan Data System) file and upload into the debt worksheet.   For instructions on how to access this information, please <a href="javascript:;" onclick="window.open('templates/page.instructions.cfm#worksheet','','scrollbars=yes,location=no,status=no,width=821,height=711');"> click here <i class="icon-question-sign"></i></a>.</p>
-													</p>
 													<br>
 													<cfif worksheetlist.recordcount gt 0>
 													

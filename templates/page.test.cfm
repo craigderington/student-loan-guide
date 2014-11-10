@@ -3,10 +3,12 @@
 			<cfparam name="mycomp" default="">
 			<cfset mycomp = createobject( "component", "apis.com.admin.companyadmingateway" ) />
 			
-			<link rel="stylesheet" href="../css/tablesorter/style.css" type="text/css" />
+			<link rel="stylesheet" href="../css/tablesorter/style.css" type="text/css" />	
 			
-			
-			
+
+			<cfparam name="mystr" default="">
+			<cfset mystr = "e0cb04dba346fb43167d1e416103fafb29b40ce2" />
+			<cfset this.name =  GetDirectoryFromPath( GetCurrentTemplatePath() )/>
 			
 			
 			<!--- // include the tinymce js path 
@@ -38,222 +40,33 @@
 						<div class="widget stacked">							
 							<div class="widget-header">		
 								<i class="icon-book"></i>							
-								<h3>Tiny MCE</h3>						
+								<h3>Go With Vanco Encryption</h3>						
 							</div> <!-- //.widget-header -->
 							
-							<div class="widget-content">
-								
-								<!--- // 
-								<cfquery datasource="#application.dsn#" name="getclientswithplans">
-									select distinct(i.implementid), l.leadid, i.solutionid
-									  from leads l, implement i, solution s
-									 where l.leadid = i.leadid
-									   and l.leadid = s.leadid
-									   and l.companyid = 446
-									   and s.solutioncompleted = 1
-								</cfquery>
-								
-								<cfoutput query="getclientswithplans">	
-									
-									<cfquery datasource="#application.dsn#" name="thisdata">
-										select *
-										from implementation i, leads l
-										where i.leadid = l.leadid
-										and i.solutionid in(<cfqueryparam value="#solutionid#" cfsqltype="cf_sql_integer" list="yes" />)
-										
-									</cfquery>
-								
-								</cfoutput>	
-								
-								--->
-								
-								<cfoutput>
-
-									<!-- // default param -->
-									<cfparam name="docsourceprefix" default="">
-									<cfparam name="sourcedocpath" default="">
-									<cfparam name="docsourcecompany" default="">
-									<cfparam name="docsourcedocument" default="">
-									<cfparam name="docsource" default="">
-									
-									<!--- // source pdf document --->
-									
-									
-									<cfset docsourceprefix = "D:\WWW\studentloanadvisoronline.com\library\company\" />
-									<cfset sourcedocpath = "/efiscal/efiscal-enrollment-agreement.pdf" />
-									<cfset docsourcecompany = listfirst( sourcedocpath, "/" ) />
-									<cfset docsourcedocument = listlast( sourcedocpath, "/" ) />
-									
-									
-									<cfset docsource = docsourceprefix & docsourcecompany & "\" & docsourcedocument />
-									
-									#sourcedocpath#<br />
-									#docsource#
-									
-								
-								</cfoutput>
+							<div class="widget-content">								
 								
 								
+								<cfset thisKey = "5b!R-j0E12LF9m6s8qzgNtMvBk74KX3T" />
+								<cfset nvpvar = "This is the text I want to encrypt." />
 								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								<cfparam name="mycode" default="">
-								<cfset mycode = "DN" />
-								
-								<!---
-								<cfinvoke component="apis.com.trees.statuscodes" method="getcodelist" returnvariable="codelist">			
-									<cfinvokeargument name="scode" value="#mycode#" >
+								<!--- // call the encryption component to encrypt our vanco nvpvar data packet --->				
+								<cfinvoke component="apis.dotnet.vanco.vanco-functions" method="vancoencrypt" returnvariable="thisencryptedmessage">							
+									<cfinvokeargument name="theKey" value="#thiskey#" />
+									<cfinvokeargument name="nvpvar" value="#nvpvar#">					
 								</cfinvoke>
-								--->
-								
-								<cfscript>
-									// create object
-									mycodelist = createobject( "component", "apis.com.system.statuscodes" ).getcodelist( mycode );														
-								</cfscript>
-						
-								<cfif listcontainsnocase( mycodelist, mycode, "," ) eq 0>
-									<cfoutput>
-										#mycodelist#
-									</cfoutput>
-								</cfif>
-								
-								
-								<h5>Please enter a detailed explantion narrative for this solution.  You should include a description as to why this solution was chosen.</h5>
-								
-								<!-- Place this in the body of the page content 
-								<form name="mytextareaform" action="" method="post">
-									<textarea id="cd1"></textarea>
-								
-								
-									<br />
-									
-									<div class="form-actions">
-									
-										<a href="javascript:;" class="btn btn-secondary"><i class="icon-save"></i> Save Content</a>&nbsp;&nbsp;<a href="javascript:;" class="btn btn-primary"><i class="icon-repeat"></i> Cancel</a>
-									
-									</div>
-								
-								
-								</form>
-								
-								<cfdump var="#mycomp#" label="Company List">
-								--->
-								<!---
-								
-								<script type="application/javascript">
-									var myCountdown2 = new Countdown({
-										time: 300, 
-										width:100, 
-										height:50, 
-										rangeHi:"minute"	// <- no comma on last item!
-									});
-
-								</script>
-								
-								
-								<br /><br />
-								
-								
-								<script type="application/javascript">
-									var test = new Countdown({time:15});
-								</script>
-								--->
-								
 								
 								<cfoutput>
-								http<cfif cgi.HTTPS EQ 'On'>s</cfif>://#cgi.server_name##cgi.path_info#<cfif cgi.query_string NEQ ''>?#cgi.query_string#</cfif>
-								</cfoutput>
+
+									
+									
+									
+									#thiskey# <br />
+									#nvpvar#
+		
+		
+		
 								
-								<cfdump var="#cgi#" label="My CGI Vars">
-								
-								
-								
-								
-								
-								<table id="tablesorter" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
-									<thead>
-										<tr>
-											<th>First Name</th>
-											<th>Last Name</th>
-											<th>Age</th>
-											<th>Total</th>
-											<th>Discount</th>
-											<th>Difference</th>
-											<th>Date</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Peter</td>
-											<td>Parker</td>
-											<td>28</td>
-											<td>$9.99</td>
-											<td>20.9%</td>
-											<td>+12.1</td>
-											<td>Jul 6, 2006 8:14 AM</td>
-										</tr>
-										<tr>
-											<td>John</td>
-											<td>Hood</td>
-											<td>33</td>
-											<td>$19.99</td>
-											<td>25%</td>
-											<td>+12</td>
-											<td>Dec 10, 2002 5:14 AM</td>
-										</tr>
-										<tr>
-											<td>Clark</td>
-											<td>Kent</td>
-											<td>18</td>
-											<td>$15.89</td>
-											<td>44%</td>
-											<td>-26</td>
-											<td>Jan 12, 2003 11:14 AM</td>
-										</tr>
-										<tr>
-											<td>Bruce</td>
-											<td>Almighty</td>
-											<td>45</td>
-											<td>$153.19</td>
-											<td>44.7%</td>
-											<td>+77</td>
-											<td>Jan 18, 2001 9:12 AM</td>
-										</tr>
-										<tr>
-											<td>Bruce</td>
-											<td>Evans</td>
-											<td>22</td>
-											<td>$13.19</td>
-											<td>11%</td>
-											<td>-100.9</td>
-											<td>Jan 18, 2007 9:12 AM</td>
-										</tr>
-										<tr>
-											<td>Bruce</td>
-											<td>Evans</td>
-											<td>22</td>
-											<td>$13.19</td>
-											<td>11%</td>
-											<td>0</td>
-											<td>Jan 18, 2007 9:12 AM</td>
-										</tr>
-									</tbody>
-								</table>
-								
-								<p class="tip">
-									<em>TIP!</em> Sort multiple columns simultaneously by holding down the shift key and clicking a second, third or even fourth column header!
-								</p>	
+								</cfoutput>			
 								
 								
 								
@@ -261,25 +74,26 @@
 								
 								
 								
-								<!---
-								<cfquery datasource="#application.dsn#" name="manual">
-									select actionplanheader, actionplanbodya
-									  from actionplan
-									 where optiontree = <cfqueryparam value="Advisory" cfsqltype="cf_sql_varchar" />
-									   and optiondescr = <cfqueryparam value="Manual" cfsqltype="cf_sql_varchar" />
-									order by actionplanid asc
-								</cfquery>
+								
+								
+								
+							
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
 							
 							
-								<div style="padding:25px;margin-top:50px;>
 								
-									<cfoutput query="manual">							
-										<h5><strong>#actionplanheader#</strong></h5><br />
-										#actionplanbodya#</font><br /><br /><br />						
-									</cfoutput>
-					
-								</div>
-								--->
+								
 							</div>
 						
 						</div><!-- /.widget -->
@@ -402,11 +216,7 @@
 							
 					
 					
-					</div>
-					
-						
-						
-					
+					</div>					
 					
 					<div style="margin-top:300px;"></div>
 					
@@ -436,7 +246,8 @@
 					</div>
 				</div>
 			</cfif>
-	
-	
-	
-	
+			
+			
+			
+			
+											

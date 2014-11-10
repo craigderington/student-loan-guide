@@ -3,11 +3,12 @@
 
 			<!--- // get our instruction categories data --->
 			<cfinvoke component="apis.com.portal.portalgateway" method="getportalcategories" returnvariable="instructcategories">
-
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+			</cfinvoke>
+			
 
 			
-				
-				
+					<cfif instructcategories.recordcount gt 0>				
 					
 						<ul class="nav nav-tabs nav-stacked">
 							<cfoutput query="instructcategories">
@@ -21,7 +22,11 @@
 							</cfoutput>						
 						</ul>
 					
+					<cfelse>
 				
+						<small><i class="icon-exclamation-sign"></i> No Instruction Categories Defined.</small>
+				
+					</cfif>
 
 			
 				

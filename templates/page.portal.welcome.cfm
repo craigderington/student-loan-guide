@@ -6,6 +6,12 @@
 			<cfinvoke component="apis.com.leads.leadgateway" method="getleaddetail" returnvariable="leaddetail">
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
+			
+			<cfinvoke component="apis.com.system.companysettings" method="getcompanywelcomemessage" returnvariable="companywelcomemessage">
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+			</cfinvoke>
+			
+			
 
 			
 			<cfparam name="mhome" default="">
@@ -47,8 +53,8 @@
 								<h3>Welcome, #leaddetail.leadfirst#</h3>
 							</div>
 							
-							<div class="modal-body">
-								<p>Welcome to your Student Loan Advisor Client Portal. The portal allows you to E-sign your enrollment docs, update your contact information, upload student loan and personal information, view student loan solution packet, download forms needed to implement solutions and track progress on your file.  Before you can proceed, please see the instructions on how to e-sign your enrollment documents and payment form.  Once you have completed these steps, you will be able to have full access to the portal and be on your way to discovering the solutions for your student loan debt!</p>
+							<div class="modal-body">								
+								<p>#urldecode( companywelcomemessage.welcomemessagetext )#</p>
 							</div>
 							  
 							<div class="modal-footer">							

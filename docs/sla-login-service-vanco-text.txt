@@ -1,0 +1,41 @@
+Login Service API
+
+Login credentials are setup and managed by Student Loan Advisor Online (SLA). This service is used to obtain a Session ID via an HTTPS Post for performing other web services. The request type and method for this service should not be encrypted.
+*Obtain a new session ID every 24 hours!*
+
+Upon successful login with your client username and password, you will receive a session ID, which is used to identify the organization utilizing SLA's Web Services. Each session ID is valid for a 24 hours after being obtained.
+
+Login Service Request Variables
+
+Arguments:
+nvpvar (empty variable struct)
+method (the default method to invoke for the login service)
+username (your web services username) 
+passcode (your web service password) 
+apiKey (your API Key assigned by SLA)
+
+Response Variables
+
+nvpvar	    Contains encrypted string of the below variables.	
+
+{ // serialized json
+sessionid	Alphanumeric string that will be used in other Web Services.  Only included if the login request was successful.
+requestid	Will be the same value as the requestid in the Request Variables.
+requestdate The date of the login request
+clientID    The web services client ID.
+ipaddr      The remote address initiating the request
+}
+
+Example Responses
+
+Note: If login is successful, the nvpvar value will be contained in the response body.  
+The value is an encrypted JSON string.  
+
+If login is unsuccessful, the value of the nvpvar string will be unencrypted.
+
+
+**Returned Response will be Encrypted**
+rLYAOiTwkLxKhUYy17aGX4VqFWsCjyl6T0DzCSW8Z1voWLHhqAreNrJJu3eqP0g7gZzJxTb6GG1kz7TIG__ZP_JyS6uCAhYHldGSGGi-UPrelJZFf1Z8w1S9pKHeeVbEomXjDrGIoa9rHhpN04p4ed4eGzlyU2DVzjgpwNDmGSY=
+
+**Decrypted Example**
+{"CLIENTID":"WS1187EFI","REQUESTID":110514410900000636,"REQUESTDATE":"11-05-2014","IPADDR":"127.0.0.1","SESSIONID":"062A747D-CF74-2F6E-3E5268B7F8EF54AC"}

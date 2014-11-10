@@ -97,7 +97,7 @@
 						</cfquery>
 						
 						<cfif getloancode.recordcount eq 0>
-							<cfset loancode = 21 />
+							<cfset loancode = -1 />
 						<cfelse>
 							<cfset loancode = getloancode.loancodeid />
 						</cfif>
@@ -193,7 +193,7 @@
 					
 					<cfscript>
 						thread = createobject( "java", "java.lang.Thread" );
-						thread.sleep(5000);
+						thread.sleep(2500);
 					</cfscript>
 					
 					

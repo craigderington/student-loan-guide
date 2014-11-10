@@ -81,6 +81,11 @@
 												<span class="shortcut-label">Manage <br /> Inquiry Sources </span>	
 											</a>
 											
+											<a href="#application.root#?event=page.menu.portal.instructions" class="shortcut">
+												<i class="shortcut-icon icon-tags"></i>
+												<span class="shortcut-label">Manage <br /> Portal Text </span>	
+											</a>
+											
 											
 										
 										

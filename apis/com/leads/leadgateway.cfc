@@ -395,5 +395,34 @@
 			<cfreturn advisortasklist>			
 		</cffunction>
 		
+		<cffunction name="getvancotransactions" output="false" access="remote" hint="I get the list of Vanco transactions for the client.">			
+			<cfargument name="leadid" required="yes" default="#session.leadid#" type="numeric">			
+			<cfset var vancotransactions = "" />				
+				<cfquery datasource="#application.dsn#" name="vancotransactions">
+					select vancotranslogid, leadid, transdatetime, customerref, paymentmethodref, 
+						   requestid, sessionid, visamctype, cardtype, name_on_card, expmonth, 
+						   expyear, billingaddr1, billingcity, billingstate, billingzip, name, 
+						   last4, reqtype, accttype, ipaddress, customerid
+					  from vancotranslog
+					 where leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />					    
+				  order by vancotranslogid asc
+				</cfquery>				
+			<cfreturn vancotransactions>			
+		</cffunction>
+		
+		<cffunction name="getvancocharges" output="false" access="remote" hint="I get the list of Vanco crediot carsd charges and transactions for the client.">			
+			<cfargument name="leadid" required="yes" default="#session.leadid#" type="numeric">			
+			<cfset var vancochargelist = "" />				
+				<cfquery datasource="#application.dsn#" name="vancochargelist">
+					select vancotransactionid, vancotranslogid, vancouuid, leadid, customerref,
+					       paymentmethodref, transactionref, requestid, requestdate, paymentamount, 
+						   ccauthcode, cardtype
+					  from vancotransactions
+					 where leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />					    
+				  order by vancotransactionid asc
+				</cfquery>				
+			<cfreturn vancochargelist>			
+		</cffunction>
+		
 		
 	</cfcomponent>

@@ -38,10 +38,12 @@
 		</cffunction>
 		
 		<cffunction name="getportalcategories" output="false" access="public" hint="I get the list of client portal instruction categories.">					
+			<cfargument name="companyid" type="numeric" required="yes" default="444">
 			<cfset var instructcategories = "" />				
 				<cfquery datasource="#application.dsn#" name="instructcategories">
 					select distinct( instructcategory ), instructorder
 					  from portalinstructions
+					 where companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 				  order by instructorder asc
 				</cfquery>				
 			<cfreturn instructcategories>			
@@ -50,14 +52,16 @@
 		
 		<cffunction name="getportalinstructions" output="false" access="public" hint="I get the client portal instructions content by category if necessary.">			
 			<cfargument name="icat" required="no" type="any">			
+			<cfargument name="companyid" required="yes" type="numeric">
 			<cfset var portalinstructcontent = "" />				
 				<cfquery datasource="#application.dsn#" name="portalinstructcontent">
 					select instructtext, instructcategory
 					  from portalinstructions
+					 where companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 					  <cfif structkeyexists( arguments, "icat" ) and arguments.icat neq 1>
-						where instructcategory = <cfqueryparam value="#arguments.icat#" cfsqltype="cf_sql_varchar" />
+						and instructcategory = <cfqueryparam value="#arguments.icat#" cfsqltype="cf_sql_varchar" />
 					  <cfelse>
-					    where instructorder = <cfqueryparam value="1" cfsqltype="cf_sql_numeric" />
+					    and instructorder = <cfqueryparam value="1" cfsqltype="cf_sql_numeric" />
 					  </cfif>
 				</cfquery>				
 			<cfreturn portalinstructcontent>			

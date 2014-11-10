@@ -2,11 +2,11 @@
 
 			
 			
-			<!--- // get our data access components --->			
+			<!--- // get our data access components --->	
 			
 			<cfinvoke component="apis.com.leads.leadgateway" method="getleaddetail" returnvariable="leaddetail">
 				<cfinvokeargument name="leadid" value="#session.leadid#">
-			</cfinvoke>
+			</cfinvoke>		
 
 			<cfinvoke component="apis.com.esign.esigngateway" method="getesigninfo" returnvariable="esigninfo">
 				<cfinvokeargument name="leadid" value="#session.leadid#">
@@ -142,12 +142,16 @@
 														
 																<!--- // declare form vars --->	
 																<cfset lead = structnew() />
-																<cfset lead.leadid = #form.leadid# />
-																<cfset lead.leadname = #trim( form.leadname )# />
-																<cfset lead.account = #trim( form.accountnumber )# />
-																<cfset lead.routing = #trim( rereplacenocase( form.routingnumber, "[^0-9]", "", "all" ))# />
-																<cfset lead.accttype = #trim( form.accttype )# />
-																<cfset lead.bankname = #trim( form.bankname )# />
+																<cfset lead.leadid = form.leadid />
+																<cfset lead.leadname = trim( form.leadname ) />
+																<cfset lead.billingaddress = trim( form.billingaddress ) />
+																<cfset lead.billingcity = trim( form.billingcity ) />
+																<cfset lead.billingstate =  trim( ucase( form.billingstate )) />
+																<cfset lead.billingzip = trim( form.billingzip ) />
+																<cfset lead.account = trim( form.accountnumber ) />
+																<cfset lead.routing = trim( rereplacenocase( form.routingnumber, "[^0-9]", "", "all" )) />
+																<cfset lead.accttype = trim( form.accttype ) />
+																<cfset lead.bankname = trim( form.bankname ) />
 
 																<!--- // admin banking settings --->
 																<cfif isdefined( "form.achhold" )>
@@ -182,7 +186,13 @@
 																				   set esignbankname = <cfqueryparam value="#lead.bankname#" cfsqltype="cf_sql_varchar" />,
 																					   esignaccttype = <cfqueryparam value="#lead.accttype#" cfsqltype="cf_sql_varchar" />,
 																					   esignrouting = <cfqueryparam value="#lead.routing#" cfsqltype="cf_sql_varchar" />,															   
-																					   esignaccount = <cfqueryparam value="#lead.account#" cfsqltype="cf_sql_varchar" />
+																					   esignaccount = <cfqueryparam value="#lead.account#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctadd1 = <cfqueryparam value="#lead.billingaddress#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctcity = <cfqueryparam value="#lead.billingcity#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctstate = <cfqueryparam value="#lead.billingstate#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctzipcode = <cfqueryparam value="#lead.billingzip#" cfsqltype="cf_sql_varchar" />,
+																					   esconfirmfullname = <cfqueryparam value="#lead.leadname#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctname = <cfqueryparam value="#lead.leadname#" cfsqltype="cf_sql_varchar" />
 																				 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />							
 																		</cfquery>
 																		
@@ -274,7 +284,11 @@
 																	<cfset lead.ccname = trim( form.ccname ) />
 																	<cfset lead.ccnum = rereplace( form.ccacctnum, "[^0-9,]", "", "all" ) />
 																	<cfset lead.ccexpdate = trim( replace( form.ccexpdate, "/", "", "all" ) ) />
-																	<cfset lead.ccv2 = trim( form.ccv2 ) />																	
+																	<cfset lead.ccv2 = trim( form.ccv2 ) />
+																	<cfset lead.billingaddress = trim( form.billingaddress ) />
+																	<cfset lead.billingcity = trim( form.billingcity ) />
+																	<cfset lead.billingstate =  trim( ucase( form.billingstate )) />
+																	<cfset lead.billingzip = trim( form.billingzip ) />
 																	<cfset today = #createodbcdatetime(now())# />	
 																		
 																		
@@ -284,7 +298,11 @@
 																				   set esignccnumber = <cfqueryparam value="#lead.ccnum#" cfsqltype="cf_sql_varchar" />,
 																					   esignccexpdate = <cfqueryparam value="#lead.ccexpdate#" cfsqltype="cf_sql_varchar" />,
 																					   esignccv2 = <cfqueryparam value="#lead.ccv2#" cfsqltype="cf_sql_varchar" />,															   
-																					   esignccname = <cfqueryparam value="#lead.ccname#" cfsqltype="cf_sql_varchar" />
+																					   esignccname = <cfqueryparam value="#lead.ccname#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctadd1 = <cfqueryparam value="#lead.billingaddress#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctcity = <cfqueryparam value="#lead.billingcity#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctstate = <cfqueryparam value="#lead.billingstate#" cfsqltype="cf_sql_varchar" />,
+																					   esignacctzipcode = <cfqueryparam value="#lead.billingzip#" cfsqltype="cf_sql_varchar" />
 																				 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />							
 																		</cfquery>
 																		
@@ -352,7 +370,7 @@
 										<div class="span8">
 											
 											<div class="tabbable">
-												<!---
+												<!--- // CLD 2-20-2014 // move to sidebar separate workflow
 												<cfoutput>
 													<ul class="nav nav-tabs">
 														<li>
@@ -374,7 +392,7 @@
 														<cfoutput>
 														
 															<h3><i class="icon-money"></i> Payment Information</h3>										
-															<p>Please select the payment type and enter the appropriate Automated Cleating House (ACH) or Credit Card information to use the integrated client payment automation. 
+															<p>Please select the payment type and enter the appropriate Automated Clearing House (ACH) or Credit Card information to use the integrated client payment automation. 
 															
 															<br /><br />															
 															
@@ -396,7 +414,7 @@
 																</div>															
 															</form>
 															
-															
+															<br /><br />
 															
 															
 															
@@ -412,6 +430,9 @@
 																	
 																	<fieldset>																
 																															
+																		<h5><i class="icon-home"></i> ACH Banking Details</h5>
+																		<hr style="margin-top:5px;margin-bottom:5px;color:gray;">
+																		<br />
 																		
 																		<div class="control-group">											
 																			<label class="control-label" for="bankname">Name of Bank</label>
@@ -448,15 +469,30 @@
 																			</div> <!-- /controls -->				
 																		</div> <!-- /control-group -->
 
-																		<!---
+																		<br />
+																		
+																		<h5><i class="icon-home"></i> Billing Address</h5>
+																		<hr style="margin-top:5px;margin-bottom:5px;color:gray;">
+																		<br />							
+																		
 																		<div class="control-group">											
-																			<label class="control-label" for="accountnumber2">Confirm Account Number</label>
+																			<label class="control-label" for="billingaddress"><strong>Billing Address</strong></label>
 																			<div class="controls">
-																				<input type="text" class="input-medium" name="accountnumber2" id="accountnumber2">
+																				<input type="text" class="input-large" name="billingaddress" id="billingaddress" value="<cfif isdefined( "form.billingaddress" )>#form.billingaddress#<cfelse><cfif esigninfo.esignacctadd1 is not "">#trim( esigninfo.esignacctadd1 )#</cfif></cfif>">
 																			</div> <!-- /controls -->				
 																		</div> <!-- /control-group -->
-																		--->
-																		<br /><br />
+																		
+																		<div class="control-group">											
+																			<label class="control-label" for="billingcity"><strong>City</strong></label>
+																			<div class="controls">
+																				<input type="text" class="input-large" name="billingcity" id="billingcity" value="<cfif isdefined( "form.billingcity" )>#form.billingcity#<cfelse><cfif esigninfo.esignacctcity is not "">#trim( esigninfo.esignacctcity )#</cfif></cfif>" />
+																				<input type="text" class="input-mini" name="billingstate" id="billingstate" value="<cfif isdefined( "form.billingstate" )>#form.billingstate#<cfelse><cfif esigninfo.esignacctstate is not "">#trim( esigninfo.esignacctstate )#</cfif></cfif>" maxlength="2" />
+																				<input type="text" class="input-small" name="billingzip" id="billingzip" value="<cfif isdefined( "form.billingzip" )>#form.billingzip#<cfelse><cfif esigninfo.esignacctzipcode is not "">#trim( esigninfo.esignacctzipcode )#</cfif></cfif>" />
+																			
+																			</div> <!-- /controls -->				
+																		</div> <!-- /control-group -->
+																		
+																		<br />																		
 
 																		
 																		<cfif not isuserinrole( "counselor" ) and not isuserinrole( "bclient" )>
@@ -509,7 +545,7 @@
 																			<input type="hidden" name="leadid" value="#leaddetail.leadid#" />
 																			<input type="hidden" name="leadname" value="#leaddetail.leadfirst# #leaddetail.leadlast#" />
 																			<input type="hidden" name="__authToken" value="#randout#" />
-																			<input name="validate_require" type="hidden" value="leadid|Lead ID is a required field.;routingnumber|Please enter the last routing number.;accountnumber|Please enter the account number." />																									
+																			<input name="validate_require" type="hidden" value="leadid|Lead ID is a required field.;routingnumber|Please enter the last routing number.;accountnumber|Please enter the account number.billingaddress|Please enter the billing address.;billingcity|Please enter the billing city.;billingstate|Please enter the state initials.;billingzip|Please enter the billing zip code." />																									
 																		</div> <!-- / .form-actions -->
 																		
 																	</fieldset>
@@ -552,15 +588,33 @@
 																				<input type="text" class="input-mini" name="ccv2" id="ccv2" value="<cfif isdefined( "form.ccv2" )>#form.ccv2#<cfelse><cfif esigninfo.esignccv2 is not "">#trim( esigninfo.esignccv2 )#</cfif></cfif>">
 																				<span class="help-block">Please enter the 3 digit code on the back of the card.  AMEX is 4 digits on front of card.</span>																		
 																			</div> <!-- /controls -->				
+																		</div> <!-- /control-group -->																		
+																		
+																		
+																		<hr style="margin-top:5px;margin-bottom:5px;color:gray;">
+																		
+																		<h5><i class="icon-home"></i> Billing Address</h5>
+																		
+																		<br />							
+																		
+																		<div class="control-group">											
+																			<label class="control-label" for="billingaddress"><strong>Billing Address</strong></label>
+																			<div class="controls">
+																				<input type="text" class="input-large" name="billingaddress" id="billingaddress" value="<cfif isdefined( "form.billingaddress" )>#form.billingaddress#<cfelse><cfif esigninfo.esignacctadd1 is not "">#trim( esigninfo.esignacctadd1 )#</cfif></cfif>">
+																			</div> <!-- /controls -->				
 																		</div> <!-- /control-group -->
 																		
+																		<div class="control-group">											
+																			<label class="control-label" for="billingcity"><strong>City</strong></label>
+																			<div class="controls">
+																				<input type="text" class="input-large" name="billingcity" id="billingcity" value="<cfif isdefined( "form.billingcity" )>#form.billingcity#<cfelse><cfif esigninfo.esignacctcity is not "">#trim( esigninfo.esignacctcity )#</cfif></cfif>" />
+																				<input type="text" class="input-mini" name="billingstate" id="billingstate" value="<cfif isdefined( "form.billingstate" )>#form.billingstate#<cfelse><cfif esigninfo.esignacctstate is not "">#trim( esigninfo.esignacctstate )#</cfif></cfif>" maxlength="2" />
+																				<input type="text" class="input-small" name="billingzip" id="billingzip" value="<cfif isdefined( "form.billingzip" )>#form.billingzip#<cfelse><cfif esigninfo.esignacctzipcode is not "">#trim( esigninfo.esignacctzipcode )#</cfif></cfif>" />
+																			
+																			</div> <!-- /controls -->				
+																		</div> <!-- /control-group -->
 																		
-																		
-																		<br /><br />							
-																		
-																		
-																		
-																																	
+																		<br /><br />															
 																		
 																		<div class="form-actions">																		
 																			<button type="submit" class="btn btn-secondary" name="saveachdetails"><i class="icon-save"></i> Save Credit Card </button>																		
@@ -570,7 +624,7 @@
 																			<input type="hidden" name="leadid" value="#leaddetail.leadid#" />
 																			<input type="hidden" name="leadname" value="#leaddetail.leadfirst# #leaddetail.leadlast#" />
 																			<input type="hidden" name="__authToken" value="#randout#" />
-																			<input name="validate_require" type="hidden" value="leadid|Lead ID is a required field.;ccacctnum|Please enter the credit card number.;ccexpdate|Please enter the credit card expiration date.;ccname|Please enter the credit card name.;ccv2|Please enter the credit card security code." />																									
+																			<input name="validate_require" type="hidden" value="leadid|Lead ID is a required field.;ccacctnum|Please enter the credit card number.;ccexpdate|Please enter the credit card expiration date.;ccname|Please enter the credit card name.;ccv2|Please enter the credit card security code.;billingaddress|Please enter the billing address.;billingcity|Please enter the billing city.;billingstate|Please enter the state initials.;billingzip|Please enter the billing zip code." />																									
 																		</div> <!-- / .form-actions -->
 																		
 																	</fieldset>

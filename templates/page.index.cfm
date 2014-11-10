@@ -21,13 +21,15 @@
 					<!--- // if the role is bClient, redirect to portal home --->
 					<cfif isuserinrole( "bclient" )>										
 						<cfquery datasource="#application.dsn#" name="getuser">
-							select u.userid, u.leadid, u.leadwelcome, l.leadwelcomehome, l.leadesign
+							select u.userid, u.leadid, u.leadwelcome, l.companyid, 
+							       l.leadwelcomehome, l.leadesign
 							  from users u, leads l
 							 where u.leadid = l.leadid
 							   and u.userid = <cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />
 						</cfquery>								
 						<!--- // set some additional session vars we need for the client portal --->						
 						<cfset session.leadid = getuser.leadid />
+						<cfset session.companyid = getuser.companyid />
 						<cfset session.leadesign = getuser.leadesign />
 						<cfset session.welcomehomesess = 0 />
 						<cfset session.leadwelcomehome = getuser.leadwelcomehome />									

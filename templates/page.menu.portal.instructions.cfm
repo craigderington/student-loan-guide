@@ -3,11 +3,13 @@
 			
 			<!--- get our data access components --->
 			<cfinvoke component="apis.com.system.portalinstructions" method="getportalcats" returnvariable="portalcats">
-			
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+			</cfinvoke>
 			
 			<!--- get the list of instructions by category, if selected --->
 			<cfinvoke component="apis.com.system.portalinstructions" method="getportalinstructions" returnvariable="portalinstruct">				
-				<cfif structkeyexists( form, "instructcat" ) and form.instructcat is not "">
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+				<cfif structkeyexists( form, "instructcat" ) and form.instructcat is not "">				
 					<cfinvokeargument name="instructcat" value="#trim( form.instructcat )#">
 				</cfif>				
 			</cfinvoke>			
@@ -138,7 +140,8 @@
 													
 													<!--- define our structure and set form values --->
 													<cfset iportal = structnew() />													
-													<cfset iportal.instructcategory = #trim( form.instructcategory )# />
+													<cfset iportal.companyid = session.companyid />
+													<cfset iportal.instructcategory = trim( form.instructcategory ) />
 													<cfset iportal.instructtext = #urlencodedformat( form.instructtext )# />
 													<cfset iportal.instructorder = #form.instructorder# />
 													<cfset iportal.iid = #form.iid# />
@@ -150,9 +153,10 @@
 														<cfset iportal.newuuid = #createuuid()# />
 														<!--- // create the database record --->
 														<cfquery datasource="#application.dsn#" name="addinstructions">
-															insert into portalinstructions(instructuuid, instructcategory, instructtext, instructorder)
+															insert into portalinstructions(instructuuid, companyid, instructcategory, instructtext, instructorder)
 																values (
 																		<cfqueryparam value="#iportal.newuuid#" cfsqltype="cf_sql_varchar" maxlength="35" />,
+																		<cfqueryparam value="#iportal.companyid#" cfsqltype="cf_sql_integer" />,
 																		<cfqueryparam value="#iportal.instructcategory#" cfsqltype="cf_sql_varchar" />,
 																		<cfqueryparam value="#iportal.instructtext#" cfsqltype="cf_sql_varchar" />,
 																		<cfqueryparam value="#iportal.instructorder#" cfsqltype="cf_sql_numeric" />
@@ -229,58 +233,68 @@
 											
 											<cfif not structkeyexists( url, "fuseaction" )>
 											
-												<!--- // portal instructions filter --->									
-												<cfoutput>
-													<div class="well">
-														<p><i class="icon-check"></i> Filter Portal Instructions</p>
-														<form class="form-inline" name="filterresults" method="post">						
-															<select name="instructcat" style="margin-left:5px;" class="input-xlarge" onchange="javascript:this.form.submit();">
-																<option value="">Select Instructions Category</option>
-																	<cfloop query="portalcats">
-																		<option value="#instructcategory#"<cfif isdefined( "form.instructcat" ) and form.instructcat eq portalcats.instructcategory>selected</cfif>>#instructcategory#</option>
-																	</cfloop>												
-															</select>					
-															<input type="hidden" name="filtermyresults" id="filtermyresults" valuue="true" />
-															<button type="submit" style="margin-left:5px;" name="filterresults" class="btn btn-small btn-secondary"><i class="icon-search"></i> Filter Results</button>
-															<cfif structkeyexists( form, "filtermyresults" )><button type="reset" onclick="location.href='#application.root#?event=#url.event#'" style="margin-left:5px;" class="btn btn-small btn-primary"><i class="icon-check"></i> Reset List</button></cfif>
-														</form>
-													</div>
-												</cfoutput>
-												<!--- // end filter --->	
-												
+												<cfif portalcats.recordcount gt 0>
+													<!--- // portal instructions filter --->									
+													<cfoutput>
+														<div class="well">
+															<p><i class="icon-check"></i> Filter Portal Instructions</p>
+															<form class="form-inline" name="filterresults" method="post">						
+																<select name="instructcat" style="margin-left:5px;" class="input-xlarge" onchange="javascript:this.form.submit();">
+																	<option value="">Select Instructions Category</option>
+																		<cfloop query="portalcats">
+																			<option value="#instructcategory#"<cfif isdefined( "form.instructcat" ) and form.instructcat eq portalcats.instructcategory>selected</cfif>>#instructcategory#</option>
+																		</cfloop>												
+																</select>					
+																<input type="hidden" name="filtermyresults" id="filtermyresults" valuue="true" />
+																<button type="submit" style="margin-left:5px;" name="filterresults" class="btn btn-small btn-secondary"><i class="icon-search"></i> Filter Results</button>
+																<cfif structkeyexists( form, "filtermyresults" )><button type="reset" onclick="location.href='#application.root#?event=#url.event#'" style="margin-left:5px;" class="btn btn-small btn-primary"><i class="icon-check"></i> Reset List</button></cfif>
+															</form>
+														</div>
+													</cfoutput>
+													<!--- // end filter --->	
+												</cfif>
 												
 												<cfoutput>
 												<h5><i class="icon-th-large"></i> Found #portalinstruct.recordcount# client portal instruction record<cfif portalinstruct.recordcount gt 1>s</cfif> <cfif structkeyexists( form, "instructcat" ) and form.instructcat is not ""> for the category: #form.instructcat#</cfif>   <span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=addnew" class="btn btn-default btn-small"><i class="icon-plus"></i> Add Instruction</a></span></h5>
 												</cfoutput>
 												
+												<cfif portalinstruct.recordcount gt 0>
 												
 												
-												<table class="table table-bordered table-striped table-highlight">
-												<thead>
-													<tr>
-														<th width="10%">Actions</th>
-														<th>Content Order</th>
-														<th>Category</th>														
-													</tr>
-												</thead>
-												<tbody>
-													<cfoutput query="portalinstruct">
-													<tr>
-														<td class="actions">													
-															<a href="#application.root#?event=#url.event#&fuseaction=editinstructions&iid=#instructuuid#" class="btn btn-mini btn-warning">
-																<i class="btn-icon-only icon-ok"></i>										
-															</a>
-															<a href="#application.root#?event=#url.event#&fuseaction=deleteinstructions&iid=#instructuuid#" class="btn btn-mini btn-default" onclick="javascript:return confirm('Are you absolutely sure you want to delete this portal instruction record?  This action can not be undone!');">
-																<i class="btn-icon-only icon-trash"></i>										
-															</a>
-														</td>
-														<td>#instructorder#</td>												
-														<td>#instructcategory#</td>																								
-													</tr>
-													</cfoutput>
-												</tbody>
-											</table>									
+													<table class="table table-bordered table-striped table-highlight">
+													<thead>
+														<tr>
+															<th width="10%">Actions</th>
+															<th>Content Order</th>
+															<th>Category</th>														
+														</tr>
+													</thead>
+													<tbody>
+														<cfoutput query="portalinstruct">
+														<tr>
+															<td class="actions">													
+																<a href="#application.root#?event=#url.event#&fuseaction=editinstructions&iid=#instructuuid#" class="btn btn-mini btn-warning">
+																	<i class="btn-icon-only icon-ok"></i>										
+																</a>
+																<a href="#application.root#?event=#url.event#&fuseaction=deleteinstructions&iid=#instructuuid#" class="btn btn-mini btn-default" onclick="javascript:return confirm('Are you absolutely sure you want to delete this portal instruction record?  This action can not be undone!');">
+																	<i class="btn-icon-only icon-trash"></i>										
+																</a>
+															</td>
+															<td>#instructorder#</td>												
+															<td>#instructcategory#</td>																								
+														</tr>
+														</cfoutput>
+													</tbody>
+												</table>									
 											
+											<cfelse>
+											
+												<div class="alert alert-error">
+													<button type="button" class="close" data-dismiss="alert">&times;</button>
+													<strong>NO RECORDS FOUND!</strong> Please use the button above to add a new record.
+												</div>
+											
+											</cfif>
 										
 										<cfelseif structkeyexists( url, "fuseaction" ) and url.fuseaction is "editinstructions">
 										
