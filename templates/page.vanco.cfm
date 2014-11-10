@@ -150,7 +150,7 @@
 													<cfset requestid = dateformat( now(), "mmddyy" ) & timeformat( now(), "mmss" ) & numberformat( randrange( 1,9999 ), "00000000" ) />
 													<cfset clientid = vancosettings.webserviceclientid />
 													<cfset customerid = leaddetail.leadid />
-													<cfset urltoredirect = "http://67.79.186.26/sladmin/index.cfm" />
+													<cfset urltoredirect = "https://www.studentloanadvisoronline.com/index.cfm" />
 													<cfset isdebitcardonly = "no" />										
 													<!--- // end encrypted values --->										
 										

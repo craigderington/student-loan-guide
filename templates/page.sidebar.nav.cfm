@@ -4,14 +4,16 @@
 			<!--- // the included sidebar navigation --->
 			<cfoutput>	
 				
-				<cfparam name="vancowebservices" default="0">
-					<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
-						<cfinvokeargument name="companyid" value="#session.companyid#">
-					</cfinvoke>
-					
-					<cfset vancowebservices = companysettings.vancows />
+				<cfparam name="vancowebservices" default="0">					
 				
 					<cfif not isuserinrole( "bclient" )>
+					
+						
+						<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
+							<cfinvokeargument name="companyid" value="#session.companyid#">
+						</cfinvoke>
+						
+						<cfset vancowebservices = companysettings.vancows />
 						
 							<ul class="nav nav-tabs nav-stacked">
 								
@@ -247,13 +249,15 @@
 								</a>              		
 							</li>												
 													
-							<li <cfif trim( url.event ) is "page.activity">class="active"</cfif>>
-								<a href="#application.root#?event=page.activity">
-									<i class="icon-reorder"></i>
-										Activity Log
-									<i class="icon-chevron-right"></i>
-								</a>              		
-							</li>
+							<cfif companysettings.useportalactlog eq 1>
+								<li <cfif trim( url.event ) is "page.activity">class="active"</cfif>>
+									<a href="#application.root#?event=page.activity">
+										<i class="icon-reorder"></i>
+											Activity Log
+										<i class="icon-chevron-right"></i>
+									</a>              		
+								</li>
+							</cfif>
 						
 						</ul>
 

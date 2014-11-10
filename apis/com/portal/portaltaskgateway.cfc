@@ -16,7 +16,10 @@
 								  from portaltasks pt, leadportaltasks lpt
 								 where pt.portaltaskid = lpt.portaltaskid
 								   and lpt.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
-							order by lpt.leadportaltaskid asc
+									<cfif session.companyid eq 454>
+										and pt.portaltaskid <> <cfqueryparam value="1412" cfsqltype="cf_sql_integer" />										
+									</cfif>
+							  order by lpt.leadportaltaskid asc
 							</cfquery>
 							<cfreturn portaltasklist >
 						</cffunction>	

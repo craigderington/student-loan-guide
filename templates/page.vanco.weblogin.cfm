@@ -46,13 +46,18 @@
 												</cfquery>
 
 												<cfif getcompanylogin.recordcount eq 1>
-											
-											
+													
+													<!--- // for testing
+												    <cfdump var="#getcompanylogin#" label="This Dump">
+													<cfdump var="#vancosettings#" label="Vanco Dump">
+													--->
+													
+													
 													<!--- // get our vanco settings   --->		
 													<cfinvoke component="apis.dotnet.vanco.vanco-functions" method="getvancosettings" returnvariable="vancosettings">
 														<cfinvokeargument name="companyid" value="#getcompanylogin.companyid#">
 														<cfinvokeargument name="requesttype" value="login">
-													</cfinvoke>		
+													</cfinvoke>							
 											
 													<!-- define url params --->			
 													<cfparam name="nvpvar" default="" >
@@ -75,9 +80,12 @@
 																	throwonerror="yes"
 																	charset="utf-8"
 																	result="result">						
-															</cfhttp>			
-
-													
+															</cfhttp>													
+														
+															<!--- // for testing 
+															<cfdump var="#result#" label="Vanco Response">
+															--->
+															
 															<!--- // if the connection to the server responds 200 OK - process the login --->
 															<cfif result.statuscode neq "200 OK">
 															
@@ -152,7 +160,7 @@
 																				 where webserviceid = <cfqueryparam value="#getvancoservices.webserviceid#" cfsqltype="cf_sql_integer" />				
 																			</cfquery>
 																		</cfloop>
-															
+																		
 															
 																		<cfoutput>															
 																				
@@ -162,9 +170,9 @@
 																			<p style="margin-top:10px;"><i>Your Vanco Web Services are now ready for use...</i></p>
 															
 																		</cfoutput>
-															
+																		
 															</cfif><!-- / .status code -->
-										
+														
 												<cfelse>
 												
 													<h5 style="color:red;"><i class="icon-warning-sign"></i> Sorry, there was a problem with the Vanco login service record.  The record could not be found.</h5>

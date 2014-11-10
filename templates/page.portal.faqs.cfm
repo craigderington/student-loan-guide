@@ -124,10 +124,12 @@
 									<div class="widget-content">
 										
 										<cfoutput>
-										<a href="#application.root#?event=page.conversation&fuseaction=new" class="btn btn-large btn-warning btn-support-ask">Ask A Question</a>	
-										
-										
-										<a href="mailto:#leaddetail.companyprimarycontact#" class="btn btn-large btn-support-contact" title="Contact #leaddetail.companyname#">Contact #leaddetail.dba#</a>
+											<cfif companysettings.useportalconvo eq 1>
+												<a href="#application.root#?event=page.conversation&fuseaction=new" class="btn btn-large btn-warning btn-support-ask">Ask A Question</a>										
+												<a href="mailto:#leaddetail.companyprimarycontact#" class="btn btn-large btn-support-contact" title="Contact #leaddetail.companyname#">Contact #leaddetail.dba#</a>
+											<cfelse>																					
+												<a href="mailto:#leaddetail.companyprimarycontact#" target="_blank" class="btn btn-large btn-support-contact" title="Contact #leaddetail.companyname#">Contact #leaddetail.dba#</a>
+											</cfif>
 										</cfoutput>
 										
 										

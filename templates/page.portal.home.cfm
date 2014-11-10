@@ -156,28 +156,30 @@
 							
 							
 							<!--- // meet your advisors --->
-							<div class="widget stacked">							
-								
-									<div class="widget-header">		
-										<i class="icon-group"></i>							
-										<h3>Meet Your Advisor Team</h3>						
-									</div> <!-- //.widget-header -->
-														
-									<div class="widget-content">								
-										<cfoutput>
-											<cfif advisorteam.enrollmentcounselor is not "">															
-												<i style="color:lightgray;" class="icon-user"></i>  #advisorteam.enrollmentcounselor#   Enrollment Counselor<a href="#application.root#?event=page.conversation&fuseaction=new"> <i style="margin-left:5px;" class="icon-comment"></i> Ask Me a Question</a></span><br /><br />														
-											</cfif>
-											<cfif advisorteam.intakeadvisor is not "">															
-												<i style="color:lightgray;" class="icon-user"></i>  #advisorteam.intakeadvisor#   Intake Advisor<a href="#application.root#?event=page.conversation&fuseaction=new">  <i style="margin-left:5px;" class="icon-comment"></i> Ask Me a Question</a></span><br /><br />												
-											</cfif>
-											<cfif advisorteam.slsadvisor is not "">															
-												<i style="color:lightgray;" class="icon-user"></i>  #advisorteam.slsadvisor#   Student Loan Advisor<a href="#application.root#?event=page.conversation&fuseaction=new">  <i style="margin-left:5px;" class="icon-comment"></i> Ask Me a Question</a></span><br /><br />												
-											</cfif>
-										</cfoutput>										
-									</div><!-- / .widget-content -->						
-							</div> <!-- /. widget-stacked -->
-							
+							<!--- // 11-10-2014 // modify based on company settings --->
+							<cfif companysettings.useportalconvo eq 1>
+								<div class="widget stacked">							
+									
+										<div class="widget-header">		
+											<i class="icon-group"></i>							
+											<h3>Meet Your Advisor Team</h3>						
+										</div> <!-- //.widget-header -->
+															
+										<div class="widget-content">								
+											<cfoutput>
+												<cfif advisorteam.enrollmentcounselor is not "">															
+													<i style="color:lightgray;" class="icon-user"></i>  #advisorteam.enrollmentcounselor#   Enrollment Counselor<a href="#application.root#?event=page.conversation&fuseaction=new"> <i style="margin-left:5px;" class="icon-comment"></i> Ask Me a Question</a></span><br /><br />														
+												</cfif>
+												<cfif advisorteam.intakeadvisor is not "">															
+													<i style="color:lightgray;" class="icon-user"></i>  #advisorteam.intakeadvisor#   Intake Advisor<a href="#application.root#?event=page.conversation&fuseaction=new">  <i style="margin-left:5px;" class="icon-comment"></i> Ask Me a Question</a></span><br /><br />												
+												</cfif>
+												<cfif advisorteam.slsadvisor is not "">															
+													<i style="color:lightgray;" class="icon-user"></i>  #advisorteam.slsadvisor#   Student Loan Advisor<a href="#application.root#?event=page.conversation&fuseaction=new">  <i style="margin-left:5px;" class="icon-comment"></i> Ask Me a Question</a></span><br /><br />												
+												</cfif>
+											</cfoutput>										
+										</div><!-- / .widget-content -->						
+								</div> <!-- /. widget-stacked -->
+							</cfif>
 							
 							
 						
@@ -279,48 +281,49 @@
 						
 						
 							<!--- // recent activity  --->
-							<div class="widget stacked">							
-								
-									<div class="widget-header">		
-										<i class="icon-money"></i>							
-										<h3>Recent Account Activity</h3>						
-									</div> <!-- //.widget-header -->
-														
-								<div class="widget-content">
-								
-									<cfif leadact.recordcount gt 0>
-										<table class="table table-bordered table-striped">
-											<thead>
-												<tr>												
-													<th>Date</th>
-													<th>Activity</th>
-												</tr>
-											</thead>
-											<tbody>					
-												<cfoutput query="leadact" maxrows="3">
-												<tr>
-													<td>#dateformat( activitydate, "mm/dd/yyyy" )#</td>
-													<td>#activity#</td>
-												</tr>
-												</cfoutput>
-											</tbody>
-										</table>
+							<cfif companysettings.useportalactlog eq 1>
+								<div class="widget stacked">							
+									
+										<div class="widget-header">		
+											<i class="icon-money"></i>							
+											<h3>Recent Account Activity</h3>						
+										</div> <!-- //.widget-header -->
+															
+									<div class="widget-content">
+									
+										<cfif leadact.recordcount gt 0>
+											<table class="table table-bordered table-striped">
+												<thead>
+													<tr>												
+														<th>Date</th>
+														<th>Activity</th>
+													</tr>
+												</thead>
+												<tbody>					
+													<cfoutput query="leadact" maxrows="3">
+													<tr>
+														<td>#dateformat( activitydate, "mm/dd/yyyy" )#</td>
+														<td>#activity#</td>
+													</tr>
+													</cfoutput>
+												</tbody>
+											</table>
+											
+											<cfoutput>
+												<a style="margin-top:5px;" href="#application.root#?event=page.activity"><i class="icon-pushpin"></i> View All Activity</a>
+											</cfoutput>
+											
+										<cfelse>
 										
-										<cfoutput>
-											<a style="margin-top:5px;" href="#application.root#?event=page.activity"><i class="icon-pushpin"></i> View All Activity</a>
-										</cfoutput>
+											<small>No activity recorded...  This will automatically update as your user activity is recorded throughout the system.</small>
 										
-									<cfelse>
-									
-										<small>No activity recorded...  This will automatically update as your user activity is recorded throughout the system.</small>
-									
-									</cfif>
-									
-									
-									
-								</div><!-- / .widget-content -->						
-							</div> <!-- /. widget-stacked -->
-							
+										</cfif>
+										
+										
+										
+									</div><!-- / .widget-content -->						
+								</div> <!-- /. widget-stacked -->
+							</cfif>
 							
 							<!--- // getting started checklist --->
 							<div class="widget stacked">							

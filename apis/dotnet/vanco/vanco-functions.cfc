@@ -21,6 +21,7 @@
 									   webservicerequestid, webservicelastlogindatetime, webserviceisactive
 								  from webservice
 								 where companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+								   and webserviceprovidername = <cfqueryparam value="Vanco" cfsqltype="cf_sql_varchar" />
 								       <cfif structkeyexists( arguments, "requesttype" )>
 										and webservicerequesttype = <cfqueryparam value="#arguments.requesttype#" cfsqltype="cf_sql_varchar" />
 									   </cfif>

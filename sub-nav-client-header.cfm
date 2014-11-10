@@ -84,13 +84,15 @@
 												<span>Important Forms</span>
 											</a>	    				
 										</li>
-
-										<li <cfif structkeyexists( url, "event" ) and trim( url.event ) is "page.activity">class="active"</cfif>>
-											<a href="#application.root#?event=page.activity">
-												<i class="icon-bar-chart"></i>
-												<span>Activity</span>
-											</a>	    				
-										</li>
+										<!--- // 11-10-2014 // modify based on company settings --->
+										<cfif companysettings.useportalactlog eq 1>
+											<li <cfif structkeyexists( url, "event" ) and trim( url.event ) is "page.activity">class="active"</cfif>>
+												<a href="#application.root#?event=page.activity">
+													<i class="icon-bar-chart"></i>
+													<span>Activity</span>
+												</a>	    				
+											</li>
+										</cfif>
 										
 										<li <cfif structkeyexists( url, "event" ) and trim( url.event ) contains "page.portal.faqs">class="active"</cfif>>
 											<a href="#application.root#?event=page.portal.faqs">
@@ -98,13 +100,23 @@
 												<span>FAQs</span>
 											</a>	    				
 										</li>
-
-										<li <cfif structkeyexists( url, "event" ) and trim( url.event ) contains "page.conversation">class="active"</cfif>>
-											<a href="#application.root#?event=page.conversation">
-												<i class="icon-comments-alt"></i>
-												<span>Ask Us</span>
-											</a>	    				
-										</li>	
+										<!--- // 11-10-2014 // modify based on company settings --->
+										<cfif companysettings.useportalconvo eq 1>
+											<li <cfif structkeyexists( url, "event" ) and trim( url.event ) contains "page.conversation">class="active"</cfif>>
+												<a href="#application.root#?event=page.conversation">
+													<i class="icon-comments-alt"></i>
+													<span>Ask Us</span>
+												</a>	    				
+											</li>
+										<cfelse>
+											<li>
+												<a href="mailto:#companysettings.email#" target="_blank">
+													<i class="icon-comments-alt"></i>
+													<span>Ask Us</span>
+												</a>	    				
+											</li>
+										</cfif>
+										
 									</cfif>
 									<!---
 									<cfif session.leadconv eq 1>
