@@ -451,7 +451,7 @@
 																		</div> <!-- /control-group -->
 																		
 																		<div class="control-group">											
-																			<label class="control-label" for="billingcity"><strong>City</strong></label>
+																			<label class="control-label" for="billingcity"><strong>City, State, Zip</strong></label>
 																			<div class="controls">
 																				<input type="text" class="input-large" name="billingcity" id="billingcity" value="<cfif isdefined( "form.billingcity" )>#form.billingcity#</cfif>" />
 																				<input type="text" class="input-mini" name="billingstate" id="billingstate" value="<cfif isdefined( "form.billingstate" )>#ucase( form.billingstate )#</cfif>" maxlength="2" />

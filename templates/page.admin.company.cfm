@@ -108,7 +108,7 @@
 												<cfset comp.fax = rereplace( form.compfax, "[/\D+/]", "", "all" ) />
 												<cfset comp.email = #form.compemail# />
 												
-												<cfif isdefined("form.chkstatus")>
+												<cfif isdefined( "form.chkstatus" )>
 													<cfset comp.status = 1 />
 												<cfelse>
 													<cfset comp.status = 0 />
@@ -192,12 +192,13 @@
 															</cfquery>
 
 															<!--- // if the company status is inactive // then inactivate all of their users --->
-															<cfquery datasource="#application.dsn#" name="killusers">
-																update users
-																   set active = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
-																 where companyid = <cfqueryparam value="#checkdupecomp.companyid#" cfsqltype="cf_sql_integer" />
-															</cfquery>
-															
+															<cfif comp.status eq 0>
+																<cfquery datasource="#application.dsn#" name="killusers">
+																	update users
+																	   set active = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
+																	 where companyid = <cfqueryparam value="#checkdupecomp.companyid#" cfsqltype="cf_sql_integer" />
+																</cfquery>
+															</cfif>
 															<!--- // log the user activity --->
 															<cfquery datasource="#application.dsn#" name="logact2">
 																insert into activity(leadid, userid, activitydate, activitytype, activity)

@@ -81,28 +81,43 @@
 											<!--- // some other variables --->
 											<cfset today = createodbcdatetime( now() ) />										
 																															
-											<!--- // update the company welcome message --->
-											<cfquery datasource="#application.dsn#" name="savewelcomemessage">
-												update welcomemessage
-												   set welcomemessagetext = <cfqueryparam value="#wm.welcomemessagetext#" cfsqltype="cf_sql_varchar" maxlength="2000" />													   												   
-											     where welcomemessageid = <cfqueryparam value="#companywelcomemessage.welcomemessageid#" cfsqltype="cf_sql_integer" /> 
-											</cfquery>																			
+											<!--- // check the length of the string to make sure it's under 2000 characters, 
+											         otherwise, we run the risk of overflowing the Welcome Message UI modal --->
 											
-											<!--- // log the client activity --->
-											<cfquery datasource="#application.dsn#" name="logact">
-												insert into activity(leadid, userid, activitydate, activitytype, activity)
-													values (
-															<cfqueryparam value="0" cfsqltype="cf_sql_integer" />,
-															<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
-															<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
-															<cfqueryparam value="Record Modified" cfsqltype="cf_sql_varchar" />,
-															<cfqueryparam value="#session.username# saved the company welcome message for #compdetails.companyname#" cfsqltype="cf_sql_varchar" />
-															);
-											</cfquery>																				
+											<cfif len( wm.welcomemessagetext ) gt 2000>
+												
+												<!--- // show overflow alert message --->
+												<div class="alert alert-block alert-error">
+													<a class="close" data-dismiss="alert">&times;</a>
+														<h5><i class="icon-warning-sign"></i> <error><strong>There were errors in your submission:</strong></error></h5>
+														<p>The maximum length of the Welcome Message is 2000 characters.  Please be advised that the source formatting in the rich text editor may result in a lot of unnecessary hidden editor code which can increase the length of the welcome message string object. To check your source formatting, click Tools/Source Code in the editor toolbar.
+												</div>
 											
-											<!--- // redirect to save message --->
-											<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">											
+											<cfelse>
+												<!--- // the welcome message string is under the allowed limit , allow the update --->
+												<!--- // update the company welcome message --->
+												<cfquery datasource="#application.dsn#" name="savewelcomemessage">
+													update welcomemessage
+													   set welcomemessagetext = <cfqueryparam value="#wm.welcomemessagetext#" cfsqltype="cf_sql_varchar" maxlength="2000" />													   												   
+													 where welcomemessageid = <cfqueryparam value="#companywelcomemessage.welcomemessageid#" cfsqltype="cf_sql_integer" /> 
+												</cfquery>																			
+												
+												<!--- // log the client activity --->
+												<cfquery datasource="#application.dsn#" name="logact">
+													insert into activity(leadid, userid, activitydate, activitytype, activity)
+														values (
+																<cfqueryparam value="0" cfsqltype="cf_sql_integer" />,
+																<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
+																<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
+																<cfqueryparam value="Record Modified" cfsqltype="cf_sql_varchar" />,
+																<cfqueryparam value="#session.username# saved the company welcome message for #compdetails.companyname#" cfsqltype="cf_sql_varchar" />
+																);
+												</cfquery>																				
+												
+												<!--- // redirect to save message --->
+												<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">											
 											
+											</cfif>
 								
 										<!--- If the required data is missing - throw the validation error --->
 										<cfelse>
@@ -141,6 +156,7 @@
 												<li><a href="#application.root#?event=page.settings">Company Summary</a></li>
 												<li><a href="#application.root#?event=page.settings.api">API Key</a></li>
 												<li class="active"><a href="#application.root#?event=#url.event#">Welcome Message</a></li>
+												<li><a href="#application.root#?event=page.settings.disclosure">Disclosure Statement</a></li>
 												<li><a href="#application.root#?event=page.settings.webservices">Webservices</a></li>										
 												<li><a href="#application.root#?event=page.settings.docs">Source Documents</a></li>
 												<li><a href="#application.root#?event=page.settings.other">Other Settings</a></li>
@@ -150,7 +166,7 @@
 											
 											<form style="align:left;" id="company-welcome-message" class="form-horizontal" method="post" action="#application.root#?event=#url.event#">
 																			
-												<textarea id="wmbody" name="welcomemessagetext">#urldecode( companywelcomemessage.welcomemessagetext )#</textarea>
+												<textarea id="wmbody" name="welcomemessagetext"><cfif isdefined( "form.welcomemessagetext" )>#trim( form.welcomemessagetext )#<cfelse>#urldecode( companywelcomemessage.welcomemessagetext )#</cfif></textarea>
 																
 															
 												<br />					

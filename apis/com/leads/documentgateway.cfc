@@ -25,7 +25,7 @@
 				<cfset var doclist = "">				
 				<cfquery datasource="#application.dsn#" name="doclist">
 					select d.docsid, d.docuuid, d.leadid, d.docname, d.docfileext, d.docpath, d.docdate, d.docuploaddate,
-					       d.doctype, d.uploadedby, d.docactive, u.firstname, u.lastname, u.role, dc.doccat
+					       d.doctype, d.uploadedby, d.docactive, u.firstname, u.lastname, u.role, dc.doccat, dc.doccatid
 					  from documents d, doccategory dc, users u
 					 where d.doccatid = dc.doccatid
 					   and d.uploadedby = u.userid

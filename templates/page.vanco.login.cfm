@@ -14,7 +14,7 @@
 										
 							<div class="widget-header">
 								<i class="icon-cogs"></i> 
-								<h3>Student Loan Advisor Online | System Information | Vanco Web Services | Service Logout</h3>											
+								<h3>Student Loan Advisor Online | System Information | Vanco Web Services | Service Login</h3>											
 							</div>
 											
 						
@@ -27,7 +27,7 @@
 									
 									<!--- // 
 									
-											this page is automatically triggered daily, by the CFAdmin's Scheduled Task function, 
+											this page is automatically triggered daily, by the CFAdmin's Scheduled Task function. 
 											provides each company with vanco login session id management for vanco web services
 
 										 //

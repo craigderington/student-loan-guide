@@ -222,6 +222,8 @@
 										SELECT DATACONTENT as qLOANSERVICERTYPE
 										FROM NSLTXTDATA
 										WHERE DATALABEL = 'Loan Contact Type'
+										AND DATACONTENT <> 'Current Lender'
+										AND DATACONTENT <> 'Current Guaranty Agency'
 										AND ( txtrowid between #positionX# and 
 										   <cfif counter lt listlen( ltlist )>
 										   #positionZ#

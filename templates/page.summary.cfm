@@ -313,7 +313,7 @@
 													
 													<div class="tab-pane active" id="tab1">
 														<cfoutput>
-														<h3><i class="icon-user"></i> Contact Information <span style="float:right;font-size:14px;">Entered On: #dateformat(leaddetail.leaddate, "mm/dd/yyyy")#</span></h3>										
+														<h3><i class="icon-user"></i> Contact Information <!---<span style="float:right;font-size:14px;">Entered On: #dateformat( leaddetail.leaddate, "mm/dd/yyyy" )#</span>---></h3>										
 														<p style="color:##ff0000;">* Denotes a required field  <cfif not isuserinrole( "bclient" )><cfif isuserinrole( "counselor" ) and leaddetail.leadintakecompdate is ""><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=swapstatus" onclick="return confirm('Are you sure you want to change this client\'s status?');" class="btn btn-small <cfif leaddetail.leadactive eq 1>btn-default"><i class="icon-remove-sign"></i> Inactivate File</a><cfelse>btn-success"><i class="icon-ok-sign"></i> Activate File</a></cfif></span><cfelseif not isuserinrole( "counselor" )><span class="pull-right"><a href="#application.root#?event=#url.event#&fuseaction=swapstatus" onclick="return confirm('Are you sure you want to change this client\'s status?');" class="btn btn-small <cfif leaddetail.leadactive eq 1>btn-default"><i class="icon-remove-sign"></i> Inactivate File</a><cfelse>btn-success"><i class="icon-ok-sign"></i> Activate File</a></span></cfif></cfif></cfif></p>
 														<br>
 														

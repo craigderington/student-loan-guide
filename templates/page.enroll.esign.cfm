@@ -23,13 +23,38 @@
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
 			
+			<!--- // 11-18-2014 // add company info for disclosure statement contact information section --->
+			<cfinvoke component="apis.com.portal.portalgateway" method="getcompanyinfo" returnvariable="companyinfo">
+				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>
+			
 			<!--- // 7-20/2014 // add company pay types allowed since some companies will have payment types other than ACH --->
 			<cfinvoke component="apis.com.portal.portalgateway" method="getcompanyportalpaytypes" returnvariable="companyportalpaytypes">
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
 			
+			<!--- // 12-1-2014 // add company specific esign disclosure statements --->
+			<cfinvoke component="apis.com.portal.portalgateway" method="getcompanydisclosure" returnvariable="companydisclosure">
+				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>
 			
 			
+			<!--- // include the tinymce js path --->
+			<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+			
+			<!--- // initialize tinymce --->
+			<script type="text/javascript">
+				tinymce.init({
+					selector: "textarea",
+					auto_focus: "dsbody",					
+					width: 512,
+					height: 512,
+					paste_as_text: false,
+					toolbar:false,
+					menubar:false,
+					readonly:1,
+				});
+			</script>
 			
 			
 			
@@ -417,44 +442,7 @@
 																					<form id="edit-lead-profile" class="form-horizontal" method="post" action="#application.root#?event=#url.event#&fuseaction=donext&step=#url.step#">
 																					<fieldset>													
 
-																					<textarea rows="20" style="height:512px;width:525px;">Electronic Disclosure and Electronic Signature Agreement
-Effective: August 16, 2013
-
-The Electronic Signatures in Global and National Commerce Act (ESIGN) requires your approval before we can provide services to you electronically. Please read this Electronic Signature Disclosure and Agreement carefully and save or print a copy for your records.
-
-Terms: This Disclosure and Agreement (“Agreement”) is the contract which covers your and our rights and responsibilities concerning the service offered to you by Consumer Debt Counselors, LLC. The service permits you to electronically sign your enrollment agreement, manage the data provided to Consumer Debt Counselors, LLC. for your student loans, communicate with Advisors, and to electronically receive disclosures and records regarding your account(s) with SLA. In this Agreement, the words “you,” “your,” and “yours” mean those who request and use the service, including any joint owners or any person authorized to use your services. The words “we,” “us,” and “our” mean SLA. By using the service, each of you, jointly and severally, agree to the terms and conditions of this Agreement, and any amendments.  The terms of this Agreement are in addition to the terms of any other client agreements you have with us, including but not limited to the: a) Client Enrollment Agreement for Student Loan Advisory Services; and b) Fee Disclosures, Privacy Notice and Electronic Fund Transfers Agreement, and any change of terms notices.
-
-Electronic Signature (e-Signature): You consent and agree that your use of a key pad, mouse or other device to select an item, button, icon or similar act/action while using any electronic service we offer; or in accessing or making any transactions regarding any agreement, acknowledgement, consent, terms, disclosures or conditions constitutes your signature, acceptance and agreement as if actually signed by you in writing. Further, you agree that no certification authority or other third party verification is necessary to validate your electronic signature; and that the lack of such certification or third party verification will not in any way affect the enforceability of your signature or resulting contract between you and Student Loan Advisor Online. You understand and agree that your e-Signature executed in conjunction with the electronic submission of your application shall be legally binding and such transaction shall be considered authorized by you.
-
-Your Consent is Required: By enrolling, you are agreeing to receive documents electronically including disclosures and notices we may need to provide you, including, but not limited to: Client Enrollment Agreement and Account Disclosures (as described above). You also agree to receive an e-mail with a link to enroll for electronic statements (e-Statements) for any account(s) you have with us where you are the primary user.
-
-If you do not wish to receive e-Statements, disregard the e-mails and paper statements will be sent to you.
-
-System Requirements: To receive the applicable disclosures and statements electronically you will need:
-
-
-&bull; A personal computer or other device which is capable of accessing the Internet.
-&bull; An active Internet Service Provider.
-&bull; An Internet Web Browser with capabilities to support a minimum 128-bit encryption. An “A-Class Browser Support Chart” can be found at http://yuilibrary.com/yui/environments/.
-&bull; The ability to download or print agreements, disclosures, and e-Statements.
-&bull; Software which permits you to receive and access Portable Document Format (PDF) files, such as Adobe Acrobat Reader® (you will need one of the last three versions.)
-
-
-Adobe Acrobat is free software available at www.adobe.com.  Please note: e-Statements will only be available in PDF formatting.
-
-System Requirements to Retain Disclosures: To retain disclosures and e-Statements for your records, your system must have the ability to either download to your hard disk drive or print PDF files.
-
-Requesting Paper Copies of Disclosures: If, after consenting to receive applicable disclosures electronically you would like paper copies of the disclosures or statements, we will send them to you. Refer to the Truth-in-Savings Disclosures for fees for copies of statements. Copies of disclosures are at no cost. There is no charge to convert from electronic disclosures and statements to paper disclosures and statements. If you would like to receive future disclosures or statements by paper instead of electronically; or you need copies of these disclosures, contact us using the following information:
-
-E-mail: info@studentloanadvisoronline.com
-Telephone: 800-820-9232 to speak to a Member Advisor
-Postal mail: 
-Consumer Debt Counselors, LLC.
-Attn: e-Signature Services
-831 West Morse Blvd.
-Winter Park, FL 32789
-
-Updating Your Personal Information: You are responsible for keeping your e-mail address updated. You should keep us informed of any changes in your telephone number, mailing address, or e-mail address by contacting us using one of the methods listed above.
+																					<textarea id="dsbody">#urldecode( companydisclosure.disclosuretext )#
 </textarea>
 																											
 																					<br /><br />											

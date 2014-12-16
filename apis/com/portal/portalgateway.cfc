@@ -107,6 +107,19 @@
 					</cfquery>
 			<cfreturn companyportaldocs >
 		</cffunction>
+		
+		<cffunction name="getcompanyinfo" access="public" output="false" hint="I get the company info for esign disclosure statements.">
+			<cfargument name="leadid" type="numeric" required="yes" default="#session.leadid#">
+			<cfset var companyinfo = "" />
+				<cfquery datasource="#application.dsn#" name="companyinfo">
+						select c.companyid, c.dba, c.companyname, c.address1, c.address2, 
+							   c.city, c.state, c.zip, c.phone, c.fax, c.email
+						  from company c, leads l
+						 where c.companyid = l.companyid
+						   and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
+					</cfquery>
+			<cfreturn companyinfo >
+		</cffunction>
 
 		<cffunction name="getcompanyportalpaytypes" access="public" output="false" hint="I get the company payment types allowed for each company for client portal.">
 			<cfargument name="leadid" type="numeric" required="yes" default="#session.leadid#">
@@ -122,6 +135,21 @@
 						          cpt.companypaytypedescr = <cfqueryparam value="CC" cfsqltype="cf_sql_char" /> )					
 				 </cfquery>
 			<cfreturn companyportalpaytypes >
+		</cffunction>
+		
+		<cffunction name="getcompanydisclosure" access="public" output="false" hint="I get the company esign disclosure statement.">
+			<cfargument name="leadid" type="numeric" required="yes" default="#session.leadid#">
+			<cfset var companydisclosure = "" />
+				<cfquery datasource="#application.dsn#" name="companydisclosure">
+					select ds.disclosureid, ds.companyid, ds.disclosuretext, ds.lastupdated, ds.lastupdatedby,
+						   u.firstname, u.lastname
+					  from disclosurestatement ds, company c, leads l, users u
+					 where ds.companyid = c.companyid
+					   and c.companyid = l.companyid					 
+					   and ds.lastupdatedby = u.userid 
+					   and l.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
+				</cfquery>					
+			<cfreturn companydisclosure >
 		</cffunction>
 		
 	</cfcomponent>

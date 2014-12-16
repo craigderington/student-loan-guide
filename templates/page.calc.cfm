@@ -25,6 +25,26 @@
 			<cfparam name="totalloanrepayamt" default="0.00">
 			<cfset pplus = valuelist( worksheetlist.loancode ) />
 			
+			<cfparam name="primaryagi" default="0.00">
+			<cfparam name="secondaryagi" default="0.00">
+			<cfparam name="totalagi" default="0.00">
+			<cfparam name="mfj" default="NO">
+			<cfparam name="icragi" default="0.00">
+			
+			<!--- // assign AGI values --->
+			<cfset mfj = trim( leadsummary.mfj ) />
+			<cfset primaryagi = numberformat( leadsummary.primaryagi, "99999.99" ) />
+			<cfset secondaryagi = numberformat( leadsummary.secondaryagi, "99999.99" ) />
+			<cfset icragi = numberformat( leadsummary.primaryagi + leadsummary.secondaryagi, "99999.99" ) />
+			
+			<!--- // if MFJ is true, combine incomes
+			          for IBR and ISR --->
+			<cfif trim( mfj ) eq "yes">
+				<cfset totalagi = primaryagi + secondaryagi />
+			<cfelse>
+				<cfset totalagi = primaryagi />
+			</cfif>
+			
 			
 			
 			<!--- // the repayment calculator --->
@@ -68,7 +88,7 @@
 															
 										<!--- // qualify the client based on the poverty lookup --->
 										<cfinvoke component="apis.com.calculator.slcalc" method="qualifyclient" returnvariable="qualifyThisClient">
-											<cfinvokeargument name="agi" value="#leadsummary.primaryagi#">
+											<cfinvokeargument name="agi" value="#totalagi#">
 											<cfinvokeargument name="famsize" value="#leadsummary.familysize#">
 											
 											<cfif trim( leaddetail.leadstate ) IS "AK">
@@ -82,7 +102,7 @@
 																	
 										<!--- // calculate the income based plan --->
 										<cfinvoke component="apis.com.calculator.slcalc" method="calcIBR" returnvariable="mIBR">
-											<cfinvokeargument name="agi" value="#leadsummary.primaryagi#">
+											<cfinvokeargument name="agi" value="#totalagi#">
 											<cfinvokeargument name="famsize" value="#leadsummary.familysize#">
 																		
 											<cfif trim( leaddetail.leadstate ) IS "AK">
@@ -97,7 +117,7 @@
 																	
 										<!--- // calculate the income contingent plan --->
 										<cfinvoke component="apis.com.calculator.slcalc" method="calcICR" returnvariable="monthlyPaymentICR">
-											<cfinvokeargument name="agi" value="#leadsummary.primaryagi#">
+											<cfinvokeargument name="agi" value="#icragi#">
 											<cfinvokeargument name="famsize" value="#leadsummary.familysize#">
 											<cfinvokeargument name="maritalstatus" value="#leadsummary.filingstatus#">		
 											<cfinvokeargument name="leadid" value="#leaddetail.leadid#">

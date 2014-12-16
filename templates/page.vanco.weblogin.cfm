@@ -45,13 +45,7 @@
 													   and companyid = <cfqueryparam value="#session.companyid#" cfsqltype="cf_sql_integer" />
 												</cfquery>
 
-												<cfif getcompanylogin.recordcount eq 1>
-													
-													<!--- // for testing
-												    <cfdump var="#getcompanylogin#" label="This Dump">
-													<cfdump var="#vancosettings#" label="Vanco Dump">
-													--->
-													
+												<cfif getcompanylogin.recordcount eq 1>						
 													
 													<!--- // get our vanco settings   --->		
 													<cfinvoke component="apis.dotnet.vanco.vanco-functions" method="getvancosettings" returnvariable="vancosettings">
@@ -83,9 +77,10 @@
 															</cfhttp>													
 														
 															<!--- // for testing 
-															<cfdump var="#result#" label="Vanco Response">
+															<cfdump var="#result#" label="Vanco Response">															
+															<cfdump var="#getcompanylogin#" label="This Dump">
+															<cfdump var="#vancosettings#" label="Vanco Dump">
 															--->
-															
 															<!--- // if the connection to the server responds 200 OK - process the login --->
 															<cfif result.statuscode neq "200 OK">
 															

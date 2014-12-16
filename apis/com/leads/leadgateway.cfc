@@ -168,7 +168,7 @@
 			<cfset var leaddetail = "" />				
 				<cfquery datasource="#application.dsn#" name="leaddetail">
 					select l.leadid, l.leaduuid, ls.leadsource, l.leaddate, l.leadfirst, l.leadlast, l.leademail,
-					       l.leadphonenumber, l.leadphonetype, l.leadactive, l.leadconv, l.leadpassword, 
+					       l.leadphonenumber, l.leadphonetype, l.leadactive, l.leadconv, l.leadpassword, l.agencyuniqueid,
 						   l.leadusername, l.leadphonetype2, l.leadphonenumber2, l.leadsourceid, l.leadadd1,
 						   l.leadadd2, l.leadcity, l.leadstate, l.leadzip, l.leadmobileprovider, l.leadachhold, 
 						   l.leadachholdreason, l.leadachholddate, l.leaddobmonth, l.leaddobday, l.leaddobyear, 

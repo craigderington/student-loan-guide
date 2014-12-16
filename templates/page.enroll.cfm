@@ -82,7 +82,7 @@
 											<cfset lead.slq1 = #form.loantype# />
 											<cfset lead.slq2 = #form.loanstatus# />
 											<cfset lead.method = #form.contactmethod# />
-											
+											<cfset lead.agencyid = #form.agencyid# />
 											
 											<!--- // some other variables --->
 											<cfset today = #CreateODBCDateTime(now())# />
@@ -101,6 +101,12 @@
 														   sloutcome = <cfqueryparam value="#lead.outcome#" cfsqltype="cf_sql_varchar" />,
 														   slenrollclientmethod = <cfqueryparam value="#lead.method#" cfsqltype="cf_sql_varchar" />
 													 where summaryid = <cfqueryparam value="#lead.summaryid#" cfsqltype="cf_sql_integer" />
+											</cfquery>
+											
+											<cfquery datasource="#application.dsn#" name="saveagencyid">
+													update leads
+													   set agencyuniqueid = <cfqueryparam value="#lead.agencyid#" cfsqltype="cf_sql_varchar" />
+													 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
 											</cfquery>
 
 											<cfif lead.outcome is not "">
@@ -231,6 +237,13 @@
 																</div> <!-- /controls -->				
 															</div> <!-- /control-group -->									
 															--->
+															
+															<div class="control-group">											
+																<label class="control-label" for="agencyid"><strong>Agency Unique ID</strong></label>
+																<div class="controls">
+																	<input type="text" class="input-small" maxlength="20" name="agencyid" id="agencyid" value="<cfif isdefined( "form.agencyid" )>#trim( form.agencyid )#<cfelse><cfif leaddetail.agencyuniqueid is not "">#trim( leaddetail.agencyuniqueid )#</cfif></cfif>">
+																</div> <!-- /controls -->				
+															</div> <!-- /control-group -->
 															
 															<div class="control-group">											
 																<label class="control-label" for="Contact Method">Contact Method</label>

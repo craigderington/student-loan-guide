@@ -1003,6 +1003,33 @@
 													<td style="font-family:Verdana;font-size:10px;">&bull; Yard/Pool Maintenance </td>
 													<td style="font-family:Verdana;font-size:10px;">#dollarformat( budget.yardmaint )#</td>
 												</tr>
+												
+												<tr>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+												</tr>
+												
+												<tr bgcolor="##000">
+													<td style="font-family:Verdana;font-size:12px;color:white;font-weight:bold;">Budget Summary </td>
+													<td style="font-family:Verdana;font-size:12px;color:white;font-weight:bold;">&nbsp;</td>
+												</tr>
+												
+												<tr bgcolor="##f2f2f2">
+													<td style="font-family:Verdana;font-size:10px;">&bull; Total Monthly Income </td>
+													<td style="font-family:Verdana;font-size:10px;">#dollarformat( budget.primarytotalincome + budget.secondarytotalincome )#</td>
+												</tr>
+												<cfset totalexpenses = budget.sheltertotal + budget.misctotal + budget.domesticorder + budget.childcaretotal + budget.medtotal + budget.insurancetotal + budget.foodtotal + budget.transtotal + budget.utilitytotal + budget.autototal />
+												<tr>
+													<td style="font-family:Verdana;font-size:10px;">&bull; Total Monthly Expenses </td>
+													<td style="font-family:Verdana;font-size:10px;">#dollarformat(  totalexpenses )#</td>
+												</tr>
+												
+												<tr bgcolor="##f2f2f2">
+													<td style="font-family:Verdana;font-size:10px;">&bull; Total Monthly Surplus/Deficit </td>
+													<td style="font-family:Verdana;font-size:10px;">#dollarformat( ( budget.primarytotalincome + budget.secondarytotalincome ) - totalexpenses )#</td>
+												</tr>
+												
+												
 											</table>
 										</td>
 									</tr>

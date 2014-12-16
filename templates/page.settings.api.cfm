@@ -58,6 +58,7 @@
 											<li><a href="#application.root#?event=page.settings">Company Summary</a></li>
 											<li class="active"><a href="#application.root#?event=#url.event#">API Key</a></li>
 											<li><a href="#application.root#?event=page.settings.welcomemessage">Welcome Message</a></li>
+											<li><a href="#application.root#?event=page.settings.disclosure">Disclosure Statement</a></li>
 											<li><a href="#application.root#?event=page.settings.webservices">Webservices</a></li>										
 											<li><a href="#application.root#?event=page.settings.docs">Source Documents</a></li>
 											<li><a href="#application.root#?event=page.settings.other">Other Settings</a></li>																											

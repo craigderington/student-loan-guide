@@ -24,10 +24,10 @@
 				
 				<cfparam name="docid" default="">
 				<cfparam name="today" default="">
-				<cfset docid = #url.docid# />
-				<cfset today = #CreateODBCDateTime(Now())# />
+				<cfset docid = url.docid />
+				<cfset today = CreateODBCDateTime( now() ) />
 				
-					<cfif structkeyexists(url, "docid") and url.docid is not "" and isvalid("uuid", url.docid) >
+					<cfif structkeyexists( url, "docid" ) and url.docid is not "" and isvalid( "uuid", url.docid ) >
 						
 						<!--- // get the record to log the activity --->						
 						<cfquery datasource="#application.dsn#" name="getdoc">
@@ -39,9 +39,9 @@
 						
 						<!--- // delete the file form the server path --->
 						<cfif trim( getdoc.doctype ) is "S">						
-							<cffile action="delete" file="#ExpandPath('library\clients\solutions')#\#getdoc.docpath#">						
+							<cffile action="delete" file="#expandpath( 'library\clients\solutions\' & getdoc.docpath )#">						
 						<cfelse>
-							<cffile action="delete" file="#ExpandPath('library\clients\enrollment')#\#getdoc.docpath#">
+							<cffile action="delete" file="#expandpath( 'library\clients\enrollment' & getdoc.docpath )#">
 						</cfif>
 						
 						<!--- // delete the document --->						
@@ -299,7 +299,7 @@
 																</thead>
 																<tbody>
 																	
-																	<cfoutput query="doclist" group="doccat">
+																	<cfoutput query="doclist" group="doccatid">
 																		
 																		<tr style="background-color:##f2f2f2;">
 																			<td colspan="4"><strong>#doccat#</strong></td>
@@ -309,7 +309,7 @@
 																				<tr>
 																					<td class="actions">
 																						
-																							<cfif trim( doctype ) is "E">
+																							<cfif trim( doctype ) eq "E">
 																								<a href="library/clients/enrollment/#docpath#" class="btn btn-mini btn-warning" target="_blank">
 																									<i class="btn-icon-only icon-ok"></i>										
 																								</a>								
@@ -320,10 +320,10 @@
 																							</cfif>
 																							
 																							<cfif not isuserinrole( "bClient" )>
-																								<cfif trim( doctype ) is "E">
+																								<cfif trim( doctype ) eq "E" or trim( doctype ) eq "S">
 																									<a href="#application.root#?event=#url.event#&fuseaction=deletedocument&docid=#docuuid#" class="btn btn-mini btn-inverse" onclick="return confirmsubmit();">
 																										<i class="btn-icon-only icon-trash"></i>										
-																									</a>
+																									</a>																							
 																								</cfif>
 																							</cfif>
 																					
@@ -331,7 +331,7 @@
 																					</td>																	
 																					<td>#dateformat(docdate, "mm/dd/yyyy")#</td>
 																					<td>#docname#</td>																					
-																					<td><a href="library/clients/enrollment/#docpath#" target="_blank" class="label label-inverse">Get Document</a></td>
+																					<td><a href="library/clients/<cfif trim( doctype ) is "E">enrollment<cfelse>solutions</cfif>/#docpath#" target="_blank" class="label label-inverse">Get Document</a></td>
 																				</tr>
 																			</cfoutput>
 																	</cfoutput>										

@@ -5,7 +5,7 @@
 		
 		<cfscript>
 			thread = createobject( "java", "java.lang.Thread" );
-			thread.sleep(3000);
+			thread.sleep( 2000 );
 		</cfscript>
 		
 	

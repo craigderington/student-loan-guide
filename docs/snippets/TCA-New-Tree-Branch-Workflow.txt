@@ -1,0 +1,44 @@
+<div class="plan-container">
+													<div class="plan stacked black">
+														<div class="plan-header">
+															
+															<div class="plan-title">
+																<small>Take Charge America - Client Options</small>    		
+															</div> <!-- /plan-title -->													
+															
+															
+														</div> <!-- /plan-header -->							
+														
+														<div class="plan-features">
+															<ul style="list-style:none;">								
+																<form name="tca-workflow-client-options" action="#application.root#?event=page.tca.solution" method="post">		
+																	<small>
+																		<li>Consolidation + IDR</li>																	
+																		<li>Consolidation</li>
+																		<li>Economic Hardship Deferment</li>
+																		<li>Forbearance</li>
+																		<li>IBR/Non-Consolidated</li>
+																		<li>ICR/Non-Consolidated</li>
+																		<li>PAYE/Non-Consolidated</li>
+																		<li>PSLF + Consolidation </li>
+																		<li>PSLF</li>
+																		<li>Rehabilitation</li>
+																		<li>Teacher Loan Forgiveness</li>
+																		<li>Unemployment Deferment</li>
+																	</small>
+																</form>	
+															</ul>
+														</div> <!-- /plan-features -->														
+														
+															<cfoutput>
+																<div class="plan-actions">				
+																	<button type="submit" class="btn btn-secondary" name="tcasolution"><i class="icon-circle-arrow-right"></i> Continue</button>				
+																</div> <!-- /plan-actions -->
+															</cfoutput>
+																	
+														</div> <!-- /plan-actions -->													
+											
+													</div> <!-- /plan -->													
+													
+													
+												</div> <!-- /plan-container -->

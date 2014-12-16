@@ -914,7 +914,51 @@
 													</div> <!-- /plan -->													
 													
 													
-												</div> <!-- /plan-container -->										
+												</div> <!-- /plan-container -->
+
+												<cfif ( session.companyid eq 446 or session.companyid eq 453 )>
+													<cfoutput>
+														<div class="plan-container">
+															<form name="tca-workflow-client-options" action="#application.root#?event=page.tca.solution" method="post">
+																<div class="plan stacked black">
+																	<div class="plan-header">																	
+																		<div class="plan-title">
+																			<small>Take Charge America &raquo; Client Options</small>    		
+																		</div> <!-- /plan-title -->																	
+																	</div> <!-- /plan-header -->							
+																	
+																			
+																	<div class="plan-features">
+																		<ul style="list-style:none;">																	
+																			<cfif structkeyexists( url, "tca_error" )>
+																			<li class="alert-error"><small>You did not select any options...</small></li>
+																			</cfif>
+																			<li><small><input type="checkbox" name="consol" value="Consolidation" /> Consolidation</small></li>
+																			<li><small><input type="checkbox" name="idrconsol" value="Consolidation + IDR" /> Consolidation + IDR</small></li>																	
+																			<li><small><input type="checkbox" name="pslfconsol" value="PSLF + Consolidation" /> PSLF + Consolidation</small></li>
+																			<li><small><input type="checkbox" name="ibr" value="IBR/Non-Consolidated" /> IBR/Non-Consolidated</small></li>
+																			<li><small><input type="checkbox" name="icr" value="ICR/Non-Consolidated" /> ICR/Non-Consolidated</small></li>
+																			<li><small><input type="checkbox" name="paye" value="PAYE/Non-Consolidated" /> PAYE/Non-Consolidated</small></li>
+																			<li><small><input type="checkbox" name="rehab" value="Rehabilitation" /> Rehabilitation</small></li>
+																			<li><small><input type="checkbox" name="pslf" value="Public Service Loan Forgiveness" /> PSLF</small></li>
+																			<li><small><input type="checkbox" name="tlf" value="Teacher Loan Forgiveness" /> Teacher Loan Forgiveness</small></li>																			
+																			<li><small><input type="checkbox" name="forbear" value="Forbearance" /> Forbearance</small></li>																																					
+																			<li><small><input type="checkbox" name="unempdefer" value="Unemployment Deferment" /> Unemployment Deferment</small></li>
+																			<li><small><input type="checkbox" name="econdefer" value="Economic Hardship Deferment" /> Economic Hardship Deferment</small></li>
+																				
+																		</ul>
+																	</div> <!-- /plan-features -->													
+																		
+																	<div class="plan-actions">				
+																		<button type="submit" class="btn" style="padding:20px 50px 20px 50px;" name="tcasolution"><i class="icon-circle-arrow-right"></i> Continue</button>							
+																	</div> <!-- /plan-actions -->													
+																														
+														
+																</div> <!-- /plan -->
+															</form>
+														</div> <!-- /plan-container -->													
+													</cfoutput>											
+												</cfif><!-- / end tca workflow -->
 										
 											</div> <!-- /pricing-plans -->
 

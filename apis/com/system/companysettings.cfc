@@ -76,6 +76,19 @@
 					<cfreturn companywelcomemessage >
 				</cffunction>
 				
+				<cffunction name="getcompanydisclosure" access="public" output="false" hint="I get the company esign disclosure statement.">
+					<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+					<cfset var companydisclosure = "" />
+					<cfquery datasource="#application.dsn#" name="companydisclosure">
+						select ds.disclosureid, ds.companyid, ds.disclosuretext, ds.lastupdated, ds.lastupdatedby,
+						       u.firstname, u.lastname
+						  from disclosurestatement ds, users u
+						 where ds.lastupdatedby = u.userid 
+						   and ds.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+					</cfquery>					
+					<cfreturn companydisclosure >
+				</cffunction>
+				
 				
 				
 		</cfcomponent>

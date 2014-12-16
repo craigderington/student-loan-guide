@@ -14,6 +14,10 @@
 				<cfinvokeargument name="leadid" value="#session.leadid#">
 			</cfinvoke>
 			
+			<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+			</cfinvoke>
+			
 			
 			<!--- // delete selected fee // check query string param // --->
 			<cfif structkeyexists( url, "fuseaction" ) and url.fuseaction is "deletefee">				
@@ -210,7 +214,12 @@
 												<cfif structkeyexists( form, "savelead" )>
 													<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
 												<cfelseif structkeyexists( form, "saveleadcontinue" )>
-													<cflocation url="#application.root#?event=page.enroll.status" addtoken="no">
+													<!--- // 11-14-2014 // modify workflow for companys using vws --->
+													<cfif companysettings.vancows eq 1>
+														<cflocation url="#application.root#?event=page.vanco" addtoken="no">
+													<cfelse>
+														<cflocation url="#application.root#?event=page.enroll.status" addtoken="no">
+													</cfif>
 												<cfelse>
 													<cflocation url="#application.root#?event=#url.event#&msg=saved" addtoken="no">
 												</cfif>

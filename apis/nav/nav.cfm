@@ -47,8 +47,8 @@
 				<cfcase value="page.growl">
 					<cfinclude template="../../templates/page.growl.cfm">
 				</cfcase>
-				<cfcase value="page.manual">
-					<cfinclude template="../../templates/page.manual.cfm">
+				<cfcase value="page.user.manual">
+					<cfinclude template="../../templates/page.user.manual.cfm">
 				</cfcase>
 				<cfcase value="page.reports">
 					<cfinclude template="../../templates/page.reports.cfm">
@@ -471,6 +471,9 @@
 				<cfcase value="page.settings.welcomemessage">				
 					<cfinclude template="../../templates/page.settings.welcomemessage.cfm">
 				</cfcase>
+				<cfcase value="page.settings.disclosure">				
+					<cfinclude template="../../templates/page.settings.disclosure.cfm">
+				</cfcase>
 				<cfcase value="page.manage.leads">				
 					<cfinclude template="../../templates/page.manage.leads.cfm">
 				</cfcase>
@@ -521,6 +524,18 @@
 				</cfcase>
 				<cfcase value="page.api.docs">				
 					<cfinclude template="../../templates/page.api.docs.cfm">
+				</cfcase>
+				<cfcase value="page.tca.solution">				
+					<cfinclude template="../../templates/page.tca.solution.cfm">
+				</cfcase>
+				<cfcase value="page.tca.solution.process">				
+					<cfinclude template="../../templates/page.tca.solution.process.cfm">
+				</cfcase>
+				<cfcase value="page.tca.solution.final">				
+					<cfinclude template="../../templates/page.tca.solution.final.cfm">
+				</cfcase>
+				<cfcase value="page.tca.create.action.plan">				
+					<cfinclude template="../../templates/page.tca.create.action.plan.cfm">
 				</cfcase>
 				<!--- default case --->
 				<cfdefaultcase>
