@@ -31,6 +31,7 @@
 										   and  l.companyid = <cfqueryparam value="#session.companyid#" cfsqltype="cf_sql_integer" />
 										   and  l.leadachhold = <cfqueryparam value="N" cfsqltype="cf_sql_char" />
 										   and  l.leadactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+										   
 										   <!--- // 7-20-2014 // not a good idea, but we have to remove this for CC payments
 										   and  e.esignrouting <> ''										   
 										   and  e.esignaccount <> ''
@@ -38,6 +39,10 @@
 										   --->
 										   and  sl.slenrollreturndate <> ''
 										   and  sl.slenrolldocsuploaddate <> ''
+										   and  f.feeamount > <cfqueryparam value="0.00" cfsqltype="cf_sql_float" />
+										   and  f.feepaiddate is null
+										   and  f.feeprogram <> <cfqueryparam value="n" cfsqltype="cf_sql_char" />
+										   and  f.feestatus <> <cfqueryparam value="NSF" cfsqltype="cf_sql_varchar" />
 										   and  ( f.feepaytype = <cfqueryparam value="ACH" cfsqltype="cf_sql_char" /> OR
 										          f.feepaytype = <cfqueryparam value="CC" cfsqltype="cf_sql_char" /> )
 										   and  f.feetrans = <cfqueryparam value="N" cfsqltype="cf_sql_char" />

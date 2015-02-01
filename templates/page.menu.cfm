@@ -128,17 +128,17 @@
 														<span class="shortcut-label">Future<br /> Use</span>
 													</a>
 													
-											</div>
+											</div>										
 											
-											
-											
-											<div class="row" style="height:100px;">										
-													
+											<div class="row">			
 												<a href="#application.root#?event=page.menu.leadsources" class="shortcut">
 													<i class="shortcut-icon icon-map-marker"></i>
-													<span class="shortcut-label">Manage <br /> Lead Sources </span>	
-												</a>	
-												
+													<span class="shortcut-label">Manage <br /> Inquiry Sources </span>	
+												</a>
+												<a href="#application.root#?event=page.settings.menus" class="shortcut">
+													<i class="shortcut-icon icon-columns"></i>
+													<span class="shortcut-label">Manage <br /> System Menus </span>	
+												</a>
 											</div>
 											
 											

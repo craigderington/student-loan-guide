@@ -18,6 +18,10 @@
 				<cfinvokeargument name="companyid" value="#session.companyid#">
 			</cfinvoke>
 			
+			<cfinvoke component="apis.com.system.companysettings" method="getcompanypaytypes" returnvariable="companypaytypes">
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+			</cfinvoke>
+			
 			
 			<!--- // delete selected fee // check query string param // --->
 			<cfif structkeyexists( url, "fuseaction" ) and url.fuseaction is "deletefee">				
@@ -291,6 +295,28 @@
 															<tbody>
 																
 																<cfoutput query="clientfees">
+																	<cfparam name="mypaytype" default="">
+																	<!--- // output readable payment type --->
+																	<cfswitch expression="#trim( clientfees.feepaytype )#">															
+																		<cfcase value = "ach">
+																			<cfset mypaytype = "ACH" />
+																		</cfcase>
+																		<cfcase value = "cc">
+																			<cfset mypaytype = "Credit Card" />
+																		</cfcase>
+																		<cfcase value = "dc">
+																			<cfset mypaytype = "Debit Card" />
+																		</cfcase>
+																		<cfcase value = "csh">
+																			<cfset mypaytype = "Cash" />
+																		</cfcase>
+																		<cfcase value = "chk">
+																			<cfset mypaytype = "Check" />
+																		</cfcase>
+																		<cfcase value = "mo">
+																			<cfset mypaytype = "Money Order" />
+																		</cfcase>																																				
+																	</cfswitch>
 																	<tr>
 																		<td class="actions">											
 																				
@@ -325,7 +351,7 @@
 																				</cfif>
 																		</td>
 																		<td><cfif feetype eq 1><span class="label label-default">Advisory</span><cfelseif feetype eq 2><span class="label label-info">Implementation</span><cfelseif feetype eq 3><span class="label label-success">Ancillary Fees</span><cfelseif feetype eq 0><span class="label label-info">Returned Item</span><cfelse></cfif></td>
-																		<td>#dateformat( feeduedate, "mm/dd/yyyy" )# by <span style="margin-left:5px;" class="label label-info">#feepaytype#</span></td>
+																		<td>#dateformat( feeduedate, "mm/dd/yyyy" )# by <span style="margin-left:5px;" class="label label-info">#mypaytype#</span></td>
 																		<td>#dollarformat( feeamount )#</td>																	
 																		<td><cfif trim( feestatus ) is "paid"><span class="label label-success">#feestatus# <cfif feepaiddate is not ""> - #dateformat( feepaiddate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "pending"><span class="label label-info">#feestatus# <cfif feetransdate is not ""> - #dateformat( feetransdate, "mm/dd/yyyy" )#</cfif></span><cfelseif trim( feestatus ) is "nsf"><span class="label label-info">#feestatus#<cfelse><span class="label label-default">#feestatus#</span></cfif></td>
 																	</tr>
@@ -378,11 +404,10 @@
 																			<label class="control-label" for="rgfeetype">Payment Type</label>
 																			<div class="controls">
 																				<select name="paytype" id="paytype" class="input-medium">
-																					<option value="ACH">ACH</option>
-																					<option value="CC" selected>Credit Card</option>
-																					<option value="MO">Money Order</option>
-																					<option value="CHK">Check</option>
-																					<option value="CSH">Cash</option>																			
+																					<option value="" selected>Select Pay Type</option>
+																					<cfloop query="companypaytypes">
+																						<option value="#companypaytypecode#">#companypaytypedescr#</option>
+																					</cfloop>
 																				</select>
 																			</div>
 																		</div>
@@ -417,7 +442,7 @@
 																		<input name="utf8" type="hidden" value="&##955;">													
 																		<input type="hidden" name="leadid" value="#leaddetail.leadid#" />																	
 																		<input type="hidden" name="__authToken" value="#randout#" />
-																		<input name="validate_require" type="hidden" value="leadid|Opps, sorry... the form can not be posted due to an internal error.  Please re-load the page and try again.;startdate|The fee schedule start date is required to create the fees.;payamt|Please enter the fee amount to create the fee schedule.;paynum|The number of payments is required to create the fee schedule." />
+																		<input name="validate_require" type="hidden" value="leadid|Opps, sorry... the form can not be posted due to an internal error.  Please re-load the page and try again.;startdate|The fee schedule start date is required to create the fees.;payamt|Please enter the fee amount to create the fee schedule.;paynum|The number of payments is required to create the fee schedule.;paytype|Please select the type of payment." />
 																		<input name="validate_numeric" type="hidden" value="paynum|'Number of Payments' must be a numeric value..." />
 																	</div> <!-- /form-actions -->
 																</fieldset>

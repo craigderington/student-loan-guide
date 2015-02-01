@@ -63,7 +63,7 @@
 			
 			<!--- // update which loans to consolidate --->
 			
-			<cfif structkeyexists( form, "updateconsolworksheet" ) and isvalid("integer", form.worksheetid )>
+			<cfif structkeyexists( form, "updateconsolworksheet" ) and isvalid( "integer", form.worksheetid )>
 				<cfparam name="worksheetid" default="">
 				<cfparam name="status" default="">
 				<cfset worksheetid = #form.worksheetid# />

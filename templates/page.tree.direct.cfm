@@ -85,7 +85,7 @@
 					<cfset tabbk = true />
 				</cfif>
 				
-				<!--- // end tab defintion and order --->
+				<!--- // end tab definition and order --->
 				
 			
 			

@@ -36,7 +36,10 @@
 					<cfinclude template="../../templates/page.profile.cfm">
 				</cfcase>
 				<cfcase value="page.lead.login">
-					<cfinclude template="../../templates/page.lead.login.cfm">
+					<cfinclude template="../../templates/page.lead.login2.cfm">
+				</cfcase>
+				<cfcase value="page.lead.login2">
+					<cfinclude template="../../templates/page.lead.login2.cfm">
 				</cfcase>
 				<cfcase value="page.taskmanager">
 					<cfinclude template="../../templates/page.taskmanager.cfm">
@@ -183,7 +186,7 @@
 					<cfinclude template="../../templates/page.worksheet.add.cfm">
 				</cfcase>
 				<cfcase value="page.nslds.upload">				
-					<cfinclude template="../../templates/page.nslds.upload.cfm">
+					<cfinclude template="../../templates/page.nslds.upload2.cfm">
 				</cfcase>
 				<cfcase value="page.nslds.analyze">				
 					<cfinclude template="../../templates/page.nslds.analyze.cfm">
@@ -474,6 +477,12 @@
 				<cfcase value="page.settings.disclosure">				
 					<cfinclude template="../../templates/page.settings.disclosure.cfm">
 				</cfcase>
+				<cfcase value="page.settings.emailtemplates">				
+					<cfinclude template="../../templates/page.settings.emailtemplates.cfm">
+				</cfcase>
+				<cfcase value="page.settings.menus">				
+					<cfinclude template="../../templates/page.settings.menus.cfm">
+				</cfcase>
 				<cfcase value="page.manage.leads">				
 					<cfinclude template="../../templates/page.manage.leads.cfm">
 				</cfcase>
@@ -525,9 +534,11 @@
 				<cfcase value="page.api.docs">				
 					<cfinclude template="../../templates/page.api.docs.cfm">
 				</cfcase>
+				<!--- // new workflow for other agencies --->
+				<!--- Take Charge America --->
 				<cfcase value="page.tca.solution">				
 					<cfinclude template="../../templates/page.tca.solution.cfm">
-				</cfcase>
+				</cfcase>				
 				<cfcase value="page.tca.solution.process">				
 					<cfinclude template="../../templates/page.tca.solution.process.cfm">
 				</cfcase>
@@ -536,6 +547,19 @@
 				</cfcase>
 				<cfcase value="page.tca.create.action.plan">				
 					<cfinclude template="../../templates/page.tca.create.action.plan.cfm">
+				</cfcase>
+				<!--- Money Management Int'l --->
+				<cfcase value="page.mmi.solution">				
+					<cfinclude template="../../templates/page.mmi.solution.cfm">
+				</cfcase>				
+				<cfcase value="page.mmi.solution.process">				
+					<cfinclude template="../../templates/page.mmi.solution.process.cfm">
+				</cfcase>
+				<cfcase value="page.mmi.solution.final">				
+					<cfinclude template="../../templates/page.mmi.solution.final.cfm">
+				</cfcase>
+				<cfcase value="page.mmi.create.action.plan">				
+					<cfinclude template="../../templates/page.mmi.create.action.plan.cfm">
 				</cfcase>
 				<!--- default case --->
 				<cfdefaultcase>

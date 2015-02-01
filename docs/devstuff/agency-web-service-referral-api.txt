@@ -1,0 +1,85 @@
+
+
+
+			
+			
+			
+			postURL = "https://www.studentloanadvisoronline.com/apis/webservices/agency/agencyservices.cfc?wsdl"			
+				
+				method = "addNewReferral"
+
+					{{ URL Params }}			
+					name = "apiKey" // unqiue agency ID (can be found in their company settings) 
+					value: "1335DC44-9D6F-16F2-9C0862ECA033E277" - company key will be unique, not this example					
+						
+					name = "agencyID"
+					value = "Your Agency ID" // integer (will be provided)				
+					
+					name = "userID"
+					value = "1035" // integer - a default user in your OU as enrolling agent
+					
+					name = "referralsourceID"
+					value = "A Ref Source ID" // integer - from your company Inquiry Sources module.					
+				
+					name = "referralstatusID"
+					value = "14" // integer - always hard coded to 14				
+				
+					name = "referraldate"
+					value = "referraldate" datetime // inquiry date					
+				
+					name = "referralfirstname"
+					value = "John" // nvarchar(50) - inquiry first name			
+				
+					name = "referrallastname"
+					value = "Mathers" // nvarchar(50) - inquirry last name					
+									
+					name = "referralemail"
+					value = "john.mathers@msn.com" // nvarchar(80) - inquiry email				
+				
+					name = "referralphonetype"
+					value = "Mobile" // nvarchar(10) - inquiry phone type Mobile, Home, Office			
+				
+					name = "referralphonenumber"
+					value = "1112221212" // nvarchar(15) - phone number 		
+				
+					name = "agencyuniqueID"
+					value = "123456789-0" // nvarchar(20) - unique id to relate back to their own cms/counseling software
+					
+
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+				
+			
+			<!--- // if the connection to the server responds 200 OK - process the login --->
+			<cfif result.statuscode neq "200 OK">
+													
+				<cfoutput>
+					<p>HTTP Error: #result.statusCode#</p>
+					<p>Content: #htmldecode( result.filecontent )#</p>
+					<p>Response Header: #result.responseHeader#</p>
+					<p>Text: #result.text#</p>
+				</cfoutput>
+
+			<cfelse>
+			
+				<!--- output the result --->
+				<cfdump var="#result#" label="This HTTP Dump">
+			
+			</cfif>
+
+
+
+
+
+			
+								

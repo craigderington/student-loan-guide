@@ -160,6 +160,8 @@
 																<cfset gotopage = "#application.root#?event=page.summary" />
 															<cfelseif mtaskname contains "contact information">
 																<cfset gotopage = "#application.root#?event=page.summary" />
+															<cfelseif mtaskname contains "user login">
+																<cfset gotopage = "#application.root#?event=page.lead.login" />
 															<cfelseif mtaskname contains "outcome">
 																<cfset gotopage = "#application.root#?event=page.enroll" />
 															<cfelseif mtaskname contains "debt balance">
@@ -176,6 +178,16 @@
 																<cfset gotopage = "#application.root#?event=page.enroll" />
 															<cfelseif mtaskname contains "fee schedule">
 																<cfset gotopage = "#application.root#?event=page.fees" />
+															<cfelseif mtaskname contains "debt worksheet">
+																<cfset gotopage = "#application.root#?event=page.worksheet" />
+															<cfelseif mtaskname contains "monthly budget">
+																<cfset gotopage = "#application.root#?event=page.budget" />
+															<cfelseif mtaskname contains "questionnaire">
+																<cfset gotopage = "#application.root#?event=page.survey" />
+															<cfelseif mtaskname contains "adjusted gross income">
+																<cfset gotopage = "#application.root#?event=page.repayments" />															
+															<cfelseif (( mtaskname contains "notified" ) or ( mtaskname contains "solution presentation" ))>
+																<cfset gotopage = "nontaskpage" />
 															<cfelse>
 																<cfset gotopage = "#application.root#?event=page.summary" />
 															</cfif>
@@ -187,7 +199,7 @@
 																		<a href="#application.root#?event=page.task.view&taskid=#taskuuid#" class="btn btn-mini btn-primary" title="View Task"><i class="btn-icon-only icon-ok"></i></a>																			
 																		<a href="#application.root#?event=page.task.edit&taskid=#taskuuid#" class="btn btn-mini btn-secondary" title="Edit Task"><i class="btn-icon-only icon-pencil"></i></a>																		
 																		<a href="#application.root#?event=page.task.reminder&taskid=#taskuuid#" class="btn btn-mini btn-default" title="Create Reminder"><i class="btn-icon-only icon-calendar"></i></a>																		
-																		<a href="#gotopage#" title="Go to Task" class="btn btn-mini btn-tertiary"><i class="btn-icon-only icon-circle-arrow-right"></i></a>																													
+																		<cfif trim( gotopage ) neq "nontaskpage"><a href="#gotopage#" title="Go to Task" class="btn btn-mini btn-tertiary"><i class="btn-icon-only icon-circle-arrow-right"></i></a></cfif>																													
 																	</td>
 																	</cfif>
 																	<td><cfif trim( mtasktype ) is "E"><span class="label label-default">Enrollment</span><cfelseif trim( mtasktype ) is "O"><span class="label label-inverse">Advisory</span><cfelseif trim( mtasktype ) is "N"><span class="label label-warning">Intake</span><cfelseif trim( mtasktype ) is "S"><span class="label label-info">Implementation</span></cfif></td>

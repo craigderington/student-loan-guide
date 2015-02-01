@@ -2,6 +2,10 @@
 	
 			
 			<!--- // get our data access components --->
+			<cfinvoke component="apis.com.users.usergateway" method="getuserprofile" returnvariable="quserprofile">
+				<cfinvokeargument name="userid" value="#session.userid#">
+			</cfinvoke>
+			
 			<cfinvoke component="apis.com.leads.leadgateway" method="getleaddetail" returnvariable="leaddetail">
 				<cfinvokeargument name="leadid" value="#session.leadid#">			
 			</cfinvoke>
@@ -36,6 +40,12 @@
 			<!--- // 12-1-2014 // add company specific esign disclosure statements --->
 			<cfinvoke component="apis.com.portal.portalgateway" method="getcompanydisclosure" returnvariable="companydisclosure">
 				<cfinvokeargument name="leadid" value="#session.leadid#">
+			</cfinvoke>
+			
+			<!--- // 12-23-2014 // get the company email template for this feature --->
+			<cfinvoke component="apis.com.admin.emailtemplategateway" method="getemailtemplatebycat" returnvariable="emailtemplate">
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+				<cfinvokeargument name="cat" value="esign-confirm">
 			</cfinvoke>
 			
 			
@@ -73,7 +83,16 @@
 					
 					<div class="row">
 			
-						<div class="span12">				
+						<div class="span12">
+
+						<cfif structkeyexists( url, "emsg" ) and url.emsg eq 1>
+							<cfoutput>
+								<div class="alert alert-box alert-success">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<strong><i class="icon-envelope"></i> EMAIL SENT!</strong> Thank You.  We just sent you a confirmation email with the details of your program enrollment status.
+								</div>
+							</cfoutput>
+						</cfif>
 							
 							<div class="widget stacked">
 								
@@ -133,11 +152,78 @@
 																	 where esid = <cfqueryparam value="#lead.esid#" cfsqltype="cf_sql_integer" />														   
 																</cfquery>													
 															
-															<cflocation url="#application.root#?event=#url.event#&fuseaction=donext&step=#lead.nextstep#" addtoken="yes">
+																<!--- // 1-5-2015 // mods to esign workflow --->
+																<cfif session.companyid eq 454>
+																	
+																	
+																		<!--- // other companies will want to use a different workflow in order to bypass steps 4 and 5 --->																	
+																		<cfquery datasource="#application.dsn#" name="leadesign35">
+																			update esign
+																			   set esconfirmfullname = <cfqueryparam value="#leaddetail.leadfirst# #leaddetail.leadlast#" cfsqltype="cf_sql_varchar" />,																			   
+																				   escompleted = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+																			 where esid = <cfqueryparam value="#esigninfo.esid#" cfsqltype="cf_sql_integer" />														   
+																		</cfquery>
+																		
+																		<!-- // flag the lead as having completed e-sign -->
+																		<cfquery datasource="#application.dsn#" name="updateleadsummary">
+																			update leads
+																			   set leadesign = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />,
+																				   leadconv = <cfqueryparam value="1" cfsqltype="cf_sql_bit" /> 
+																			 where leadid = <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />														   
+																		</cfquery>														
+																	
+																		<!--- // mark the portal task complete --->
+																		<cfinvoke component="apis.com.portal.portaltaskgateway" method="markportaltaskcompleted" returnvariable="taskstatusmsg">
+																			<cfinvokeargument name="portaltaskid" value="1406">
+																			<cfinvokeargument name="leadid" value="#session.leadid#">
+																		</cfinvoke>
+																		
+																		<!--- // assign the intake advisor  --->
+																		<cfinvoke component="apis.com.clients.assigngateway" method="assignintake" returnvariable="taskstatusmsg">
+																			<cfinvokeargument name="companyid" value="#leaddetail.companyid#">
+																			<cfinvokeargument name="leadid" value="#session.leadid#">
+																		</cfinvoke>
+																		
+																		<!--- // notify the enrollment and intake advisors that the client has completed esign 	--->												
+																		<cfinvoke component="apis.com.comms.commsgateway" method="sendclientesigncomplete" returnvariable="msgstatus">																
+																			<cfinvokeargument name="leadid" value="#session.leadid#">
+																		</cfinvoke>															
+																	
+																		<!--- // flag the lead summary as docs returned and signed --->
+																		<cfquery datasource="#application.dsn#" name="summary">
+																			update slsummary																	   
+																			   set slenrollreturndate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />,
+																				   slenrolldocsuploaddate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />																		   
+																			 where leadid = <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />
+																		</cfquery>
+																		
+																		<!--- // 12-29-2014 // modify to allow for dynamic email templates --->					
+																		<cfif isvalid( "email", quserprofile.email ) and isvalid( "email", companyinfo.email )>							
+																			<cfmail from="#companyinfo.email# (#companyinfo.companyname#)" to="#quserprofile.email#" cc="craig@efiscal.net" subject="Student Loan Counseling Portal ESIGN Confirmation" type="HTML">																			
+																				<!--- // include the dynamic body // client-login-email-template.cfm in company library path --->
+																				<cfinclude template="#emailtemplate.templatepath#">																
+																			</cfmail>																			
+																		</cfif>
+																		
+																		<!--- // set the esign session to true --->
+																		<cfset session.leadesign = 1 />
+																		
+																		<!--- // redirect --->
+																		<cflocation url="#application.root#?event=#url.event#&emsg=1" addtoken="no">
+																
+																<cfelse>
+																	
+																	
+																	<!--- // for everyone else - go to the next step --->
+																	<cflocation url="#application.root#?event=#url.event#&fuseaction=donext&step=#lead.nextstep#" addtoken="yes">
+																
+																
+																</cfif>
+														
 														
 														<cfelseif lead.step eq 4>
 															
-															<cfset paytype = #form.paytype# />
+															<cfset paytype = trim( form.paytype ) />
 																<cfquery datasource="#application.dsn#" name="leadesign4">
 																	update esign
 																	   set esignpaytype = <cfqueryparam value="#paytype#" cfsqltype="cf_sql_varchar" />
@@ -214,11 +300,12 @@
 																		<cfinvokeargument name="leadid" value="#session.leadid#">
 																	</cfinvoke>
 																	
-																	<!--- // notify the enrollment and intake advisors that the client has completed esign --->															
+																	<!--- // notify the enrollment and intake advisors that the client has completed esign 	--->													
 																	<cfinvoke component="apis.com.comms.commsgateway" method="sendclientesigncomplete" returnvariable="msgstatus">																
 																		<cfinvokeargument name="leadid" value="#session.leadid#">
 																	</cfinvoke>															
-																
+																	
+																	
 																	<!--- // flag the lead summary as docs returned and signed --->
 																	<cfquery datasource="#application.dsn#" name="summary">
 																		update slsummary																	   
@@ -227,9 +314,17 @@
 																		 where leadid = <cfqueryparam value="#lead.leadid#" cfsqltype="cf_sql_integer" />
 																	</cfquery>
 																	
+																	<!--- // 12-29-2014 // modify to allow for dynamic email templates --->					
+																	<cfif isvalid( "email", quserprofile.email ) and isvalid( "email", companyinfo.email )>							
+																		<cfmail from="#companyinfo.email# (#companyinfo.companyname#)" to="#quserprofile.email#" subject="Student Loan Counseling Portal ESIGN Confirmation" type="HTML">																			
+																			<!--- // include the dynamic body // client-login-email-template.cfm in company library path --->
+																			<cfinclude template="#emailtemplate.templatepath#">																
+																		</cfmail>																		
+																	</cfif>
+																	
 																	<cfset session.leadesign = 1 />
 																	
-																	<cflocation url="#application.root#?event=#url.event#" addtoken="no">
+																	<cflocation url="#application.root#?event=#url.event#&emsg=1" addtoken="no">
 																
 																<cfelse>
 																
@@ -313,6 +408,14 @@
 																			   slenrolldocsuploaddate = <cfqueryparam value="#today#" cfsqltype="cf_sql_date" />																		   
 																		 where leadid = <cfqueryparam value="#session.leadid#" cfsqltype="cf_sql_integer" />
 																	</cfquery>
+																	
+																	<!--- // 12-29-2014 // modify to allow for dynamic email templates 	--->				
+																	<cfif isvalid( "email", quserprofile.email ) and isvalid( "email", companyinfo.email )>							
+																		<cfmail from="#companyinfo.email# (#companyinfo.companyname#)" to="#quserprofile.email#" subject="Student Loan Counseling Portal ESIGN Confirmation" type="HTML">																			
+																			<!--- // include the dynamic body // client-login-email-template.cfm in company library path --->
+																			<cfinclude template="#emailtemplate.templatepath#">																
+																		</cfmail>																		
+																	</cfif>															
 																	
 																	<cfset session.leadesign = 1 />
 																	

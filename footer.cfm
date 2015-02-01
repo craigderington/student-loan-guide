@@ -102,7 +102,10 @@
 			<script src="./js/bootstrap-tooltip.js"></script>
 			<script src="./js/bootstrap-popover.js"></script>
 			
-			
+			<script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
+			<script type="text/javascript">
+				FreshWidget.init("", {"queryString": "&widgetType=popup&formTitle=Student+Loan+Advisor+Online+Support&submitThanks=Thank+you+for+your+feedback.++One+of+our+team+members+will+follow+up+with+you+shortly.+&searchArea=no", "widgetType": "popup", "buttonType": "text", "buttonText": "Contact Support", "buttonColor": "black", "buttonBg": "#ffffff", "alignment": "4", "offset": "350px", "submitThanks": "Thank you for your feedback.  One of our team members will follow up with you shortly. ", "formHeight": "500px", "url": "https://efiscal.freshdesk.com"} );
+			</script>
 			
 			<!--- // rel popover script --->
 			<script type="text/javascript">

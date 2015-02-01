@@ -36,7 +36,7 @@
 							</cfinvoke>
 
 							<cfinvoke component="apis.com.reports.reportgateway" method="getcounselorlist" returnvariable="counselorlist">
-								<cfinvokeargument name="companyid" value="#session.companyid#">			
+								<cfinvokeargument name="companyid" value="#session.companyid#">		
 							</cfinvoke>
 							
 		
@@ -103,7 +103,7 @@
 																<select name="counselors" style="margin-left:5px;" class="input-large" onchange="javascript:this.form.submit();">
 																	<option value="">Select Counselor</option>
 																		<cfloop query="counselorlist">
-																			<option value="#userid#"<cfif isdefined( "form.counselors" ) and form.counselors eq counselorlist.userid>selected</cfif>>#firstname# #lastname#</option>
+																			<option value="#userid#"<cfif isdefined( "form.counselors" ) and trim( form.counselors ) is not ""><cfif form.counselors eq counselorlist.userid>selected</cfif></cfif>>#firstname# #lastname#</option>
 																		</cfloop>							
 																</select>																
 																<input type="text" name="startdate" style="margin-left:5px;" class="input-medium" placeholder="Start Date" id="datepicker-inline4" value="<cfif isdefined( "form.startdate" )>#dateformat( form.startdate, 'mm/dd/yyyy' )#<cfelse>#dateformat( startdate, 'mm/dd/yyyy' )#</cfif>">

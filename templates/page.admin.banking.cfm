@@ -100,35 +100,52 @@
 													);
 									</cfquery>
 									
-										<!--- // if the user has selected the check box to send an email notification to the client, send it now --->
-										<cfif structkeyexists( form, "chksendnotify" ) and trim( returnreason ) is not "refund">
-											<cfinvoke component="apis.com.system.settingsgateway" method="getnsfreason" returnvariable="nsfreasondetail">
-												<cfinvokeargument name="nsfreasonid" value="#form.nsfreason#">
-											</cfinvoke>
-											<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
-												<cfinvokeargument name="companyid" value="#session.companyid#">
-											</cfinvoke>
-											
-											<cfmail from="#companysettings.dba#(#companysettings.email#)" to="#getfeedetail.leademail#" cc="craig@efiscal.net,#getauthuser()#" subject="Notification - Payment Returned NSF">*** AUTOMATED SYSTEM NOTIFICATION *** UNATTENDED MAILBOX ***  PLEASE DO NOT REPLY
+											<!--- // if the user has selected the check box to send an email notification to the client, send it now --->
+											<cfif structkeyexists( form, "chksendnotify" )>
+												<cfif returnreason neq 8662>
+													<cfinvoke component="apis.com.system.settingsgateway" method="getnsfreason" returnvariable="nsfreasondetail">
+														<cfinvokeargument name="nsfreasonid" value="#form.nsfreason#">
+													</cfinvoke>
+													<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
+														<cfinvokeargument name="companyid" value="#session.companyid#">
+													</cfinvoke>
+													
+													<cfmail from="#companysettings.email# (#companysettings.companyname#)" to="#getfeedetail.leademail#" cc="craig@efiscal.net,#getauthuser()#" subject="Notification - Payment Returned NSF">*** AUTOMATED SYSTEM NOTIFICATION *** UNATTENDED MAILBOX ***  PLEASE DO NOT REPLY
 
-Please note that your payment for #dollarformat( getfeedetail.feeamount )# on #dateformat( getfeedetail.feeduedate, "mm/dd/yyyy" )# was returned by your bank for the following reason:
+		Please note that your payment for #dollarformat( getfeedetail.feeamount )# on #dateformat( getfeedetail.feeduedate, "mm/dd/yyyy" )# was returned by your bank for the following reason:
 
-#nsfreasondetail.nsfreasondescr#
-
-
-
+		#nsfreasondetail.nsfreasondescr#
 
 
 
 
 
-This email was automatically generated from the Student Loan Advisor Online system and sent on behalf of #companysettings.companyname# on #dateformat( now(), "mm/dd/yyyy" )# at #timeformat( now(), "hh:mm tt" )#.
 
 
-											
-												<cfmailparam name="Reply-To" value="#getauthuser()#">
-											</cfmail>
+
+		This email was automatically generated from the Student Loan Advisor Online system and sent on behalf of #companysettings.companyname# on #dateformat( now(), "mm/dd/yyyy" )# at #timeformat( now(), "hh:mm tt" )#.
+
+
+													
+														<cfmailparam name="Reply-To" value="#getauthuser()#">
+													</cfmail>
+												</cfif>
 										</cfif>
+										
+											<!--- // 1-14-2015 // requested by lin // create a client NSF note --->
+											<cfquery datasource="#application.dsn#" name="addnsfnote">
+												insert into notes(leadid, noteuuid, userid, notedate, notetext, removed, systemnote)
+													values (
+															<cfqueryparam value="#getfeedetail.leadid#" cfsqltype="cf_sql_integer" />,
+															<cfqueryparam value="#createuuid()#" cfsqltype="cf_sql_varchar" maxlength="35" />,
+															<cfqueryparam value="#session.userid#" cfsqltype="cf_sql_integer" />,
+															<cfqueryparam value="#thisdate#" cfsqltype="cf_sql_timestamp" />,
+															<cfqueryparam value="A payment was returned on #dateformat( thisdate, 'mm/dd/yyyy' )# for #dollarformat( getfeedetail.feeamount )# for #nsfreasondetail.nsfreasondescr#." cfsqltype="cf_sql_varchar" />,
+															<cfqueryparam value="0" cfsqltype="cf_sql_bit" />,
+															<cfqueryparam value="1" cfsqltype="cf_sql_bit" />
+														   );
+											</cfquery>
+											
 									
 									<cflocation url="#application.root#?event=#url.event#" addtoken="no" />
 								
@@ -469,12 +486,3 @@ This email was automatically generated from the Student Loan Advisor Online syst
 								</div> <!-- / .container -->
 								
 							</div> <!-- / .main -->
-		
-		
-		
-		
-		
-		
-		
-		
-		

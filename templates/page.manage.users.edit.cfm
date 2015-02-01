@@ -154,8 +154,21 @@
 																			<ul>																		
 																				<li class="formerror">The entered user password and confirm password fields do not match.  Please check your input and try again...</li>																		
 																			</ul>
-																	</div>
+																	</div>																
 																
+																<!--- // 1-22-2015 // do not allow users to be in sls, intake and counselor --->
+																<cfelseif ( user.role eq "sls,intake,counselor" ) or ( user.role eq "sls,counselor" ) or ( user.role eq "intake,counselor" ) or ( user.role eq "co-admin,sls,intake,counselor" ) or ( user.role eq "co-admin,intake,counselor" ) or ( user.role eq "co-admin,sls,counselor" ) or ( user.role eq "co-admin,counselor" )>
+																
+															
+																	<div class="alert alert-error">
+																		<a class="close" data-dismiss="alert">&times;</a>
+																		<h5><error>There was 1 error in your form submission:</error></h2>
+																			<ul>																		
+																				<li class="formerror">Sorry, the selected user role configuration is invalid...</li>
+																				<li class="formerror">You have selected <b>Counselor</b> with additional roles selected.</li>
+																				<li class="formerror">Please do not select the <b>Counselor</b> role if assigning additional roles.</li>
+																			</ul>
+																	</div>																														
 																
 																
 																<cfelse>
@@ -196,8 +209,34 @@
 																
 															
 														<cfelse>
-															
 																
+																
+															<cfif comparenocase( user.password, user.confirmpass ) neq 0>
+																
+																	<div class="alert alert-error">
+																		<a class="close" data-dismiss="alert">&times;</a>
+																		<h5><error>There was 1 error in your form submission:</error></h2>
+																			<ul>																		
+																				<li class="formerror">The entered user password and confirm password fields do not match.  Please check your input and try again...</li>																		
+																			</ul>
+																	</div>
+																
+															<!--- // 1-22-2015 // do not allow users to be in sls, intake and counselor --->
+															<cfelseif ( user.role eq "sls,intake,counselor" ) or ( user.role eq "sls,counselor" ) or ( user.role eq "intake,counselor" ) or ( user.role eq "co-admin,sls,intake,counselor" ) or ( user.role eq "co-admin,intake,counselor" ) or ( user.role eq "co-admin,sls,counselor" ) or ( user.role eq "co-admin,counselor" )>
+																
+															
+																	<div class="alert alert-error">
+																		<a class="close" data-dismiss="alert">&times;</a>
+																		<h5><error>There was 1 error in your form submission:</error></h2>
+																			<ul>																		
+																				<li class="formerror">Sorry, the selected user role configuration is invalid...</li>
+																				<li class="formerror">You have selected <b>Counselor</b> with additional roles selected.</li>
+																				<li class="formerror">Please do not select the <b>Counselor</b> role if assigning additional roles.</li>
+																			</ul>
+																	</div>
+																
+															<cfelse>
+															
 																<!--- // update the database record --->
 																<cfquery datasource="#application.dsn#" name="saveuserdetail">
 																	update users
@@ -228,6 +267,7 @@
 																
 																<cflocation url="#application.root#?event=page.users&msg=saved" addtoken="no">													
 															
+															</cfif>
 														
 														</cfif>
 												

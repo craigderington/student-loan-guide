@@ -57,7 +57,8 @@
 					<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
 					<cfset var companypaytypes = "" />
 					<cfquery datasource="#application.dsn#" name="companypaytypes">
-						select cpt.companypaytypeid, cpt.companypaytypedescr, cpt.companypaytypeactive
+						select cpt.companypaytypeid, cpt.companypaytypecode, cpt.companypaytypedescr, 
+						       cpt.companypaytypeactive
 						  from companypaytypes cpt
 					     where cpt.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 						   and cpt.companypaytypeactive = <cfqueryparam value="1" cfsqltype="cf_sql_bit" />

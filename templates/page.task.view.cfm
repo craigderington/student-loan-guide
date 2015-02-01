@@ -14,10 +14,11 @@
 			<cfinvoke component="apis.com.tasks.taskgateway" method="gettask" returnvariable="taskdetail">
 				<cfinvokeargument name="taskid" value="#url.taskid#">
 			</cfinvoke>
-			
+			<!---
 			<cfinvoke component="apis.com.tasks.taskgateway" method="gettaskreminder" returnvariable="taskreminder">
 				<cfinvokeargument name="taskid" value="#url.taskid#">
 			</cfinvoke>
+			--->
 			
 			<cfparam name="gotopage" default="">
 				<cfif taskdetail.mtaskname contains "reason for inquiry">

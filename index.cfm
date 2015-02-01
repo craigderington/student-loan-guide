@@ -14,13 +14,13 @@
 			<cflocation url="#application.root#?event=page.vanco.response&nvpvar=#nvpvar#" addtoken="no">
 		</cfif>
 		
-		<!--- components that we'll use on every page --->
+		<!--- // components that we'll use on every page --->
 		<cfinvoke component="apis.udfs.genAlpha" method="genRandomAlphaString" returnvariable="randout">
 		
-		<!--- include the system templating engine --->
+		<!--- // include the system templating engine --->
 		<cfinclude template="apis/nav/nav.cfm">	
 		
-		<!--- include the footer --->			
+		<!--- // include the footer --->			
 		<cfinclude template="footer.cfm">			
 					
 				

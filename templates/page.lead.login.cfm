@@ -13,7 +13,13 @@
 			</cfinvoke>
 			
 			<cfinvoke component="apis.com.system.companysettings" method="getcompanysettings" returnvariable="companysettings">
-				<cfinvokeargument name="leadid" value="#session.leadid#">
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+			</cfinvoke>
+			
+			<!--- // 12-23-2014 // get the company email template for this feature --->
+			<cfinvoke component="apis.com.admin.emailtemplategateway" method="getemailtemplatebycat" returnvariable="emailtemplate">
+				<cfinvokeargument name="companyid" value="#session.companyid#">
+				<cfinvokeargument name="cat" value="client-login">
 			</cfinvoke>
 			
 			
@@ -176,9 +182,12 @@
 															<!--- send the client a message with their login information --->
 															<cfinvoke component="apis.com.comms.commsgateway" method="sendclientlogin" returnvariable="msgstatus">
 																<cfinvokeargument name="leadid" value="#session.leadid#">
+																<cfinvokeargument name="companyid" value="#session.companyid#">
+																<cfinvokeargument name="cat" value="client-login">
 																<cfinvokeargument name="companyemail" value="#companysettings.email#">
 																<cfinvokeargument name="companyname" value="#companysettings.dba#">
 																<cfinvokeargument name="sendto" value="#lead.username#">
+																<cfinvokeargument name="templatepath" value="#emailtemplate.templatepath#">
 															</cfinvoke>								
 															
 														

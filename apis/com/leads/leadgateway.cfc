@@ -316,7 +316,8 @@
 					  from tasks t, mtask mt
 					 where t.mtaskid = mt.mtaskid
 					   and t.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_varchar" />
-					   
+					   and mt.mtasktype <> <cfqueryparam value="S" cfsqltype="cf_sql_char" />
+					   and mt.mtaskid NOT IN(<cfqueryparam value="9889,9892,9893,9903,9909" cfsqltype="cf_sql_integer" list="yes">)
 					   <cfif structkeyexists( form, "filtertasks" )>
 							and ( mt.mtasktype = <cfqueryparam value="#trim( form.rgtasktype )#" cfsqltype="cf_sql_char" />	)
 					   <cfelse>
@@ -347,14 +348,13 @@
 					  from tasks t, mtask mt
 					 where t.mtaskid = mt.mtaskid
 					   and t.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
+					   and mt.mtasktype <> <cfqueryparam value="S" cfsqltype="cf_sql_char" />
+					   and mt.mtaskid NOT IN(<cfqueryparam value="9889,9892,9893,9903,9909" cfsqltype="cf_sql_integer" list="yes">)
 					   and ( mt.mtasktype = <cfqueryparam value="E" cfsqltype="cf_sql_char" />					    
 					   <cfif structkeyexists( session, "leadconv" )>
 					    or mt.mtasktype = <cfqueryparam value="N" cfsqltype="cf_sql_char" />
 						or mt.mtasktype = <cfqueryparam value="O" cfsqltype="cf_sql_char" />											   			   
-					   </cfif>					   
-					   <cfif structkeyexists( session, "implement" )>
-					    or mt.mtasktype = <cfqueryparam value="S" cfsqltype="cf_sql_char" />					   			   
-					   </cfif>
+					   </cfif>				   
 					   )	
 				</cfquery>				
 			<cfreturn taskprogress>			

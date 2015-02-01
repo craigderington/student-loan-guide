@@ -17,7 +17,8 @@
 								 where pt.portaltaskid = lpt.portaltaskid
 								   and lpt.leadid = <cfqueryparam value="#arguments.leadid#" cfsqltype="cf_sql_integer" />
 									<cfif session.companyid eq 454>
-										and pt.portaltaskid <> <cfqueryparam value="1412" cfsqltype="cf_sql_integer" />										
+										and pt.portaltaskid <> <cfqueryparam value="1411" cfsqltype="cf_sql_integer" />
+										and pt.portaltaskid <> <cfqueryparam value="1412" cfsqltype="cf_sql_integer" />
 									</cfif>
 							  order by lpt.leadportaltaskid asc
 							</cfquery>

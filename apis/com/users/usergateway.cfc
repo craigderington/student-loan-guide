@@ -43,7 +43,7 @@
 					  from loginhistory
 					 where userid = <cfqueryparam value="#arguments.userid#" cfsqltype="cf_sql_integer" />
 				  group by datepart(m, logindate), datepart(yyyy, logindate)
-				  order by datepart(m, logindate) asc
+				  order by datepart(yyyy, logindate) asc
 				</cfquery>
 				<cfreturn qloginmonths >
 			</cffunction>

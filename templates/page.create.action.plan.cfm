@@ -549,7 +549,11 @@
 								--->
 							</cfpdf>
 				
-						
+							<!--- // task automation // update task and mark completed --->
+							<cfinvoke component="apis.com.tasks.taskautomation" method="marktaskcompleted" returnvariable="taskmsg">
+								<cfinvokeargument name="leadid" value="#session.leadid#">
+								<cfinvokeargument name="taskref" value="spgen">
+							</cfinvoke>
 				
 				
 						<!--- // output some info for the user --->

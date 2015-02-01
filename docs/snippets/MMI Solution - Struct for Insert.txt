@@ -1,0 +1,43 @@
+<!--- now format our tree 6 structure for insert --->
+					<cfif isdefined( "form.tree6" ) and form.tree6 eq 6>						
+						<cfset tree6 = structnew() />
+						<cfif isdefined( "form.subcat6c" ) and isdefined( "form.subcat6clist" )>
+							<cfset subcat6c = structinsert( tree6, "Cancellation", trim( form.subcat6clist )) />								
+						</cfif>
+							
+						<cfif isdefined( "form.subcat6f" ) and isdefined( "form.subcat6flist" )>
+							<cfset subcat6f = structinsert( tree6, "Forgiveness", trim( form.subcat6flist )) />
+						</cfif>
+						
+						<cfif isdefined( "form.subcat6d" ) and isdefined( "form.subcat6dlist" )>
+							<cfset subcat6d = structinsert( tree6, "Default Intervention", trim( form.subcat6dlist )) />
+						</cfif>
+						
+						<cfif isdefined( "form.subcat6r" ) and isdefined( "form.subcat6rlist" )>
+							<cfset subcat6r = structinsert( tree6, "Repayment Plan", trim( form.subcat6rlist )) />
+						</cfif>
+						
+						<cfif isdefined( "form.subcat6p" ) and isdefined( "form.subcat6plist" )>
+							<cfset subcat6p = structinsert( tree6, "Postponement", trim( form.subcat6plist )) />
+						</cfif>
+						
+						<cfif isdefined( "form.subcat6o" ) and isdefined( "form.subcat6olist" )>
+							<cfset subcat6o = structinsert( tree6, "Offer in Compromise", "" ) />
+						</cfif>
+						
+						<cfif isdefined( "form.subcat6b" ) and isdefined( "form.subcat6blist" )>
+							<cfset subcat6b = structinsert( tree6, "Bankruptcy", "" ) />
+						</cfif>
+
+						<cfloop collection="#tree6#" index="option">
+							<cfquery datasource="#application.dsn#" name="tree6solutiondetail">
+								insert into mmisolutiondetail(mmisolutionid, mmisolutiontree, mmisolutionoption, mmisolutionsubcat)
+									values(
+											<cfqueryparam value="#thissolutionid#" cfsqltype="cf_sql_integer" />,
+											<cfqueryparam value="Parent PLUS" cfsqltype="cf_sql_varchar" />,
+											<cfqueryparam value="#option#" cfsqltype="cf_sql_varchar" />,
+											<cfqueryparam value="#tree6[option]#" cfsqltype="cf_sql_varchar" list="yes" />									
+										   );
+							</cfquery>						
+						</cfloop>				
+					</cfif>

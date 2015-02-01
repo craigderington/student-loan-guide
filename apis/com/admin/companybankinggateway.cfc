@@ -68,9 +68,9 @@
 							and  l.companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
 							and  ( f.feeduedate between <cfqueryparam value="#arguments.startdate#" cfsqltype="cf_sql_date" /> and <cfqueryparam value="#arguments.enddate#" cfsqltype="cf_sql_date" /> )                
 							<cfif structkeyexists( form, "filtermyresults" )>
-								
-								and l.userid = <cfqueryparam value="#form.counselors#" cfsqltype="cf_sql_integer" />
-								
+								<cfif structkeyexists( form, "counselors" ) and form.counselors neq "">
+									and l.userid = <cfqueryparam value="#form.counselors#" cfsqltype="cf_sql_integer" />
+								</cfif>
 							</cfif>
 					</cfquery>
 					<cfreturn achsummarydata>
@@ -129,7 +129,7 @@
 										</cfloop>								
 									
 									
-										<cfmail from="#companyach.email# (#companyach.dba#)" to="#companyach.email#"  bcc="craig@efiscal.net" subject="SLA Banking Automation - Notification of Payments Marked Paid" type="HTML"><h3>*** AUTOMATED SYSTEM MESSAGE *** PLEASE DO NOT REPLY ***</h3>
+										<cfmail from="#companyach.email# (#companyach.dba#)" to="#companyach.email#"  bcc="linh@consumerdebtcounselors.com,craig@efiscal.net" subject="SLA Banking Automation - Notification of Payments Marked Paid" type="HTML"><h3>*** AUTOMATED SYSTEM MESSAGE *** PLEASE DO NOT REPLY ***</h3>
 
 										<cfoutput>								
 <p style="margin-top:10px;">The Student Loan Advisor Online system banking automation has marked the following client ACH fee payments as paid with a transaction date before #dateformat( triggerdate, "mm/dd/yyyy" )#:</p>

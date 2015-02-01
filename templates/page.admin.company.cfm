@@ -96,7 +96,7 @@
 												
 												<!--- define our structure and set form values --->
 												<cfset comp = structnew() />
-												<cfset comp.compid = #url.compid# />
+												<cfset comp.compid = form.compid />
 												<cfset comp.compname = #form.compname# />
 												<cfset comp.regcode = #createuuid()# />
 												<cfset comp.add1 = #form.compadd1# />
@@ -115,13 +115,13 @@
 												</cfif>
 																							
 												<!--- // some other variables --->
-												<cfset today = #CreateODBCDateTime(now())# />					
+												<cfset today = #CreateODBCDateTime( now() )# />					
 												
-													<!--- // check for duplicate department entry --->
+													<!--- // check for duplicate company name entry --->
 													<cfquery datasource="#application.dsn#" name="checkdupecomp">
 														select companyid, companyname
 														  from company
-														 where companyname = <cfqueryparam value="#comp.compname#" cfsqltype="cf_sql_varchar" />
+														 where companyname LIKE <cfqueryparam value="#comp.compname#%" cfsqltype="cf_sql_varchar" />
 													</cfquery>
 													
 													
@@ -130,7 +130,7 @@
 														
 														<cfoutput>
 															<script>
-																alert('Sorry, #comp.compname# already exists for this company...');
+																alert('Sorry, #comp.compname# already exists in the database.  Please select the company to edit the record.');
 																self.location="javascript:history.back(-1);"
 															</script>
 														</cfoutput>
@@ -156,8 +156,26 @@
 																			<cfqueryparam value="#comp.email#" cfsqltype="cf_sql_varchar" />,
 																			<cfqueryparam value="#comp.regcode#" cfsqltype="cf_sql_varchar" maxlength="35" />,
 																			<cfqueryparam value="1" cfsqltype="cf_sql_bit" />
-																		   );
-															</cfquery>											
+																		   ); select @@identity as newcompanyid
+															</cfquery>
+															
+															<!--- // create welcome message --->
+															<cfquery datasource="#application.dsn#" name="addwelcomemessage">
+																insert into welcomemessage(companyid)
+																	values(
+																			<cfqueryparam value="#addcompany.newcompanyid#" cfsqltype="cf_sql_integer" />																			
+																		   ); 
+															</cfquery>
+															
+															<!--- // create disclosure statement --->
+															<cfquery datasource="#application.dsn#" name="adddisclosurestatement">
+																insert into disclosurestatement(companyid,lastupdated,lastupdatedby)
+																	values(
+																			<cfqueryparam value="#addcompany.newcompanyid#" cfsqltype="cf_sql_integer" />,
+																			<cfqueryparam value="#today#" cfsqltype="cf_sql_timestamp" />,
+																			<cfqueryparam value="987" cfsqltype="cf_sql_integer" />
+																		   ); 
+															</cfquery>							 
 															
 															<!--- // log the activity --->
 															<cfquery datasource="#application.dsn#" name="logact">
@@ -188,7 +206,7 @@
 																	   fax = <cfqueryparam value="#comp.fax#" cfsqltype="cf_sql_varchar" />,
 																	   email = <cfqueryparam value="#comp.email#" cfsqltype="cf_sql_varchar" />,
 																	   active = <cfqueryparam value="#comp.status#" cfsqltype="cf_sql_bit" />
-																 where companyid = <cfqueryparam value="#checkdupecomp.companyid#" cfsqltype="cf_sql_integer" />
+																 where companyid = <cfqueryparam value="#comp.compid#" cfsqltype="cf_sql_integer" />
 															</cfquery>
 
 															<!--- // if the company status is inactive // then inactivate all of their users --->
@@ -196,7 +214,7 @@
 																<cfquery datasource="#application.dsn#" name="killusers">
 																	update users
 																	   set active = <cfqueryparam value="0" cfsqltype="cf_sql_bit" />
-																	 where companyid = <cfqueryparam value="#checkdupecomp.companyid#" cfsqltype="cf_sql_integer" />
+																	 where companyid = <cfqueryparam value="#comp.compid#" cfsqltype="cf_sql_integer" />
 																</cfquery>
 															</cfif>
 															<!--- // log the user activity --->
@@ -364,7 +382,7 @@
 														<div class="control-group">											
 															<label class="control-label" for="compadd1">Address</label>
 																<div class="controls">
-																	<input type="text" name="compadd1" class="input-medium" />   <input type="text" name="compadd2" class="input-medium" />
+																	<input type="text" name="compadd1" class="input-large" />   <input type="text" name="compadd2" class="input-medium" />
 																</div> <!-- /controls -->				
 														</div> <!-- /control-group -->
 														
@@ -401,7 +419,8 @@
 														<div class="form-actions">													
 															<button type="submit" class="btn btn-secondary" name="savedept"><i class="icon-save"></i> Add Company</button>																										
 															<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.admin.company'"><i class="icon-remove-sign"></i> Cancel</a>													
-															<input name="utf8" type="hidden" value="&##955;">																											
+															<input name="utf8" type="hidden" value="&##955;">
+															<input type="hidden" name="compid" value="#url.compid#" />															
 															<input type="hidden" name="__authToken" value="#randout#" />
 															<input name="validate_require" type="hidden" value="compname|Please enter the company name.;compadd1|Please enter the company address.;compcity|Please enter the company city.;">
 													</fieldset>
@@ -432,7 +451,7 @@
 														<div class="control-group">											
 															<label class="control-label" for="compadd1">Address</label>
 																<div class="controls">
-																	<input type="text" name="compadd1" class="input-medium" value="#compdetail.address1#" />   <input type="text" name="compadd2" class="input-medium" value="#compdetail.address2#" />
+																	<input type="text" name="compadd1" class="input-large" value="#compdetail.address1#" />   <input type="text" name="compadd2" class="input-medium" value="#compdetail.address2#" />
 																</div> <!-- /controls -->				
 														</div> <!-- /control-group -->
 														
@@ -479,7 +498,8 @@
 														<div class="form-actions">													
 															<button type="submit" class="btn btn-secondary" name="savedept"><i class="icon-save"></i> Save Company Details</button>																										
 															<a name="cancel" class="btn btn-primary" onclick="location.href='#application.root#?event=page.admin.company'"><i class="icon-remove-sign"></i> Cancel</a>													
-															<input name="utf8" type="hidden" value="&##955;">																											
+															<input name="utf8" type="hidden" value="&##955;">
+															<input type="hidden" name="compid" value="#url.compid#" />
 															<input type="hidden" name="__authToken" value="#randout#" />
 															<input name="validate_require" type="hidden" value="compname|Please enter the company name.;compadd1|Please enter the company address.;compcity|Please enter the company city.;">
 													

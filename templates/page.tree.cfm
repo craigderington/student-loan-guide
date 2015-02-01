@@ -916,7 +916,7 @@
 													
 												</div> <!-- /plan-container -->
 
-												<cfif ( session.companyid eq 446 or session.companyid eq 453 )>
+												<cfif ( <!--- session.companyid eq 446  or ---> session.companyid eq 453 )>
 													<cfoutput>
 														<div class="plan-container">
 															<form name="tca-workflow-client-options" action="#application.root#?event=page.tca.solution" method="post">
@@ -958,6 +958,45 @@
 															</form>
 														</div> <!-- /plan-container -->													
 													</cfoutput>											
+												
+												<!--- // 1-10-2015 // modify for MMI workflow --->
+												<cfelseif (( session.companyid eq 454 ) or ( session.companyid eq 446 ))>
+													<cfoutput>
+														<div class="plan-container">
+															<form name="mmi-workflow-client-options" action="#application.root#?event=page.mmi.solution" method="post">
+																<div class="plan stacked black">
+																	<div class="plan-header">																	
+																		<div class="plan-title">
+																			<small>MMI &raquo; Client Options</small>    		
+																		</div> <!-- /plan-title -->																	
+																	</div> <!-- /plan-header -->							
+																	
+																			
+																	<div class="plan-features">
+																		<div class="well" style="padding:25px;">
+																			<ul style="list-style:none;">																	
+																				<i class="icon-check"></i> I have reviewed all of the client's Student Loan options by Loan Type and I am ready to create an action plan.	
+																			</ul>																			
+																			<p style="margin-top:15px;"><small>Please click the Continue button below.  In the next step, you will enter a personalized client solution message to be included in the solution packet.</small></p>
+																		</div>
+																	</div> <!-- /plan-features -->													
+																		
+																	<div class="plan-actions">				
+																		<button type="submit" class="btn" style="padding:20px 50px 20px 50px;" name="mmisolution"><i class="icon-circle-arrow-right"></i> Continue</button>							
+																	</div> <!-- /plan-actions -->													
+																														
+														
+																</div> <!-- /plan -->
+															</form>
+														</div> <!-- /plan-container -->
+													</cfoutput>
+												
+												
+												
+												
+												
+												
+												
 												</cfif><!-- / end tca workflow -->
 										
 											</div> <!-- /pricing-plans -->

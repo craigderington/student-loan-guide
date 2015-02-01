@@ -10,6 +10,8 @@
 
 				<cffunction name="sendclientlogin" access="public" output="false" hint="I trigger the portal login email to the client.">
 						<cfargument name="leadid" type="numeric" required="yes" default="#session.leadid#">
+						<cfargument name="companyid" type="numeric" required="yes" default="#session.companyid#">
+						<cfargument name="cat" type="any" required="yes" default="Login">
 						<cfargument name="companyemail" type="string" required="yes">
 						<cfargument name="companyname" type="string" required="yes">
 						<cfargument name="sendto" type="string" required="yes">
@@ -20,9 +22,24 @@
 							
 							<cfif isvalid( "email", arguments.sendto ) and isvalid( "email", arguments.companyemail )>			
 								
+								<!--- // new method // dynamic email templates per company --->
+								<cfquery datasource="#application.dsn#" name="getemailtemplate">
+									select templateid, companyid, templatecategory, templatecreatedate, 
+									       templatecontent, lastupdated, lastupdatedby
+									  from emailtemplates
+									 where companyid = <cfqueryparam value="#arguments.companyid#" cfsqltype="cf_sql_integer" />
+									   and templatecategory = <cfqueryparam value="#arguments.cat#" cfsqltype="cf_sql_varchar" />
+								</cfquery>
+								
 								
 								<cfmail from="#arguments.companyemail# (#arguments.companyname#)" to="#arguments.sendto#" bcc="craig@efiscal.net" subject="Important Information from your Student Loan Advisor Team" type="HTML">
 										
+										<cfoutput>
+											#urldecode( getemailtemplate.templatecontent )#
+										</cfoutput>
+										
+										
+										<!--- // old method // static template
 										<html>
 											<head>
 												<title>Student Loan Advisor Online - Email Notification</title>						
@@ -87,7 +104,7 @@
 													</body>
 												</cfoutput>
 										</html>
-
+										--->
 																
 								</cfmail>
 								
