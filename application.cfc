@@ -34,8 +34,8 @@
 		 <cfscript>
 			//set your app vars for the application          
 			application.dsn = "SLAdmin";
-			application.title = "Student Loan Advisor Online";
-			application.developer = "eFiscal Networks, LLC.";
+			application.title = "Student Loan Guide";
+			application.developer = "Craig Derington, Inc.";
 			application.bootver = "v 2.3.1";
 			application.softver = "v 1.0.1 Beta";
 			application.root = "index.cfm";
