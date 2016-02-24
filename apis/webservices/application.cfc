@@ -3,7 +3,7 @@
 	hint="I define the webservices sub directory application settings and event handlers."
 	>		
 	<!--- ****************************************************  
-		  11-2-2014 // CLD // eFiscal Networks
+		  11-2-2014 // CLD // 
 		  We need to allow direct web service API calls to our
 		  CFC's.  Since the root site utilizes the OnRequestStart
 		  method, all page requests are routed through CF login.
