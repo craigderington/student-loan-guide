@@ -45,7 +45,7 @@
 							</a>
 							
 							<a class="brand" href="./index.cfm">
-								Student Loan Advisor Online <sup style="color:#F90;">Beta 1</sup>				
+								Student Loan Guide				
 							</a>		
 							
 							<div class="nav-collapse">
@@ -81,14 +81,14 @@
 				
 					<cfif isdefined( "REQUEST.badlogin" )>
 						<div class="alert alert-block alert-error fade in">
-							<button type="button" class="close" data-dismiss="alert">×</button>
+							<button type="button" class="close" data-dismiss="alert">Ã—</button>
 								<h4 class="alert-heading"><i class="icon-warning-sign"></i> Login Failed!</h4>
 									<p>Sorry, your login credentials have failed.  Either your username and password was entered incorrectly.  Please try again...</p>
 									
 						</div>
 					<cfelseif isdefined( "url.killopensess" ) and url.killopensess eq 1>
 						<div class="alert alert-block alert-error fade in">
-							<button type="button" class="close" data-dismiss="alert">×</button>
+							<button type="button" class="close" data-dismiss="alert">Ã—</button>
 								<h4 class="alert-heading"><i class="icon-warning-sign"></i> OPEN SESSION DETECTED</h4>
 									<p style="margin-top:5px;">Sorry for the inconvenience, but the system has detected an open login session for the username entered.</p>
 									<p>This is a result of a previous login session for which the user was not logged out.</p>
@@ -99,7 +99,7 @@
 						</div>
 					<cfelseif isdefined( "url.logout" ) and url.logout eq 1>
 						<div class="alert alert-block alert-info fade in">
-							<button type="button" class="close" data-dismiss="alert">×</button>
+							<button type="button" class="close" data-dismiss="alert">Ã—</button>
 								<h4 class="alert-heading"><i class="icon-check"></i> THANK YOU!</h4>
 									<p>Your logout request was processed successfully.  To continue, please login again or close this window.</p>
 									
@@ -109,7 +109,7 @@
 					<div class="content clearfix">
 						
 						<cfoutput>
-						<form action="https://www.studentloanadvisoronline.com/#application.root#?event=page.index" method="post" name="loginform">
+						<form action="https://www.strapped.com/#application.root#?event=page.index" method="post" name="loginform">
 						
 							<h1>Sign In</h1>		
 							
