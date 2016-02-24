@@ -5,7 +5,7 @@
 					<cfoutput>
 					<div class="container">
 						
-						<a href="#application.root#?event=page.index" class="brand">eFiscal v3.0.1</a>
+						<a href="#application.root#?event=page.index" class="brand">Strapped</a>
 						
 						<a href="javascript:;" class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<i class="icon-reorder"></i>
