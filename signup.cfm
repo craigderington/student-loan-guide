@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Create an Account :: Student Loan Advisor Online</title>
+    <title>Create an Account :: Student Loan Guide</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
@@ -37,7 +37,7 @@
 			</a>
 			
 			<a class="brand" href="./index.html">
-				Student Loan Advisor <sup>Beta 1</sup>				
+				Student Loan Guide				
 			</a>		
 			
 			<div class="nav-collapse">
