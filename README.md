@@ -1,6 +1,8 @@
-SLAdmin
+Student Loan Guide v. 2
 =======
 
-Student Loan Advisor Online
+Welcome to Student Loan Guide v. 2  
+Quickly and Effectively Manage Your Federal Student Loan Debt. 
 
-Welcome to Student Loan Advisor Online
+
+Federal student loan debt resolution.
