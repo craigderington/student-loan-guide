@@ -19,8 +19,8 @@
 						so that the CFDump doesn't recurse forever.
 					--->
 					<cfmail
-						to="craig@efiscal.net"
-						from="system@efiscal.net"
+						to="craig@..."
+						from="system@..."
 						subject="Web Site Error"
 						type="html">
 			 
