@@ -15,7 +15,7 @@
 									
 								<ul>
 									<li><a href="javascript:;">About Us</a></li>
-									<li><a href="javascript:;">eFiscal Networks, LLC.</a></li>									
+									<li><a href="javascript:;">Strapped</a></li>									
 									<li><a href="javascript:;">Disclaimer</a></li>
 								</ul>
 									
